@@ -1,0 +1,67 @@
+@import 'src/utils/utils';
+
+.seo {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: $white-1;
+
+  @media(max-width: $phone) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+
+    @media(max-width: $tablet) {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-family: $title-font;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 45px;
+    color: $dark-blue-1;
+
+    @media(max-width: $tablet) {
+      margin-bottom: 30px;
+    }
+    @media(max-width: $phone) {
+      margin-bottom: 10px;
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    em {
+      font-style: normal;
+      color: $blue-1;
+    }
+  }
+
+  p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 25px;
+
+    @media(max-width: $phone) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

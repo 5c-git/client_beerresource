@@ -1,0 +1,183 @@
+mixin layout(props)
+  if props.slider
+    section.layout.layout--slider
+      div.container 
+        div.layout__wrapper
+          div.layout__head
+            h2.layout__title=props.title
+            if props.link
+              a(href="#").layout__all
+                span.layout__all-arrow ↗
+            div.layout__slider-buttons
+              button(type='button' aria-label='Предыдущий слайд.').layout__slider-button.layout__slider-button--prev ←
+              button(type='button' aria-label='Следующий слайд.').layout__slider-button.layout__slider-button--next →
+          div.swiper.layout__slider
+            ul.swiper-wrapper.layout__slider-list
+              li.swiper-slide.layout__slider-item
+                +item-card({
+                  front: './assets/images/promo-picture-1.png',
+                  back: './assets/images/item-background-1.jpg',
+                  mixin: 'item-card--to-order',
+                  flag: './assets/images/item-flag-1.jpg',
+                  title: 'Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами',
+                  pricePack: true,
+                })
+              li.swiper-slide.layout__slider-item
+                +item-card({
+                  flag: './assets/images/item-flag-2.jpg',
+                  title: 'Солод шишковой',
+                  pricePack: true,
+                })
+              li.swiper-slide.layout__slider-item
+                +item-card({
+                  front: './assets/images/promo-picture-2.png',
+                  back: './assets/images/item-background-2.jpg',
+                  tags: true,
+                  flag: './assets/images/item-flag-3.jpg',
+                  title: 'Солод шишковой улучшенный свежий',
+                })
+              li.swiper-slide.layout__slider-item
+                +item-card({
+                  front: './assets/images/promo-picture-3.png',
+                  back: './assets/images/item-background-3.jpg',
+                  tags: true,
+                  flag: './assets/images/item-flag-2.jpg',
+                  title: 'Солод шишковой улучшенный свежий',
+                })
+              li.swiper-slide.layout__slider-item
+                +item-card({
+                  front: './assets/images/promo-picture-6.png',
+                  back: './assets/images/item-background-4.jpg',
+                  tags: true,
+                  flag: './assets/images/item-flag-1.jpg',
+                  title: 'Солод шишковой улучшенный свежий',
+                  pricePack: true,
+                })
+              li.swiper-slide.layout__slider-item
+                +item-card({
+                  flag: './assets/images/item-flag-2.jpg',
+                  title: 'Солод шишковой',
+                })
+              li.swiper-slide.layout__slider-item
+                +item-card({
+                  front: './assets/images/promo-picture-2.png',
+                  back: './assets/images/item-background-2.jpg',
+                  tags: true,
+                  flag: './assets/images/item-flag-3.jpg',
+                  title: 'Солод шишковой улучшенный свежий',
+                })
+              li.swiper-slide.layout__slider-item
+                +item-card({
+                  front: './assets/images/promo-picture-3.png',
+                  back: './assets/images/item-background-3.jpg',
+                  tags: true,
+                  flag: './assets/images/item-flag-2.jpg',
+                  title: 'Солод шишковой улучшенный свежий',
+                })
+            div.layout__scrollbar
+
+  else if props.grid3
+    section.layout.layout--grid3
+      div.container 
+        div.layout__wrapper
+          if props.title
+            div.layout__head
+              h2.layout__title=props.title
+              if props.link
+                a(href="#").layout__all
+                  span.layout__all-text=props.link
+                  span.layout__all-arrow ↗
+          if props.sort
+            +top-filters({})
+          div.layout__list
+            block
+
+          if props.pagination
+            include ../pagination/pagination
+
+  else if props.grid4
+    section.layout.layout--grid4
+      div.container 
+        div.layout__wrapper
+          if props.title
+            div.layout__head
+              h2.layout__title=props.title
+              if props.link
+                a(href="#").layout__all
+                  span.layout__all-text=props.link
+                  span.layout__all-arrow ↗
+          if props.sort
+            +top-filters({})
+          div.layout__list
+            block
+
+          if props.pagination
+            include ../pagination/pagination
+
+  else if props.grid
+    section.layout.layout--grid
+      div.container 
+        div.layout__wrapper
+          if props.title
+            div.layout__head
+              h2.layout__title=props.title
+              if props.link
+                a(href="#").layout__all
+                  span.layout__all-text=props.link
+                  span.layout__all-arrow ↗
+          if props.sort
+            +top-filters({})
+          div.layout__list
+            block
+
+          if props.pagination
+            include ../pagination/pagination
+
+  else if props.sidebar
+    section.layout.layout--sidebar
+      div.container 
+        div.layout__wrapper
+          if props.title
+            div.layout__head
+              h2.layout__title=props.title
+              if props.link
+                a(href="#").layout__all
+                  span.layout__all-text=props.link
+                  span.layout__all-arrow ↗
+          div.layout__content
+            div.layout__sidebar
+              if props.promotions
+                +sidebar-nav({
+                  promotions: true,
+                })
+              if props.favorites
+                +sidebar-nav({
+                  favorites: true,
+                })
+            div.layout__main
+              if props.favorites 
+                +top-filters({})
+              div.layout__list
+                block
+
+              if props.pagination
+                include ../pagination/pagination
+
+  else
+    section.layout
+      div.container 
+        div.layout__wrapper
+          if props.title
+            div.layout__head
+              h2.layout__title=props.title
+              if props.link
+                a(href="#").layout__all
+                  span.layout__all-text=props.link
+                  span.layout__all-arrow ↗
+          if props.sort
+            +top-filters({})
+          div.layout__list
+            block
+
+          if props.pagination
+            include ../pagination/pagination

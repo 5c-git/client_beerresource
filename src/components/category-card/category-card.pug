@@ -1,0 +1,8 @@
+mixin category-card(props)
+  article.category-card
+    a(href="#").category-card__image
+      <!-- Рекомендуемые размеры 380/215. -->
+      img(src=props.src alt="")
+    
+    h3.category-card__title
+      a(href="#")=props.title

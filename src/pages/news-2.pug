@@ -1,0 +1,37 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Среди интеграторов и разработчиков на CRM Битрикс24 мы заняли 10-е место!',
+  })
+    include ../components/back/back
+
+  +layout-header({
+    promotion: true,
+  })
+
+  +layout({})
+    +article({
+      service: true,
+    })
+
+  +layout({
+    grid3: true,
+    title: 'Другие новости',
+    link: 'Смотреть все',
+  })
+    +news-card({
+      src: './assets/images/image-2.jpg',
+      title: 'Классификация сортов и видов пива.',
+      tags: true,
+    })
+    +news-card({
+      src: './assets/images/image-5.jpg',
+      title: 'Описание и характеристики самых популярных марок',
+    })
+    +news-card({
+      src: './assets/images/image-9.jpg',
+      title: 'Классификация сортов и видов пива.',
+    })

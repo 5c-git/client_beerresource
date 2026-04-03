@@ -1,0 +1,102 @@
+@import 'src/utils/utils';
+
+.button {
+  display: inline-grid;
+  min-height: 50px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding-top: 11px;
+  padding-right: 25px;
+  padding-bottom: 12px;
+  padding-left: 25px;
+  border: 1px solid $dark-blue-1;
+  border-radius: 8px;
+  font-family: $main-font;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  text-decoration: none;
+  color: $white-1;
+  background-color: $dark-blue-1;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s;
+  grid-auto-flow: column;
+  grid-column-gap: 5px;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  @media(max-width: $phone) {
+    min-height: 45px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  &:disabled {
+    color: $grey-8;
+    background-color: $grey-3;
+    border-color: $grey-3;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    @media(min-width: $desktop-only) {
+      background-color: $blue-1;
+      border-color: $blue-1;
+    }
+  }
+
+  svg {
+    fill: currentcolor;
+    stroke: currentcolor;
+  }
+
+  &--transparent {
+    color: $dark-blue-1;
+    background-color: transparent;
+    border-color: $grey-6;
+
+    &:not(:disabled):hover {
+      @media(min-width: $desktop-only) {
+        color: $dark-blue-1;
+        background-color: transparent;
+        border-color: $grey-7;
+      }
+    }
+  }
+
+  &--reverse {
+    color: $dark-blue-1;
+    background-color: transparent;
+    border-color: $grey-6;
+
+    @media(max-width: $tablet) {
+      color: $white-1;
+      background-color: $dark-blue-1;
+      border-color: $dark-blue-1;
+    }
+
+    &:not(:disabled):hover {
+      @media(min-width: $desktop-only) {
+        background-color: transparent;
+        border-color: $grey-7;
+      }
+    }
+  }
+
+  &--white {
+    color: $white-1;
+    background-color: transparent;
+    border-color: $grey-2;
+
+    &:not(:disabled):hover {
+      @media(min-width: $desktop-only) {
+        background-color: rgb($color: $white-1, $alpha: 30%);
+        border-color: $grey-2;
+      }
+    }
+  }
+}

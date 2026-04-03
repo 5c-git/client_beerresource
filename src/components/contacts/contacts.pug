@@ -1,0 +1,123 @@
+section.contacts
+  div.container
+    div.contacts__block.contacts__block--sidebar
+      div.contacts__center
+        h2.contacts__title Центральный офис
+        p.contacts__text По вопросам проезда,  для предложений, замечаний, а также записи в Центр обслуживания и другим вопросам.
+        p.contacts__text 
+          a(href="#").contacts__link Наша география 
+      div.contacts__sidebar
+        div 
+          h3.contacts__sidebar-title Звоните:
+          a(href="tel:+78127250088").contacts__sidebar-link +7 812 725-00-88
+          a(href="tel:+78127250088").contacts__sidebar-link +7 812 725-00-88
+          a(href="tel:+78127250088").contacts__sidebar-link +7 812 725-00-88
+
+        div 
+          h3.contacts__sidebar-title Пишите:
+          a(href="mailto:sales@resource.beer").contacts__sidebar-link sales@resource.beer
+          a(href="mailto:sales@resource.beer").contacts__sidebar-link sales@resource.beer
+          +socials({
+            contacts: true,
+          })
+
+
+    div.contacts__block
+      h2.contacts__title Схема проезда
+      div.contacts__plan
+        h3.contacts__plan-title Своим ходом
+        ul.contacts__plan-list 
+          li.contacts__plan-item
+            span(style='background-color: #4BD31A;').contacts__circle
+            p.contacts__text Павелецкая. Выход №2, далее на автобусе №56 до остановки Сахарорафинадный завод;
+          li.contacts__plan-item
+            span(style='background-color: #F3A712;').contacts__circle
+            p.contacts__text Третьяковская. Выход №4, далее на автобусе № 32 до остановки Пищекомбинат;
+      div.contacts__plan
+        h3.contacts__plan-title На автомобиле
+        ul.contacts__plan-list 
+          li.contacts__plan-item
+            span(style='background-color: #D6DFE4;').contacts__circle
+            p.contacts__text Съезд с МКАД 49-й км на улицу Рябиновую. По ходу движения с левой стороны — офисное здание с вывеской «5 УГЛОВ»; Из центра — с Можайского шоссе поворот на улицу Рябиновую. По ходу движения с правой стороны — офисное здание с вывеской «5 УГЛОВ».
+
+    div.contacts__map
+      +map({
+        x: '59.962971',
+        y: '30.334360',
+        name: 'Адрес офиса:',
+        hint: 'г. Санкт-Петербург, ул. Петроградская Набережная 36А, БЦ «Линкор», офис 376',
+      })
+      div.contacts__nav 
+        h3.contacts__nav-title Отправить координаты в:
+        ul.contacts__nav-list 
+          li.contacts__nav-item.contacts__nav-item--mobile
+            a(href="#" target='_blank').contacts__nav-link 
+              svg(width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg")
+                use(href='#icon-navyandex')
+              span Яндекс.Навигатор
+          li.contacts__nav-item 
+            a(href="#" target='_blank').contacts__nav-link 
+              svg(width="17" height="24" viewBox="0 0 17 24" xmlns="http://www.w3.org/2000/svg")
+                use(href='#icon-navgoogle')
+              span Google Maps
+          li.contacts__nav-item 
+            a(data-link='https://5corners.ru/').contacts__nav-link.contacts__nav-link--copy
+              svg(width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg")
+                use(href='#icon-navshare')
+              span Копировать ссылку
+            div.contacts__message 
+              span Ссылка скопирована
+
+
+    div.contacts__block.contacts__block--wide
+      h2.contacts__title Реквизиты
+      div.contacts__requisites
+        div.contacts__requisites-wrapper
+          div.contacts__requisites-item
+            div.contacts__requisites-block
+              p.contacts__requisites-name Организация
+              p.contacts__requisites-value ООО ПЯТЬ УГЛОВ
+          div.contacts__requisites-item
+            div.contacts__requisites-block
+              p.contacts__requisites-name Наименование банка
+              p.contacts__requisites-value Акционерное общество Альфа-банк
+          div.contacts__requisites-item
+            div.contacts__requisites-block
+              p.contacts__requisites-name БИК
+              p.contacts__requisites-value 044525593
+          div.contacts__requisites-item
+            div.contacts__requisites-block
+              p.contacts__requisites-name ОГРН
+              p.contacts__requisites-value 99999999999
+          div.contacts__requisites-item
+            div.contacts__requisites-block
+              p.contacts__requisites-name ИНН
+              p.contacts__requisites-value 7709982857
+          div.contacts__requisites-item
+            div.contacts__requisites-block
+              p.contacts__requisites-name КПП
+              p.contacts__requisites-value 770101001
+          div.contacts__requisites-item
+            div.contacts__requisites-block
+              p.contacts__requisites-name Расчетный счёт
+              p.contacts__requisites-value 40702810601300022674
+          div.contacts__requisites-item
+            div.contacts__requisites-block
+              p.contacts__requisites-name Корреспондентский счёт
+              p.contacts__requisites-value 30101810200000000593
+        div.contacts__requisites-wrapper
+          a(href="/upload/Реквизиты ООО БИЗНЕСРЕСУРС (РФ).pdf" download).contacts__requisites-item
+            i.contacts__requisites-icon
+              svg(width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg")
+                use(href='#icon-document')
+            div.contacts__requisites-block
+              p.contacts__requisites-name Реквизиты для РФ
+              p.contacts__requisites-value Реквизиты ООО БИЗНЕСРЕСУРС (РФ)
+          a(href="/upload/Реквизиты ООО БИЗНЕСРЕСУРС (РФ).pdf" download).contacts__requisites-item
+            i.contacts__requisites-icon
+              svg(width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg")
+                use(href='#icon-document')
+            div.contacts__requisites-block
+              p.contacts__requisites-name Реквизиты для СНГ
+              p.contacts__requisites-value Реквизиты ООО БИЗНЕСРЕСУРС (СНГ)
+        

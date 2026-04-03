@@ -1,0 +1,31 @@
+@import 'src/utils/utils';
+
+.Loader {
+  @include zero;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+
+    @media(max-width: $phone) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+@keyframes spin {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}

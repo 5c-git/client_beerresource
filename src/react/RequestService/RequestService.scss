@@ -1,0 +1,162 @@
+@import 'src/utils/utils';
+
+.RequestService {
+
+  &__header {
+    margin-bottom: 30px;
+
+    @media(max-width: $phone) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-family: $title-font;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 45px;
+
+    @media(max-width: $phone) {
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+
+  &__post-title {
+    margin: 0;
+    margin-top: 20px;
+
+    @media(max-width: $phone) {
+      margin-top: 15px;
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
+    @media(max-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media(max-width: $phone) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__field {
+    position: relative;
+
+    &--wide {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+  }
+
+  &__terms {
+    display: grid;
+    align-items: center;
+    margin-top: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+    @media(max-width: $phone) {
+      margin-top: 0;
+      grid-template-columns: 1fr;
+      grid-column-gap: 0;
+      grid-row-gap: 9px;
+    }
+  }
+
+  &__legal {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: $grey-8;
+    grid-column: span 2;
+    gap: 10px;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      line-height: 18px;
+      order: 1;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: underline;
+      color: $blue-1;
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__submit {
+    @media(max-width: $phone) {
+      width: 100%;
+      min-width: unset;
+    }
+  }
+
+  &__footer {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid $grey-6;
+
+    @media(max-width: $phone) {
+      margin-top: 20px;
+      padding-top: 20px;
+    }
+  }
+
+  &__contacts-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 10px;
+
+    @media(max-width: $phone) {
+      flex-direction: column;
+    }
+  }
+
+  &__contacts-link {
+    display: inline-grid;
+    align-items: center;
+    text-decoration: none;
+    color: $dark-blue-1;
+    transition: color 0.3s;
+    grid-auto-flow: column;
+    grid-column-gap: 5px;
+
+    &:hover {
+      @media(min-width: $phone) {
+        color: $blue-1;
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      stroke: currentcolor;
+    }
+  }
+}

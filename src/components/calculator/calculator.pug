@@ -1,0 +1,37 @@
+article.calculator
+  a(href="#").calculator__toggle
+    i.calculator__icon
+      svg(width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg")
+        use(href='#icon-calculator')
+    span Калькулятор
+  div.calculator__wrapper
+    div.calculator__body
+      div.calculator__results
+        div.calculator__result
+        div.calculator__expression
+      div.calculator__nav
+        div.calculator__numbers
+          button(type='button' data-number='7').calculator__button.calculator__button--number 7
+          button(type='button' data-number='8').calculator__button.calculator__button--number 8
+          button(type='button' data-number='9').calculator__button.calculator__button--number 9
+          
+          button(type='button' data-number='4').calculator__button.calculator__button--number 4
+          button(type='button' data-number='5').calculator__button.calculator__button--number 5
+          button(type='button' data-number='6').calculator__button.calculator__button--number 6
+          
+          button(type='button' data-number='1').calculator__button.calculator__button--number 1
+          button(type='button' data-number='2').calculator__button.calculator__button--number 2
+          button(type='button' data-number='3').calculator__button.calculator__button--number 3
+          
+          button(type='button' data-number='0').calculator__button.calculator__button--number 0
+          button(type='button' data-number='.').calculator__button.calculator__button--number .
+          button(type='button' data-number='=').calculator__button.calculator__button--equals =
+          
+        div.calculator__operations
+          button(type='button' data-number='*').calculator__button.calculator__button--operation *
+          button(type='button' data-number='/').calculator__button.calculator__button--operation /
+          button(type='button' data-number='+').calculator__button.calculator__button--operation +
+          button(type='button' data-number='-').calculator__button.calculator__button--operation -
+        div.calculator__clears
+          button(type='button' data-number='clear').calculator__button.calculator__button--clear AC
+          button(type='button' data-number='ce').calculator__button.calculator__button--ce CE

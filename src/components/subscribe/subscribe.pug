@@ -1,0 +1,15 @@
+section.subscribe
+  div.container 
+    div.subscribe__wrapper
+      div.subscribe__header
+        h2.subscribe__title Подпишитесь на&nbsp;рассылку! 
+        p.subscribe__post-title Подпишитесь на&nbsp;новости и&nbsp;получайте самые свежие статьи и&nbsp;рекомендации от&nbsp;наших пивоваров!
+      form(action='#' method='post')#subscribe-form.subscribe__form
+        div.subscribe__fields 
+          div.subscribe__field
+            div.validator__error-container
+            label(for="subscribe-email").validator__description.subscribe__label E-mail
+            input(type='email' name='subscribe-email' id='subscribe-email' autocomplete='off' autocapitalize='off' placeholder='Введите e-mail').validator__mail.subscribe__input
+      div.subscribe__terms
+        p.subscribe__legal Нажимая кнопку "Отправить" вы&nbsp;соглашаетесь с&nbsp;нашей <a href='#' class="subscribe__legal-link" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a> и обработкой <a href='#' class="subscribe__legal-link" target="_blank" rel="noopener noreferrer">персональных данных</a>.
+        button(type='submit' form='subscribe-form').subscribe__submit.button Отправить

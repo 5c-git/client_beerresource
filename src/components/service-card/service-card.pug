@@ -1,0 +1,11 @@
+mixin service-card(props)
+  article.service-card
+    a(href="#").service-card__image
+      <!-- Рекомендуемые размеры 330/280. -->
+      if props.src
+        img(src=props.src alt="")
+    
+    h3.text-crop-3.service-card__title
+      a(href="#")=props.title
+    
+    p.text-crop-3.service-card__text=props.text

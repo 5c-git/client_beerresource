@@ -1,0 +1,18 @@
+@import 'src/utils/utils';
+
+.SubscribeProvider {
+  position: relative;
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  @media(max-width: $phone) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  & + .layout {
+    @media(max-width: $phone) {
+      margin-top: 20px;
+    }
+  }
+}

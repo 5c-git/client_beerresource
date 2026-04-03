@@ -1,0 +1,103 @@
+section.catalog
+  div.container 
+    div.catalog__wrapper
+      div.catalog__sidebar 
+        div.catalog__sidebar-filter
+          button(type='button').catalog__filter-open
+            svg(width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg")
+              use(href='#icon-filter')
+            span Фильтры
+          div.catalog__filter
+            div.catalog__filter-head
+              p.catalog__filter-title Фильтры
+              button(type='button' aria-label='Закрыть фильтр').catalog__filter-close
+                span 
+            div.catalog__filter-body
+              <!-- Сюда кодер воткнёт стандартный фильтр от Битрикса, после чего верстак его застилизует. -->
+        
+      div.catalog__main
+        +top-filters({
+          view: true,
+        })
+        div.catalog__list
+          +item-card({
+            front: './assets/images/promo-picture-1.png',
+            back: './assets/images/item-background-1.jpg',
+            mixin: 'item-card--to-order',
+            flag: './assets/images/item-flag-1.jpg',
+            title: 'Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами',
+            pricePack: true,
+          })
+          +item-card({
+            onepackag: true,
+            back: './assets/images/item-background-2.jpg',
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Солод шишковой',
+            pricePack: true,
+          })
+          +item-card({
+            onepackag: true,
+            front: './assets/images/promo-picture-3.png',
+            back: './assets/images/item-background-1.jpg',
+            flag: './assets/images/item-flag-3.jpg',
+            title: 'Семечко хмеля Емеля',
+          })
+          +item-card({
+            onepackag: true,
+            front: './assets/images/promo-picture-4.png',
+            flag: './assets/images/item-flag-1.jpg',
+            tags: true,
+            title: 'Мешок белого цемента',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-5.png',
+            back: './assets/images/item-background-2.jpg',
+            tags: true,
+            flag: './assets/images/item-flag-1.jpg',
+            title: 'Модная импортная продукция, которую никогда не увидим больше',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-6.png',
+            back: './assets/images/item-background-1.jpg',
+            mixin: 'item-card--to-order',
+            flag: './assets/images/item-flag-3.jpg',
+            title: 'Просто бочка',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-1.png',
+            back: './assets/images/item-background-1.jpg',
+            tags: true,
+            flag: './assets/images/item-flag-1.jpg',
+            title: 'Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами',
+          })
+          +item-card({
+            back: './assets/images/item-background-2.jpg',
+            flag: './assets/images/item-flag-1.jpg',
+            title: 'Солод шишковой',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-3.png',
+            back: './assets/images/item-background-1.jpg',
+            mixin: 'item-card--to-order',
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Семечко хмеля Емеля',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-4.png',
+            flag: './assets/images/item-flag-1.jpg',
+            title: 'Мешок цемента',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-5.png',
+            back: './assets/images/item-background-2.jpg',
+            flag: './assets/images/item-flag-3.jpg',
+            title: 'Модная продукция',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-6.png',
+            back: './assets/images/item-background-1.jpg',
+            flag: './assets/images/item-flag-1.jpg',
+            title: 'Просто бочка',
+          })
+
+        include ../pagination/pagination

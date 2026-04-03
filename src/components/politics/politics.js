@@ -1,0 +1,1 @@
+import './politics.scss';

@@ -1,0 +1,33 @@
+extends ../templates/default
+
+block main
+  section.background
+    include ../components/breadcrumbs/breadcrumbs
+
+    +profile-page({})
+      +profile-center({
+        select: true,
+        title: 'Текущие заказы',
+        pagination: true,
+      })
+        +offer-card({
+          formed: true,
+        })
+        +offer-card({
+          formed2: true,
+        })
+        +offer-card({
+          awaiting: true,
+        })
+        +offer-card({
+          shipment: true,
+        })
+        +offer-card({
+          delivery: true,
+        })
+        +offer-card({
+          finished: true,
+        })
+        +offer-card({
+          canceled: true,
+        })

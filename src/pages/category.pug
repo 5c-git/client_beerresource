@@ -1,0 +1,93 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Наименование категории',
+  })
+    include ../components/back/back
+  
+  +layout({
+    grid3: true,
+    pagination: true,
+  })
+    +article-card({
+      src: './assets/images/image-3.jpg',
+      title: 'Классификация сортов и видов пива. Описание и характеристики самых популярных марок.',
+    })
+    +article-card({
+      src: './assets/images/image-4.jpg',
+      title: 'Классификация сортов и видов пива.',
+    })
+    +article-card({
+      src: './assets/images/image-1.jpg',
+      title: 'Описание и характеристики самых популярных марок',
+    })
+    +article-card({
+      src: './assets/images/image-2.jpg',
+      title: 'Классификация сортов и видов пива.',
+    })
+    +article-card({
+      src: './assets/images/image-7.jpg',
+      title: 'Классификация сортов и видов пива.',
+    })
+    +article-card({
+      src: './assets/images/image-8.jpg',
+      title: 'Классификация сортов и видов пива.',
+    })
+    +article-card({
+      src: './assets/images/image-11.jpg',
+      title: 'Описание и характеристики самых популярных марок',
+    })
+    +article-card({
+      src: './assets/images/image-13.jpg',
+      title: 'Классификация сортов и видов пива. Описание и характеристики самых популярных марок.',
+    })
+    +article-card({
+      src: './assets/images/image-15.jpg',
+      title: 'Классификация сортов и видов пива.',
+    })
+    +article-card({
+      src: './assets/images/image-17.jpg',
+      title: 'Классификация сортов и видов пива.',
+    })
+    +article-card({
+      src: './assets/images/image-12.jpg',
+      title: 'Описание и характеристики самых популярных марок',
+    })
+    +article-card({
+      src: './assets/images/image-9.jpg',
+      title: 'Классификация сортов и видов пива.',
+    })
+
+  include ../providers/common/SubscribeProvider/SubscribeProvider
+  
+  +layout({
+    grid3: true,
+    title: 'Другие категории',
+  })
+    +category-card({
+      src: './assets/images/image-19.jpg',
+      title: 'Классификация сортов и видов пива. Описание и характеристики самых популярных марок.',
+    })
+    +category-card({
+      src: './assets/images/image-2.jpg',
+      title: 'Классификация сортов и видов пива.',
+    })
+    +category-card({
+      src: './assets/images/image-5.jpg',
+      title: 'Описание и характеристики самых популярных марок',
+    })
+    +category-card({
+      src: './assets/images/image-7.jpg',
+      title: 'Классификация сортов и видов пива. Описание и характеристики самых популярных марок.',
+    })
+    +category-card({
+      src: './assets/images/image-6.jpg',
+      title: 'Классификация сортов и видов пива.',
+    })
+    +category-card({
+      src: './assets/images/image-8.jpg',
+      title: 'Описание и характеристики самых популярных марок',
+    })

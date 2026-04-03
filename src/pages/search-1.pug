@@ -1,0 +1,18 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Результаты поиска',
+  })
+  
+  include ../components/search/search
+
+  +empty({})
+
+  include ../providers/pages/search-1/RequestSearchProvider/RequestSearchProvider
+  
+  +watched({
+    title: 'Вы смотрели',
+  })

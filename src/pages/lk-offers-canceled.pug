@@ -1,0 +1,33 @@
+extends ../templates/default
+
+block main
+  section.background
+    include ../components/breadcrumbs/breadcrumbs
+
+    +profile-page({})
+      +profile-center({
+        select: true,
+        title: 'Отмененные заказы',
+        pagination: true,
+      })
+        +offer-card({
+          canceled: true,
+        })
+        +offer-card({
+          canceled: true,
+        })
+        +offer-card({
+          canceled: true,
+        })
+        +offer-card({
+          canceled: true,
+        })
+        +offer-card({
+          canceled: true,
+        })
+        +offer-card({
+          canceled: true,
+        })
+        +offer-card({
+          canceled: true,
+        })

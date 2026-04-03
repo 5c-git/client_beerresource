@@ -1,0 +1,9 @@
+mixin packaging-amount(props)
+  
+  div(data-unit-type=props.type data-unit-size=props.size).packaging-amount
+    div(data-max=props.max).packaging-amount__buttons
+      button(type='button' aria-label='Уменьшить на 1').packaging-amount__button.packaging-amount__button--minus
+      input(type="number" inputmode='numeric' value='0' min='0').packaging-amount__input
+      button(type='button' aria-label='Увеличить на 1').packaging-amount__button.packaging-amount__button--plus
+    div.packaging-amount__total
+      span

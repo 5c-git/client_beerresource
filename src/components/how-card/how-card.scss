@@ -1,0 +1,56 @@
+@import 'src/utils/utils';
+
+.how-card {
+
+  &__banner {
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 60px 0;
+    overflow: hidden;
+    user-select: none;
+
+    @media(max-width: $phone) {
+      margin-bottom: 15px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      // width: 285px;
+      height: 300px;
+      object-fit: cover;
+
+      @media(max-width: $phone) {
+        height: 265px;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    font-family: $title-font;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+
+    @media(max-width: $phone) {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}

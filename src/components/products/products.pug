@@ -1,0 +1,145 @@
+section.products
+  div.container 
+    div.products__wrapper
+      h2(data-aos='fade-up' data-aos-delay='100' data-aos-duration='500').products__title <em>Продукция</em> со всего мира
+      ul.products__list
+        li.products__item
+          +item-card({
+            onepackag: true,
+            back: './assets/images/item-background-1.jpg',
+            mixin: 'item-card--to-order',
+            flag: './assets/images/item-flag-1.jpg',
+            title: 'Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами',
+            pricePack: true,
+          })
+          +item-card({
+            front: './assets/images/item-1/item.png',
+            back: './assets/images/item-1/background.jpg',
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Солод шишковой',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-2.png',
+            back: './assets/images/item-background-2.jpg',
+            tags: true,
+            flag: './assets/images/item-flag-3.jpg',
+            title: 'Солод шишковой улучшенный свежий',
+            pricePack: true,
+          })
+          +item-card({
+            front: './assets/images/item-1/item.png',
+            back: './assets/images/item-1/background.jpg',
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Солод шишковой',
+            pricePack: true,
+          })
+        li.products__item
+          +item-card({
+            front: './assets/images/item-1/item.png',
+            back: './assets/images/item-1/background.jpg',
+            mixin: 'item-card--to-order',
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Солод шишковой',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-6.png',
+            back: './assets/images/item-background-5.jpg',
+            tags: true,
+            flag: './assets/images/item-flag-1.jpg',
+            title: 'Солод шишковой улучшенный свежий',
+          })
+          +item-card({
+            back: './assets/images/item-background-5.jpg',
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами',
+          })
+          +item-card({
+            front: './assets/images/item-1/item.png',
+            back: './assets/images/item-1/background.jpg',
+            mixin: 'item-card--to-order',
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Солод шишковой',
+          })
+        li.products__item
+          +item-card({
+            front: './assets/images/promo-picture-3.png',
+            back: './assets/images/item-background-3.jpg',
+            tags: true,
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Солод шишковой улучшенный свежий',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-4.png',
+            back: './assets/images/item-background-4.jpg',
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Солод шишковой',
+          })
+          +item-card({
+            front: './assets/images/item-1/item.png',
+            back: './assets/images/item-1/background.jpg',
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Солод шишковой',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-2.png',
+            back: './assets/images/item-background-2.jpg',
+            tags: true,
+            flag: './assets/images/item-flag-3.jpg',
+            title: 'Солод шишковой улучшенный свежий',
+          })
+        li.products__item
+          +item-card({
+            front: './assets/images/item-1/item.png',
+            back: './assets/images/item-1/background.jpg',
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Солод шишковой',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-3.png',
+            back: './assets/images/item-background-3.jpg',
+            tags: true,
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Солод шишковой улучшенный свежий',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-4.png',
+            back: './assets/images/item-background-4.jpg',
+            tags: true,
+            flag: './assets/images/item-flag-1.jpg',
+            title: 'Солод шишковой улучшенный свежий',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-2.png',
+            back: './assets/images/item-background-2.jpg',
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами',
+          })
+        li.products__item
+          +item-card({
+            tags: true,
+            flag: './assets/images/item-flag-1.jpg',
+            title: 'Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-6.png',
+            back: './assets/images/item-background-3.jpg',
+            mixin: 'item-card--to-order',
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Солод шишковой',
+          })
+          +item-card({
+            front: './assets/images/item-1/item.png',
+            back: './assets/images/item-1/background.jpg',
+            mixin: 'item-card--to-order',
+            flag: './assets/images/item-flag-2.jpg',
+            title: 'Солод шишковой',
+          })
+          +item-card({
+            front: './assets/images/promo-picture-5.png',
+            back: './assets/images/item-background-5.jpg',
+            tags: true,
+            flag: './assets/images/item-flag-3.jpg',
+            title: 'Солод шишковой улучшенный свежий',
+          })
+      div.products__footer
+        a(href="#").products__link.button.button--reverse Перейти в каталог&nbsp;→

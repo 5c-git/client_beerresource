@@ -1,0 +1,51 @@
+mixin watched(props)  
+  section.watched
+    div.container
+      div.watched__wrapper
+        h2.watched__title=props.title
+        div.swiper.watched__slider
+          ul.swiper-wrapper.watched__slider-list
+            li.swiper-slide.watched__slider-item
+              +item-card({
+                front: './assets/images/promo-picture-2.png',
+                back: './assets/images/item-background-2.jpg',
+                mixin: 'item-card--to-order',
+                flag: './assets/images/item-flag-3.jpg',
+                title: 'Солод шишковой улучшенный свежий',
+                pricePack: true,
+              })
+            li.swiper-slide.watched__slider-item
+              +item-card({
+                front: './assets/images/promo-picture-4.png',
+                flag: './assets/images/item-flag-2.jpg',
+                title: 'Солод шишковой',
+                pricePack: true,
+              })
+            li.swiper-slide.watched__slider-item
+              +item-card({
+                front: './assets/images/promo-picture-1.png',
+                back: './assets/images/item-background-1.jpg',
+                tags: true,
+                flag: './assets/images/item-flag-1.jpg',
+                title: 'Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами',
+              })
+            li.swiper-slide.watched__slider-item
+              +item-card({
+                front: './assets/images/promo-picture-6.png',
+                back: './assets/images/item-background-3.jpg',
+                tags: true,
+                flag: './assets/images/item-flag-1.jpg',
+                title: 'Солод шишковой улучшенный свежий',
+              })
+            li.swiper-slide.watched__slider-item
+              +item-card({
+                front: './assets/images/promo-picture-3.png',
+                back: './assets/images/item-background-4.jpg',
+                tags: true,
+                flag: './assets/images/item-flag-2.jpg',
+                title: 'Солод шишковой улучшенный свежий',
+              })
+          div.watched__scrollbar
+        div.watched__slider-buttons
+          button(type='button' aria-label='Предыдущий слайд.').watched__slider-button.watched__slider-button--prev ←
+          button(type='button' aria-label='Следующий слайд.').watched__slider-button.watched__slider-button--next →

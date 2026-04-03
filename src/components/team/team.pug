@@ -1,0 +1,28 @@
+section.team
+  div.container 
+    h2.team__title Команда
+    ul.team__list
+      li.team__item
+        +team-card({
+          src: './assets/images/team-photo-1.jpg',
+          name: 'Харитонов Сергей',
+          position: 'Генеральный директор',
+        })
+      li.team__item
+        +team-card({
+          src: './assets/images/team-photo-2.jpg',
+          name: 'Милонов Владимир',
+          position: 'Исполнительный директор',
+        })
+      li.team__item
+        +team-card({
+          src: './assets/images/team-photo-3.jpg',
+          name: 'Рюриков Илья',
+          position: 'Технический директор',
+        })
+      li.team__item
+        +team-card({
+          src: './assets/images/team-photo-4.jpg',
+          name: 'Масленников Александр',
+          position: 'Маркетолог',
+        })

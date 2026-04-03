@@ -1,0 +1,13 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Корзина',
+  })
+    +clear({
+      cart: true,
+    })
+  
+  include ../components/cart/cart

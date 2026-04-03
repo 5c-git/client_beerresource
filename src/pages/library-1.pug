@@ -1,0 +1,47 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Декор',
+  })
+
+  +layout({})
+    +checkbox({
+      mixin: 'checkbox--toggle',
+      type: 'checkbox',
+      name: 'test-1',
+    })
+    +checkbox({
+      mixin: 'checkbox--toggle',
+      text: 'Доставка товаров со склада',
+      type: 'checkbox',
+      name: 'test-2',
+    })
+    +checkbox({
+      text: 'Личные рекомендации товаров',
+      type: 'checkbox',
+      name: 'test-3',
+    })
+    +checkbox({
+      text: 'Я согласен получать информационную рассылку рекламного характера.',
+      type: 'radio',
+      name: 'edo_doc_radio',
+      value: 'edo_doc_radio_1',
+    })
+    +checkbox({
+      text: 'Digital-агентство 5 УГЛОВ оказывает услуги в области айдентики, веб-разработки, интернет-маркетинга и медиа продакшена, используя передовые технологии и опыт сплоченной команды профессионалов.',
+      type: 'radio',
+      name: 'edo_doc_radio',
+      value: 'edo_doc_radio_2',
+      checked: true,
+    })
+    +checkbox({
+      text: 'Акции, персональные промокоды и секретные распродажи',
+      type: 'radio',
+      name: 'edo_doc_radio',
+      value: 'edo_doc_radio_2',
+      checked: true,
+    })
+

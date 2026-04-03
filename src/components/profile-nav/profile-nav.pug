@@ -1,0 +1,61 @@
+section.profile-nav
+  button(type='button' aria-label='Открыть-скрыть меню.').profile-nav__toggle
+    span
+  div.profile-nav__inner
+    ul.profile-nav__list
+      li.profile-nav__item
+        a(href='#').profile-nav__link
+          svg(width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg')
+            use(href='#icon-orders')
+          span.profile-nav__name Текущие заказы
+
+      li.profile-nav__item
+        a(href='#').profile-nav__link
+          svg(width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg')
+            use(href='#icon-completed')
+          span.profile-nav__name Выполненные
+
+      li.profile-nav__item
+        a(href='#').profile-nav__link
+          svg(width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg')
+            use(href='#icon-canceled')
+          span.profile-nav__name Отмененные
+
+    ul.profile-nav__list    
+      li.profile-nav__item
+        a(href='#').profile-nav__link
+          svg(width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg')
+            use(href='#icon-eye')
+          span.profile-nav__name Вы смотрели
+
+    ul.profile-nav__list 
+      li.profile-nav__item.profile-nav__item--active
+        a(href='#').profile-nav__link
+          svg(width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg')
+            use(href='#icon-head')
+          span.profile-nav__name Личные данные
+
+      li.profile-nav__item
+        a(href='#').profile-nav__link
+          svg(width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg')
+            use(href='#icon-building')
+          span.profile-nav__name Мои организации
+          <!-- если нужен маркер для оповещения. -->
+          i.profile-nav__icon 
+            img(src="./assets/images/icon-alert.svg", alt="")
+
+      li.profile-nav__item
+        a(href='#').profile-nav__link
+          svg(width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg')
+            use(href='#icon-book')
+          span.profile-nav__name Подписки
+          <!-- если нужен маркер для оповещения. -->
+          i.profile-nav__icon 
+            img(src="./assets/images/icon-alert.svg", alt="")
+
+
+      li.profile-nav__item
+        a(href='#').profile-nav__link
+          svg(width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg')
+            use(href='#icon-location')
+          span.profile-nav__name Адреса доставки

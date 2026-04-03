@@ -1,0 +1,14 @@
+@import 'src/utils/utils';
+
+.product-analogues {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+  grid-column-gap: 15px;
+  grid-row-gap: 20px;
+
+  @media(max-width: $phone) {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
+  }
+}

@@ -1,0 +1,70 @@
+mixin payment(props)
+  if props.qr
+    section.payment
+      div.container 
+        div.payment__wrapper
+          h2.payment__title Оплата заказа
+          p.payment__text Оплата по QR коду
+          hr
+          p.payment__text Сумма к оплате: <br>
+            b 4 278 ₽
+          div.payment__block 
+            div.payment__qr
+              img(src="./assets/images/qr-code.svg" width='150' height='150' alt="")
+              p.payment__comment
+                a(href="#" target='_blank') Сгенерировать новый QR код
+              a(href='#' target='_blank').button Перейти к оплате
+          p.payment__comment Вы будете перенаправлены на страницу оплаты. <br>Обратите внимание, если вы откажетесь от покупки, для возврата денег вам придется обратиться в магазин.
+          p.payment__comment Остались вопросы – звоните:
+          p.payment__comment 
+            a(href="tel:+78127250088") +7(812)725-00-88
+          p.payment__comment 
+            a(href="tel:+79215886080") +7(921)588-60-80
+          
+  if props.visa
+    section.payment
+      div.container 
+        div.payment__wrapper
+          h2.payment__title Оплата заказа
+          p.payment__text Онлайн оплата с помощью платежных сервисов Visa, Mastercard.
+          hr
+          p.payment__text Сумма к оплате: <br>
+            b 4 278 ₽
+          div.payment__block 
+            a(href='#' target='_blank').button Перейти к оплате
+          p.payment__comment Вы будете перенаправлены на страницу оплаты. <br>Обратите внимание, если вы откажетесь от покупки, для возврата денег вам придется обратиться в магазин.
+          p.payment__comment Остались вопросы – звоните:
+          p.payment__comment 
+            a(href="tel:+78127250088") +7(812)725-00-88
+          p.payment__comment 
+            a(href="tel:+79215886080") +7(921)588-60-80
+          
+  if props.bill
+    section.payment
+      div.container 
+        div.payment__wrapper
+          h2.payment__title Оплата заказа
+          p.payment__text Оплата по счету
+          hr
+          p.payment__text Сумма к оплате по счету: <br>
+            b 4 278 ₽
+          div.payment__block 
+            a(href='#' download).button Скачать счет на оплату
+          p.payment__comment Счёт необходимо оплатить в течение 3-х рабочих дней.
+          p.payment__comment Остались вопросы – звоните:
+          p.payment__comment 
+            a(href="tel:+78127250088") +7(812)725-00-88
+          p.payment__comment 
+            a(href="tel:+79215886080") +7(921)588-60-80
+          
+  if props.fail
+    section.payment
+      div.container 
+        div.payment__wrapper
+          h2.payment__title Ошибка формирования заказа.
+          p.payment__text Мы с вами свяжемся в ближайшее время и обсудим детали. <br>При возникновении дополнительных вопросов – звоните:
+          p.payment__comment Остались вопросы – звоните:
+          p.payment__comment 
+            a(href="tel:+78127250088") +7(812)725-00-88
+          p.payment__comment 
+            a(href="tel:+79215886080") +7(921)588-60-80

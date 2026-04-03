@@ -1,0 +1,79 @@
+mixin header(props)
+  header(class=props.secondClass).header
+    div.header__padding
+    div.header__fixed
+      div.header__noise
+        canvas.header__noise-canvas 
+      div.container 
+        div.header__wrapper
+          a(href="#").header__logo
+            img(src="./assets/images/logo-header--black.svg" width='180' height='37' alt="").header__logo-black
+            img(src="./assets/images/logo-header--white.svg" width='180' height='37' alt="").header__logo-white
+          nav.header__nav
+            ul.header__list 
+              li.header__item.header__item--sub
+                a(href="#").header__link Каталог
+                div.header__sub
+                  div.container 
+                    ul.header__sub-list 
+                      li.header__sub-item 
+                        a(href="#").header__sub-link Солод
+                      li.header__sub-item 
+                        a(href="#").header__sub-link Химия
+                      li.header__sub-item 
+                        a(href="#").header__sub-link Ингредиенты
+                      li.header__sub-item 
+                        a(href="#").header__sub-link Товары для дестиляции
+                      li.header__sub-item 
+                        a(href="#").header__sub-link Хмель
+                      li.header__sub-item 
+                        a(href="#").header__sub-link Пюре
+                      li.header__sub-item 
+                        a(href="#").header__sub-link Клининг
+                      li.header__sub-item 
+                        a(href="#").header__sub-link Дрожжи
+                      li.header__sub-item 
+                        a(href="#").header__sub-link Солодовые экстракты
+                      li.header__sub-item 
+                        a(href="#").header__sub-link Оборудование
+              li.header__item
+                a(href="#").header__link Избранное
+              li.header__item
+                a(href="#").header__link Сравнение
+              li.header__item
+                a(href="#").header__link Контакты
+              li.header__item
+                a(href="#").header__link.header__link--cart Корзина
+                  span.header__link-value 985 365 ₽
+
+            div.header__geolocation
+              button(type='button').header__geolocation-button
+                svg(width="11" height="15" viewBox="0 0 11 15" xmlns="http://www.w3.org/2000/svg")
+                  use(href='#icon-geopin')
+                span.header__geolocation-text Самый Нижний Новгород
+
+            div.header__buttons
+              a(href="#" data-count='28').header__button.header__button--mobile-only
+                <!-- Кол-во товаров в корзине передаём через data-count. -->
+                svg(width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  use(href='#icon-header-cart')
+              a(href="#").header__button.header__button--profile
+                svg(width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  use(href='#icon-header-user')
+              a.header__button.header__button--search
+                svg(width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  use(href='#icon-header-search')
+              button(type='button').header__burger
+                span
+
+        div.header__dropdown 
+          include ../header-dropdown/header-dropdown
+
+        div.header__mobile-nav
+          include ../mobile-nav/mobile-nav
+
+        div.header__search
+          include ../header-search/header-search
+
+    div.header__overlay
+

@@ -1,0 +1,388 @@
+section.compare
+  div.compare__nav
+    div.container 
+      div.compare__nav-wrapper
+        div.compare__filter
+          button(type='button').compare__filter-button.compare__filter-button--all.compare__filter-button--active Все характеристики
+          button(type='button').compare__filter-button.compare__filter-button--diff Только различия
+        button(type='button').compare__clear
+          svg(width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg")
+            use(href='#icon-cross')
+          span Очистить категорию
+        div.compare__slider-buttons
+          button(type='button' aria-label='Предыдущий слайд.').compare__slider-button.compare__slider-button--prev ←
+          button(type='button' aria-label='Следующий слайд.').compare__slider-button.compare__slider-button--next →
+
+  div.compare__products
+    div.container
+      div.swiper.compare__products-slider
+        ul.swiper-wrapper.compare__products-list
+          li.swiper-slide.compare__products-item
+            +item-card({
+              compare: true,
+              front: './assets/images/promo-picture-4.png',
+              back: './assets/images/item-background-4.jpg',
+              flag: './assets/images/item-flag-1.jpg',
+              tags: true,
+              title: 'Мешок белого цемента',
+              pricePack: true,
+            })
+            button(type='button').button.button--transparent.compare__slider-delete Удалить из списка
+            div.compare__fraction
+          li.swiper-slide.compare__products-item
+            +item-card({
+              compare: true,
+              front: './assets/images/promo-picture-5.png',
+              back: './assets/images/item-background-2.jpg',
+              tags: true,
+              flag: './assets/images/item-flag-1.jpg',
+              title: 'Модная импортная продукция, которую никогда не увидим больше',
+              pricePack: true,
+            })
+            button(type='button').button.button--transparent.compare__slider-delete Удалить из списка
+            div.compare__fraction
+          li.swiper-slide.compare__products-item
+            +item-card({
+              compare: true,
+              front: './assets/images/promo-picture-6.png',
+              back: './assets/images/item-background-1.jpg',
+              tags: true,
+              flag: './assets/images/item-flag-3.jpg',
+              title: 'Просто бочка',
+            })
+            button(type='button').button.button--transparent.compare__slider-delete Удалить из списка
+            div.compare__fraction
+          li.swiper-slide.compare__products-item
+            +item-card({
+              compare: true,
+              front: './assets/images/promo-picture-1.png',
+              back: './assets/images/item-background-1.jpg',
+              tags: true,
+              flag: './assets/images/item-flag-1.jpg',
+              title: 'Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами',
+            })
+            button(type='button').button.button--transparent.compare__slider-delete Удалить из списка
+            div.compare__fraction
+          li.swiper-slide.compare__products-item
+            +item-card({
+              compare: true,
+              front: './assets/images/promo-picture-2.png',
+              back: './assets/images/item-background-2.jpg',
+              flag: './assets/images/item-flag-1.jpg',
+              title: 'Солод шишковой',
+            })
+            button(type='button').button.button--transparent.compare__slider-delete Удалить из списка
+            div.compare__fraction
+          li.swiper-slide.compare__products-item
+            +item-card({
+              compare: true,
+              front: './assets/images/promo-picture-5.png',
+              back: './assets/images/item-background-2.jpg',
+              tags: true,
+              flag: './assets/images/item-flag-1.jpg',
+              title: 'Модная импортная продукция, которую никогда не увидим больше',
+            })
+            button(type='button').button.button--transparent.compare__slider-delete Удалить из списка
+            div.compare__fraction
+          li.swiper-slide.compare__products-item
+            +item-card({
+              compare: true,
+              front: './assets/images/promo-picture-6.png',
+              back: './assets/images/item-background-1.jpg',
+              tags: true,
+              flag: './assets/images/item-flag-3.jpg',
+              title: 'Просто бочка',
+            })
+            button(type='button').button.button--transparent.compare__slider-delete Удалить из списка
+            div.compare__fraction
+          li.swiper-slide.compare__products-item
+            +item-card({
+              compare: true,
+              front: './assets/images/promo-picture-1.png',
+              back: './assets/images/item-background-1.jpg',
+              tags: true,
+              flag: './assets/images/item-flag-1.jpg',
+              title: 'Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами',
+            })
+            button(type='button').button.button--transparent.compare__slider-delete Удалить из списка
+            div.compare__fraction
+
+  div.compare__float
+    div.container
+      button(type='button' aria-label='Предыдущий слайд.').compare__slider-button.compare__slider-button--prev ←
+      button(type='button' aria-label='Следующий слайд.').compare__slider-button.compare__slider-button--next →
+      div.swiper.compare__float-slider
+        ul.swiper-wrapper.compare__float-list
+          li.swiper-slide.compare__float-item
+            a(href="#").compare__float-link
+              div.compare__float-banner
+                img(src="./assets/images/promo-picture-4.png" alt="")
+              div.compare__float-content
+                p.compare__float-name Мешок белого цемента
+                p.compare__float-price <span>50 ₽</span> / кг
+          li.swiper-slide.compare__float-item
+            a(href="#").compare__float-link
+              div.compare__float-banner
+                img(src="./assets/images/promo-picture-5.png" alt="")
+              div.compare__float-content
+                p.compare__float-name Модная импортная продукция, которую никогда не увидим больше
+                p.compare__float-price <span>50 ₽</span> / кг
+          li.swiper-slide.compare__float-item
+            a(href="#").compare__float-link
+              div.compare__float-banner
+                img(src="./assets/images/promo-picture-6.png" alt="")
+              div.compare__float-content
+                p.compare__float-name Просто бочка
+                p.compare__float-price <span>50 ₽</span> / кг
+          li.swiper-slide.compare__float-item
+            a(href="#").compare__float-link
+              div.compare__float-banner
+                img(src="./assets/images/promo-picture-1.png" alt="")
+              div.compare__float-content
+                p.compare__float-name Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами
+                p.compare__float-price <span>50 ₽</span> / кг
+          li.swiper-slide.compare__float-item
+            a(href="#").compare__float-link
+              div.compare__float-banner
+                img(src="./assets/images/promo-picture-2.png" alt="")
+              div.compare__float-content
+                p.compare__float-name Солод шишковой
+                p.compare__float-price <span>50 ₽</span> / кг
+          li.swiper-slide.compare__float-item
+            a(href="#").compare__float-link
+              div.compare__float-banner
+                img(src="./assets/images/promo-picture-5.png" alt="")
+              div.compare__float-content
+                p.compare__float-name Модная импортная продукция, которую никогда не увидим больше
+                p.compare__float-price <span>50 ₽</span> / кг
+          li.swiper-slide.compare__float-item
+            a(href="#").compare__float-link
+              div.compare__float-banner
+                img(src="./assets/images/promo-picture-6.png" alt="")
+              div.compare__float-content
+                p.compare__float-name Просто бочка
+                p.compare__float-price <span>50 ₽</span> / кг
+          li.swiper-slide.compare__float-item
+            a(href="#").compare__float-link
+              div.compare__float-banner
+                img(src="./assets/images/promo-picture-1.png" alt="")
+              div.compare__float-content
+                p.compare__float-name Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами
+                p.compare__float-price <span>50 ₽</span> / кг
+
+  div.compare__header
+    div.container
+      h2.compare__title Характеристики
+
+  div.compare__scoring
+    div.container 
+      div.swiper.compare__scoring-block
+        div.compare__scoring-head
+          span.compare__scoring-name Краткое описание
+        ul.swiper-wrapper.compare__scoring-list
+          li.swiper-slide.compare__scoring-item
+            p Каждый из нас понимает очевидную вещь: выбранный нами инновационный путь предоставляет широкие возможности для переосмысления внешнеэкономических политик.
+          li.swiper-slide.compare__scoring-item
+            p Базовый класса премиум для производства, как классического так и крафтовых сортов пива. Этот солод произведен из отборного пивоваренного ячменя выведенного лучшими селекционерами Европы.
+          li.swiper-slide.compare__scoring-item
+            p Для современного мира постоянный количественный рост и сфера нашей активности позволяет выполнить важные задания по разработке вывода текущих активов.
+          li.swiper-slide.compare__scoring-item
+            p В рамках спецификации современных стандартов, базовые сценарии поведения пользователей призывают нас к новым свершениям, которые, в свою очередь, должны быть заблокированы в рамках своих собственных рациональных ограничений.
+          li.swiper-slide.compare__scoring-item
+            p Имеется спорная точка зрения, гласящая примерно следующее: явные признаки победы институционализации призывают нас к новым свершениям, которые, в свою очередь, должны быть объективно рассмотрены соответствующими инстанциями.
+          li.swiper-slide.compare__scoring-item
+            p Для современного мира постоянный количественный рост и сфера нашей активности позволяет выполнить важные задания по разработке вывода текущих активов.
+          li.swiper-slide.compare__scoring-item
+            p В рамках спецификации современных стандартов, базовые сценарии поведения пользователей призывают нас к новым свершениям, которые, в свою очередь, должны быть заблокированы в рамках своих собственных рациональных ограничений.
+          li.swiper-slide.compare__scoring-item
+            p Для современного мира постоянный количественный рост и сфера нашей активности позволяет выполнить важные задания по разработке вывода текущих активов.
+
+  div.compare__scoring
+    div.container 
+      div.swiper.compare__scoring-block
+        div.compare__scoring-head
+          span.compare__scoring-name Тип
+        ul.swiper-wrapper.compare__scoring-list
+          li.swiper-slide.compare__scoring-item
+            p Базовый солод
+          li.swiper-slide.compare__scoring-item
+            p Базовый солод
+          li.swiper-slide.compare__scoring-item
+            p Базовый солод
+          li.swiper-slide.compare__scoring-item
+            p Базовый солод
+          li.swiper-slide.compare__scoring-item
+            p Базовый солод
+          li.swiper-slide.compare__scoring-item
+            p Базовый солод
+          li.swiper-slide.compare__scoring-item
+            p Базовый солод
+          li.swiper-slide.compare__scoring-item
+            p Базовый солод
+
+  div.compare__scoring
+    div.container 
+      div.swiper.compare__scoring-block
+        div.compare__scoring-head
+          span.compare__scoring-name Цветность, EBC
+          +tooltip({
+            data: 'EBC — это условный показатель, определяющий насыщенность цвета солода. Чем больше показатель EBC, тем более насыщенный цвет имеет солод и как результат, тем более насыщенный цвет будет иметь готовое пиво.'
+          })
+        ul.swiper-wrapper.compare__scoring-list
+          li.swiper-slide.compare__scoring-item
+            p 300 EBC
+          li.swiper-slide.compare__scoring-item
+            p 300 EBC
+          li.swiper-slide.compare__scoring-item
+            p 1400 EBC
+          li.swiper-slide.compare__scoring-item
+            p 500 EBC
+          li.swiper-slide.compare__scoring-item
+            p 600 EBC
+          li.swiper-slide.compare__scoring-item
+            p 2600 EBC
+          li.swiper-slide.compare__scoring-item
+            p 600 EBC
+          li.swiper-slide.compare__scoring-item
+            p 300 EBC
+
+  div.compare__scoring
+    div.container 
+      div.swiper.compare__scoring-block
+        div.compare__scoring-head
+          span.compare__scoring-name Страна происхождения
+        ul.swiper-wrapper.compare__scoring-list
+          li.swiper-slide.compare__scoring-item
+            p Россия
+          li.swiper-slide.compare__scoring-item
+            p Бразилия
+          li.swiper-slide.compare__scoring-item
+            p Чехия
+          li.swiper-slide.compare__scoring-item
+            p Индия
+          li.swiper-slide.compare__scoring-item
+            p Палестина
+          li.swiper-slide.compare__scoring-item
+            p Аргентина
+          li.swiper-slide.compare__scoring-item
+            p Мексика
+          li.swiper-slide.compare__scoring-item
+            p Чехия
+
+  div.compare__scoring
+    div.container 
+      div.swiper.compare__scoring-block
+        div.compare__scoring-head
+          span.compare__scoring-name Урожайный год
+        ul.swiper-wrapper.compare__scoring-list
+          li.swiper-slide.compare__scoring-item
+            p 2020
+          li.swiper-slide.compare__scoring-item
+            p 2020
+          li.swiper-slide.compare__scoring-item
+            p 2020
+          li.swiper-slide.compare__scoring-item
+            p 2020
+          li.swiper-slide.compare__scoring-item
+            p 2020
+          li.swiper-slide.compare__scoring-item
+            p 2020
+          li.swiper-slide.compare__scoring-item
+            p 2020
+          li.swiper-slide.compare__scoring-item
+            p 2020
+
+  div.compare__scoring
+    div.container 
+      div.swiper.compare__scoring-block
+        div.compare__scoring-head
+          span.compare__scoring-name Альфа-кислота
+          +tooltip({
+            data: 'Не знаю что такое альфа-кислота, но звучит опасно, я люблю опасности!'
+          })
+        ul.swiper-wrapper.compare__scoring-list
+          li.swiper-slide.compare__scoring-item
+            p 4 % альфа
+          li.swiper-slide.compare__scoring-item
+            p 6,5 % альфа
+          li.swiper-slide.compare__scoring-item
+            p 6,5 % альфа
+          li.swiper-slide.compare__scoring-item
+            p 5 % альфа
+          li.swiper-slide.compare__scoring-item
+            p 6,5 % альфа
+          li.swiper-slide.compare__scoring-item
+            p 6,5 % альфа
+          li.swiper-slide.compare__scoring-item
+            p 4 % альфа
+          li.swiper-slide.compare__scoring-item
+            p 4 % альфа
+
+  div.compare__scoring
+    div.container 
+      div.swiper.compare__scoring-block
+        div.compare__scoring-head
+          span.compare__scoring-name Вид брожения
+        ul.swiper-wrapper.compare__scoring-list
+          li.swiper-slide.compare__scoring-item
+            p Низовое брожение
+          li.swiper-slide.compare__scoring-item
+            p Спонтанного брожения
+          li.swiper-slide.compare__scoring-item
+            p Гибридное пиво
+          li.swiper-slide.compare__scoring-item
+            p Спонтанного брожения
+          li.swiper-slide.compare__scoring-item
+            p Спонтанного брожения
+          li.swiper-slide.compare__scoring-item
+            p Низовое брожение
+          li.swiper-slide.compare__scoring-item
+            p Низовое брожение
+          li.swiper-slide.compare__scoring-item
+            p Гибридное пиво
+
+  div.compare__scoring
+    div.container 
+      div.swiper.compare__scoring-block
+        div.compare__scoring-head
+          span.compare__scoring-name Диастатическое питание
+        ul.swiper-wrapper.compare__scoring-list
+          li.swiper-slide.compare__scoring-item
+            p —
+          li.swiper-slide.compare__scoring-item
+            p —
+          li.swiper-slide.compare__scoring-item
+            p 5.7 - 6.2 ед.
+          li.swiper-slide.compare__scoring-item
+            p —
+          li.swiper-slide.compare__scoring-item
+            p —
+          li.swiper-slide.compare__scoring-item
+            p —
+          li.swiper-slide.compare__scoring-item
+            p —
+          li.swiper-slide.compare__scoring-item
+            p —
+
+  div.compare__scoring
+    div.container 
+      div.swiper.compare__scoring-block
+        div.compare__scoring-head
+          span.compare__scoring-name Добавки
+        ul.swiper-wrapper.compare__scoring-list
+          li.swiper-slide.compare__scoring-item
+            p Печеньки
+          li.swiper-slide.compare__scoring-item
+            p Орешки
+          li.swiper-slide.compare__scoring-item
+            p Грибочки
+          li.swiper-slide.compare__scoring-item
+            p Сосиски и колбаски
+          li.swiper-slide.compare__scoring-item
+            p Печеньки
+          li.swiper-slide.compare__scoring-item
+            p Печеньки
+          li.swiper-slide.compare__scoring-item
+            p Сосиски и колбаски
+          li.swiper-slide.compare__scoring-item
+            p Орешки

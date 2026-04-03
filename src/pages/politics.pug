@@ -1,0 +1,10 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Политика конфиденциальности',
+  })
+  include ../components/politics/politics
+  

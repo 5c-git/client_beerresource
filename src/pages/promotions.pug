@@ -1,0 +1,103 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Акции и спец. предложения',
+  })
+
+  +banner({
+    list: [
+      {
+        srcset: './assets/images/banner/banner-2.jpg',
+        src: './assets/images/banner/banner-2.jpg',
+        title: 'Доставим за 1-2 часа',
+        text: '01.01.2021 — 01.01.2021',
+      },
+      {
+        srcset: './assets/images/banner/banner-1.jpg',
+        src: './assets/images/banner/banner-1.jpg',
+        title: 'Доставим за 1-2 часа',
+        text: '01.01.2021 — 01.01.2021',
+      },
+      {
+        srcset: './assets/images/banner/banner-4.jpg',
+        src: './assets/images/banner/banner-4.jpg',
+        title: 'Доставим за 1-2 часа',
+        text: '01.01.2021 — 01.01.2021',
+      },
+      {
+        srcset: './assets/images/banner/banner-3.jpg',
+        src: './assets/images/banner/banner-3.jpg',
+        title: 'Доставим за 1-2 часа',
+        text: '01.01.2021 — 01.01.2021',
+      },
+      {
+        srcset: './assets/images/banner/banner-5.jpg',
+        src: './assets/images/banner/banner-5.jpg',
+        title: 'Доставим за 1-2 часа',
+        text: '01.01.2021 — 01.01.2021',
+      }
+    ],
+  })
+
+  include ../providers/common/SubscribeProvider/SubscribeProvider
+  
+  +layout({
+    grid3: true,
+    title: 'Акции',
+    pagination: true,
+  })
+    +promotion-card({
+      src: './assets/images/image-2.jpg',
+      title: 'Дурное дело нехитрое: известный инсайдер, в преддверии важного события, не позволил союзу развалиться',
+    })
+    +promotion-card({
+      src: './assets/images/image-3.jpg',
+      title: 'Воистину радостный звук: детский заливистый смех',
+    })
+    +promotion-card({
+      src: './assets/images/image-4.jpg',
+      title: 'Финансовый мир очнулся: постоянный количественный рост бодрит',
+    })
+    +promotion-card({
+      src: './assets/images/image-1.jpg',
+      title: 'Сложно сказать, почему объем доходов населения сократился',
+    })
+    +promotion-card({
+      src: './assets/images/image-5.jpg',
+      title: 'Дурное дело нехитрое: известный инсайдер, в преддверии важного события, не позволил союзу развалиться',
+    })
+    +promotion-card({
+      src: './assets/images/image-11.jpg',
+      title: 'Воистину радостный звук: детский заливистый смех',
+    })
+    +promotion-card({
+      src: './assets/images/image-15.jpg',
+      title: 'Финансовый мир очнулся: постоянный количественный рост бодрит',
+    })
+    +promotion-card({
+      src: './assets/images/image-3.jpg',
+      title: 'Сложно сказать, почему объем доходов населения сократился',
+    })
+    +promotion-card({
+      src: './assets/images/image-11.jpg',
+      title: 'Дурное дело нехитрое: известный инсайдер, в преддверии важного события, не позволил союзу развалиться',
+    })
+    +promotion-card({
+      src: './assets/images/image-10.jpg',
+      title: 'Воистину радостный звук: детский заливистый смех',
+    })
+    +promotion-card({
+      src: './assets/images/image-7.jpg',
+      title: 'Финансовый мир очнулся: постоянный количественный рост бодрит',
+    })
+    +promotion-card({
+      src: './assets/images/image-5.jpg',
+      title: 'Сложно сказать, почему объем доходов населения сократился',
+    })
+  
+  +watched({
+    title: 'Вы смотрели',
+  })

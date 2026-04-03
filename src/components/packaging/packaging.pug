@@ -1,0 +1,164 @@
+mixin packaging(props)
+  if props.cart
+    section.packaging
+      div.packaging__type 
+        span.packaging__type-input Мешок 5 кг
+        <!-- Если будет больше 4 пунктов, будут проблемы с вёрсткой. -->
+        ul.packaging__type-list 
+          li.packaging__type-item Мешок 5 кг
+          li.packaging__type-item Мешок 15 кг
+          li.packaging__type-item Мешок 25 кг
+          li.packaging__type-item Мешок 50 кг
+          li.packaging__type-item Мешок 75 кг
+          li.packaging__type-item Мешок 150 кг
+          
+      div.packaging__count
+        <!-- Если у товара нет выбора объёма то в в списке будет один пункт с классом '.packaging__count-item--active' по умолчанию. -->
+        ul.packaging__count-list 
+          li.packaging__count-item.packaging__count-item--active
+            div.packaging__count-main
+              p.packaging__price 10 000 ₽
+
+              div(data-max='1000000').packaging__count-buttons
+                <!-- В дата атрибуте передаём максимально доступное кол-во товара данной упаковки. Для замены логики - писать верстаку. -->
+                button(type='button' aria-label='Уменьшить на 1').packaging__count-button.packaging__count-button--minus
+                input(type="number" inputmode='numeric' value='1').packaging__count-input
+                button(type='button' aria-label='Увеличить на 1').packaging__count-button.packaging__count-button--plus
+              p.packaging__total-price 9 220 000 ₽
+
+            span.packaging__count-total 328 * 32 727,27 = 10 734 544,56 т
+            
+          //- li.packaging__count-item
+          //-   p.packaging__count-description Цена за 1 уп
+          //-   div.packaging__count-main
+          //-     p.packaging__price 10 000 ₽
+          //-     div(data-max='3').packaging__count-buttons
+          //-       button(type='button' aria-label='Уменьшить на 1').packaging__count-button.packaging__count-button--minus
+          //-       input(type="number" inputmode='numeric' value='0').packaging__count-input
+          //-       button(type='button' aria-label='Увеличить на 1').packaging__count-button.packaging__count-button--plus
+          //-     p.packaging__total-price 120 000 ₽
+          //- li.packaging__count-item
+          //-   p.packaging__count-description Цена за 1 уп
+          //-   div.packaging__count-main
+          //-     p.packaging__price 10 000 ₽
+          //-     div(data-max='6').packaging__count-buttons
+          //-       button(type='button' aria-label='Уменьшить на 1').packaging__count-button.packaging__count-button--minus
+          //-       input(type="number" inputmode='numeric' value='0').packaging__count-input
+          //-       button(type='button' aria-label='Увеличить на 1').packaging__count-button.packaging__count-button--plus
+          //-     p.packaging__total-price 120 000 ₽
+          //- li.packaging__count-item
+          //-   p.packaging__count-description Цена за 1 уп
+          //-   div.packaging__count-main
+          //-     p.packaging__price 5 000 ₽
+          //-     div(data-max='2').packaging__count-buttons
+          //-       button(type='button' aria-label='Уменьшить на 1').packaging__count-button.packaging__count-button--minus
+          //-       input(type="number" inputmode='numeric' value='0').packaging__count-input
+          //-       button(type='button' aria-label='Увеличить на 1').packaging__count-button.packaging__count-button--plus
+          //-     p.packaging__total-price 50 000 ₽
+          //- li.packaging__count-item
+          //-   p.packaging__count-description Цена за 1 уп
+          //-   div.packaging__count-main
+          //-     p.packaging__price 15 000 ₽
+          //-     div(data-max='1').packaging__count-buttons
+          //-       button(type='button' aria-label='Уменьшить на 1').packaging__count-button.packaging__count-button--minus
+          //-       input(type="number" inputmode='numeric' value='0').packaging__count-input
+          //-       button(type='button' aria-label='Увеличить на 1').packaging__count-button.packaging__count-button--plus
+          //-     p.packaging__total-price 70 000 ₽
+          //- li.packaging__count-item
+          //-   p.packaging__count-description Цена за 1 уп
+          //-   div.packaging__count-main
+          //-     p.packaging__price 25 000 ₽
+          //-     div(data-max='5').packaging__count-buttons
+          //-       button(type='button' aria-label='Уменьшить на 1').packaging__count-button.packaging__count-button--minus
+          //-       input(type="number" inputmode='numeric' value='0').packaging__count-input
+          //-       button(type='button' aria-label='Увеличить на 1').packaging__count-button.packaging__count-button--plus
+          //-     p.packaging__total-price 150 000 ₽
+
+
+  else if props.cart2
+    section.packaging
+      div.packaging__count
+        <!-- Если у товара нет выбора объёма то в в списке будет один пункт с классом '.packaging__count-item--active' по умолчанию. -->
+        ul.packaging__count-list 
+          li.packaging__count-item.packaging__count-item--active
+            p.packaging__count-description Цена за 1 уп
+
+            div.packaging__count-main
+              p.packaging__price 1 000 ₽
+              div(data-max='100000').packaging__count-buttons
+                <!-- В дата атрибуте передаём максимально доступное кол-во товара данной упаковки. Для замены логики - писать верстаку. -->
+                button(type='button' aria-label='Уменьшить на 1').packaging__count-button.packaging__count-button--minus
+                input(type="number" inputmode='numeric' value='1').packaging__count-input
+                button(type='button' aria-label='Увеличить на 1').packaging__count-button.packaging__count-button--plus
+              p.packaging__total-price 20 000 ₽
+              
+            span.packaging__count-total 328 * 32 727,27 = 10 734 544,56 т
+
+
+  else if props.onepackag
+    section.packaging
+      div.packaging__count
+        <!-- Если у товара нет выбора объёма то в в списке будет один пункт с классом '.packaging__count-item--active' по умолчанию. -->
+        ul.packaging__count-list 
+          li.packaging__count-item.packaging__count-item--active
+            p.packaging__count-name Количество-1
+            div(data-max='5').packaging__count-buttons
+              <!-- В дата атрибуте передаём максимально доступное кол-во товара данной упаковки. Для замены логики - писать верстаку. -->
+              button(type='button' aria-label='Уменьшить на 1').packaging__count-button.packaging__count-button--minus
+              input(type="number" inputmode='numeric' value='1').packaging__count-input
+              button(type='button' aria-label='Увеличить на 1').packaging__count-button.packaging__count-button--plus
+
+
+  else
+    section.packaging
+      div.packaging__type 
+        span.packaging__type-input Мешок 5 кг
+        <!-- Если будет больше 4 пунктов, будут проблемы с вёрсткой. -->
+        ul.packaging__type-list 
+          li.packaging__type-item.packaging__type-item--hide Мешок 5 кг
+          li.packaging__type-item Мешок 15 кг
+          li.packaging__type-item Мешок 25 кг
+          li.packaging__type-item Мешок 50 кг
+          li.packaging__type-item Мешок 75 кг
+          li.packaging__type-item Мешок 125 кг
+          
+      div.packaging__count
+        <!-- Если у товара нет выбора объёма то в в списке будет один пункт с классом '.packaging__count-item--active' по умолчанию. -->
+        ul.packaging__count-list 
+          li.packaging__count-item.packaging__count-item--active
+            p.packaging__count-name Количество-1
+            div(data-max='1000000').packaging__count-buttons
+              <!-- В дата атрибуте передаём максимально доступное кол-во товара данной упаковки. Для замены логики - писать верстаку. -->
+              button(type='button' aria-label='Уменьшить на 1').packaging__count-button.packaging__count-button--minus
+              input(type="number" inputmode='numeric' value='1').packaging__count-input
+              button(type='button' aria-label='Увеличить на 1').packaging__count-button.packaging__count-button--plus
+          //- li.packaging__count-item
+          //-   p.packaging__count-name Количество-2
+          //-   div(data-max='3').packaging__count-buttons
+          //-     button(type='button' aria-label='Уменьшить на 1').packaging__count-button.packaging__count-button--minus
+          //-     input(type="number" inputmode='numeric' value='0').packaging__count-input
+          //-     button(type='button' aria-label='Увеличить на 1').packaging__count-button.packaging__count-button--plus
+          //- li.packaging__count-item
+          //-   p.packaging__count-name Количество-3
+          //-   div(data-max='12').packaging__count-buttons
+          //-     button(type='button' aria-label='Уменьшить на 1').packaging__count-button.packaging__count-button--minus
+          //-     input(type="number" inputmode='numeric' value='0').packaging__count-input
+          //-     button(type='button' aria-label='Увеличить на 1').packaging__count-button.packaging__count-button--plus
+          //- li.packaging__count-item
+          //-   p.packaging__count-name Количество-4
+          //-   div(data-max='6').packaging__count-buttons
+          //-     button(type='button' aria-label='Уменьшить на 1').packaging__count-button.packaging__count-button--minus
+          //-     input(type="number" inputmode='numeric' value='0').packaging__count-input
+          //-     button(type='button' aria-label='Увеличить на 1').packaging__count-button.packaging__count-button--plus
+          //- li.packaging__count-item
+          //-   p.packaging__count-name Количество-5
+          //-   div(data-max='10').packaging__count-buttons
+          //-     button(type='button' aria-label='Уменьшить на 1').packaging__count-button.packaging__count-button--minus
+          //-     input(type="number" inputmode='numeric' value='0').packaging__count-input
+          //-     button(type='button' aria-label='Увеличить на 1').packaging__count-button.packaging__count-button--plus
+          //- li.packaging__count-item
+          //-   p.packaging__count-name Количество-6
+          //-   div(data-max='10').packaging__count-buttons
+          //-     button(type='button' aria-label='Уменьшить на 1').packaging__count-button.packaging__count-button--minus
+          //-     input(type="number" inputmode='numeric' value='0').packaging__count-input
+          //-     button(type='button' aria-label='Увеличить на 1').packaging__count-button.packaging__count-button--plus

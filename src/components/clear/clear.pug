@@ -1,0 +1,21 @@
+mixin clear(props)
+  if props.cart
+    div.clear
+      button(type='button').clear__button.clear__button--cart
+        svg(width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg")
+          use(href='#icon-clear')
+        span Очистить корзину
+
+  if props.compare
+    div.clear
+      button(type='button').clear__button.clear__button--compare
+        svg(width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg")
+          use(href='#icon-clear')
+        span Очистить всё
+
+  if props.favorites
+    div.clear
+      button(type='button').clear__button.clear__button--favorites
+        svg(width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg")
+          use(href='#icon-clear')
+        span Очистить всё

@@ -1,0 +1,15 @@
+@import 'src/utils/utils';
+
+.RequestSearchProvider {
+  position: relative;
+  z-index: 5;
+  margin-bottom: -1px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: $grey-1;
+
+  @media(max-width: $phone) {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+}

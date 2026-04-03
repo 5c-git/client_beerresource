@@ -1,0 +1,205 @@
+@import 'src/utils/utils';
+
+.question-card {
+  margin-top: 30px;
+
+  @media(max-width: $phone) {
+    margin-top: 20px;
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &__wrapper {
+    position: relative;
+
+    .question-card__main {
+      background: $grey-2;
+    }
+
+    &--admin {
+      margin-top: 20px;
+      margin-left: 50px;
+
+      @media(max-width: $tablet) {
+        margin-top: 15px;
+        margin-left: 25px;
+      }
+
+      &:before {
+        position: absolute;
+        top: -10px;
+        left: -34px;
+        width: 24px;
+        height: 24px;
+        border: 2px solid $grey-6;
+        border-top: 0;
+        border-right: 0;
+        border-bottom-left-radius: 10px;
+        content: '';
+
+        @media(max-width: $tablet) {
+          top: -6px;
+          left: -25px;
+          width: 15px;
+          height: 15px;
+        }
+      }
+
+      .question-card__main {
+        background: $grey-5;
+      }
+    }
+  }
+
+  &__head {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    grid-column-gap: 10px;
+    column-gap: 10px;
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+
+    @media(max-width: $tablet) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__date {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    color: $grey-7;
+
+    @media(max-width: $tablet) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__main {
+    padding-top: 20px;
+    padding-right: 25px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+    border-radius: 8px;
+
+    @media(max-width: $tablet) {
+      padding-top: 15px;
+      padding-right: 20px;
+      padding-bottom: 15px;
+      padding-left: 20px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+
+    @media(max-width: $tablet) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &__slider {
+    display: flex;
+    margin-top: 20px;
+
+    @media(max-width: $phone) {
+      margin-top: 10px;
+    }
+
+    .swiper {
+      margin: 0;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+  }
+
+  &__item {
+    width: 70px;
+    border-radius: 10px;
+    background-color: $grey-3;
+    overflow: hidden;
+
+    @media(max-width: $tablet) {
+      width: 50px;
+    }
+
+    img {
+      display: block;
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+
+      @media(max-width: $tablet) {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  &__slider-buttons {
+    display: flex;
+    width: 155px;
+    flex-direction: row;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 45px;
+    grid-column-gap: 10px;
+    column-gap: 10px;
+    flex-shrink: 0;
+
+    @media(max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__slider-button {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-family: $main-font;
+    font-size: 20px;
+    line-height: 25px;
+    color: $dark-blue-1;
+    background-color: transparent;
+    transition: color 0.3s;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &:hover:not(.question-card__slider-button--disabled) {
+      @media(min-width: $desktop-only) {
+        color: $blue-1;
+      }
+    }
+
+    svg {
+      stroke: currentColor;
+    }
+
+    &--disabled {
+      color: $grey-7;
+      cursor: not-allowed;
+    }
+  }
+}

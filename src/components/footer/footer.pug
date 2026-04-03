@@ -1,0 +1,98 @@
+footer.footer
+  div.container
+    div.footer__wrapper 
+      div.footer__contacts
+        a(href="#").footer__logo
+          img(src="./assets/images/logo-footer.svg", alt="") 
+        ul.footer__contacts-list 
+          li.footer__contacts-item 
+            address.footer__contacts-address
+              a(href="#").footer__contacts-link Москва, ул. Авиаторов, 30 офис 405
+          li.footer__contacts-item 
+            a(href="mailto:Name@sitename.ru").footer__contacts-link Name@sitename.ru
+          li.footer__contacts-item 
+            a(href="tel:+79994567890").footer__contacts-link +7 999 456 78 90
+          li.footer__contacts-item 
+            a(href="tel:+79994567890").footer__contacts-link +7 999 456 78 90
+            +socials({
+              contacts: true,
+            })
+        ul.footer__social-list 
+          li.footer__social-item
+            a(href="").footer__social-link
+              svg(width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg")
+                use(href='#icon-vk--black')
+          li.footer__social-item
+            a(href="").footer__social-link
+              svg(width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg")
+                use(href='#icon-tele--black') 
+          //- li.footer__social-item
+          //-   a(href="").footer__social-link
+          //-     svg(width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg")
+          //-       use(href='#icon-you--black') 
+          //- li.footer__social-item
+          //-   a(href="").footer__social-link
+          //-     svg(width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg")
+          //-       use(href='#icon-fb--black')
+          //- li.footer__social-item
+          //-   a(href="").footer__social-link
+          //-     svg(width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg")
+          //-       use(href='#icon-insta--black')
+
+      div.footer__main
+        nav.footer__nav
+          ul.footer__nav-list.footer__nav-list--big
+            li.footer__nav-item
+              a(href="#").footer__nav-link Солод
+            li.footer__nav-item
+              a(href="#").footer__nav-link Хмель
+            li.footer__nav-item
+              a(href="#").footer__nav-link Дрожжи
+            li.footer__nav-item
+              a(href="#").footer__nav-link Химия
+            li.footer__nav-item
+              a(href="#").footer__nav-link Прочие ингредиенты
+            li.footer__nav-item
+              a(href="#").footer__nav-link Акции
+            li.footer__nav-item
+              a(href="#").footer__nav-link Вдохновение
+          
+          ul.footer__nav-list
+            li.footer__nav-item
+              a(href="#").footer__nav-link Оплата и доставка
+            li.footer__nav-item
+              a(href="#").footer__nav-link Вопросы и ответы
+            li.footer__nav-item
+              a(href="#").footer__nav-link О компании
+            li.footer__nav-item
+              a(href="#").footer__nav-link Контакты
+            li.footer__nav-item
+              a(href="#").footer__nav-link Договор оферты
+            li.footer__nav-item
+              a(href="#").footer__nav-link Карта сайта
+            li.footer__nav-item
+              a(href="/about/agreement.php" target='_blank').footer__nav-link Пользовательское соглашение
+            li.footer__nav-item
+              a(href="/about/privacy.php" target='_blank').footer__nav-link Политика конфиденциальности
+
+        div.footer__block
+          div.footer__payment
+            p.footer__payment-text Принимаем к оплате:
+            ul.footer__payment-list 
+              li.footer__payment-item 
+                img(src="./assets/images/logo-mir.png" width='61' height='17' alt="")
+              li.footer__payment-item 
+                img(src="./assets/images/logo-mastercard.png" width='57' height='35' alt="")
+            ul.footer__payment-list 
+              li.footer__payment-item 
+                img(src="./assets/images/logo-visa.png" width='77' height='25' alt="")
+              li.footer__payment-item 
+                img(src="./assets/images/logo-union.png" width='42' height='25' alt="")
+          include ../../providers/common/FooterSubscribeProvider/FooterSubscribeProvider
+
+    div.footer__bottom
+      p.footer__copyright &copy; 2022 Beer Resource. Все права защищены.
+      p.footer__5corners
+        a(href="https://5corners.ru/").footer__5corners-link Ваше здоровье!
+          svg(width="80" height="16" viewBox="0 0 80 16" xmlns="http://www.w3.org/2000/svg")
+            use(href="#icon-5corners")

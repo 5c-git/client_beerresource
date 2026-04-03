@@ -1,0 +1,41 @@
+@import 'src/utils/utils';
+
+.FormContacts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  column-gap: 50px;
+  row-gap: 20px;
+
+  @media(max-width: $phone) {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__link {
+    display: inline-grid;
+    align-items: center;
+    text-decoration: none;
+    color: $dark-blue-1;
+    transition: color 0.3s;
+    grid-auto-flow: column;
+    grid-column-gap: 5px;
+
+    &:hover {
+      @media(min-width: $phone) {
+        color: $blue-1;
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      stroke: currentcolor;
+    }
+  }
+}

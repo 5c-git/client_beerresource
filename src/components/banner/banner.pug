@@ -1,0 +1,23 @@
+mixin banner(props)
+  section.banner
+    div.container 
+      div.banner__wrapper
+        div.swiper.banner__slider
+          <!-- Картинки для слайдера должны быть одинаковых размеров. Высота будет автоматическая. -->
+          ul.swiper-wrapper.banner__slider-list
+
+            each item in props.list
+              li.swiper-slide.banner__slider-item
+                a(href="#").banner__slider-link
+                  picture 
+                    source(media="(max-width: 767px)", srcset=item.srcset)
+                    img(src=item.src, alt="")
+                  div.banner__slider-content
+                    <!-- Если надо выделить цветов в заголовке кусок, то оборачиваем в 'em'. -->
+                    p.banner__slider-title=item.title
+                    p.banner__slider-text=item.text 
+
+          div.banner__slider-buttons
+            button(type='button' aria-label='Предыдущий слайд.').banner__slider-button.banner__slider-button--prev ←
+            button(type='button' aria-label='Следующий слайд.').banner__slider-button.banner__slider-button--next →
+          div.banner__slider-pagination

@@ -1,0 +1,1 @@
+import './outdated-browsers.scss';

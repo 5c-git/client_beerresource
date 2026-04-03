@@ -1,0 +1,33 @@
+extends ../templates/default
+
+block main
+  section.background
+    include ../components/breadcrumbs/breadcrumbs
+
+    +profile-page({})
+      +profile-center({
+        select: true,
+        title: 'Выполненные заказы',
+        pagination: true,
+      })
+        +offer-card({
+          finished: true,
+        })
+        +offer-card({
+          finished: true,
+        })
+        +offer-card({
+          finished: true,
+        })
+        +offer-card({
+          finished: true,
+        })
+        +offer-card({
+          finished: true,
+        })
+        +offer-card({
+          finished: true,
+        })
+        +offer-card({
+          finished: true,
+        })

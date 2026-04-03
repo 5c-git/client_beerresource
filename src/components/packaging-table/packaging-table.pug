@@ -1,0 +1,160 @@
+include ../packaging-amount/packaging-amount
+
+section.packaging-table
+  table(width="100%" cellspacing="0" cellpadding="0" border="0").packaging-table__main
+    tr
+      th Год
+      th Альфа кислота
+      th Упаковка
+      th Цена 1 кг
+      th Цена упаковки
+      th Количество
+      th Стоимость
+    tr
+      td 2018
+      td 1005
+      td Мешок 5 кг
+      td 100 ₽
+      td 2 500 ₽
+      td 
+        div.packaging-table__amount
+          +packaging-amount({
+            type: 'т',
+            size: '32 727.27',
+            max: '328',
+          })
+      td 0 ₽
+    tr
+      td 2020
+      td 50
+      td Мешок 15 кг
+      td 1000 ₽
+      td 22 500 ₽
+      td 
+        div.packaging-table__amount
+          +packaging-amount({
+            type: 'кг',
+            size: '25',
+            max: '4',
+          })
+      td 42 500 ₽
+    tr
+      td 2021
+      td 99
+      td Мешок 25 кг
+      td 2500 ₽
+      td 32 500 ₽
+      td 
+        div.packaging-table__amount
+          +packaging-amount({
+            type: 'гр',
+            size: '125',
+            max: '5',
+          })
+      td 122 500 ₽
+    tr
+      td 2021
+      td №56ФФФ
+      td Мешок 50 кг
+      td 2500 ₽
+      td 22 500 ₽
+      td 
+        div.packaging-table__amount
+          +packaging-amount({
+            type: 'кг',
+            size: '8',
+            max: '14',
+          })
+      td 92 500 ₽
+  div.packaging-table__mobile
+    div.packaging-table__type
+      span.packaging-table__type-input Выбрать объём
+      div.packaging-table__mobile-dropdown
+        div.packaging-table__mobile-overlay
+        div.packaging-table__mobile-wrapper
+          div.container
+            div.packaging-table__type-head
+              p Варианты упаковок
+              button(type='button').packaging-table__mobile-close
+                span
+            ul.packaging-table__type-list
+              li.packaging-table__type-item
+                table 
+                  tr
+                    th Год
+                    th Альфа кислота
+                    th Упаковка
+                    th Цена за 1 кг.
+                  tr 
+                    td 2019
+                    td №фв12
+                    td Мешок 5 кг
+                    td 100 ₽
+                span 
+              li.packaging-table__type-item
+                table 
+                  tr
+                    th Год
+                    th Альфа кислота
+                    th Упаковка
+                    th Цена за 1 кг.
+                  tr 
+                    td 2019
+                    td ASAS
+                    td Мешок 15 кг
+                    td 100 ₽
+                span 
+              li.packaging-table__type-item
+                table 
+                  tr
+                    th Год
+                    th Альфа кислота
+                    th Упаковка
+                    th Цена за 1 кг.
+                  tr 
+                    td 2020
+                    td 123123
+                    td Мешок 25 кг
+                    td 100 ₽
+                span 
+              li.packaging-table__type-item
+                table 
+                  tr
+                    th Год
+                    th Альфа кислота
+                    th Упаковка
+                    th Цена за 1 кг.
+                  tr 
+                    td 2021
+                    td 56
+                    td Мешок 50 кг
+                    td 100 ₽
+                span 
+      
+    div.packaging-table__count
+      ul.packaging-table__count-list 
+        li.packaging-table__count-item
+          p.packaging-table__count-name Выберите количество-1
+          div(data-max='3').packaging-table__count-buttons
+            <!-- В дата атрибуте передаём максимально доступное кол-во товара данной упаковки. Для замены логики - писать верстаку. -->
+            button(type='button' aria-label='Уменьшить на 1').packaging-table__count-button.packaging-table__count-button--minus
+            input(type="number" inputmode='numeric' value='0' min='0').packaging-table__count-input
+            button(type='button' aria-label='Увеличить на 1').packaging-table__count-button.packaging-table__count-button--plus
+        li.packaging-table__count-item
+          p.packaging-table__count-name Выберите количество-2
+          div(data-max='4').packaging-table__count-buttons
+            button(type='button' aria-label='Уменьшить на 1').packaging-table__count-button.packaging-table__count-button--minus
+            input(type="number" inputmode='numeric' value='0' min='0').packaging-table__count-input
+            button(type='button' aria-label='Увеличить на 1').packaging-table__count-button.packaging-table__count-button--plus
+        li.packaging-table__count-item
+          p.packaging-table__count-name Выберите количество-3
+          div(data-max='5').packaging-table__count-buttons
+            button(type='button' aria-label='Уменьшить на 1').packaging-table__count-button.packaging-table__count-button--minus
+            input(type="number" inputmode='numeric' value='0' min='0').packaging-table__count-input
+            button(type='button' aria-label='Увеличить на 1').packaging-table__count-button.packaging-table__count-button--plus
+        li.packaging-table__count-item
+          p.packaging-table__count-name Выберите количество-4
+          div(data-max='6').packaging-table__count-buttons
+            button(type='button' aria-label='Уменьшить на 1').packaging-table__count-button.packaging-table__count-button--minus
+            input(type="number" inputmode='numeric' value='0' min='0').packaging-table__count-input
+            button(type='button' aria-label='Увеличить на 1').packaging-table__count-button.packaging-table__count-button--plus

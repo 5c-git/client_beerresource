@@ -1,0 +1,1 @@
+import './product-analogues.scss';

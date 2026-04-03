@@ -1,0 +1,46 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Наименование услуги',
+  })
+    include ../components/back/back
+
+  +layout-header({
+    service: true,
+  })
+
+  +layout({})
+    +article({
+      service: true,
+    })
+
+  include ../providers/pages/service/RequestServiceProvider/RequestServiceProvider
+
+  +layout({
+    grid4: true,
+    title: 'Другие услуги',
+    link: 'Смотреть все',
+  })
+    +service-card({
+      src: './assets/images/image-3.jpg',
+      title: 'Новая парадигма реальности: жизнь прекрасна',
+      text: 'Очевидцы сообщают, что слышали ласковый перезвон вертикали власти!',
+    })
+    +service-card({
+      src: './assets/images/image-6.jpg',
+      title: 'Главные СМИ предупреждают: небо темнеет',
+      text: 'Неподкупность государственных СМИ оказалась ошибочной',
+    })
+    +service-card({
+      src: './assets/images/image-15.jpg',
+      title: 'Смешно, но парад бытовой техники оказался началом великой войны',
+      text: 'Нынче никто не может себе позволить инициировать шопот бессменных лидеров',
+    })
+    +service-card({
+      src: './assets/images/image-19.jpg',
+      title: 'Был сорван доклад председателя совхоза!',
+      text: 'Давайте разбираться: чистый разум не скован границами',
+    })

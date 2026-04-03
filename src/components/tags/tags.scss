@@ -1,0 +1,71 @@
+@import 'src/utils/utils';
+
+.tags {
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  @media(max-width: $phone) {
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 40px;
+    font-family: $title-font;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 45px;
+
+    @media(max-width: $phone) {
+      margin-bottom: 20px;
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    em {
+      font-style: normal;
+      color: $blue-1;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-column-gap: 10px;
+    column-gap: 10px;
+    grid-row-gap: 10px;
+    row-gap: 10px;
+  }
+
+  &__link {
+    display: block;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+    color: $dark-blue-1;
+    background-color: $grey-3;
+    transition: color 0.3s;
+    cursor: pointer;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        color: $blue-1;
+      }
+    }
+  }
+}

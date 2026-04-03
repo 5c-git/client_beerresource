@@ -1,0 +1,30 @@
+section.product-documents
+  div.product-documents__block
+    h2.product-documents__title Документы
+    include ../document-card/document-card
+    include ../document-card/document-card
+    include ../document-card/document-card
+
+  div.product-documents__block
+    h2.product-documents__title Материалы
+    include ../document-card/document-card
+    include ../document-card/document-card
+
+  div.product-documents__download
+    a(href="#" download).product-documents__download-link
+      svg(width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg")
+        use(href='#icon-download')
+      span Скачать всё 
+
+  div.product-documents__alert 
+    p.product-documents__alert-text Вы можете скачать официальное приложение производителя для работы с документами.
+    img(src="./assets/images/partner-3.png" alt="")
+    a(href="#").product-documents__alert-link Скачать приложение
+
+  div.product-documents__alert 
+    p Вы можете скачать официальное приложение производителя для работы с документами.
+    img(src="./assets/images/partner-2.png" alt="")
+    a(href="#") Скачать приложение
+  
+  div.product-documents__qr
+    include ../qr-code/qr-code

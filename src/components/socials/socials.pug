@@ -1,0 +1,22 @@
+mixin socials(props)
+  if props.header
+    div.socials
+      ul.socials__list
+        li.socials__item
+          a(href="#" target="_blank" rel=" noopener noreferrer" aria-label="ВКонтакте").socials__link.socials__link--vk
+        li.socials__item
+          a(href="#" target="_blank" rel=" noopener noreferrer" aria-label="Ютуб").socials__link.socials__link--you
+        //- li.socials__item
+        //-   a(href="#").socials__link.socials__link--fb
+        //- li.socials__item
+        //-   a(href="#").socials__link.socials__link--insta
+
+  if props.contacts
+    div.socials
+      ul.socials__list
+        li.socials__item
+          a(href="#" target="_blank" rel=" noopener noreferrer" aria-label="Телеграм").socials__link.socials__link--tele
+        li.socials__item
+          a(href="#" target="_blank" rel=" noopener noreferrer" aria-label="Ватсап").socials__link.socials__link--whats
+        //- li.socials__item
+        //-   a(href="#").socials__link.socials__link--insta

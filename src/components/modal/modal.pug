@@ -1,0 +1,143 @@
+mixin modal(props)
+  if props.notify 
+    section.popUp.modal.modal--notify
+      div.popUp__overlay.modal__overlay
+      section.popUp__container.modal__container
+        div.popUp__wrapper.modal__wrapper
+          button.popUp__close.modal__close
+            span
+          div.modal__header 
+            h2.modal__title Сообщить о поступлении
+          form(action='#' method='post')#notify-form.modal__form
+            div.modal__field
+              div.validator__error-container
+              label(for='name').validator__description.modal__label Имя Фамилия<em class='star'>*</em>
+              input(type='text' id='name' autocomplete='off' placeholder='Введите Имя Фамилию').validator__text.modal__input
+            div.modal__field
+              div.validator__error-container
+              label(for='email').validator__description.modal__label E-mail<em class='star'>*</em>
+              input(type='email' id='email' autocomplete='off' placeholder='Введите e-mail').validator__mail.modal__input
+            div.modal__field
+              div.modal__terms
+                p.modal__legal Нажимая кнопку «Сообщить», вы соглашаетесь с <a href='/about/privacy.php' target='_blank'>политикой конфиденциальности</a> и <a href='/about/agreement.php' target='_blank'>пользовательским соглашением</a>.
+            div.modal__field
+              div.modal__buttons
+                button(type='button').popUp__close.button.button--transparent.modal__cancel Отменить
+                button(type='submit').button.modal__submit Сообщить
+
+  if props.discompare
+    section.popUp.modal.modal--discompare
+      div.popUp__overlay.modal__overlay
+      section.popUp__container.modal__container
+        div.popUp__wrapper.modal__wrapper
+          button.popUp__close.modal__close
+            span
+          div.modal__banner 
+            img(src="./assets/images/icon-modal-q.svg" width='60' height='60' alt="")
+          p.modal__text.modal__text--center Вы&nbsp;хотите очистить весь список товаров? <br>Это действие нельзя будет отменить!
+          div.modal__buttons
+            button(type='button').popUp__close.button.button--transparent.modal__cancel Отменить
+            button(type='submit').button.modal__submit Очистить
+
+  if props.dislike
+    section.popUp.modal.modal--dislike
+      div.popUp__overlay.modal__overlay
+      section.popUp__container.modal__container
+        div.popUp__wrapper.modal__wrapper
+          button.popUp__close.modal__close
+            span
+          div.modal__banner 
+            img(src="./assets/images/icon-modal-q.svg" width='60' height='60' alt="")
+          p.modal__text.modal__text--center Вы&nbsp;хотите очистить весь список товаров? <br>Это действие нельзя будет отменить!
+          div.modal__buttons
+            button(type='button').popUp__close.button.button--transparent.modal__cancel Отменить
+            button(type='submit').button.modal__submit Очистить
+
+  if props.discart
+    section.popUp.modal.modal--discart
+      div.popUp__overlay.modal__overlay
+      section.popUp__container.modal__container
+        div.popUp__wrapper.modal__wrapper
+          button.popUp__close.modal__close
+            span
+          div.modal__banner 
+            img(src="./assets/images/icon-modal-q.svg" width='60' height='60' alt="")
+          p.modal__text.modal__text--center Вы&nbsp;действительно хотите удалить <br>товары из&nbsp;корзины?
+          div.modal__buttons
+            button(type='button').popUp__close.button.button--transparent.modal__cancel Отменить
+            button(type='submit').button.modal__submit Удалить
+
+  if props.cancel
+    section.popUp.modal.modal--cancel
+      div.popUp__overlay.modal__overlay
+      section.popUp__container.modal__container
+        div.popUp__wrapper.modal__wrapper
+          button.popUp__close.modal__close
+            span
+          div.modal__header 
+            h2.modal__title Отмена заказа №11
+            p.modal__post-title Вы уверены, что хотите отменить заказ?<br><em>Отмена заказа необратима</em>.
+          form(action='#' method='post')#cancel-form.modal__form
+            div.modal__field
+              div.validator__error-container
+              label(for='name').validator__description.modal__label Причина отмены заказа
+              textarea(id='text' autocomplete='off' autocapitalize='off' placeholder='Введите комментарий').modal__textarea
+            div.modal__field
+              div.modal__buttons
+                button(type='button').popUp__close.button.button--transparent.modal__cancel Не отменять
+                button(type='submit').button.modal__submit Отменить заказ
+
+  if props.change
+    section.popUp.modal.modal--change
+      div.popUp__overlay.modal__overlay
+      section.popUp__container.modal__container
+        div.popUp__wrapper.modal__wrapper
+          button.popUp__close.modal__close
+            span
+          div.modal__header 
+            h2.modal__title Изменение способа оплаты
+          p.modal__text
+            b Способ оплаты:
+          form(action='#' method='post')#change-form.modal__form
+            div.modal__fields 
+              div.modal__field
+                input(type='radio' id='pay-code' name='pay-type' checked).visually-hidden.modal__radio
+                label(for='pay-code').modal__radio-label По QR коду
+                  span.modal__radio-description Apple pay, Google pay.
+              div.modal__field
+                input(type='radio' id='pay-online' name='pay-type').visually-hidden.modal__radio
+                label(for='pay-online').modal__radio-label Онлайн-оплата
+                  span.modal__radio-description Visa, Mastercard, Мир, Union pay.
+            div.modal__field
+              hr.modal__line
+            div.modal__field
+              div.modal__buttons
+                button(type='button').popUp__close.button.button--transparent.modal__cancel Отменить
+                button(type='submit').button.modal__submit Изменить
+
+  if props.city
+    section.popUp.modal.modal--city
+      div.popUp__overlay.modal__overlay
+      section.popUp__container.modal__container
+        div.popUp__wrapper.modal__wrapper
+          button.popUp__close.modal__close
+            span
+          div.modal__header 
+            h2.modal__title Выберите ваш город
+          include ../select-city/select-city
+          //- form(action='#' method='post')#city-form.modal__form
+          //-   select(name="city").modal__select.modal__select--city
+          //-     option(value="1") Москва
+          //-     option(value="1") Санкт-Петербург
+          //-     option(value="2") Архангельск
+          //-     option(value="3") Владивосток
+          //-     option(value="4") Волгоград
+          //-     option(value="5") Воронеж
+          //-     option(value="6") Екатеринбург
+          //-     option(value="7") Ижевск
+          //-     option(value="8") Иркутск
+          //-     option(value="9") Клин Московская область
+          //-     option(value="10") Клин, Веневский район, Тульская область
+          //-     option(value="11") Клин, Одинцовский район, Московская область
+          //-     option(value="12") Клин, Вачский район, Нижегородская область
+          //-     option(value="13") Клин-9, Клин, Московская область

@@ -1,0 +1,86 @@
+@import 'src/utils/utils';
+
+.socials {
+
+  &__list {
+    display: grid;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-auto-flow: column;
+    grid-column-gap: 10px;
+  }
+
+  &__link {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    color: $dark-blue-1;
+    background-size: contain;
+    transition: background-image 0.3s;
+    overflow: hidden;
+
+    &--fb {
+      background-image: url('../assets/images/icon-fb.svg');
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          background-image: url('../assets/images/icon-fb--hover.svg');
+        }
+      }
+    }
+
+    &--vk {
+      background-image: url('../assets/images/icon-vk.svg');
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          background-image: url('../assets/images/icon-vk--hover.svg');
+        }
+      }
+    }
+
+    &--insta {
+      background-image: url('../assets/images/icon-insta.svg');
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          background-image: url('../assets/images/icon-insta--hover.svg');
+        }
+      }
+    }
+
+    &--you {
+      background-image: url('../assets/images/icon-you.svg');
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          background-image: url('../assets/images/icon-you--hover.svg');
+        }
+      }
+    }
+
+    &--tele {
+      background-image: url('../assets/images/icon-tele.svg');
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          background-image: url('../assets/images/icon-tele--hover.svg');
+        }
+      }
+    }
+
+    &--whats {
+      background-image: url('../assets/images/icon-whats.svg');
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          background-image: url('../assets/images/icon-whats--hover.svg');
+        }
+      }
+    }
+  }
+}

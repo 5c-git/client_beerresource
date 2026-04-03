@@ -1,0 +1,254 @@
+@import "src/utils/utils";
+
+.AddAddressPopUpProvider {
+    @include zero;
+
+    .Editable {
+        margin-bottom: 15px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    .Modal__container {
+        overflow-y: auto;
+    }
+
+    .react-dadata__container {
+        position: relative;
+
+        @media (max-width: $phone) {
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+
+        &:before {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 15px;
+            width: 10px;
+            height: 15px;
+            margin: auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            background-image: url("../assets/images/icon-map.svg");
+            content: "";
+        }
+    }
+
+    .react-dadata__input {
+        @include zero;
+        display: block;
+        width: 100%;
+        padding-top: 12px;
+        padding-right: 5px;
+        padding-bottom: 12px;
+        padding-left: 34px;
+        border: 1px solid $grey-6;
+        border-radius: 8px;
+        font-family: $main-font;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        color: $dark-blue-1;
+        outline: none;
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        @media (max-width: $phone) {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        &::placeholder {
+            font-family: $main-font;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 25px;
+            color: $grey-8;
+        }
+    }
+
+    &__item {
+        @include zero;
+
+        &:not(:first-of-type) {
+            margin-top: 20px;
+        }
+    }
+
+    &__header {
+        @include zero;
+        margin-bottom: 20px;
+        font-family: $title-font;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 30px;
+        color: $dark-blue-1;
+
+        @media (max-width: $phone) {
+            padding-top: 17px;
+            padding-right: 50px;
+            padding-bottom: 17px;
+            padding-left: 15px;
+            border-bottom: 1px solid $grey-6;
+            font-size: 20px;
+            line-height: 25px;
+        }
+    }
+
+    &__heading {
+        @include zero;
+        margin-bottom: 15px;
+        font-family: $main-font;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 28px;
+        color: $dark-blue-1;
+
+        @media (max-width: $phone) {
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 25px;
+        }
+    }
+
+    &__text {
+        @include zero;
+        margin-bottom: 5px;
+        font-family: $main-font;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: $dark-blue-1;
+
+        @media (max-width: $phone) {
+            padding-right: 15px;
+            padding-left: 15px;
+            font-size: 12px;
+            line-height: 15px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__button {
+        margin-top: 20px;
+        margin-left: auto;
+
+        @media (max-width: $phone) {
+            margin-left: unset;
+        }
+        @media (max-width: 425px) {
+            width: 48%;
+        }
+    }
+
+    &__add {
+        margin-top: 30px;
+
+        @media (max-width: 425px) {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+
+    &__delete {
+        @include zero;
+        display: flex;
+        max-width: 400px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__delete-navigation {
+        @include zero;
+        display: flex;
+        column-gap: 10px;
+    }
+
+    &__question {
+        @include zero;
+        display: block;
+        width: 60px;
+        height: 60px;
+    }
+
+    &__delete-text {
+        @include zero;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-family: $main-font;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        text-align: center;
+        color: $dark-blue-1;
+
+        @media (max-width: $phone) {
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: flex-end;
+
+        @media (max-width: $phone) {
+            margin-top: auto;
+            margin-bottom: 13px;
+            padding-right: 15px;
+            padding-left: 15px;
+            border-top: 1px solid $grey-6;
+            justify-content: center;
+            column-gap: 10px;
+        }
+    }
+
+    &__modal {
+        .Modal__container {
+            @media (max-width: $phone) {
+                height: 100vh;
+                max-width: unset;
+                margin: 0;
+                padding: 0;
+                border-radius: 0;
+            }
+        }
+
+        .Modal__close {
+            @media (max-width: $phone) {
+                top: 20px;
+                right: 15px;
+                width: 17px;
+                height: 17px;
+            }
+        }
+
+        &--nooverflow {
+            .Modal__container {
+                overflow-y: initial;
+            }
+        }
+    }
+
+    &__cancel {
+        display: none;
+
+        @media (max-width: $phone) {
+            display: initial;
+        }
+    }
+}

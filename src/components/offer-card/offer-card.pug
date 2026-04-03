@@ -1,0 +1,292 @@
+mixin offer-card(props)
+  if props.formed
+    article.offer-card.offer-card--active
+      <!-- Чтобы карточка была открыта сразу надо навесить класс '.offer-card--active'. -->
+      div.offer-card__header
+        div.offer-card__status.offer-card__status--formed Сформирован
+        p.offer-card__header-title Заказ <b>№11</b> от <b>16.07.2021</b> на сумму <b>1 399 ₽</b>
+        span.offer-card__name Владислав Галкин
+
+      div.offer-card__inner
+        div.offer-card__answer
+          div
+            div.offer-card__block
+              p.offer-card__block-title Оплата: 
+              p.offer-card__block-text Онлайн 
+                a(href="#" data-id="41").offer-card__change-pay Изменить
+            div.offer-card__block
+              p.offer-card__block-title Сумма к оплате по счету: 
+              p.offer-card__block-text 1 399 ₽
+            div.offer-card__block
+              p.offer-card__block-title Статус оплаты: 
+              p.offer-card__block-text Не оплачено
+
+          div
+            div.offer-card__block
+              p.offer-card__block-title Доставка: 
+              p.offer-card__block-text Самовывоз
+            div.offer-card__block
+              p.offer-card__block-title Стоимость доставки: 
+              p.offer-card__block-text 0 ₽
+            div.offer-card__block
+              p.offer-card__block-title Адрес пункта самовывоза:
+              p.offer-card__block-text СПБ, Парголово, ул. Ленина дом 3
+
+          div.offer-card__block-footer 
+            div
+              a(href="#").button.offer-card__button Оплатить&nbsp;→
+            div.offer-card__links 
+              p.offer-card__block-text
+                a(href="#").offer-card__details Товары в заказе
+              p.offer-card__block-text
+                a(href="#" data-id="42").offer-card__repeat Повторить заказ
+              p.offer-card__block-text
+                a(href="#" data-id="42").offer-card__cancel Отменить заказ
+
+  if props.formed2
+    article.offer-card.offer-card--active
+      div.offer-card__header
+        div.offer-card__status.offer-card__status--formed Сформирован
+        p.offer-card__header-title Заказ <b>№11</b> от <b>16.07.2021</b> на сумму <b>1 399 ₽</b>
+        span.offer-card__name Владислав Галкин
+
+      div.offer-card__inner
+        div.offer-card__answer
+          div
+            div.offer-card__block
+              p.offer-card__block-title Оплата: 
+              p.offer-card__block-text Онлайн 
+                a(href="#" data-id="44").offer-card__change-pay Изменить
+            div.offer-card__block
+              p.offer-card__block-title Сумма к оплате по счету: 
+              p.offer-card__block-text 1 399 ₽
+            div.offer-card__block
+              p.offer-card__block-title Статус оплаты: 
+              p.offer-card__block-text Не оплачено
+
+          div
+            div.offer-card__block
+              p.offer-card__block-title Доставка: 
+              p.offer-card__block-text Самовывоз
+            div.offer-card__block
+              p.offer-card__block-title Стоимость доставки: 
+              p.offer-card__block-text 0 ₽
+            div.offer-card__block
+              p.offer-card__block-title Адрес пункта самовывоза:
+              p.offer-card__block-text СПБ, Парголово, ул. Ленина дом 3
+
+          div.offer-card__block-footer 
+            div
+              div.offer-card__qr
+                img(src="./assets/images/qr-code.svg" width='100' height='100' alt="")
+                p.offer-card__block-text
+                  a(href="#") Сгенерировать QR код
+                a(href="#").button.offer-card__button Оплатить&nbsp;→
+            div.offer-card__links 
+              p.offer-card__block-text
+                a(href="#").offer-card__details Товары в заказе
+              p.offer-card__block-text
+                a(href="#" data-id="43").offer-card__repeat Повторить заказ
+              p.offer-card__block-text
+                a(href="#" data-id="43").offer-card__cancel Отменить заказ
+                
+  if props.awaiting
+    article.offer-card
+      div.offer-card__header
+        div.offer-card__status.offer-card__status--awaiting Ожидает оплаты
+        p.offer-card__header-title Заказ <b>№11</b> от <b>16.07.2021</b> на сумму <b>1 399 ₽</b>
+        span.offer-card__name Владислав Галкин
+
+      div.offer-card__inner
+        div.offer-card__answer
+          div
+            div.offer-card__block
+              p.offer-card__block-title Оплата: 
+              p.offer-card__block-text По счёту 
+                a(href="#" data-id="47").offer-card__change-pay Изменить
+            div.offer-card__block
+              p.offer-card__block-title Сумма к оплате по счету: 
+              p.offer-card__block-text 1 399 ₽
+            div.offer-card__block
+              p.offer-card__block-title Статус оплаты: 
+              p.offer-card__block-text Не оплачено
+
+          div
+            div.offer-card__block
+              p.offer-card__block-title Доставка: 
+              p.offer-card__block-text Доставка от BeerResource
+            div.offer-card__block
+              p.offer-card__block-title Стоимость доставки: 
+              p.offer-card__block-text 0 ₽
+            div.offer-card__block
+              p.offer-card__block-title Адрес пункта самовывоза:
+              p.offer-card__block-text СПБ, Парголово, ул. Ленина дом 3
+
+          div.offer-card__block-footer 
+            div
+              a(href="#" download).button.offer-card__button Скачать счёт
+            div.offer-card__links 
+              p.offer-card__block-text
+                a(href="#").offer-card__details Товары в заказе
+              p.offer-card__block-text
+                a(href="#" data-id="44").offer-card__repeat Повторить заказ
+              p.offer-card__block-text
+                a(href="#" data-id="44").offer-card__cancel Отменить заказ
+          
+  if props.shipment
+    article.offer-card
+      div.offer-card__header
+        div.offer-card__status.offer-card__status--shipment Разрешен к отгрузке
+        p.offer-card__header-title Заказ <b>№11</b> от <b>16.07.2021</b> на сумму <b>1 399 ₽</b>
+        span.offer-card__name Владислав Галкин
+
+      div.offer-card__inner
+        div.offer-card__answer
+          div
+            div.offer-card__block
+              p.offer-card__block-title Оплата: 
+              p.offer-card__block-text По счёту
+            div.offer-card__block
+              p.offer-card__block-title Сумма к оплате по счету: 
+              p.offer-card__block-text 1 399 ₽
+            div.offer-card__block
+              p.offer-card__block-title Статус оплаты: 
+              p.offer-card__block-text Оплачен
+
+          div
+            div.offer-card__block
+              p.offer-card__block-title Доставка: 
+              p.offer-card__block-text Самовывоз
+            div.offer-card__block
+              p.offer-card__block-title Стоимость доставки: 
+              p.offer-card__block-text 0 ₽
+            div.offer-card__block
+              p.offer-card__block-title Адрес пункта самовывоза:
+              p.offer-card__block-text СПБ, Парголово, ул. Ленина дом 3
+
+          div.offer-card__block-footer 
+            div
+            div.offer-card__links 
+              p.offer-card__block-text
+                a(href="#").offer-card__details Товары в заказе
+              p.offer-card__block-text
+                a(href="#" data-id="45").offer-card__repeat Повторить заказ
+          
+  if props.delivery
+    article.offer-card
+      div.offer-card__header
+        div.offer-card__status.offer-card__status--delivery Передан в доставку
+        p.offer-card__header-title Заказ <b>№11</b> от <b>16.07.2021</b> на сумму <b>1 399 ₽</b>
+        span.offer-card__name Владислав Галкин
+
+      div.offer-card__inner
+        div.offer-card__answer
+          div
+            div.offer-card__block
+              p.offer-card__block-title Оплата: 
+              p.offer-card__block-text Онлайн
+            div.offer-card__block
+              p.offer-card__block-title Сумма к оплате по счету: 
+              p.offer-card__block-text 1 399 ₽
+            div.offer-card__block
+              p.offer-card__block-title Статус оплаты: 
+              p.offer-card__block-text Оплачен
+
+          div
+            div.offer-card__block
+              p.offer-card__block-title Доставка: 
+              p.offer-card__block-text Самовывоз
+            div.offer-card__block
+              p.offer-card__block-title Стоимость доставки: 
+              p.offer-card__block-text 0 ₽
+            div.offer-card__block
+              p.offer-card__block-title Адрес пункта самовывоза:
+              p.offer-card__block-text СПБ, Парголово, ул. Ленина дом 3
+
+          div.offer-card__block-footer 
+            div
+            div.offer-card__links 
+              p.offer-card__block-text
+                a(href="#").offer-card__details Товары в заказе
+              p.offer-card__block-text
+                a(href="#" data-id="46").offer-card__repeat Повторить заказ
+              p.offer-card__block-text
+          
+  if props.finished
+    article.offer-card
+      div.offer-card__header
+        div.offer-card__status.offer-card__status--finished Выполнен
+        p.offer-card__header-title Заказ <b>№11</b> от <b>16.07.2021</b> на сумму <b>1 399 ₽</b>
+        span.offer-card__name Владислав Галкин
+
+      div.offer-card__inner
+        div.offer-card__answer
+          div
+            div.offer-card__block
+              p.offer-card__block-title Оплата: 
+              p.offer-card__block-text Онлайн 
+            div.offer-card__block
+              p.offer-card__block-title Сумма к оплате по счету: 
+              p.offer-card__block-text 1 399 ₽
+            div.offer-card__block
+              p.offer-card__block-title Статус оплаты: 
+              p.offer-card__block-text Оплачен
+
+          div
+            div.offer-card__block
+              p.offer-card__block-title Доставка: 
+              p.offer-card__block-text Самовывоз
+            div.offer-card__block
+              p.offer-card__block-title Стоимость доставки: 
+              p.offer-card__block-text 0 ₽
+            div.offer-card__block
+              p.offer-card__block-title Адрес пункта самовывоза:
+              p.offer-card__block-text СПБ, Парголово, ул. Ленина дом 3
+
+          div.offer-card__block-footer 
+            div
+              a(href="#" download).button.offer-card__button Скачать счёт
+            div.offer-card__links 
+              p.offer-card__block-text
+                a(href="#").offer-card__details Товары в заказе
+              p.offer-card__block-text
+                a(href="#" data-id="47").offer-card__repeat Повторить заказ
+          
+  if props.canceled
+    article.offer-card
+      div.offer-card__header
+        div.offer-card__status.offer-card__status--canceled Отменен
+        p.offer-card__header-title Заказ <b>№11</b> от <b>16.07.2021</b> на сумму <b>1 399 ₽</b>
+        span.offer-card__name Владислав Галкин
+
+      div.offer-card__inner
+        div.offer-card__answer
+          div
+            div.offer-card__block
+              p.offer-card__block-title Оплата: 
+              p.offer-card__block-text По счёту
+            div.offer-card__block
+              p.offer-card__block-title Сумма к оплате по счету: 
+              p.offer-card__block-text 1 399 ₽
+            div.offer-card__block
+              p.offer-card__block-title Статус оплаты: 
+              p.offer-card__block-text Не оплачен
+
+          div
+            div.offer-card__block
+              p.offer-card__block-title Доставка: 
+              p.offer-card__block-text Самовывоз
+            div.offer-card__block
+              p.offer-card__block-title Стоимость доставки: 
+              p.offer-card__block-text 0 ₽
+            div.offer-card__block
+              p.offer-card__block-title Адрес пункта самовывоза:
+              p.offer-card__block-text СПБ, Парголово, ул. Ленина дом 3
+
+          div.offer-card__block-footer 
+            div
+            div.offer-card__links 
+              p.offer-card__block-text
+                a(href="#").offer-card__details Товары в заказе
+              p.offer-card__block-text
+                a(href="#" data-id="48").offer-card__repeat Повторить заказ

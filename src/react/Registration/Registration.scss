@@ -1,0 +1,66 @@
+@import 'src/utils/utils';
+
+.Registration {
+  @include zero;
+
+  &__header {
+    @include zero;
+    font-family: $title-font;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+    color: $dark-blue-1;
+
+    @media(max-width: $phone) {
+      line-height: 25px;
+    }
+  }
+
+  &__input {
+    margin-top: 15px;
+
+    &--error {
+
+      .Input__field {
+        border-color: $red-1;
+      }
+
+      .Input__label {
+        color: $red-1;
+      }
+
+    }
+  }
+
+  &__button {
+    @include zero;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  &__link {
+    @include zero;
+    font-family: $main-font;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: $grey-8;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      line-height: 18px;
+      text-align: center;
+    }
+
+    a {
+      color: $blue-1;
+
+      @media(min-width: $desktop-only) {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

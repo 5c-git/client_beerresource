@@ -1,0 +1,82 @@
+mixin layout-header(props)
+  if props.promotion
+    section.layout-header
+      div.container
+        div.layout-header__wrapper
+          div.layout-header__main 
+            ul.layout-header__stats
+              li.layout-header__stats-item 
+                time 01.01.2021 — 01.01.2021
+            p Beer Resource — поставщик ингредиентов для пивоварения с обширной сетью складов, логистической экспертизой и любовью к пиву. Работаем с 2017 года.
+            p Противоположная точка зрения подразумевает, что тщательные исследования конкурентов неоднозначны и будут смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии будут объективно рассмотрены соответствующими инстанциями.
+
+          div.layout-header__sidebar 
+            include ../share/share
+
+          div.layout-header__banner
+            figure
+              img(src="./assets/images/image-1.jpg" alt="")
+              figcaption Наименование фотографии текст которой может быть очень и очень длинным.
+
+  if props.article
+    section.layout-header
+      div.container
+        div.layout-header__wrapper
+          div.layout-header__main 
+            ul.layout-header__stats
+              li.layout-header__stats-item 
+                time 01.01.2021
+              li.layout-header__stats-item 
+                a(href="#") Категория
+            p Beer Resource — поставщик ингредиентов для пивоварения с обширной сетью складов, логистической экспертизой и любовью к пиву. Работаем с 2017 года.
+            p Противоположная точка зрения подразумевает, что тщательные исследования конкурентов неоднозначны и будут смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии будут объективно рассмотрены соответствующими инстанциями.
+
+          div.layout-header__sidebar 
+            include ../share/share
+
+          div.layout-header__banner
+            figure
+              img(src="./assets/images/image-2.jpg" alt="")
+              figcaption Наименование фотографии текст которой может быть очень и очень длинным.
+
+  if props.service
+    section.layout-header
+      div.container
+        div.layout-header__wrapper
+          div.layout-header__main 
+            p Beer Resource — поставщик ингредиентов для пивоварения с обширной сетью складов, логистической экспертизой и любовью к пиву. Работаем с 2017 года.
+            p Противоположная точка зрения подразумевает, что тщательные исследования конкурентов неоднозначны и будут смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии будут объективно рассмотрены соответствующими инстанциями.
+            a(href="#RequestServiceProvider").button.layout-header__button Заказать
+
+          div.layout-header__banner
+            figure
+              img(src="./assets/images/image-3.jpg" alt="")
+              figcaption Наименование фотографии текст которой может быть очень и очень длинным.
+
+  if props.about
+    section.layout-header
+      div.container
+        div.layout-header__wrapper
+          div.layout-header__main 
+            p Beer Resource — поставщик ингредиентов для пивоварения с обширной сетью складов, логистической экспертизой и любовью к пиву. Работаем с 2017 года.
+            p Противоположная точка зрения подразумевает, что тщательные исследования конкурентов неоднозначны и будут смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии будут объективно рассмотрены соответствующими инстанциями.
+
+          div.layout-header__sidebar 
+            include ../about-nav/about-nav
+
+  if props.missions
+    section.layout-header
+      div.container
+        div.layout-header__wrapper
+          div.layout-header__main 
+            p Beer Resource — поставщик ингредиентов для пивоварения с обширной сетью складов, логистической экспертизой и любовью к пиву. Работаем с 2017 года.
+
+          div.layout-header__sidebar 
+            include ../about-nav/about-nav
+
+  if props.contacts
+    section.layout-header
+      div.container
+        div.layout-header__wrapper
+          div.layout-header__main 
+            p Качественные ингредиенты – залог отличного результата при производстве пива. Мы любим пиво и хотим, чтобы вы создавали отличный продукт, благодаря премиальным продуктам поставляемыми нашей компанией.

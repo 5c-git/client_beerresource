@@ -1,0 +1,73 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Новости',
+  })
+
+  +layout({
+    grid3: true,
+    pagination: true,
+  })
+    +news-card({
+      src: './assets/images/image-2.jpg',
+      title: 'Дурное дело нехитрое: известный инсайдер, в преддверии важного события, не позволил союзу развалиться',
+      tags: true,
+    })
+    +news-card({
+      src: './assets/images/image-3.jpg',
+      title: 'Воистину радостный звук: детский заливистый смех',
+    })
+    +news-card({
+      src: './assets/images/image-4.jpg',
+      title: 'Финансовый мир очнулся: постоянный количественный рост бодрит',
+    })
+    +news-card({
+      src: './assets/images/image-1.jpg',
+      title: 'Сложно сказать, почему объем доходов населения сократился',
+    })
+    +news-card({
+      src: './assets/images/image-5.jpg',
+      title: 'Дурное дело нехитрое: известный инсайдер, в преддверии важного события, не позволил союзу развалиться',
+      tags: true,
+    })
+    +news-card({
+      src: './assets/images/image-11.jpg',
+      title: 'Воистину радостный звук: детский заливистый смех',
+      tags: true,
+    })
+    +news-card({
+      src: './assets/images/image-15.jpg',
+      title: 'Финансовый мир очнулся: постоянный количественный рост бодрит',
+      tags: true,
+    })
+    +news-card({
+      src: './assets/images/image-3.jpg',
+      title: 'Сложно сказать, почему объем доходов населения сократился',
+    })
+    +news-card({
+      src: './assets/images/image-11.jpg',
+      title: 'Дурное дело нехитрое: известный инсайдер, в преддверии важного события, не позволил союзу развалиться',
+    })
+    +news-card({
+      src: './assets/images/image-10.jpg',
+      title: 'Воистину радостный звук: детский заливистый смех',
+    })
+    +news-card({
+      src: './assets/images/image-7.jpg',
+      title: 'Финансовый мир очнулся: постоянный количественный рост бодрит',
+      tags: true,
+    })
+    +news-card({
+      src: './assets/images/image-5.jpg',
+      title: 'Сложно сказать, почему объем доходов населения сократился',
+      tags: true,
+    })
+
+  include ../providers/common/SubscribeProvider/SubscribeProvider
+  
+  +watched({
+    title: 'Вы смотрели',
+  })

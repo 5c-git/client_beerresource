@@ -1,0 +1,151 @@
+@import 'src/utils/utils';
+
+.payment {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  background-color: $grey-2;
+
+  @media(max-width: $phone) {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
+  hr {
+    margin: 0;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid $grey-6;
+
+    @media(max-width: $phone) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__wrapper {
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+    font-family: $title-font;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 45px;
+
+    @media(max-width: $phone) {
+      margin-bottom: 10px;
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    em {
+      font-style: normal;
+      color: $blue-1;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 25px;
+
+    @media(max-width: $phone) {
+      margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    b {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+
+      @media(max-width: $phone) {
+        font-size: 16px;
+        line-height: 25px;
+      }
+    }
+
+    a {
+      text-decoration: underline;
+      color: $blue-1;
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__block {
+    margin-bottom: 30px;
+
+    @media(max-width: $phone) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__comment {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: $grey-8;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    br {
+      @media(max-width: $phone) {
+        display: none;
+      }
+    }
+
+    a {
+      text-decoration: underline;
+      color: $blue-1;
+      white-space: nowrap;
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__qr {
+
+    img {
+      display: block;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+
+      @media(max-width: $tablet) {
+        display: none;
+      }
+    }
+
+    .button {
+      display: none;
+
+      @media(max-width: $tablet) {
+        display: inline-grid;
+      }
+    }
+
+    .payment__comment {
+      margin-top: 10px;
+
+      @media(max-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+}

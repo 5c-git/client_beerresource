@@ -1,0 +1,28 @@
+@import 'src/utils/utils';
+
+.Select {
+  @include zero;
+
+  &__label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #212f4e;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    &--required {
+      position: relative;
+
+      &::after {
+        content: '*';
+        color: #E45945;
+      }
+    }
+  }
+}

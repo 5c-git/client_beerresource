@@ -1,0 +1,1 @@
+import './catalog-nav.scss';

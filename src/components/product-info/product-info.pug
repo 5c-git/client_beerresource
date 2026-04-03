@@ -1,0 +1,74 @@
+section.product-info
+  div.product-info__top 
+    button(type='button').product-info__like
+      <!-- Если товар добавлен в избранное, то добавляется класс '.product-info__like--add'-->
+      i
+        svg(width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg")
+          use(href='#icon-like')
+      span В избранное
+    a(href="#").product-info__compare
+      <!-- Если товар добавлен в избранное, то добавляется класс '.product-info__compare--add'-->
+      i
+        svg(width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg")
+          use(href='#icon-compare')
+      span Сравнить
+    ul.product-info__tags 
+      li.product-info__tag.product-info__tag--red Скидка
+      li.product-info__tag.product-info__tag--orange Хит продаж
+      li.product-info__tag.product-info__tag--green Новинка
+
+  div.product-info__block
+    h2.product-info__title Описание
+    p Базовый класса премиум для производства, как классического так и крафтовых сортов пива. Этот солод произведен из отборного пивоваренного ячменя выведенного лучшими селекционерами Европы.
+    div.product-info__links
+      a(href="#").product-info__link Полное описание
+      a(href="#").product-info__link Полезные материалы
+
+  div.product-info__block
+    h2.product-info__title Характеристики
+    ul.product-info__description-table
+      li.product-info__description-row
+        div
+          span.product-info__description-name Тип
+        span.product-info__description-info Базовый солод
+      li.product-info__description-row
+        div
+          span.product-info__description-name Цветность, EBC
+          +tooltip({
+            data: 'EBC — это условный показатель, определяющий насыщенность цвета солода. Чем больше показатель EBC, тем более насыщенный цвет имеет солод и как результат, тем более насыщенный цвет будет иметь готовое пиво.'
+          })
+        span.product-info__description-info 200
+      li.product-info__description-row
+        div
+          span.product-info__description-name Страна происхождения
+        span.product-info__description-info Курский солод
+    
+    div.product-info__links
+      a(href="#").product-info__link Все характеристики
+
+  div.product-info__block
+    h2.product-info__title Варианты упаковок
+    div.product-info__packaging-table
+      include ../packaging-table/packaging-table
+
+  div.product-info__bottom
+    div.product-info__total
+      p.product-info__total-text Итого:
+      p.product-info__total-value 15 000 ₽ <em>/ 125 кг</em>
+    button.button.product-info__button
+      svg(width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg")
+        use(href='#icon-button-card')
+      span В корзину
+
+  div.product-info__bottom
+    div.product-info__total
+      p.product-info__total-text Итого:
+      p.product-info__total-value 15 000 ₽ <em>/ 125 кг</em>
+    a(href="#" aria-label='В корзину').button.product-info__button
+      span ✓
+      span Добавлен
+
+  div.product-info__bottom
+    p.product-info__not-available Нет в наличии
+    button.button.product-info__button.product-info__button--notify
+      span Сообщить о поступлении

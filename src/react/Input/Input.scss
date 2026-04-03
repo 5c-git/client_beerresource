@@ -1,0 +1,76 @@
+@import 'src/utils/utils';
+
+.Input {
+
+  &__field {
+    width: 100%;
+    margin: 0;
+    padding-top: 11px;
+    padding-right: 14px;
+    padding-bottom: 12px;
+    padding-left: 14px;
+    border: 1px solid $grey-6;
+    border-radius: 8px;
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    color: $dark-blue-1;
+    background-color: $white-1;
+    outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @media(max-width: $phone) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &::placeholder {
+      font-family: $main-font;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 25px;
+      color: $grey-8;
+    }
+
+    &:disabled {
+      color: $grey-8;
+      background-color: $grey-3;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: $dark-blue-1;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    &--required {
+      position: relative;
+
+      &:after {
+        color: $red-1;
+        content: '*';
+      }
+    }
+  }
+
+  &--error {
+
+    .Input__label {
+      color: $red-1;
+    }
+
+    .Input__field {
+      border-color: $red-1;
+    }
+  }
+}

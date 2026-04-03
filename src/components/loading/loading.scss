@@ -1,0 +1,46 @@
+@import 'src/utils/utils.scss';
+
+.loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 60%);
+
+  &__spin {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    color: $blue-1;
+    animation: spin 2s linear infinite;
+
+    @media(max-width: $phone) {
+      width: 50px;
+      height: 50px;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+
+@keyframes spin {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}

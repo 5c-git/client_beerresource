@@ -1,0 +1,12 @@
+extends ../templates/default
+
+block main
+  section.background
+    include ../components/breadcrumbs/breadcrumbs
+
+    +profile-page({})
+      +profile-center({
+        title: 'Подписки',
+      })
+        include ../components/profile-subscribes/profile-subscribes
+        

@@ -1,0 +1,7 @@
+mixin how-card(props)
+  article.how-card
+    picture.how-card__banner
+      <!-- Рекомендуемые размеры картинки 285х300 -->
+      img(src=props.src, alt="")
+    p.how-card__title=props.title 
+    p.how-card__text=props.text

@@ -1,0 +1,1 @@
+import './how-card.scss';

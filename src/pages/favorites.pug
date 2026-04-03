@@ -1,0 +1,95 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Избранное',
+  })
+    +clear({
+      favorites: true,
+    })
+
+  +layout({
+    sidebar: true,
+    favorites: true,
+    pagination: true,
+  })
+    +item-card({
+      onepackag: true,
+      front: './assets/images/promo-picture-1.png',
+      back: './assets/images/item-background-1.jpg',
+      tags: true,
+      flag: './assets/images/item-flag-1.jpg',
+      title: 'Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами',
+    })
+    +item-card({
+      onepackag: true,
+      front: './assets/images/promo-picture-2.png',
+      back: './assets/images/item-background-2.jpg',
+      mixin: 'item-card--to-order',
+      flag: './assets/images/item-flag-2.jpg',
+      title: 'Солод шишковой',
+    })
+    +item-card({
+      front: './assets/images/promo-picture-3.png',
+      back: './assets/images/item-background-1.jpg',
+      flag: './assets/images/item-flag-3.jpg',
+      title: 'Семечко хмеля Емеля',
+    })
+    +item-card({
+      front: './assets/images/promo-picture-4.png',
+      flag: './assets/images/item-flag-1.jpg',
+      tags: true,
+      title: 'Мешок белого цемента',
+    })
+    +item-card({
+      front: './assets/images/promo-picture-5.png',
+      back: './assets/images/item-background-2.jpg',
+      tags: true,
+      flag: './assets/images/item-flag-1.jpg',
+      title: 'Модная импортная продукция, которую никогда не увидим больше',
+    })
+    +item-card({
+      front: './assets/images/promo-picture-6.png',
+      back: './assets/images/item-background-1.jpg',
+      tags: true,
+      flag: './assets/images/item-flag-3.jpg',
+      title: 'Просто бочка',
+    })
+    +item-card({
+      front: './assets/images/promo-picture-1.png',
+      back: './assets/images/item-background-1.jpg',
+      tags: true,
+      flag: './assets/images/item-flag-1.jpg',
+      title: 'Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами',
+    })
+    +item-card({
+      front: './assets/images/promo-picture-2.png',
+      back: './assets/images/item-background-2.jpg',
+      flag: './assets/images/item-flag-1.jpg',
+      title: 'Солод шишковой',
+    })
+    +item-card({
+      front: './assets/images/promo-picture-3.png',
+      back: './assets/images/item-background-1.jpg',
+      flag: './assets/images/item-flag-2.jpg',
+      title: 'Семечко хмеля Емеля',
+    })
+    +item-card({
+      front: './assets/images/promo-picture-4.png',
+      flag: './assets/images/item-flag-1.jpg',
+      title: 'Мешок цемента',
+    })
+    +item-card({
+      front: './assets/images/promo-picture-5.png',
+      back: './assets/images/item-background-2.jpg',
+      flag: './assets/images/item-flag-3.jpg',
+      title: 'Модная продукция',
+    })
+    +item-card({
+      front: './assets/images/promo-picture-6.png',
+      back: './assets/images/item-background-1.jpg',
+      flag: './assets/images/item-flag-1.jpg',
+      title: 'Просто бочка',
+    })

@@ -1,0 +1,94 @@
+@import 'src/utils/utils';
+
+.question {
+  margin: 0;
+  padding: 0;
+  border: 1px solid $grey-6;
+  border-radius: 10px;
+  background-color: $white-1;
+  transition: border-color 0.3s;
+
+  &__header {
+    position: relative;
+    padding-top: 15px;
+    padding-right: 60px;
+    padding-bottom: 15px;
+    padding-left: 19px;
+    color: $dark-blue-1;
+    transition: color 0.3s;
+    cursor: pointer;
+
+    @media(max-width: $phone) {
+      padding-top: 9px;
+      padding-right: 45px;
+      padding-bottom: 9px;
+      padding-left: 14px;
+    }
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        color: $blue-1;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      top: calc(50% - 2px);
+      right: 15px;
+      width: 10px;
+      height: 2px;
+      background-color: currentcolor;
+      transition: transform 0.3s, background-color 0.3s;
+      transform-origin: 50% 50%;
+      transform: rotate(-45deg);
+      content: '';
+
+      @media(max-width: $phone) {
+        right: 15px;
+      }
+    }
+
+    &:before {
+      position: absolute;
+      top: calc(50% - 2px);
+      right: 21px;
+      width: 10px;
+      height: 2px;
+      background-color: currentcolor;
+      transition: transform 0.3s, background-color 0.3s;
+      transform-origin: 50% 50%;
+      transform: rotate(45deg);
+      content: '';
+
+      @media(max-width: $phone) {
+        right: 21px;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+
+    @media(max-width: $phone) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__answer {
+    max-width: 865px;
+    padding-top: 0;
+    padding-right: 19px;
+    padding-bottom: 19px;
+    padding-left: 19px;
+
+    @media(max-width: $phone) {
+      padding-right: 14px;
+      padding-bottom: 14px;
+      padding-left: 14px;
+    }
+  }
+}

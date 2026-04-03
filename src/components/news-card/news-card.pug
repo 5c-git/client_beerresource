@@ -1,0 +1,23 @@
+mixin news-card(props)
+  article.news-card
+    a(href="#").news-card__image
+      <!-- Рекомендуемые размеры 380/300. -->
+      if props.src
+        img(src=props.src alt="")
+    
+    time(datetime='12.11.2020').news-card__time 12.11.2020
+
+    if props.title
+      h3.news-card__title
+        a(href="#")=props.title
+
+    if props.tags
+      ul.news-card__tags
+        li.news-card__tags-item 
+          a(href="#").news-card__tags-link #сорт
+        li.news-card__tags-item 
+          a(href="#").news-card__tags-link #пиво
+        li.news-card__tags-item 
+          a(href="#").news-card__tags-link #стакан
+        li.news-card__tags-item 
+          a(href="#").news-card__tags-link #производство

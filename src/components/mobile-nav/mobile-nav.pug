@@ -1,0 +1,88 @@
+nav.mobile-nav
+  div.container 
+    div.mobile-nav__top 
+      ul.mobile-nav__list 
+        li.mobile-nav__item.mobile-nav__item--sup
+          a(href="#").mobile-nav__link Корзина
+            sup 8887
+        li.mobile-nav__item.mobile-nav__item--sup
+          a(href="#").mobile-nav__link Избранное
+            sup 1200
+        li.mobile-nav__item.mobile-nav__item--sup
+          a(href="#").mobile-nav__link Сравнение
+            sup 5
+      div.mobile-nav__side
+        div.mobile-nav__geolocation
+          button(type='button').mobile-nav__geolocation-button
+            svg(width="11" height="15" viewBox="0 0 11 15" xmlns="http://www.w3.org/2000/svg")
+              use(href='#icon-geopin')
+            span.mobile-nav__geolocation-text Самый Нижний Новгород
+        div.mobile-nav__language
+          a(href="#").mobile-nav__language-link EN
+    div.mobile-nav__main 
+      ul.mobile-nav__list.mobile-nav__list--big
+        li.mobile-nav__item
+          a(href="#").mobile-nav__link Каталог
+          button(type='button').mobile-nav__sub-toggle
+          ul.mobile-nav__sub-list
+            li.mobile-nav__sub-item
+              a(href="#").mobile-nav__link Солод
+            li.mobile-nav__sub-item
+              a(href="#").mobile-nav__link Химия
+            li.mobile-nav__sub-item
+              a(href="#").mobile-nav__link Ингредиенты
+            li.mobile-nav__sub-item
+              a(href="#").mobile-nav__link Товары для дестиляции
+            li.mobile-nav__sub-item
+              a(href="#").mobile-nav__link Хмель
+            li.mobile-nav__sub-item
+              a(href="#").mobile-nav__link Пюре
+            li.mobile-nav__sub-item
+              a(href="#").mobile-nav__link Клининг
+            li.mobile-nav__sub-item
+              a(href="#").mobile-nav__link Дрожжи
+            li.mobile-nav__sub-item
+              a(href="#").mobile-nav__link Солодовые экстракты
+            li.mobile-nav__sub-item
+              a(href="#").mobile-nav__link Оборудование
+        li.mobile-nav__item
+          a(href="#").mobile-nav__link Контакты
+        li.mobile-nav__item
+          a(href="#").mobile-nav__link Акции
+        li.mobile-nav__item
+          a(href="#").mobile-nav__link Вдохновение
+        li.mobile-nav__item
+          a(href="#").mobile-nav__link Услуги
+        li.mobile-nav__item
+          a(href="#").mobile-nav__link Покупателю
+
+      div.mobile-nav__contacts
+        ul.mobile-nav__list 
+          li.mobile-nav__item
+            a(href="tel:+79164959595").mobile-nav__tel +7(812)725-00-88
+          li.mobile-nav__item
+            a(href="tel:+79164959595").mobile-nav__tel +7(921)588-60-80
+            +socials({
+              contacts: true,
+            })
+          li.mobile-nav__item
+            a(href="mailto:sales@resource.beer").mobile-nav__tel sales@resource.beer
+        p.mobile-nav__desc Ежедневно 10:00-19:00
+        div.mobile-nav__socials
+          +socials({
+            header: true,
+          })
+
+      div.mobile-nav__payment
+        p.mobile-nav__payment-text Принимаем к оплате:
+        ul.mobile-nav__payment-list 
+          li.mobile-nav__payment-item 
+            img(src="./assets/images/logo-visa.png" width='66' height='22' alt="")
+          li.mobile-nav__payment-item 
+            img(src="./assets/images/logo-mastercard.png" width='49' height='30' alt="")
+        ul.mobile-nav__payment-list 
+          li.mobile-nav__payment-item 
+            img(src="./assets/images/logo-mir.png" width='61' height='17' alt="")
+          li.mobile-nav__payment-item 
+            img(src="./assets/images/logo-union.png" width='42' height='25' alt="")
+

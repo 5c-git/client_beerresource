@@ -1,0 +1,195 @@
+@import 'src/utils/utils';
+
+.offer-details {
+
+  &__control {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    border: 1px solid $grey-6;
+    border-radius: 10px;
+    column-gap: 30px;
+
+    @media(max-width: $phone) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding-right: 15px;
+    }
+    @media print {
+      display: none;
+    }
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+
+    @media(max-width: $phone) {
+      flex-direction: column;
+      row-gap: 10px;
+    }
+  }
+
+  &__button {
+    display: inline-grid;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    text-decoration: none;
+    color: $dark-blue-1;
+    transition: color 0.3s;
+    background: 0;
+    grid-auto-flow: column;
+    grid-column-gap: 8px;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+      grid-column-gap: 4px;
+    }
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        color: $blue-1;
+      }
+    }
+
+    svg {
+      width: 28px;
+      height: 28px;
+      stroke: currentcolor;
+
+      @media(max-width: $phone) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &--print {
+      @media(max-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+
+  &__total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+  }
+
+  &__total-name {
+    font-size: 14px;
+    line-height: 20px;
+
+    @media(max-width: $phone) {
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 15px;
+    }
+  }
+
+  &__total-value {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+
+    @media(max-width: $phone) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__table {}
+
+  &__thead {
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $grey-6;
+    grid-column-gap: 40px;
+    column-gap: 40px;
+
+    @media(max-width: $phone) {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      grid-column-gap: 20px;
+      column-gap: 20px;
+    }
+  }
+
+  &__th {
+    min-width: 100px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: right;
+    color: $grey-8;
+    flex-shrink: 0;
+
+    @media(max-width: $phone) {
+      min-width: unset;
+      font-size: 10px;
+      line-height: 15px;
+    }
+
+    &:first-of-type {
+      text-align: left;
+      flex-grow: 1;
+    }
+  }
+
+  &__row {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $grey-6;
+
+    @media(max-width: $phone) {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+
+    &:last-of-type {
+      margin: 0;
+      padding: 0;
+      border-bottom: 0;
+    }
+  }
+
+  &__type {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+
+    @media(max-width: $phone) {
+      margin-bottom: 10px;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+}

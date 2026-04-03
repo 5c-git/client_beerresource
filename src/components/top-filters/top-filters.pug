@@ -1,0 +1,20 @@
+mixin top-filters(props)
+  div.top-filters
+    div.top-filters__sort
+      span.top-filters__sort-text Сортировать:
+      div.top-filters__sort-buttons
+        button(type='button' aria-label='Сортировать по рейтингу').top-filters__sort-button.top-filters__sort-button--active По рейтингу
+          span
+        button(type='button' aria-label='Сортировать по новизне').top-filters__sort-button По новизне
+          span
+        button(type='button' aria-label='Сортировать по цене').top-filters__sort-button По цене
+          span
+
+    if props.view
+      div.top-filters__view
+        button(type='button').top-filters__view-button.top-filters__view-button--tile-view.top-filters__view-button--active
+          svg(width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg")
+            use(href='#icon-tile-view')
+        button(type='button').top-filters__view-button.top-filters__view-button--row-view
+          svg(width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg")
+            use(href='#icon-row-view')

@@ -1,0 +1,12 @@
+extends ../templates/default
+
+block main
+  section.background
+    include ../components/breadcrumbs/breadcrumbs
+    
+    +title({
+      title: 'Товары в заказе №11',
+    })
+      include ../components/back/back
+
+    include ../components/offer-details/offer-details

@@ -1,0 +1,17 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Сравнение товаров',
+  })
+    +clear({
+      compare: true,
+    })
+
+  +tabs({
+    ver4: true,
+  })
+
+  include ../components/compare/compare

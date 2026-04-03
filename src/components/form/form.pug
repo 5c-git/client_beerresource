@@ -1,0 +1,25 @@
+//- ОБРАЗЕЦ ФОРМЫ
+
+section.form.FORM-ID
+
+  section.form__content
+    h2 Заголовок формы
+    p И другой различный контент
+    form#FORM-ID.validator
+      input.form__text.v-text(type="text" name="name" maxlength="225" placeholder="Ваше имя*")
+      input.form__text.v-text(type="text" name="surname" maxlength="225" placeholder="Ваша фамилия*")
+      input.form__phone.v-phone.mask(type="tel" name="phone" autocomplete="off" inputmode="tel" placeholder="Телефон*")
+      input.form__text(required type="email" placeholder="E-mail*")
+      textarea.form__textarea.v-textarea(type="text" name="comment" maxlength="225" placeholder="Комментарий")
+      input.form__text.v-password(type="password" name="password" maxlength="225" id="password" placeholder="Введите пароль")
+      input.form__text.v-password(type="password" name="confirm-password" maxlength="225" id="confirm-password" data-bouncer-match="#password" placeholder="Повторите пароль")
+      button.form__submit(type="submit") Отправить
+    
+    p Нажимая на кнопку “Оставить заявку”, вы подтверждаете свое согласие на обработку пользовательских данных
+  
+  section.form__greetings
+    h2 Спасибо, ваша заявка успешно отправлена.
+  
+  section.form__fail
+    h2 Возникла ошибка, повторите попытку позже.
+    button.form__reset Вернуться к форме

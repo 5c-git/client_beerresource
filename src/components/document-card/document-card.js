@@ -1,0 +1,1 @@
+import './document-card.scss';

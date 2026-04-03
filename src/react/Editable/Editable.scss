@@ -1,0 +1,67 @@
+@import 'src/utils/utils';
+
+.Editable {
+  position: relative;
+
+  &__buttons {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 15px;
+    margin: auto;
+  }
+
+  &__edit {
+    @include zero;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    @media(min-width: $desktop-only) {
+
+      &:hover {
+        svg {
+          stroke: $blue-1;
+        }
+      }
+    }
+
+    svg {
+      stroke: $dark-blue-1;
+      transition: 0.3s;
+    }
+  }
+
+  &__delete {
+    @include zero;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    @media(min-width: $desktop-only) {
+
+      &:hover {
+        svg {
+          fill: $blue-1;
+        }
+      }
+    }
+
+    svg {
+      fill: $dark-blue-1;
+      transition: 0.3s;
+    }
+  }
+}

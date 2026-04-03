@@ -1,0 +1,16 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Контакты',
+  })
+
+  +layout-header({
+    contacts: true,
+  })
+
+  include ../components/contacts/contacts
+
+  include ../providers/pages/contacts/RequestContactsProvider/RequestContactsProvider

@@ -1,0 +1,342 @@
+@import 'src/utils/utils';
+
+.layout {
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  @media(max-width: $phone) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  & + .layout .layout__wrapper {
+    padding-top: 60px;
+    border-top: 1px solid $grey-6;
+
+    @media(max-width: $phone) {
+      padding-top: 0;
+      border-top: 0;
+    }
+  }
+
+  .question {
+
+    &:not(:first-of-type) {
+      margin-top: 15px;
+    }
+  }
+
+  &__head {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+
+    @media(max-width: $phone) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $title-font;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 45px;
+
+    @media(max-width: $phone) {
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    em {
+      font-style: normal;
+      color: $blue-1;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: minmax(0 ,1fr);
+    gap: 20px;
+
+    @media(max-width: $phone) {
+      gap: 15px;
+    }
+  }
+
+  &__all {
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    text-decoration: none;
+    color: $grey-7;
+    transition: color 0.3s;
+    align-self: center;
+
+    @media(max-width: $phone) {
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 30px;
+    }
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        color: $blue-1;
+      }
+    }
+  }
+
+  &__all-text {
+    @media(max-width: $phone) {
+      display: none;
+    }
+  }
+
+  &__all-arrow {
+    margin-top: 3px;
+    margin-bottom: -3px;
+    margin-left: 5px;
+
+    @media(max-width: $phone) {
+      margin-top: 5px;
+      margin-bottom: -5px;
+      margin-left: 0;
+    }
+  }
+
+  &__slider {
+    @media(max-width: $desktop) {
+      margin-right: -30px;
+      margin-left: -30px;
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+    @media(max-width: $phone) {
+      margin-right: -15px;
+      margin-left: -15px;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+
+  &__slider-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+  }
+
+  &__slider-item {
+    width: unset !important;
+    margin-right: 20px;
+
+    @media(max-width: $phone) {
+      margin-right: 10px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__scrollbar {
+    display: none;
+
+    @media(max-width: $phone) {
+      display: block;
+      height: 4px;
+      margin-top: 25px;
+      border-radius: 4px;
+      background-color: $grey-6;
+    }
+  }
+
+  &__scrollbar-drag {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    background: $grey-8;
+  }
+
+  &__slider-buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-grid;
+    column-gap: 15px;
+    grid-template-columns: repeat(2, 50px);
+
+    @media(max-width: $phone) {
+      display: none;
+    }
+  }
+
+  &__slider-button {
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $dark-blue-1;
+    border-radius: 50%;
+    font-family: $main-font;
+    font-size: 20px;
+    line-height: 20px;
+    color: $dark-blue-1;
+    background-color: transparent;
+    transition: border-color 0.3s, color 0.3s;
+    user-select: none;
+    cursor: pointer;
+
+    &:not([disabled]):hover {
+      @media(min-width: $desktop-only) {
+        color: $blue-1;
+        border-color: $blue-1;
+      }
+    }
+
+    &:not(.swiper-button-lock) {
+      display: flex;
+    }
+
+    &--disabled {
+      color: $grey-7;
+      border-color: $grey-7;
+      cursor: not-allowed;
+    }
+  }
+
+  &--slider {
+
+    .layout__head {
+      justify-content: flex-start;
+      padding-right: 150px;
+      column-gap: 10px;
+
+      @media(max-width: $phone) {
+        justify-content: space-between;
+        padding-right: unset;
+      }
+    }
+
+    .layout__all {
+      font-size: 36px;
+      line-height: 26px;
+      color: $dark-blue-1;
+
+      @media(max-width: $phone) {
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 30px;
+      }
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          color: $blue-1;
+        }
+      }
+    }
+
+    .layout__all-arrow {
+      margin: 0;
+
+      @media(max-width: $phone) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &--grid {
+
+    .layout__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+      column-gap: 20px;
+      row-gap: 20px;
+
+      @media(max-width: $desktop) {
+        column-gap: 15px;
+      }
+      @media(max-width: $phone) {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        column-gap: 10px;
+        row-gap: 15px;
+      }
+    }
+  }
+
+  &--grid3 {
+
+    .layout__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 30px;
+      row-gap: 40px;
+
+      @media(max-width: $tablet) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media(max-width: $phone) {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+      }
+    }
+  }
+
+  &--grid4 {
+
+    .layout__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 30px;
+      row-gap: 40px;
+
+      @media(max-width: $tablet) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media(max-width: $phone) {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+      }
+    }
+  }
+
+  &--sidebar {
+
+    & + .layout .layout__wrapper {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .layout__content {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      column-gap: 25px;
+
+      @media(max-width: $tablet) {
+        display: block;
+      }
+    }
+
+    .layout__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+      column-gap: 15px;
+      row-gap: 20px;
+
+      @media(max-width: $phone) {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        column-gap: 10px;
+        row-gap: 15px;
+      }
+    }
+  }
+}

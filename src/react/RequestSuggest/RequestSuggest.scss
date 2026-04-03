@@ -1,0 +1,88 @@
+@import 'src/utils/utils';
+
+.RequestSuggest {
+
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+    font-family: $title-font;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 45px;
+    color: $dark-blue-1;
+
+    @media(max-width: $phone) {
+      margin-bottom: 10px;
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    em {
+      font-style: normal;
+      color: $blue-1;
+    }
+  }
+
+  &__form {
+    display: grid;
+    max-width: 600px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    flex-shrink: 0;
+
+    @media(max-width: $tablet) {
+      max-width: 400px;
+      grid-template-columns: 1fr;
+    }
+    @media(max-width: $phone) {
+      max-width: unset;
+    }
+  }
+
+  &__field {
+    position: relative;
+
+    .button {
+      width: 100%;
+    }
+
+    &--wide {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+  }
+
+  &__legal {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: $grey-8;
+    grid-column: span 2;
+    gap: 10px;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      line-height: 18px;
+      order: 1;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: underline;
+      color: $blue-1;
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

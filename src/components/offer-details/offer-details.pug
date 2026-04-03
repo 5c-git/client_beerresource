@@ -1,0 +1,59 @@
+section.offer-details
+  div.container 
+    div.offer-details__control
+      div.offer-details__buttons
+        button(type='button').offer-details__button.offer-details__button--print
+          svg(width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg")
+            use(href='#icon-print')
+          span Распечатать заказ
+        button(type='button').offer-details__button.offer-details__button--repeat
+          svg(width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg")
+            use(href='#icon-repeat')
+          span Повторить заказ
+        button(type='button').offer-details__button.offer-details__button--cancel
+          svg(width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg")
+            use(href='#icon-cancel')
+          span Отменить заказ
+      div.offer-details__total 
+        span.offer-details__total-name Итого:
+        span.offer-details__total-value 20 000 ₽
+    
+    div.offer-details__table
+      div.offer-details__thead
+        p.offer-details__th Товар
+        p.offer-details__th Стоимость
+        p.offer-details__th Количество
+        p.offer-details__th Сумма
+
+      div.offer-details__tbody 
+        div.offer-details__row 
+          p.offer-details__type Солод
+          include ../offer-detail-card/offer-detail-card
+        div.offer-details__row 
+          p.offer-details__type Хмель
+          include ../offer-detail-card/offer-detail-card
+          include ../offer-detail-card/offer-detail-card
+          include ../offer-detail-card/offer-detail-card
+        div.offer-details__row 
+          p.offer-details__type Дрожжи
+          include ../offer-detail-card/offer-detail-card
+          include ../offer-detail-card/offer-detail-card
+
+    div.offer-details__control
+      div.offer-details__buttons
+        button(type='button').offer-details__button.offer-details__button--print
+          svg(width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg")
+            use(href='#icon-print')
+          span Распечатать заказ
+        button(type='button').offer-details__button.offer-details__button--repeat
+          svg(width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg")
+            use(href='#icon-repeat')
+          span Повторить заказ
+        button(type='button').offer-details__button.offer-details__button--cancel
+          svg(width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg")
+            use(href='#icon-cancel')
+          span Отменить заказ
+      div.offer-details__total 
+        span.offer-details__total-name Итого:
+        span.offer-details__total-value 20 000 ₽
+

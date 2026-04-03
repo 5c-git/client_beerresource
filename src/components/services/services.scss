@@ -1,0 +1,17 @@
+@import 'src/utils/utils';
+
+.services {
+
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+
+    @media(max-width: $phone) {
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+    }
+  }
+}

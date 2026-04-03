@@ -1,0 +1,8 @@
+mixin empty(props)
+  section.empty
+    div.container
+      div.empty__wrapper
+        img(src="./assets/images/empty.svg" width='260' height='80' alt="")
+        if props.title
+          h2.empty__title=props.title
+        include ../back-nav/back-nav

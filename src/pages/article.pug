@@ -1,0 +1,40 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Нынче никто не может себе позволить инициировать песнь светлого будущего',
+  })
+    include ../components/back/back
+
+  +layout-header({
+    article: true,
+  })
+
+  +layout({})
+    +article({
+      article: true,
+    })
+  
+  +tags({
+    title: 'Теги',
+  })
+
+  +layout({
+    grid3: true,
+    title: 'Другие статьи',
+    link: 'Смотреть все',
+  })
+    +article-card({
+      src: './assets/images/image-2.jpg',
+      title: 'Классификация сортов и видов пива.',
+    })
+    +article-card({
+      src: './assets/images/image-5.jpg',
+      title: 'Описание и характеристики самых популярных марок',
+    })
+    +article-card({
+      src: './assets/images/image-9.jpg',
+      title: 'Классификация сортов и видов пива.',
+    })

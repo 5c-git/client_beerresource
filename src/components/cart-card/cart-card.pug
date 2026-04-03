@@ -1,0 +1,19 @@
+mixin cart-card(props)
+  if props.deleted
+    article.cart-card.cart-card--deleted
+      button(type='button').cart-card__delete
+        span
+      div.cart-card__alert Товар удален
+      div.cart-card__content
+        div.cart-card__header
+          img(src="./assets/images/item-flag-3.jpg", alt="").cart-card__flag
+          span.cart-card__flag-name Crisp malt
+        a(href="#").cart-card__title Хмель шишковой улучшенный свежий новая партия
+        div.cart-card__back
+          p.cart-card__text
+            a(href="#") Восстановить в корзине
+
+
+  else if props.empty
+    article.cart-card.cart-card--empty
+      p.cart-card__text Вы не добавили <a href="#">наименование раздела</a>.

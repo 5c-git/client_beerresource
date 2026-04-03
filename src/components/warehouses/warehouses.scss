@@ -1,0 +1,73 @@
+@import 'src/utils/utils';
+
+.warehouses {
+  position: relative;
+  padding-bottom: 110px;
+  background-color: $grey-1;
+
+  @media(max-width: $phone) {
+    padding-bottom: 40px;
+  }
+
+  &__content {
+    width: 50%;
+    margin-right: auto;
+
+    @media(max-width: $tablet) {
+      width: unset;
+      margin-right: 0;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+    font-family: $title-font;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 45px;
+    color: $dark-blue-1;
+
+    @media(max-width: $phone) {
+      margin-bottom: 20px;
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    em {
+      font-style: normal;
+      color: $blue-1;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__map {
+    margin-top: 40px;
+
+    @media(max-width: $phone) {
+      margin-top: 20px;
+    }
+  }
+
+  &__footer {
+    margin-top: 60px;
+    text-align: center;
+
+    @media(max-width: $phone) {
+      margin-top: 30px;
+    }
+  }
+
+  &__link {
+    min-width: 277px;
+
+    @media(max-width: $phone) {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+extends ../templates/main-page
+
+block main
+  include ../components/promo/promo
+
+  include ../components/about/about
+
+  include ../components/products/products
+
+  include ../components/how/how
+
+  include ../components/warehouses/warehouses
+
+  include ../components/categories/categories
+
+  include ../components/suggest/suggest
+
+  include ../components/partners/partners
+
+  +line({
+    src: './assets/images/image-1.jpg',
+  })
+  
+  include ../components/seo/seo

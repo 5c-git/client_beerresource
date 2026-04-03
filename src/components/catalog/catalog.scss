@@ -1,0 +1,453 @@
+@import 'src/utils/utils';
+
+.catalog {
+  padding-top: 40px;
+  padding-bottom: 60px;
+
+  @media(max-width: $phone) {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    grid-column-gap: 25px;
+
+    @media(max-width: $tablet) {
+      display: block;
+    }
+  }
+
+  &__sidebar-filter {
+    height: 100%;
+  }
+
+  &__filter-open {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7px;
+    padding-right: 14px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    border: 1px solid $grey-6;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    color: $dark-blue-1;
+    background-color: transparent;
+    grid-column-gap: 5px;
+
+    @media(max-width: $tablet) {
+      display: flex;
+    }
+  }
+
+  &__filter {
+    height: 100%;
+
+    @media(max-width: $tablet) {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 15;
+      width: 100%;
+      height: calc(var(--vh, 1vh) * 100);
+      background-color: $white-1;
+      transition: visibility 0.3s, opacity 0.3s;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &--active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__filter-head {
+    display: none;
+
+    @media(max-width: $tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      padding-right: 30px;
+      padding-bottom: 19px;
+      padding-left: 30px;
+      border-bottom: 1px solid $grey-6;
+    }
+
+    @media(max-width: $phone) {
+      padding-top: 12px;
+      padding-right: 15px;
+      padding-bottom: 11px;
+      padding-left: 15px;
+    }
+  }
+
+  &__filter-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+  }
+
+  &__filter-close {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: $dark-blue-1;
+    background-color: transparent;
+    cursor: pointer;
+
+    @media(max-width: $phone) {
+      width: 35px;
+      height: 35px;
+    }
+
+    span {
+      position: relative;
+      display: inline-block;
+      width: 22px;
+      height: 2px;
+      background: transparent;
+      vertical-align: bottom;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: currentcolor;
+        content: '';
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: currentcolor;
+        content: '';
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__filter-body {
+    height: 100%;
+    background-color: $white-1;
+
+    @media(max-width: $tablet) {
+      height: calc(100% - 60px);
+      margin-left: 0;
+      padding-top: 15px;
+      padding-right: 15px;
+      padding-bottom: 15px;
+      padding-left: 15px;
+      overflow: auto;
+      overflow-x: hidden;
+    }
+  }
+
+  &__main {
+
+    .top-filters {
+      @media(max-width: $tablet) {
+        padding-left: 130px;
+      }
+
+      @media(max-width: $phone) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__sort {
+    margin-bottom: 40px;
+
+    @media(max-width: $tablet) {
+      padding-left: 130px;
+    }
+
+    @media(max-width: $phone) {
+      margin-bottom: 20px;
+      padding-left: 0;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+    grid-column-gap: 15px;
+    grid-row-gap: 20px;
+
+    @media(max-width: $phone) {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      grid-column-gap: 10px;
+      grid-row-gap: 15px;
+    }
+  }
+}
+
+.catalog__list--row {
+  grid-template-columns: 1fr;
+  grid-row-gap: 15px;
+
+  .packaging {
+    display: flex;
+    align-items: flex-end;
+    grid-column-gap: 30px;
+
+    @media(max-width: $desktop) {
+      justify-content: space-between;
+    }
+  }
+
+  .packaging__type {
+    max-width: 245px;
+    flex-grow: 1;
+  }
+
+  .packaging__type-list {
+    right: 0;
+    left: 0;
+  }
+
+  .packaging__count {
+    @media(max-width: $desktop) {
+      margin-left: auto;
+    }
+
+    @media(max-width: $phone) {
+      position: absolute;
+      bottom: 12px;
+      left: 10px;
+    }
+  }
+
+  .packaging__count-name {
+    display: none;
+  }
+
+  .packaging__count-item {
+    margin: 0 !important;
+    padding: 0;
+    border: 0;
+  }
+
+  .packaging__count-buttons {
+    width: 120px;
+
+    @media(max-width: $phone) {
+      width: 78px;
+    }
+  }
+
+  .packaging__count-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+
+    @media(max-width: $phone) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .packaging__count-button--plus:after,
+  .packaging__count-button:before {
+    width: 16px;
+
+    @media(max-width: $phone) {
+      width: 10px;
+    }
+  }
+
+  .item-card {
+    display: flex;
+    height: unset;
+    flex-direction: row;
+    grid-column-gap: 15px;
+
+    @media(max-width: $phone) {
+      min-height: 150px;
+      padding: 9px;
+      border: 1px solid #d6dfe4;
+      border-radius: 10px;
+      grid-column-gap: 10px;
+    }
+
+    &__banner {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      padding: 0;
+      flex-shrink: 0;
+
+      @media(max-width: $desktop) {
+        width: 160px;
+        height: 160px;
+      }
+
+      @media(max-width: $phone) {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    &__banner-front {
+      @media(max-width: $phone) {
+        padding: 10px;
+      }
+    }
+
+    &__content {
+      z-index: unset;
+      display: grid;
+      margin: 0;
+      grid-template-columns: minmax(0, 1fr) 210px;
+      grid-column-gap: 20px;
+      grid-row-gap: 10px;
+      flex: 1 1 100%;
+      grid-template-areas:
+        'header tags'
+        'title title'
+        'desc desc'
+        'hidden footer';
+
+      @media(max-width: $desktop) {
+        grid-template-areas:
+          'header tags'
+          'title title'
+          'desc desc'
+          'hidden hidden'
+          'footer footer';
+      }
+
+      @media(max-width: $phone) {
+        position: initial;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        border: 0;
+        grid-row-gap: 5px;
+      }
+    }
+
+    &__tags {
+      position: initial;
+      width: 210px;
+      justify-content: flex-end;
+      transform: unset;
+      grid-area: tags;
+
+      @media(max-width: $phone) {
+        width: unset;
+        justify-content: flex-start;
+        order: 1;
+      }
+    }
+
+    &__hidden {
+      max-height: unset !important;
+      visibility: initial;
+      opacity: 1;
+      overflow: initial;
+      grid-area: hidden;
+      align-self: flex-end;
+
+      @media(max-width: $tablet) {
+        width: 100%;
+        order: 5;
+      }
+    }
+
+    &__header {
+      margin: 0;
+      grid-area: header;
+
+      @media(max-width: $phone) {
+        order: 2;
+      }
+    }
+
+    &__title {
+      height: unset;
+      margin: 0;
+      grid-area: title;
+
+      @media(max-width: $phone) {
+        order: 3;
+      }
+    }
+
+    &__description {
+      grid-area: desc;
+      margin-top: 0;
+
+      @media(max-width: $phone) {
+        order: 4;
+      }
+    }
+
+    &__description-tile {
+      display: none;
+    }
+
+    &__description-table {
+      display: table;
+    }
+
+    &__note {
+      margin-top: 0;
+    }
+
+    &__footer {
+      width: 210px;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      grid-area: footer;
+      align-self: flex-end;
+
+      @media(max-width: $desktop) {
+        width: unset;
+        order: 6;
+      }
+
+      @media(max-width: $phone) {
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-end;
+        flex-grow: 1;
+      }
+    }
+
+    &__buttons {
+      @media(max-width: $phone) {
+        margin-top: 0;
+        grid-column-gap: 5px;
+      }
+    }
+
+    &--to-order {
+      @media(max-width: $phone) {
+        background-color: $grey-1;
+      }
+    }
+  }
+}

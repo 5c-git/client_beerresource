@@ -1,0 +1,101 @@
+@import 'src/utils/utils';
+
+.share {
+  position: relative;
+
+  &__list {
+    display: grid;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-auto-flow: column;
+    grid-column-gap: 10px;
+
+    @media(max-width: $tablet) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 40px;
+    height: 40px;
+    color: $dark-blue-1;
+    transition: background-image 0.3s;
+    cursor: pointer;
+
+    &--fb {
+      background-image: url('../assets/images/icon-fb.svg');
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          background-image: url('../assets/images/icon-fb--hover.svg');
+        }
+      }
+    }
+
+    &--vk {
+      background-image: url('../assets/images/icon-vk.svg');
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          background-image: url('../assets/images/icon-vk--hover.svg');
+        }
+      }
+    }
+
+    &--insta {
+      background-image: url('../assets/images/icon-insta.svg');
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          background-image: url('../assets/images/icon-insta--hover.svg');
+        }
+      }
+    }
+
+    &--copy {
+      background-image: url('../assets/images/icon-copy.svg');
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          background-image: url('../assets/images/icon-copy--hover.svg');
+        }
+      }
+    }
+  }
+
+  &__message {
+    position: absolute;
+    right: 0;
+    margin-top: 6px;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    background-color: $white-1;
+    transition: visibility 0.3s, opacity 0.3s;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0 25px 40px rgba(17, 17, 17, 20%);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+
+    @media(max-width: $tablet) {
+      right: unset;
+      left: 0;
+    }
+
+    &--active {
+      visibility: initial;
+      opacity: unset;
+    }
+  }
+}

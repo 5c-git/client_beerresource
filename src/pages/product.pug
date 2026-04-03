@@ -1,0 +1,17 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Солод шишковой улучшенный свежий свежий',
+  })
+    include ../components/back/back
+
+  include ../components/product/product
+
+  include ../providers/pages/product/RequestProductProvider/RequestProductProvider
+  
+  +watched({
+    title: 'Вы смотрели',
+  })

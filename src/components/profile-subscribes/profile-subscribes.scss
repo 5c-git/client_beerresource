@@ -1,0 +1,139 @@
+@import 'src/utils/utils';
+
+.profile-subscribes {
+
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 15px;
+  }
+
+  &__field {
+    position: relative;
+  }
+
+  &__buttons {
+    display: grid;
+    margin-top: 15px;
+    grid-template-columns: repeat(2, 150px);
+    grid-auto-flow: column;
+    grid-column-gap: 20px;
+
+    @media(max-width: $phone) {
+      grid-template-columns: repeat(2, 140px);
+      grid-column-gap: 10px;
+    }
+
+    .button {
+      padding-right: 19px;
+      padding-left: 19px;
+    }
+  }
+
+  &__checkbox {}
+
+  &__label {
+    position: relative;
+    display: flex;
+    padding-left: 26px;
+    font-size: 15px;
+    line-height: 20px;
+    cursor: pointer;
+
+    @media(max-width: $phone) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__input {
+
+    &:checked + .profile-subscribes__label-box {
+      background-color: $blue-1;
+      border-color: $blue-1;
+
+      &:before {
+        // position: absolute;
+        // top: 1px;
+        // left: -2px;
+        // width: 3px;
+        // height: 7px;
+        // border-right: 2px solid transparent;
+        // border-bottom: 2px solid transparent;
+        // transform: rotate(45deg);
+        // transform-origin: 0 100%;
+        // box-sizing: content-box;
+        // animation: checkbox-check 125ms 0.25s forwards;
+        // content: '';
+        position: absolute;
+        top: 1px;
+        left: 5px;
+        width: 4px;
+        height: 8px;
+        border-right: 2px solid #ffffff;
+        border-bottom: 2px solid #ffffff;
+        transform: rotate(45deg);
+        box-sizing: content-box;
+        content: '';
+      }
+    }
+  }
+
+  &__label-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid $grey-6;
+    border-radius: 4px;
+    background-color: $white-1;
+    transition: all 0.3s;
+  }
+}
+
+@keyframes checkbox-check {
+
+  0% {
+    width: 0;
+    height: 0;
+    border-color: $white-1;
+    transform: translateZ(0) rotate(45deg);
+  }
+
+  33% {
+    width: 0.2em;
+    height: 0;
+    transform: translateZ(0) rotate(45deg);
+  }
+
+  to {
+    width: 0.2em;
+    height: 0.5em;
+    border-color: $white-1;
+    transform: translate3d(0, -0.5em, 0) rotate(45deg);
+  }
+}
+@keyframes checkbox-check-some {
+
+  0% {
+    width: 0.2em;
+    height: 0.5em;
+    border-color: $white-1;
+    transform: translate3d(0, -0.5em, 0) rotate(45deg);
+  }
+
+  33% {
+    width: 0.1em;
+    height: 0.5em;
+    border-color: $white-1;
+    transform: translate3d(0, -0.55em, 0) rotate(60deg);
+  }
+
+  to {
+    width: 0;
+    height: 0.5em;
+    border-color: $white-1;
+    transform: translate3d(0, -0.6em, 0) rotate(90deg);
+  }
+}

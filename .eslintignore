@@ -1,0 +1,5 @@
+/*.js
+/src/*.js
+/src/providers/*.js
+/src/react/*/*.js
+/src/libsJQ/*/*.js

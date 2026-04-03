@@ -1,0 +1,73 @@
+@import 'src/utils/utils';
+
+.advantages {
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  @media(max-width: $phone) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .advantage-card__image:after {
+    position: absolute;
+    bottom: -10px;
+    left: 15px;
+    z-index: 5;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 90px;
+    color: $white-1;
+    content: counter(lvl1);
+
+    @media(max-width: $phone) {
+      bottom: -6px;
+      left: 10px;
+      font-size: 66px;
+      line-height: 60px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 40px;
+    font-family: $title-font;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 45px;
+
+    @media(max-width: $phone) {
+      margin-bottom: 20px;
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    em {
+      font-style: normal;
+      color: $blue-1;
+    }
+  }
+
+  &__list {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-column-gap: 30px;
+    grid-row-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    counter-reset: lvl1;
+
+    @media(max-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media(max-width: $phone) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 20px;
+    }
+  }
+
+  &__item {
+    counter-increment: lvl1;
+  }
+}

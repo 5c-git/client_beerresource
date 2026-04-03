@@ -1,0 +1,15 @@
+mixin promotion-card(props)
+  article.promotion-card
+    a(href="#").promotion-card__image
+      <!-- Рекомендуемые размеры 380/215. -->
+      if props.src
+        img(src=props.src alt="")
+
+    ul.promotion-card__stats
+      li.promotion-card__stats-item
+        time 02.11.2020
+      li.promotion-card__stats-item
+        time 12.11.2021
+    
+    h3.promotion-card__title
+      a(href="#")=props.title

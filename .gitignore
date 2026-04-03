@@ -1,0 +1,6 @@
+.vscode
+*.ai
+*.sublime*
+node_modules/
+npm-debug.*
+Thumbs.db

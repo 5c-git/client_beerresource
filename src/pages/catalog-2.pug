@@ -1,0 +1,56 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Солод Crisp malt мешок 25 кг до 500 юаней',
+  })
+    p Товары 1—36 из 1143
+
+  +banner({
+    list: [
+      {
+        srcset: './assets/images/banner/banner-1.jpg',
+        src: './assets/images/banner/banner-1.jpg',
+        title: 'Доставим за 1-2 часа',
+        text: 'В любую точку России',
+      },
+      {
+        srcset: './assets/images/banner/banner-2.jpg',
+        src: './assets/images/banner/banner-2.jpg',
+        title: 'Доставим за 1-2 часа',
+        text: 'В любую точку России',
+      },
+      {
+        srcset: './assets/images/banner/banner-3.jpg',
+        src: './assets/images/banner/banner-3.jpg',
+        title: 'Доставим за 1-2 часа',
+        text: 'В любую точку России',
+      },
+      {
+        srcset: './assets/images/banner/banner-4.jpg',
+        src: './assets/images/banner/banner-4.jpg',
+        title: 'Доставим за 1-2 часа',
+        text: 'В любую точку России',
+      },
+      {
+        srcset: './assets/images/banner/banner-5.jpg',
+        src: './assets/images/banner/banner-5.jpg',
+        title: 'Доставим за 1-2 часа',
+        text: 'В любую точку России',
+      }
+    ],
+  })
+
+  include ../components/catalog/catalog
+
+  +watched({
+    title: 'Вы смотрели',
+  })
+
+  +line({
+    src: './assets/images/image-17.jpg',
+  })
+  
+  include ../components/seo/seo

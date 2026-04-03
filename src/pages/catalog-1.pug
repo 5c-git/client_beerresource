@@ -1,0 +1,32 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Каталог товаров',
+  })
+
+  include ../components/catalog-nav/catalog-nav
+
+  +layout({
+    slider: true,
+    title: 'Новинки',
+    link: 'Смотреть все',
+  })
+
+  +layout({
+    slider: true,
+    title: 'Хиты продаж',
+    link: 'Смотреть все',
+  })
+
+  +watched({
+    title: 'Вы смотрели',
+  })
+
+  +line({
+    src: './assets/images/image-2.jpg',
+  })
+  
+  include ../components/seo/seo

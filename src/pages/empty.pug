@@ -1,0 +1,16 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Корзина/Акции/Статьи/Избранное/Сравнение',
+  })
+
+  +empty({
+    title: 'Здесь пока ничего нет.',
+  })
+
+  +watched({
+    title: 'Может заинтересовать',
+  })

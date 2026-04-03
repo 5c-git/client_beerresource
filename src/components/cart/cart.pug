@@ -1,0 +1,90 @@
+section.cart
+  div.container
+    div.cart__total
+      include ../cart-amount/cart-amount
+
+    div.cart__block
+      +cart-block({
+        title: 'Солод',
+        weight: 'Вес: 60 кг',
+        amount: 'Сумма: 60 000 ₽',
+      })
+        +item-card({
+          cart2: true,
+          front: './assets/images/promo-picture-2.png',
+          back: './assets/images/item-background-2.jpg',
+          flag: './assets/images/item-flag-2.jpg',
+          title: 'Солод шишковой',
+        })
+        +item-card({
+          cart: true,
+          front: './assets/images/promo-picture-1.png',
+          back: './assets/images/item-background-1.jpg',
+          flag: './assets/images/item-flag-1.jpg',
+          title: 'Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами',
+        })
+        +cart-card({
+          deleted: true,
+        })
+        +item-card({
+          cart2: true,
+          front: './assets/images/promo-picture-3.png',
+          back: './assets/images/item-background-1.jpg',
+          flag: './assets/images/item-flag-3.jpg',
+          title: 'Семечко хмеля Емеля',
+        })
+        +item-card({
+          cart: true,
+          front: './assets/images/promo-picture-4.png',
+          flag: './assets/images/item-flag-1.jpg',
+          title: 'Мешок белого цемента',
+        })
+
+    div.cart__block
+      +cart-block({
+        title: 'Хмель',
+        weight: 'Вес: 120 кг',
+        amount: 'Сумма: 20 000 ₽',
+      })
+        +item-card({
+          cart: true,
+          front: './assets/images/promo-picture-5.png',
+          back: './assets/images/item-background-2.jpg',
+          flag: './assets/images/item-flag-1.jpg',
+          title: 'Модная импортная продукция, которую никогда не увидим больше',
+        })
+        +item-card({
+          cart: true,
+          front: './assets/images/promo-picture-6.png',
+          back: './assets/images/item-background-1.jpg',
+          flag: './assets/images/item-flag-3.jpg',
+          title: 'Просто бочка',
+        })
+        +item-card({
+          cart: true,
+          front: './assets/images/promo-picture-1.png',
+          back: './assets/images/item-background-1.jpg',
+          flag: './assets/images/item-flag-1.jpg',
+          title: 'Хмель шишковой улучшенный свежий выращенный самыми лучшими специалистами',
+        })
+
+    div.cart__block
+      +cart-block({
+        title: 'Дрожжи',
+        weight: 'Вес: 840 кг',
+        amount: 'Сумма: 130 000 ₽',
+      })
+        +item-card({
+          cart: true,
+          front: './assets/images/promo-picture-5.png',
+          back: './assets/images/item-background-2.jpg',
+          flag: './assets/images/item-flag-3.jpg',
+          title: 'Модная продукция',
+        })
+
+    div.cart__missed
+      include ../cart-missed/cart-missed
+
+
+    div.cart__total
+      include ../cart-amount/cart-amount

@@ -1,0 +1,27 @@
+mixin article-card(props)
+  article.article-card
+    ul.article-card__stats
+      li.article-card__stats-item
+        time 12.11.2020
+      li.article-card__stats-item
+        a(href="#").article-card__category Название категории
+
+    a(href="#").article-card__image
+      <!-- Рекомендуемые размеры 380/300. -->
+      if props.src
+        img(src=props.src alt="")
+    
+    h3.article-card__title
+      a(href="#")=props.title
+
+    ul.article-card__tags
+      li.article-card__tags-item 
+        a(href="#").article-card__tags-link #бухуслуги 
+      li.article-card__tags-item 
+        a(href="#").article-card__tags-link #сорт
+      li.article-card__tags-item 
+        a(href="#").article-card__tags-link #пиво
+      li.article-card__tags-item 
+        a(href="#").article-card__tags-link #стакан
+      li.article-card__tags-item 
+        a(href="#").article-card__tags-link #производство

@@ -1,0 +1,55 @@
+@import 'src/utils/utils';
+
+.not-found {
+  padding-top: 180px;
+  padding-bottom: 260px !important;
+
+  @media(max-width: $desktop) {
+    padding-top: 120px;
+    padding-bottom: 150px !important;
+  }
+  @media(max-width: $tablet) {
+    padding-top: 70px;
+    padding-bottom: 70px !important;
+  }
+  @media(max-width: $phone) {
+    padding-top: 40px;
+    padding-bottom: 40px !important;
+  }
+
+  &__wrapper {
+    text-align: center;
+  }
+
+  &__img {
+    display: block;
+    width: 284px;
+    height: auto;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+
+    @media(max-width: $phone) {
+      width: 200px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: $title-font;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 45px;
+
+    @media(max-width: $phone) {
+      font-size: 35px;
+      line-height: 35px;
+    }
+  }
+
+  &__post-title {
+    margin: 0;
+  }
+}

@@ -1,0 +1,141 @@
+@import 'src/utils/utils';
+
+.cart-amount {
+  display: flex;
+
+  @media(max-width: $tablet) {
+    flex-direction: column;
+  }
+
+  &__table {
+    padding-top: 14px;
+    padding-right: 19px;
+    padding-bottom: 14px;
+    padding-left: 19px;
+    border: 1px solid $grey-6;
+    border-right: 0;
+    border-radius: 10px 0 0 10px;
+
+    @media(max-width: $tablet) {
+      border: 1px solid $grey-6;
+      border-bottom: 0;
+      border-radius: 10px 10px 0 0;
+    }
+    @media(max-width: $phone) {
+      padding-top: 9px;
+      padding-right: 9px;
+      padding-bottom: 9px;
+      padding-left: 9px;
+    }
+  }
+
+  &__tr {
+    @media(max-width: $phone) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__td {
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: left;
+    color: $grey-8;
+    white-space: nowrap;
+
+    @media(max-width: $phone) {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      padding: 0;
+    }
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+
+      @media(max-width: $phone) {
+        margin-bottom: 0;
+      }
+    }
+
+    &:not(:first-of-type) {
+      border-left: 1px solid $grey-6;
+
+      @media(max-width: $phone) {
+        border-left: 0;
+      }
+    }
+
+    &--total {
+      width: 100%;
+      border-left: 0 !important;
+      text-align: right;
+      color: $dark-blue-1;
+
+      .cart-amount__td-title {
+        @media(max-width: $phone) {
+          font-weight: 700;
+        }
+      }
+
+      .cart-amount__td-value {
+        justify-content: flex-end;
+
+        @media(max-width: $phone) {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  &__td-title {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+    }
+  }
+
+  &__td-value {
+    display: flex;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+    }
+
+    sup {
+      font-size: 14px;
+      line-height: 20px;
+      color: $grey-8;
+      transform: translateY(-5px);
+
+      @media(max-width: $tablet) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__submit {
+    min-width: 234px;
+    border-radius: 0 10px 10px 0;
+    flex-shrink: 0;
+
+    @media(max-width: $tablet) {
+      border-radius: 0 0 10px 10px;
+    }
+  }
+}

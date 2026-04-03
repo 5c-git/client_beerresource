@@ -1,0 +1,6 @@
+mixin zoom(props)
+  div.zoom
+    <!-- В ссылке ставится картинка для детального просмотра. Рекомендуемые размеры 1000х1000. -->
+    div(data-link=props.big tabindex='-1').zoom__big 
+      <!-- Тут ставится картинка для превью. Рекомендуемые размеры 350х350. -->
+      img(src=props.small alt="").zoom__small

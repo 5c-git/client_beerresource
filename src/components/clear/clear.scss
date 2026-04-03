@@ -1,0 +1,46 @@
+@import 'src/utils/utils';
+
+.clear {
+
+  &__button {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: $main-font;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    color: $grey-7;
+    background-color: transparent;
+    transition: color 0.3s;
+    grid-column-gap: 5px;
+    column-gap: 5px;
+    cursor: pointer;
+
+    @media(max-width: $tablet) {
+      font-size: 0;
+      line-height: 0;
+      color: $dark-blue-1;
+      grid-column-gap: 0;
+      column-gap: 0;
+    }
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        color: $blue-1;
+      }
+    }
+
+    svg {
+      stroke: currentColor;
+      flex-shrink: 0;
+
+      @media(max-width: $phone) {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}

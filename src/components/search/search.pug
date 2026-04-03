@@ -1,0 +1,73 @@
+section.search
+  div.container 
+    form(action='#' method='post').search__form 
+      div.search__field
+        input(type='text' placeholder='Поиск' required).search__input
+        button(type='button' aria-labet='Очистить поле поиска.').search__clear
+          span
+      button(type='submit').button.search__submit Искать
+
+    div.search__inner
+      div.search__history
+        div.search__block
+          span.search__block-name Вы искали:
+          ul.search__list 
+            li.search__item 
+              a(href="#").search__link Дрожжи пивоварные 
+            li.search__item 
+              a(href="#").search__link Хмель односолодовый
+            li.search__item 
+              a(href="#").search__link Кега для брожения
+            li.search__item 
+              a(href="#").search__link Crisp
+            li.search__item 
+              a(href="#").search__link 400 EBC
+            li.search__item 
+              a(href="#").search__link Вот вам яркий пример современных пивных закусок
+            li.search__item 
+              a(href="#").search__link Как варить пиво
+
+      div.search__result
+        div.search__block
+          span.search__block-name Категория:
+          ul.search__list 
+            li.search__item 
+              a(href="#").search__link Дрожжи пивоварные 
+            li.search__item 
+              a(href="#").search__link Хмель односолодовый
+            li.search__item 
+              a(href="#").search__link Кега для брожения
+        div.search__block
+          span.search__block-name Категория:
+          ul.search__list 
+            li.search__item 
+              a(href="#").search__link Crisp
+            li.search__item 
+              a(href="#").search__link 400 EBC
+            li.search__item 
+              a(href="#").search__link Вот вам яркий пример современных пивных закусок
+        div.search__block
+          span.search__block-name Категория:
+          ul.search__list 
+            li.search__item 
+              a(href="#").search__link Как варить пиво
+            li.search__item 
+              a(href="#").search__link Crisp
+            li.search__item 
+              a(href="#").search__link Кега для брожения
+        div.search__block
+          span.search__block-name Очень длинные теги, чтобы получилось две строки:
+          ul.search__list 
+            li.search__item 
+              a(href="#").search__link #Тег 1
+            li.search__item 
+              a(href="#").search__link #Тег 2
+            li.search__item 
+              a(href="#").search__link #Тег 3
+        div.search__block.search__block--last
+          span.search__block-name
+          ul.search__list 
+            li.search__item 
+              a(href="#").search__link Все результаты&nbsp;→
+
+    h2.search__title По запросу <em>йукмуймуймуйм</em> найдено:

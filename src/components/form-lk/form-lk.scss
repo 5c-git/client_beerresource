@@ -1,0 +1,406 @@
+@import 'src/utils/utils';
+
+.form-lk {
+  position: relative;
+  max-width: 420px;
+  margin: 0;
+
+  @media(max-width: $phone) {
+    max-width: 100%;
+  }
+
+  &__title {
+    margin: 0 0 30px;
+    padding: 0;
+    font-family: $title-font;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 45px;
+    color: $grey-8;
+
+    @media(max-width: $phone) {
+      margin-bottom: 15px;
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+
+  &__fieldset {
+    position: relative;
+    min-width: auto;
+    max-width: 460px;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    border: none;
+
+    @media(max-width: $phone) {
+      max-width: 100%;
+      margin: 0;
+    }
+
+    &--wide {
+      max-width: 100%;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+
+    &--narrow {
+      width: 50%;
+
+      @media(max-width: $tablet) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__legend {
+    margin-bottom: 15px;
+    padding: 0;
+    font-family: $main-font;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+
+    @media(max-width: $phone) {
+      margin: 15px 0;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+
+    @media(max-width: $tablet) {
+      display: block;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 14px;
+    line-height: 20px;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+    }
+
+    span {
+      color: $light-red-1;
+    }
+
+    &.error {
+      color: $red-1;
+    }
+  }
+
+  &__item {
+    display: block;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 12px 15px 11px;
+    border: 1px solid $grey-6;
+    border-radius: 8px;
+    font: inherit;
+    color: $dark-blue-1;
+    text-overflow: ellipsis;
+    outline: none;
+
+    @media(max-width: $phone) {
+      font-size: 14px;
+    }
+
+    &::placeholder {
+      color: $grey-8;
+    }
+
+    &--select {
+      padding: 0;
+      border: none;
+    }
+
+    &--limited {
+      padding: 12px 115px 11px 15px;
+
+      @media(max-width: $phone) {
+        padding: 12px 45px 11px 15px;
+      }
+
+      &:read-only {
+        padding: 12px 45px 11px 15px;
+      }
+    }
+
+    &.error {
+      border: 1px solid $red-1;
+      color: $grey-8;
+    }
+  }
+
+  &__add-contact {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    column-gap: 20px;
+
+    @media(max-width: $phone) {
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 20px;
+      color: $grey-8;
+
+      @media(max-width: $phone) {
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__button-personal {
+    position: absolute;
+    top: 23px;
+    right: 10px;
+    display: flex;
+    width: auto;
+    min-height: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: none;
+    font: inherit;
+    font-size: 14px;
+    text-decoration: underline;
+    color: $blue-1;
+    background-color: transparent;
+    transition: color 0.3s;
+    cursor: pointer;
+
+    @media(max-width: $phone) {
+      min-height: 45px;
+    }
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        color: $blue-1;
+        background-color: none;
+      }
+    }
+
+    svg {
+      stroke: currentcolor;
+    }
+
+    &--edit {
+      right: 0;
+      width: 50px;
+      color: $dark-blue-1;
+
+      @media(max-width: $phone) {
+        position: absolute;
+        width: 45px;
+      }
+    }
+
+    &--save {
+      top: 35px;
+      right: 20px;
+      min-height: auto;
+      padding: 0;
+      color: $dark-blue-1;
+
+      @media(max-width: $phone) {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 12px 20px 13px;
+        border-radius: 8px;
+        font-weight: 500;
+        line-height: 20px;
+        text-decoration: none;
+        color: $white-1;
+        background-color: $dark-blue-1;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        outline: none;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      &:disabled {
+        @media(max-width: $phone) {
+          color: #7f8899;
+          cursor: not-allowed;
+        }
+      }
+
+      &:not(:disabled):hover {
+        @media(min-width: $desktop-only) {
+          color: $blue-1;
+        }
+      }
+
+      span {
+        @media(min-width: $phone) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__button-delete {
+    position: absolute;
+    top: -53px;
+    right: 0;
+    width: auto;
+    min-height: 50px;
+    padding: 0;
+    padding-left: 25px;
+    border: none;
+    font: inherit;
+    font-size: 14px;
+    text-decoration: none;
+    color: $grey-8;
+    background-color: transparent;
+    transition: color 0.3s;
+    cursor: pointer;
+
+    @media(max-width: $phone) {
+      top: -45px;
+      right: -6px;
+      width: 40px;
+      min-height: 40px;
+      font-size: 0;
+    }
+
+    & svg {
+      position: absolute;
+      top: 15px;
+      left: 0;
+      stroke: currentcolor;
+
+      @media(max-width: $phone) {
+        top: 7px;
+        left: 8px;
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        color: $blue-1;
+        background-color: none;
+      }
+    }
+  }
+
+  &__button-add {
+    @media(max-width: $phone) {
+      width: 100%;
+      min-height: 45px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__button-cancel {
+    min-width: 150px;
+
+    @media(max-width: $phone) {
+      min-width: calc(50% - 5px);
+    }
+
+    &--mobile {
+      @media(max-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+
+  &__button-forward {
+    min-width: 150px;
+
+    @media(max-width: $phone) {
+      min-width: calc(50% - 5px);
+    }
+  }
+
+  &__button-back {
+    min-width: 150px;
+    margin-right: auto;
+
+    @media(max-width: $tablet) {
+      margin: 0;
+      margin-left: auto;
+    }
+    @media(max-width: $phone) {
+      min-width: calc(50% - 5px);
+    }
+  }
+
+  &__button-save {
+    min-width: 150px;
+
+    @media(max-width: $phone) {
+      min-width: calc(50% - 5px);
+    }
+  }
+
+  &__control {
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+    padding-top: 30px;
+    border-top: 1px solid $grey-6;
+    column-gap: 20px;
+
+    @media(max-width: $phone) {
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      border: none;
+      column-gap: 10px;
+    }
+  }
+
+  &__add-organization {
+    display: none;
+    margin-right: -15px;
+    margin-bottom: 20px;
+    margin-left: -15px;
+
+    @media(max-width: $phone) {
+      position: relative;
+      display: flex;
+      width: auto;
+      min-height: 60px;
+      align-items: center;
+      border-bottom: 1px solid $grey-6;
+      background-color: $white-1;
+    }
+  }
+
+  &__link {
+    display: none;
+
+    @media(max-width: $phone) {
+      display: initial;
+      padding-left: 15px;
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}

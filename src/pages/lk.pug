@@ -1,0 +1,10 @@
+extends ../templates/default
+
+block main
+  section.background
+    include ../components/breadcrumbs/breadcrumbs
+
+    +profile-page({})
+      +profile-react({
+        personalData: true,
+      })

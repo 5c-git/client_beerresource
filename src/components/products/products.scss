@@ -1,0 +1,104 @@
+@import 'src/utils/utils';
+
+.products {
+  position: relative;
+  padding-top: 110px;
+  padding-bottom: 110px;
+  background-color: $white-1;
+
+  @media(max-width: $phone) {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 60px;
+    padding: 0;
+    font-family: $title-font;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 45px;
+    color: $dark-blue-1;
+
+    @media(max-width: $tablet) {
+      margin-bottom: 30px;
+    }
+    @media(max-width: $phone) {
+      margin-bottom: 20px;
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    em {
+      font-style: normal;
+      color: $blue-1;
+    }
+  }
+
+  &__list {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 20px;
+
+    @media(max-width: $desktop) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media(max-width: $tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media(max-width: $phone) {
+      grid-column-gap: 10px;
+    }
+    @media(max-width: 469px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: 20px;
+
+    &:nth-child(5) {
+      @media(max-width: $desktop) {
+        display: none;
+      }
+    }
+
+    &:nth-child(4) {
+      @media(max-width: $tablet) {
+        display: none;
+      }
+    }
+
+    &:nth-child(3) {
+      @media(max-width: 469px) {
+        display: none;
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: 100px;
+    text-align: center;
+
+    @media(max-width: $tablet) {
+      margin-top: 60px;
+    }
+    @media(max-width: $phone) {
+      margin-top: 30px;
+    }
+  }
+
+  &__link {
+    min-width: 277px;
+
+    @media(max-width: $phone) {
+      width: 100%;
+    }
+  }
+}

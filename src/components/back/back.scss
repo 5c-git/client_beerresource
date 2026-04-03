@@ -1,0 +1,23 @@
+@import 'src/utils/utils';
+
+.back {
+  @media print {
+    display: none;
+  }
+
+  &__link {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    text-decoration: none;
+    color: $grey-7;
+    transition: color 0.3s;
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        color: $blue-1;
+      }
+    }
+  }
+}

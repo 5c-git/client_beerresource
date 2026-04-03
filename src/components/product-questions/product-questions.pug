@@ -1,0 +1,12 @@
+section.product-questions
+  div.product-questions__main 
+    h2.product-questions__title Вопросы
+      sup 12
+    include ../question-card/question-card
+    include ../pagination/pagination
+
+  div.product-questions__sidebar 
+    a(href='#RequestProductProvider').button.product-questions__button 
+      svg(width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg")
+        use(href='#icon-pencil')
+      span Задать вопрос

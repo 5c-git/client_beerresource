@@ -1,0 +1,74 @@
+div.header-search
+  div.header-search__wrapper
+    div.container
+      form(action='#' method='post').header-search__form
+        div.header-search__field
+          input(type="text" placeholder='Введите искомый запрос' required).header-search__input
+          button(type='button' aria-labet='Очистить поле поиска.').header-search__clear
+            span
+        button(type='submit').button.header-search__submit Искать
+        button(type='button').button.button--transparent.header-search__close Закрыть
+
+      div.header-search__history
+        div.header-search__block
+          span.header-search__block-name Вы искали:
+          ul.header-search__list 
+            li.header-search__item 
+              a(href="#").header-search__link Дрожжи пивоварные 
+            li.header-search__item 
+              a(href="#").header-search__link Хмель односолодовый
+            li.header-search__item 
+              a(href="#").header-search__link Кега для брожения
+            li.header-search__item 
+              a(href="#").header-search__link Crisp
+            li.header-search__item 
+              a(href="#").header-search__link 400 EBC
+            li.header-search__item 
+              a(href="#").header-search__link Вот вам яркий пример современных пивных закусок
+            li.header-search__item 
+              a(href="#").header-search__link Как варить пиво
+
+      div.header-search__result
+        div.header-search__block
+          span.header-search__block-name Категория:
+          ul.header-search__list 
+            li.header-search__item 
+              a(href="#").header-search__link Дрожжи пивоварные 
+            li.header-search__item 
+              a(href="#").header-search__link Хмель односолодовый
+            li.header-search__item 
+              a(href="#").header-search__link Кега для брожения
+        div.header-search__block
+          span.header-search__block-name Категория:
+          ul.header-search__list 
+            li.header-search__item 
+              a(href="#").header-search__link Crisp
+            li.header-search__item 
+              a(href="#").header-search__link 400 EBC
+            li.header-search__item 
+              a(href="#").header-search__link Вот вам яркий пример современных пивных закусок
+        div.header-search__block
+          span.header-search__block-name Категория:
+          ul.header-search__list 
+            li.header-search__item 
+              a(href="#").header-search__link Как варить пиво
+            li.header-search__item 
+              a(href="#").header-search__link Crisp
+            li.header-search__item 
+              a(href="#").header-search__link Кега для брожения
+        div.header-search__block
+          span.header-search__block-name Очень длинные теги, чтобы получилось две строки:
+          ul.header-search__list 
+            li.header-search__item 
+              a(href="#").header-search__link #Тег 1
+            li.header-search__item 
+              a(href="#").header-search__link #Тег 2
+            li.header-search__item 
+              a(href="#").header-search__link #Тег 3
+        div.header-search__block.header-search__block--last
+          span.header-search__block-name
+          ul.header-search__list 
+            li.header-search__item 
+              a(href="#").header-search__link Все результаты&nbsp;→
+
+  div.header-search__overlay

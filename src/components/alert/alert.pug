@@ -1,0 +1,227 @@
+mixin alert(props)
+
+  if props.notify
+    section.alert.alert--green.alert--notify
+      div.alert__container
+        p.alert__title Заявка отправлена!
+        p.alert__text Мы&nbsp;сообщим вам, как только товар поступит на&nbsp;склад.
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.request
+    section.alert.alert--green.alert--request
+      div.alert__container
+        p.alert__title Заявка отправлена!
+        p.alert__text Наш менеджер свяжется с&nbsp;вами и&nbsp;проконсультирует о&nbsp;дальнейших шагах.
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.error
+    section.alert.alert--red.alert--error
+      div.alert__container
+        p.alert__title Ошибка!
+        p.alert__text Что-то пошло не так, повторите попытку позже.
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.subscribe
+    section.alert.alert--green.alert--subscribe
+      div.alert__container
+        p.alert__text Вы успешно подписались на рассылку!
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.compare
+    section.alert.alert--green.alert--compare
+      div.alert__container
+        p.alert__text Товар добавлен в сравнение!
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.discompare
+    section.alert.alert--green.alert--discompare
+      div.alert__container
+        p.alert__text Товар удалён из сравнения!
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.deleted
+    section.alert.alert--green.alert--organization-deleted
+      div.alert__container
+        p.alert__text Организация удалена!
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.like
+    section.alert.alert--green.alert--like
+      div.alert__container
+        p.alert__text Товар добавлен в избранное!
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.dislike
+    section.alert.alert--green.alert--dislike
+      div.alert__container
+        p.alert__text Товар удалён из избранного!
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.cart
+    section.alert.alert--green.alert--cart
+      div.alert__container
+        p.alert__text Товар добавлен в корзину!
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.discart
+    section.alert.alert--green.alert--discart
+      div.alert__container
+        p.alert__text Товар удалён из корзины!
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.confirmEmail
+    section.alert.alert--grey.alert--confirm-email
+      div.alert__container
+        p.alert__title Подтвердите адрес e&#8209;mail!
+        p.alert__text Ссылка для подтверждения отправлена на&nbsp;
+          a.alert__link (href='#') name@site.ru.
+        p.alert__text Если ссылка не&nbsp;пришла, то&nbsp;проверьте папку &laquo;Спам&raquo;.
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.repeat
+    section.alert.alert--green.alert--repeat
+      div.alert__container
+        p.alert__text Товары из заказа №11 добавлены в корзину.
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.cancel
+    section.alert.alert--green.alert--cancel
+      div.alert__container
+        p.alert__text Заказ отменён!
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.save
+    section.alert.alert--green.alert--save
+      div.alert__container
+        p.alert__text Изменения сохранены!
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.mobileSuccess
+    section.alert.alert--green.alert--mobileSuccess
+      div.alert__container
+        p.alert__text Мобильный телефон успешно изменен.
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.fio
+    section.alert.alert--green.alert--fio
+      div.alert__container
+        p.alert__text Фамилия, Имя успешно изменены.
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.email
+    section.alert.alert--green.alert--email
+      div.alert__container
+        p.alert__text Адрес почты успешно изменен.
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  if props.addOrganization
+    section.alert.alert--green.alert--add
+      div.alert__container
+        p.alert__text Организация добавлена!
+      button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+        span
+
+  //- if props.subscribe
+  //-   section.alert.alert--green.alert--subscribe
+  //-     div.alert__container
+  //-       p.alert__title Вы подписались на рассылку! 
+  //-       p.alert__text Обещаем отправлять только самое нужное и интересное!
+  //-     button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+  //-       span
+
+  //- if props.share
+  //-   section.alert.alert--green.alert--share
+  //-     div.alert__container
+  //-       p.alert__title Ссылка скопирована!
+  //-     button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+  //-       span
+
+  //- if props.where
+  //-   section.alert.alert--green.alert--where
+  //-     div.alert__container
+  //-       p.alert__title Сообщение отправлено!
+  //-       p.alert__text Наш менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время.
+  //-     button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+  //-       span
+
+  //- if props.registration
+  //-   section.alert.alert--green.alert--registration
+  //-     div.alert__container
+  //-       p.alert__title Ваша заявка принята!
+  //-       p.alert__text Ваша заявка принята и&nbsp;направлена на&nbsp;модерацию.
+  //-     button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+  //-       span
+
+  //- if props.wrong
+  //-   section.alert.alert--red.alert--wrong
+  //-     div.alert__container
+  //-       p.alert__title Неверный пароль!
+  //-       p.alert__text Возможно вы&nbsp;не&nbsp;переключили раскладку клавиатуры или забыли пароль.
+  //-     button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+  //-       span
+
+  //- if props.restore
+  //-   section.alert.alert--green.alert--restore
+  //-     div.alert__container
+  //-       p.alert__title Доступ восстановлен!
+  //-       p.alert__text Смена или восстановление пароля была успешно произведена.
+  //-     button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+  //-       span
+
+  //- if props.saved
+  //-   section.alert.alert--green.alert--saved
+  //-     div.alert__container
+  //-       p.alert__title Изменения сохранены
+  //-     button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+  //-       span
+
+  //- if props.sended
+  //-   section.alert.alert--green.alert--sended
+  //-     div.alert__container
+  //-       p.alert__title Обращение отправлено
+  //-       p.alert__text Мы получили ваше обращение, в течение 24 часов обработаем и ответим вам на вопрос.
+  //-     button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+  //-       span
+
+
+  //- if props.request
+  //-   section.alert.alert--green.alert--request
+  //-     div.alert__container
+  //-       p.alert__title Заявка успешно отправлена! 
+  //-       p.alert__text Кстати, активно развивающиеся страны третьего мира являются только методом политического участия и представлены в исключительно положительном свете.
+  //-       a(href="#").alert__link Ссылка чтобы перейти на что-то либо кнопка
+  //-     button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+  //- if props.code
+  //-   section.alert.alert--green.alert--code
+  //-     div.alert__container
+  //-       p.alert__title Купон успешно применён!
+  //-     button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+  //- if props.payError
+  //-   section.alert.alert--red.alert--pay-error
+  //-     div.alert__container
+  //-       p.alert__title Ошибка, платеж не прошёл!
+  //-     button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+  //- if props.notMatch
+  //-   section.alert.alert--red.alert--not-match
+  //-     div.alert__container
+  //-       p.alert__title Старый пароль не свпадает!
+  //-     button(type="button" arial-label="Закрыть всплывающее окно").alert__close
+

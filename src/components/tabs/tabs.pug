@@ -1,0 +1,56 @@
+mixin tabs(props)
+  if props.ver1
+    section.tabs
+      div.container
+        div.tabs__nav
+          div.tabs__border 
+            div.tabs__list 
+              a(href="#").tabs__item.tabs__item--active Товары
+                sup 123
+              a(href="#").tabs__item Акции
+                sup 2
+              a(href="#").tabs__item Статьи
+                sup 23
+              a(href="#").tabs__item Теги
+                sup 56
+
+
+  if props.ver2
+    section.tabs
+      div.container
+        div.tabs__nav
+          div.tabs__border 
+            div.tabs__list 
+              a(href="#").tabs__item.tabs__item--active Товары
+                sup 123
+              a(href="#").tabs__item Акции
+                sup 322
+              a(href="#").tabs__item Статьи
+                sup 3
+
+  if props.ver3
+    section.tabs
+      div.container
+        div.tabs__nav
+          div.tabs__border 
+            div.tabs__list 
+              a(href="#").tabs__item.tabs__item--active Оплата и доставка
+              a(href="#").tabs__item Возврат и гарантия
+              a(href="#").tabs__item Как сделать заказ
+              a(href="#").tabs__item Вопросы и ответы
+              a(href="#").tabs__item Наша география
+
+  if props.ver4
+    section.tabs
+      div.container
+        div.tabs__nav
+          div.tabs__border 
+            div.tabs__list 
+              a(href="#").tabs__item.tabs__item--active Товары
+                sup 123
+              a(href="#").tabs__item Солод
+                sup 2
+              a(href="#").tabs__item Хмель
+                sup 23
+              a(href="#").tabs__item Дрожжи
+                sup 56

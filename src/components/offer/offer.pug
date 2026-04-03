@@ -1,0 +1,21 @@
+mixin offer(props)
+  if props.success
+    section.offer
+      div.container
+        div.offer__wrapper 
+          div.offer__banner
+            img(src='./assets/images/offer-yes.svg' width='100' height='100' alt="")
+          h1.offer__title Заказ оформлен
+          p.offer__text Ваш заказ <b>№65484</b> от 30.10.2020 16:10 успешно создан.
+          p.offer__comment Вы можете следить за выполнением вашего заказа в <a href='#'>Персональном разделе сайта</a>. 
+
+
+  if props.fail
+    section.offer
+      div.container
+        div.offer__wrapper 
+          div.offer__banner
+            img(src='./assets/images/offer-no.svg' width='100' height='100' alt="")
+          h1.offer__title Заказ не оформлен
+          p.offer__text Ваш заказ <b>№65484</b> от 30.10.2020 16:10 не был оформлен. Мы с вами свяжемся в ближайшее время и обсудим детали.
+          p.offer__text При возникновении дополнительных вопросов – звоните <a href='tel:+78127250088'>+7(812)725-00-88</a> или пишите нам.

@@ -1,0 +1,126 @@
+@import 'src/utils/utils';
+
+.catalog-card {
+  position: relative;
+  display: block;
+  width: 183px;
+  height: 183px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+
+  @media(max-width: $tablet) {
+    width: 120px;
+    height: 120px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  @media(max-width: $phone) {
+    width: unset;
+    height: unset;
+    border-radius: unset;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+  }
+
+  &:hover {
+    @media(min-width: $desktop-only) {
+
+      .catalog-card__back {
+        transition: clip-path 0.3s ease-out;
+        // clip-path: polygon(0 0, 250% 0, 100% 100%, 0% 100%);
+        clip-path: circle(70.7% at 50% 50%);
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid $grey-7;
+    border-radius: 50%;
+
+    @media(max-width: $phone) {
+      justify-content: flex-start;
+      padding: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border: 0;
+      border-radius: unset;
+    }
+  }
+
+  &__title {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    color: $dark-blue-1;
+
+    @media(max-width: $phone) {
+      padding-right: 20px;
+    }
+
+    &:before {
+      @media(max-width: $phone) {
+        position: absolute;
+        right: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        content: '→';
+      }
+    }
+  }
+
+  &__back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: clip-path 0.1s ease;
+    // clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    clip-path: circle(0% at 50% 50%);
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 5;
+      font-size: 72px;
+      font-weight: 400;
+      line-height: 96px;
+      color: $white-1;
+      transform: translate(-50%, -50%);
+      content: '↗';
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba($color: $dark-blue-1, $alpha: 15%);
+      content: '';
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      transform: translateZ(10px);
+      user-select: none;
+    }
+  }
+}

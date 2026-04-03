@@ -1,0 +1,141 @@
+@import 'src/utils/utils';
+
+.profile-page {
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    grid-column-gap: 60px;
+    column-gap: 60px;
+
+    @media(max-width: $desktop) {
+      grid-column-gap: 30px;
+      column-gap: 30px;
+    }
+    @media(max-width: $tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+      grid-row-gap: 25px;
+      row-gap: 25px;
+    }
+    @media(max-width: $phone) {
+      width: calc(100% + 30px);
+      margin-right: -15px;
+      margin-bottom: 0;
+      margin-left: -15px;
+      grid-row-gap: unset;
+      row-gap: unset;
+    }
+
+    &--hidden {
+      @media(max-width: $phone) {
+        display: none;
+      }
+    }
+  }
+
+  &__top-inner {
+    @media(max-width: $phone) {
+      width: 100%;
+      padding-top: 20px;
+      padding-right: 15px;
+      padding-bottom: 20px;
+      padding-left: 15px;
+      background-color: $white-1;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $title-font;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 55px;
+
+    @media(max-width: $phone) {
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+
+  &__user {
+    flex-shrink: 0;
+
+    @media(max-width: $phone) {
+      width: 100%;
+      padding-top: 20px;
+      padding-right: 15px;
+      padding-bottom: 20px;
+      padding-left: 15px;
+    }
+  }
+
+  &__user-list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-column-gap: 20px;
+    column-gap: 20px;
+
+    @media(max-width: $phone) {
+      justify-content: space-between;
+    }
+  }
+
+  &__user-item {
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 40px;
+      height: 40px;
+      fill: currentcolor;
+      stroke: currentcolor;
+
+      @media(max-width: $phone) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__user-out {
+    text-decoration: none;
+    color: $grey-8;
+    transition: color 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        color: $red-1;
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    grid-column-gap: 30px;
+    column-gap: 30px;
+
+    @media(max-width: $tablet) {
+      grid-column-gap: 15px;
+      column-gap: 15px;
+    }
+    @media(max-width: $phone) {
+      display: block;
+    }
+  }
+
+  &__sidebar {
+    flex-shrink: 0;
+  }
+
+  &__center {
+    flex-grow: 1;
+  }
+}

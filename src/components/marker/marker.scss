@@ -1,0 +1,42 @@
+@import 'src/utils/utils';
+
+.marker {
+  position: relative;
+  margin-bottom: 60px;
+  padding-top: 11px;
+
+  @media(max-width: $phone) {
+    margin-bottom: 30px;
+    padding-top: 5px;
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $grey-6;
+    transition: transform 1s;
+    transform: scaleX(0);
+    transform-origin: left;
+    content: '';
+  }
+
+  &__title {
+    font-size: 14px;
+    line-height: 20px;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &--show {
+
+    &:before {
+      transform: scaleX(1);
+    }
+  }
+}

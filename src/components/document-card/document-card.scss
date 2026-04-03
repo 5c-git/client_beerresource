@@ -1,0 +1,74 @@
+@import 'src/utils/utils';
+
+.document-card {
+  display: flex;
+  justify-content: flex-start;
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    color: $dark-blue-1;
+    transition: color 0.3s;
+    grid-column-gap: 5px;
+    column-gap: 5px;
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        color: $blue-1;
+
+        svg {
+          visibility: initial !important;
+          opacity: initial !important;
+        }
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+
+    svg {
+      width: 40px;
+      height: 40px;
+      stroke: currentColor;
+
+      @media(max-width: $phone) {
+        width: 30px;
+        height: 30px;
+      }
+
+      &:nth-child(2n) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transition: visibility 0.3s, opacity 0.3s;
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 16px;
+    line-height: 25px;
+
+    @media(max-width: $phone) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__type {
+    font-size: 13px;
+    line-height: 20px;
+    color: $grey-7;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+mixin sidebar-nav(props)
+  if props.favorites
+    div.sidebar-nav
+      span.sidebar-nav__header Все товары
+        sup 126
+      ul.sidebar-nav__list
+        li.sidebar-nav__item.sidebar-nav__item--active
+          button(type='button').sidebar-nav__button Все товары
+            sup 126
+        li.sidebar-nav__item 
+          button(type='button').sidebar-nav__button Солод
+            sup 5
+        li.sidebar-nav__item 
+          button(type='button').sidebar-nav__button Хмель
+            sup 16
+        li.sidebar-nav__item 
+          button(type='button').sidebar-nav__button Дрожжи
+            sup 35
+        li.sidebar-nav__item 
+          button(type='button').sidebar-nav__button Пюре
+            sup 1
+
+  if props.promotions
+    div.sidebar-nav
+      span.sidebar-nav__header Все товары
+        sup 126
+      ul.sidebar-nav__list
+        li.sidebar-nav__item.sidebar-nav__item--active
+          button(type='button').sidebar-nav__button Все товары
+            sup 126
+        li.sidebar-nav__item 
+          button(type='button').sidebar-nav__button Солод
+            sup 12
+        li.sidebar-nav__item 
+          button(type='button').sidebar-nav__button Хмель
+            sup 16
+        li.sidebar-nav__item 
+          button(type='button').sidebar-nav__button Дрожжи
+            sup 26
+        li.sidebar-nav__item 
+          button(type='button').sidebar-nav__button Химия
+            sup 6
+        li.sidebar-nav__item 
+          button(type='button').sidebar-nav__button Прочие ингредиенты
+            sup 2

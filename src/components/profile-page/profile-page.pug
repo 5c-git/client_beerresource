@@ -1,0 +1,21 @@
+mixin profile-page(props)
+  section.profile-page
+    div.container
+      div.profile-page__top
+        div.profile-page__top-inner 
+          h1.profile-page__title Личный кабинет
+        div.profile-page__user
+          ul.profile-page__user-list
+            li.profile-page__user-item
+              svg(width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg")
+                use(href='#icon-user')
+              span Магомедшарипов Иммануил
+            li.profile-page__user-item
+              a(href='#').profile-page__user-out Выйти
+
+      div.profile-page__main
+        div.profile-page__sidebar 
+          include ../profile-nav/profile-nav
+        div.profile-page__center
+          block
+

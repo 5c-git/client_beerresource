@@ -1,0 +1,16 @@
+mixin checkbox(props)
+  div(class=props.mixin).checkbox
+    label.checkbox__label
+      if props.text
+        span!=props.text
+      input(
+        class=props.secondClass
+        type=props.type
+        id=props.id
+        name=props.name
+        value=props.value
+        data-fieldset-id=props.fieldset
+        required=props.required
+        checked=props.checked
+      ).visually-hidden
+      span.checkbox__box

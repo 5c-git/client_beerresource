@@ -1,0 +1,52 @@
+/* stylelint-disable */
+@mixin zero {
+  padding: 0;
+  margin: 0;
+}
+
+$main-font: 'Inter';
+$title-font: 'BEERRESOURCE';
+$icon-font: 'icon';
+
+$white-1: #ffffff;
+$grey-1: #f7fafc;
+$grey-2: #fafafa;
+$grey-3: #eeeff0;
+$grey-4: #ededed;
+$grey-5: #eff6ff;
+$grey-6: #d6dfe4;
+$grey-7: #a5afc3;
+$grey-8: #7f8899;
+$light-blue-1: #ceddf0;
+$dark-blue-1: #212f4e;
+$blue-1: #1f617f;
+$orange-1: #f8b814;
+$red-1: #db1f35;
+$light-red-1: #e45945;
+$green-1: #41bf2a;
+$light-green-1: #a1c39b;
+$black-1: #101828;
+
+$article-width: 100%;
+
+$desktop: 1300px;
+$tablet: 991px;
+$desktop-only: $tablet + 1;
+$phone: 767px;
+/* stylelint-enable */
+
+@mixin noimg {
+  background-repeat: no-repeat;
+  background-size: 60px;
+  background-position: center;
+  background-color: $grey-3;
+  background-image: url('../assets/images/no-image.svg');
+
+  @media(max-width: $phone) {
+    background-size: 44px;
+  }
+
+  &:has(img) {
+    background-image: unset;
+  }
+}

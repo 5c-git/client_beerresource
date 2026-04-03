@@ -1,0 +1,68 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: '#тег_с_длинным_названием',
+  })
+    include ../components/back/back
+  +post-title({
+    text: 'Всего совпадений: 11 882',
+  })
+
+  +tabs({
+    ver2: true,
+  })
+  +layout({
+    grid3: true,
+    pagination: true,
+  })
+    +promotion-card({
+      src: './assets/images/image-1.jpg',
+      title: 'Дурное дело нехитрое: известный инсайдер, в преддверии важного события, не позволил союзу развалиться',
+    })
+    +promotion-card({
+      src: './assets/images/image-2.jpg',
+      title: 'Воистину радостный звук: детский заливистый смех',
+    })
+    +promotion-card({
+      src: './assets/images/image-10.jpg',
+      title: 'Финансовый мир очнулся: постоянный количественный рост бодрит',
+    })
+    +promotion-card({
+      src: './assets/images/image-14.jpg',
+      title: 'Сложно сказать, почему объем доходов населения сократился',
+    })
+    +promotion-card({
+      src: './assets/images/image-17.jpg',
+      title: 'Дурное дело нехитрое: известный инсайдер, в преддверии важного события, не позволил союзу развалиться',
+    })
+    +promotion-card({
+      src: './assets/images/image-18.jpg',
+      title: 'Воистину радостный звук: детский заливистый смех',
+    })
+    +promotion-card({
+      src: './assets/images/image-16.jpg',
+      title: 'Финансовый мир очнулся: постоянный количественный рост бодрит',
+    })
+    +promotion-card({
+      src: './assets/images/image-5.jpg',
+      title: 'Сложно сказать, почему объем доходов населения сократился',
+    })
+    +promotion-card({
+      src: './assets/images/image-17.jpg',
+      title: 'Дурное дело нехитрое: известный инсайдер, в преддверии важного события, не позволил союзу развалиться',
+    })
+    +promotion-card({
+      src: './assets/images/image-11.jpg',
+      title: 'Воистину радостный звук: детский заливистый смех',
+    })
+    +promotion-card({
+      src: './assets/images/image-8.jpg',
+      title: 'Финансовый мир очнулся: постоянный количественный рост бодрит',
+    })
+    +promotion-card({
+      src: './assets/images/image-7.jpg',
+      title: 'Сложно сказать, почему объем доходов населения сократился',
+    })

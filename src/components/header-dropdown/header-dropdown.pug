@@ -1,0 +1,75 @@
+section.header-dropdown
+  div.header-dropdown__wrapper
+    div.container 
+      div.header-dropdown__top
+        div.header-dropdown__left
+          a.header-dropdown__user.header-dropdown__user--profile
+            svg(width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg")
+              use(href='#icon-user-dropdown')
+            span Вход или регистрация
+            span(style='display: none;') Магомедшарипов Иммануил
+        div.header-dropdown__main
+          ul.header-dropdown__list
+            li.header-dropdown__item
+              a(href="#").header-dropdown__link 
+                svg(width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg")
+                  use(href='#icon-dropdown-cart')
+                span Корзина
+                sup 12
+            li.header-dropdown__item
+              a(href="#").header-dropdown__link 
+                svg(width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg")
+                  use(href='#icon-dropdown-favorites')
+                span Избранное
+                sup 30
+            li.header-dropdown__item
+              a(href="#").header-dropdown__link 
+                svg(width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg")
+                  use(href='#icon-dropdown-compare')
+                span Сравнение
+                sup 4
+            li.header-dropdown__item.header-dropdown__item--language
+              a(href="#").header-dropdown__link EN
+
+      div.header-dropdown__inner 
+        div.header-dropdown__left 
+          ul.header-dropdown__list
+            li.header-dropdown__item
+              a(href="tel:+79164959595").header-dropdown__tel +7(812)725-00-88
+            li.header-dropdown__item
+              a(href="tel:+79164959595").header-dropdown__tel +7(921)588-60-80
+              +socials({
+                contacts: true,
+              })
+            li.header-dropdown__item
+              a(href="mailto:sales@resource.beer").header-dropdown__tel sales@resource.beer
+          p.header-dropdown__desc Ежедневно 10:00-19:00
+          div.header-dropdown__socials 
+            +socials({
+              header: true,
+            })
+          div.header-dropdown__payment
+            p.header-dropdown__payment-text Принимаем к оплате:
+            ul.header-dropdown__payment-list 
+              li.header-dropdown__payment-item 
+                img(src="./assets/images/logo-visa.png" width='77' height='25' alt="")
+              li.header-dropdown__payment-item 
+                img(src="./assets/images/logo-mastercard.png" width='57' height='35' alt="")
+
+        div.header-dropdown__main
+          nav.header-dropdown__nav
+            ul.header-dropdown__nav-list
+              li.header-dropdown__nav-item
+                a(href="#").header-dropdown__nav-link Каталог
+              li.header-dropdown__nav-item
+                a(href="#").header-dropdown__nav-link Контакты
+              li.header-dropdown__nav-item
+                a(href="#").header-dropdown__nav-link Акции
+              li.header-dropdown__nav-item
+                a(href="#").header-dropdown__nav-link Вдохновение
+              li.header-dropdown__nav-item
+                a(href="#").header-dropdown__nav-link Услуги
+              li.header-dropdown__nav-item
+                a(href="#").header-dropdown__nav-link Покупателю
+
+  div.header-dropdown__overlay

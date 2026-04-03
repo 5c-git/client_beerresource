@@ -1,0 +1,214 @@
+mixin item-card(props)
+  if props.cart
+    article.item-card.item-card--cart
+      button(type='button').item-card__delete
+        span
+      a(href="#").item-card__banner 
+        div.item-card__banner-front
+          <!-- Рекомендованые размеры 164х164 -->
+          if props.front
+            img(src=props.front, alt="")
+        div.item-card__banner-back
+          <!-- Тут может не быть изображения -->
+          if props.back
+            img(src=props.back, alt="")
+      div.item-card__content
+        div.item-card__hidden 
+          +packaging({
+            cart: true,
+          })
+        div.item-card__header
+          img(src=props.flag, alt="").item-card__flag
+          span.item-card__flag-name Crisp malt
+        a(href="#").item-card__title=props.title
+        div.item-card__description
+          div.item-card__description-tile
+            p 1300 EBC
+          table(width="100%" cellspacing="0" cellpadding="0" border="0").item-card__description-table
+            tr
+              td Артикул:
+              td 168457
+            tr
+              td Цветность:
+              td 1300 EBC
+            tr
+              td Тип:
+              td Базовый солод
+
+
+  else if props.cart2
+    article.item-card.item-card--cart
+      button(type='button').item-card__delete
+        span
+      a(href="#").item-card__banner 
+        div.item-card__banner-front
+          <!-- Рекомендованые размеры 164х164 -->
+          if props.front
+            img(src=props.front, alt="")
+        div.item-card__banner-back
+          <!-- Тут может не быть изображения -->
+          if props.back
+            img(src=props.back, alt="")
+      div.item-card__content
+        div.item-card__hidden 
+          +packaging({
+            cart2: true,
+          })
+        div.item-card__header
+          img(src=props.flag, alt="").item-card__flag
+          span.item-card__flag-name Crisp malt
+        a(href="#").item-card__title=props.title
+        div.item-card__description
+          div.item-card__description-tile
+            p 1300 EBC
+          table(width="100%" cellspacing="0" cellpadding="0" border="0").item-card__description-table
+            tr
+              td Артикул:
+              td 168457
+            tr
+              td Цветность:
+              td 1300 EBC
+            tr
+              td Тип:
+              td Базовый солод
+
+
+  else if props.compare
+    article.item-card
+      a(href="#").item-card__banner 
+        div.item-card__banner-front
+          <!-- Рекомендованые размеры 164х164 -->
+          if props.front
+            img(src=props.front, alt="")
+        div.item-card__banner-back
+          <!-- Тут может не быть изображения -->
+          if props.back
+            img(src=props.back, alt="")
+      div.item-card__content 
+        if props.tags
+          ul.item-card__tags 
+            li.item-card__tag.item-card__tag--red Скидка
+            li.item-card__tag.item-card__tag--orange Хит продаж
+            li.item-card__tag.item-card__tag--green Новинка
+        div.item-card__header
+          img(src=props.flag, alt="").item-card__flag
+          span.item-card__flag-name Crisp malt
+        a(href="#").item-card__title=props.title
+        div.item-card__footer
+          p.item-card__price
+            span.item-card__price-value.item-card__price-value--kg 80.18 ₽ / кг
+            if props.pricePack
+              span.item-card__price-value.item-card__price-value--pack 2004.5 ₽ / уп
+
+
+  else if props.onepackag
+    article.item-card
+      a(href="#").item-card__banner 
+        div.item-card__banner-front
+          <!-- Рекомендованые размеры 164х164 -->
+          if props.front
+            img(src=props.front, alt="")
+        div.item-card__banner-back
+          <!-- Тут может не быть изображения -->
+          if props.back
+            img(src=props.back, alt="")
+      div.item-card__content 
+        if props.tags
+          ul.item-card__tags 
+            li.item-card__tag.item-card__tag--red Скидка
+            li.item-card__tag.item-card__tag--orange Хит продаж
+        div.item-card__hidden 
+          +packaging({
+            onepackag: true,
+          })
+        div.item-card__header
+          img(src=props.flag, alt="").item-card__flag
+          span.item-card__flag-name Crisp malt
+        a(href="#").item-card__title=props.title
+        div.item-card__description
+          div.item-card__description-tile
+            p 1300 EBC
+          table(width="100%" cellspacing="0" cellpadding="0" border="0").item-card__description-table
+            tr
+              td Артикул:
+              td 168457
+            tr
+              td Цветность:
+              td 1300 EBC
+            tr
+              td Тип:
+              td Базовый солод
+        div.item-card__footer
+          p.item-card__price
+            span.item-card__price-value.item-card__price-value--kg 80.18 ₽ / кг
+            if props.pricePack
+              span.item-card__price-value.item-card__price-value--pack 2004.5 ₽ / уп
+
+          div.item-card__buttons
+            <!-- Если товар добавлен в избранное, то добавляется класс '.item-card__like--add'-->
+            button(type='button').item-card__like.item-card__like--add
+              svg(width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg")
+                use(href='#icon-like')
+            button(type='button').item-card__cart
+              svg(width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg")
+                use(href='#icon-cart')
+
+
+  else
+    article.item-card(class=props.mixin)
+      
+      a(href="#").item-card__banner 
+        div.item-card__banner-front
+          <!-- Рекомендованые размеры 164х164 -->
+          if props.front
+            img(src=props.front, alt="")
+        div.item-card__banner-back
+          <!-- Тут может не быть изображения -->
+          if props.back
+            img(src=props.back, alt="")
+      div.item-card__content 
+        if props.mixin
+          ul.item-card__tags 
+            li.item-card__tag.item-card__tag--red Под заказ
+        if props.tags
+          ul.item-card__tags 
+            li.item-card__tag.item-card__tag--red Скидка
+            li.item-card__tag.item-card__tag--orange Хит продаж
+            li.item-card__tag.item-card__tag--green Новинка
+        div.item-card__hidden 
+          +packaging({})
+        div.item-card__header
+          img(src=props.flag, alt="").item-card__flag
+          span.item-card__flag-name Crisp malt
+        a(href="#").item-card__title=props.title
+        div.item-card__description
+          div.item-card__description-tile
+            p 1300 EBC
+          table(width="100%" cellspacing="0" cellpadding="0" border="0").item-card__description-table
+            tr
+              td Артикул:
+              td 168457
+            tr
+              td Цветность:
+              td 1300 EBC
+            tr
+              td Тип:
+              td Базовый солод
+        div.item-card__footer
+          p.item-card__price
+            span.item-card__price-value.item-card__price-value--kg 80.18 ₽ / кг
+            if props.pricePack
+              span.item-card__price-value.item-card__price-value--pack 2004.5 ₽ / уп
+
+          div.item-card__buttons
+            <!-- Если товар добавлен в избранное, то добавляется класс '.item-card__like--add'-->
+            button(type='button').item-card__like
+              svg(width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg")
+                use(href='#icon-like')
+            button(type='button').item-card__cart
+              svg(width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg")
+                use(href='#icon-cart')
+
+        if props.mixin
+          div.item-card__note
+            small *цена уточняется на момент заказа

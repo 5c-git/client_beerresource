@@ -1,0 +1,55 @@
+section.novelties
+  div.container
+      div.novelties__wrapper
+        h2.novelties__title Новые статьи
+        div.swiper.novelties__slider
+          ul.swiper-wrapper.novelties__slider-list
+            li.swiper-slide.novelties__slider-item
+              +article-card({
+                src: './assets/images/image-13.jpg',
+                title: 'Классификация сортов и видов пива.',
+              })
+            li.swiper-slide.novelties__slider-item
+              +article-card({
+                src: './assets/images/image-12.jpg',
+                title: 'Классификация сортов и видов пива.',
+              })
+            li.swiper-slide.novelties__slider-item
+              +article-card({
+                src: './assets/images/image-11.jpg',
+                title: 'Описание и характеристики самых популярных марок',
+              })
+            li.swiper-slide.novelties__slider-item
+              +article-card({
+                src: './assets/images/image-14.jpg',
+                title: 'Классификация сортов и видов пива.',
+              })
+            li.swiper-slide.novelties__slider-item
+              +article-card({
+                src: './assets/images/image-15.jpg',
+                title: 'Классификация сортов и видов пива. Описание и характеристики самых популярных марок.',
+              })
+            li.swiper-slide.novelties__slider-item
+              +article-card({
+                src: './assets/images/image-16.jpg',
+                title: 'Описание и характеристики самых популярных марок',
+              })
+            li.swiper-slide.novelties__slider-item
+              +article-card({
+                src: './assets/images/image-17.jpg',
+                title: 'Классификация сортов и видов пива. Описание и характеристики самых популярных марок.',
+              })
+            li.swiper-slide.novelties__slider-item
+              +article-card({
+                src: './assets/images/image-18.jpg',
+                title: 'Классификация сортов и видов пива.',
+              })
+            li.swiper-slide.novelties__slider-item
+              +article-card({
+                src: './assets/images/image-19.jpg',
+                title: 'Описание и характеристики самых популярных марок',
+              })
+          div.novelties__scrollbar
+        div.novelties__slider-buttons
+          button(type='button' aria-label='Предыдущий слайд.').novelties__slider-button.novelties__slider-button--prev ←
+          button(type='button' aria-label='Следующий слайд.').novelties__slider-button.novelties__slider-button--next →

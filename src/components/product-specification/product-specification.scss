@@ -1,0 +1,129 @@
+@import 'src/utils/utils';
+
+.product-specification {
+
+  .tooltip {
+    margin-left: 10px;
+  }
+
+  p {
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 25px;
+
+    @media(max-width: $phone) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &__block {
+    max-width: 800px;
+
+    &:not(:first-of-type) {
+      margin-top: 60px;
+
+      @media(max-width: $phone) {
+        margin-top: 20px;
+      }
+    }
+
+    .product-specification__title {
+      margin: 0;
+      margin-bottom: 15px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+
+      @media(max-width: $phone) {
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 25px;
+      }
+    }
+  }
+
+  &__table {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__row {
+    position: relative;
+    display: grid;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    grid-template-columns: 1fr 200px;
+
+    @media(max-width: $phone) {
+      grid-template-columns: 1fr 120px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+
+      &:after {
+        position: relative;
+        margin-right: 10px;
+        margin-left: 10px;
+        border-top: 1px dashed $grey-7;
+        flex: 1 1 100%;
+        content: '';
+
+        @media(max-width: $phone) {
+          margin-right: 5px;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  &__name {
+    flex-shrink: 0;
+
+    @media(max-width: $phone) {
+      max-width: 120px;
+    }
+  }
+
+  &__link {
+    margin-right: auto;
+    color: $blue-1;
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__info {
+    font-size: 16px;
+    line-height: 25px;
+    color: $grey-8;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}

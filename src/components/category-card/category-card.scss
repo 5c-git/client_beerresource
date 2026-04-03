@@ -1,0 +1,77 @@
+@import 'src/utils/utils';
+
+.category-card {
+
+  &__image {
+    @include noimg;
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    aspect-ratio: 380 / 215;
+    overflow: hidden;
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+
+        &:before {
+          visibility: initial;
+          opacity: initial;
+        }
+      }
+    }
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      font-size: 72px;
+      line-height: 96px;
+      color: $white-1;
+      background-color: rgba($color: $dark-blue-1, $alpha: 30%);
+      transition: visibility 0.3s, opacity 0.3s;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      content: '↗';
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+
+    @media(max-width: $phone) {
+      margin-top: 15px;
+      font-size: 16px;
+      line-height: 25px;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: $dark-blue-1;
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          color: $blue-1;
+        }
+      }
+    }
+  }
+}

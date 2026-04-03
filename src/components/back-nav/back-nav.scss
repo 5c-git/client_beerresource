@@ -1,0 +1,46 @@
+@import 'src/utils/utils';
+
+.back-nav {
+  margin-top: 20px;
+  text-align: center;
+
+  &__list {
+    display: inline-grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-auto-flow: column;
+    grid-column-gap: 30px;
+
+    @media(max-width: $phone) {
+      grid-auto-flow: row;
+      grid-row-gap: 10px;
+    }
+  }
+
+  &__link {
+    display: inline-grid;
+    font-size: 16px;
+    line-height: 25px;
+    text-decoration: none;
+    color: $grey-8;
+    transition: color 0.3s;
+    grid-template-columns: auto 16px;
+    grid-column-gap: 5px;
+
+    @media(max-width: $phone) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        color: $dark-blue-1;
+      }
+    }
+
+    span {
+      margin-top: 3px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'О компании',
+  })
+
+  +layout-header({
+    about: true,
+  })
+
+  +line({
+    src: './assets/images/image-5.jpg',
+  })
+  
+  include ../components/advantages/advantages
+
+  +layout({})
+    +article({
+      article: true,
+    })
+  
+  include ../components/team/team
+  
+  include ../components/projects/projects

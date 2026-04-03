@@ -1,0 +1,15 @@
+extends ../templates/default
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Покупателю',
+  })
+
+  +tabs({
+    ver3: true,
+  })
+  
+  +layout({})
+    include ../components/question/question

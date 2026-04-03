@@ -1,0 +1,23 @@
+mixin title(props)
+  if props.small
+    section.title.title--small
+      div.container
+        div.title__wrapper
+          h1.title__text=props.title
+          div.title__after
+            block
+  else if props.hidden
+    section.title.title--hidden
+      div.container
+        div.title__wrapper
+          h1.title__text=props.title
+          div.title__after
+            block
+
+  else
+    section.title
+      div.container
+        div.title__wrapper
+          h1.title__text=props.title
+          div.title__after
+            block

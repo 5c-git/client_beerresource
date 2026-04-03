@@ -1,0 +1,778 @@
+@import 'src/utils/utils';
+
+.item-card {
+  position: relative;
+  display: flex;
+  height: 430px;
+  flex-direction: column;
+
+  @media(max-width: $phone) {
+    height: 360px;
+  }
+
+  &--to-order {
+    .item-card {
+
+      &__content {
+        background-color: $grey-1;
+      }
+    }
+  }
+
+  &__banner {
+    @include noimg;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: block;
+    padding-top: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+
+        .item-card__banner-back {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  &__banner-front {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      user-select: none;
+    }
+  }
+
+  &__banner-back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    transition: opacity 0.3s;
+    opacity: 1;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      user-select: none;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    border: 1px solid $grey-6;
+    border-radius: 10px;
+    background-color: $white-1;
+
+    @media(max-width: $phone) {
+      padding-top: 15px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+    }
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+
+        .item-card__hidden {
+          max-height: 150px;
+          transition: max-height 0.6s, visibility 0.3s 0.1s, opacity 0.3s 0.1s;
+          visibility: initial;
+          opacity: initial;
+          overflow: initial;
+        }
+      }
+    }
+  }
+
+  &__tags {
+    position: absolute;
+    top: -11px;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 5px;
+    flex-wrap: wrap;
+
+    @media(max-width: $phone) {
+      top: -7px;
+    }
+  }
+
+  &__tag {
+    padding-top: 2px;
+    padding-right: 8px;
+    padding-bottom: 0;
+    padding-left: 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    color: $white-1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    user-select: none;
+
+    @media(max-width: $phone) {
+      padding-top: 2px;
+      padding-right: 5px;
+      padding-bottom: 2px;
+      padding-left: 5px;
+      font-size: 8px;
+      line-height: 10px;
+    }
+
+    &:not(:first-of-type) {
+      margin-left: 2px;
+    }
+
+    &--red {
+      background-color: $red-1;
+    }
+
+    &--orange {
+      background-color: $orange-1;
+    }
+
+    &--green {
+      background-color: $green-1;
+    }
+  }
+
+  &__hidden {
+    max-height: 0;
+    transition: max-height 0.3s;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+
+    @media(max-width: $tablet) {
+      max-height: unset;
+      visibility: initial;
+      opacity: initial;
+      overflow: initial;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    @media(max-width: $phone) {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__flag {
+    display: block;
+    width: 21px;
+    height: 15px;
+    margin-top: 2px;
+    margin-right: 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    overflow: hidden;
+    user-select: none;
+
+    @media(max-width: $phone) {
+      width: 16px;
+      height: 11px;
+      margin-right: 4px;
+    }
+  }
+
+  &__flag-name {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: $blue-1;
+
+    @media(max-width: $phone) {
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 15px;
+    }
+  }
+
+  &__title {
+    height: 40px;
+    margin: 0;
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-decoration: none;
+    color: $dark-blue-1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 0;
+    /* stylelint-disable */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    /* stylelint-enable */
+
+    @media(max-width: $phone) {
+      height: 30px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        color: $blue-1;
+      }
+    }
+  }
+
+  &__description {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: $grey-8;
+
+    @media(max-width: $phone) {
+      margin-top: 5px;
+      font-size: 10px;
+      line-height: 15px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    small {
+      margin: 0;
+      font-size: 10px;
+    }
+  }
+
+  &__note {
+    margin-top: 10px;
+    font-size: 10px;
+    line-height: 15px;
+    color: $red-1;
+    grid-column: 1 / -1;
+
+    @media(max-width: $phone) {
+      margin-top: 5px;
+    }
+
+    small {
+      margin: 0;
+      font: inherit;
+    }
+  }
+
+  &__description-table {
+    display: none;
+    max-width: 400px;
+
+    tr {
+      position: relative;
+      display: grid;
+      margin: 0;
+      padding: 0;
+      column-gap: 5px;
+      grid-template-columns: 1fr 120px;
+
+      @media(max-width: $phone) {
+        column-gap: 3px;
+        grid-template-columns: 1fr 90px;
+      }
+    }
+
+    td {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      column-gap: 5px;
+
+      @media(max-width: $phone) {
+        column-gap: 3px;
+      }
+
+      &:first-of-type {
+        color: $dark-blue-1;
+
+        &:after {
+          height: 2px;
+          background-repeat: repeat-x;
+          background-position: center;
+          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAAAAAA+i0toAAAAAnRSTlMA/1uRIrUAAAAMSURBVHheY7j1/z8ABY8C2UtBe8oAAAAASUVORK5CYII=');
+          flex-grow: 1;
+          content: '';
+        }
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid $grey-6;
+
+    @media(max-width: $phone) {
+      flex-direction: column;
+      align-items: initial;
+      margin-top: 5px;
+      padding-top: 5px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+    // color: $grey-8;
+    color: $dark-blue-1;
+    gap: 3px;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &:has(.item-card__price-value--pack) {
+      .item-card {
+
+        &__price-value {
+
+          &--kg {
+            font-size: 12px;
+            line-height: 18px;
+            color: $grey-8;
+
+            @media(max-width: $phone) {
+              font-size: 10px;
+              line-height: 12px;
+            }
+          }
+
+          &--pack {
+            font-size: 14px;
+            line-height: 18px;
+
+            @media(max-width: $phone) {
+              font-size: 12px;
+              line-height: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    display: inline-grid;
+    grid-auto-flow: column;
+    grid-column-gap: 8px;
+
+    @media(max-width: $phone) {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+      grid-column-gap: unset;
+    }
+  }
+
+  &__cart {
+    display: flex;
+    width: 34px;
+    height: 34px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: $dark-blue-1;
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+    @media(max-width: $phone) {
+      width: 28px;
+      height: 28px;
+    }
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        background-color: $blue-1;
+      }
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__like {
+    display: flex;
+    width: 34px;
+    height: 34px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: 1px solid $grey-6;
+    border-radius: 50%;
+    color: $grey-8;
+    background-color: $white-1;
+    transition: color 0.3s, border-color 0.3s;
+    cursor: pointer;
+
+    @media(max-width: $phone) {
+      width: 28px;
+      height: 28px;
+    }
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        color: $dark-blue-1;
+        border-color: $dark-blue-1;
+      }
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      transition: fill 0.3s;
+      fill: currentcolor;
+    }
+
+    &--add {
+      color: $blue-1;
+      border-color: $blue-1;
+    }
+  }
+
+  &__delete {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 1;
+    display: flex;
+    width: 18px;
+    height: 18px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: $dark-blue-1;
+    background-color: transparent;
+    transition: color 0.3s;
+    outline: none;
+    cursor: pointer;
+
+    @media(max-width: $phone) {
+      top: 6px;
+      right: 6px;
+    }
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        color: $blue-1;
+      }
+    }
+
+    span {
+      position: relative;
+      display: inline-block;
+      width: 18px;
+      height: 1px;
+      background: transparent;
+      vertical-align: bottom;
+
+      @media(max-width: $phone) {
+        width: 14px;
+      }
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: currentcolor;
+        content: '';
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: currentcolor;
+        content: '';
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+
+.item-card--cart {
+  display: flex;
+  height: unset;
+  flex-direction: row;
+  grid-column-gap: 15px;
+  column-gap: 15px;
+
+  @media(max-width: $phone) {
+    min-height: 155px;
+    padding: 9px;
+    border: 1px solid #d6dfe4;
+    border-radius: 10px;
+    grid-column-gap: 10px;
+    column-gap: 10px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .item-card {
+
+    &__banner {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      padding: 0;
+      flex-shrink: 0;
+
+      @media(max-width: $desktop) {
+        width: 160px;
+        height: 160px;
+      }
+
+      @media(max-width: $phone) {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    &__banner-front {
+      @media(max-width: $phone) {
+        padding: 10px;
+      }
+    }
+
+    &__content {
+      z-index: unset;
+      display: grid;
+      margin: 0;
+      grid-template-columns: 1fr;
+      grid-column-gap: 20px;
+      grid-row-gap: 10px;
+      flex: 1 1 100%;
+      grid-template-areas:
+        'header'
+        'title'
+        'desc'
+        'hidden';
+
+      @media(max-width: $phone) {
+        position: initial;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        border: 0;
+        grid-row-gap: 5px;
+      }
+    }
+
+    &__hidden {
+      max-height: unset !important;
+      visibility: initial;
+      opacity: 1;
+      overflow: initial;
+      grid-area: hidden;
+      align-self: flex-end;
+
+      @media(max-width: $tablet) {
+        width: 100%;
+        order: 5;
+      }
+
+      @media(max-width: $phone) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        flex-grow: 1;
+      }
+    }
+
+    &__header {
+      margin: 0;
+      grid-area: header;
+
+      @media(max-width: $phone) {
+        order: 2;
+      }
+    }
+
+    &__title {
+      height: unset;
+      margin: 0;
+      grid-area: title;
+
+      @media(max-width: $phone) {
+        order: 3;
+      }
+    }
+
+    &__description {
+      grid-area: desc;
+
+      @media(max-width: $phone) {
+        order: 4;
+      }
+    }
+
+    &__description-tile {
+      display: none;
+    }
+
+    &__description-table {
+      display: table;
+    }
+  }
+
+  .packaging {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    grid-column-gap: 30px;
+    column-gap: 30px;
+
+    @media(max-width: $tablet) {
+      flex-direction: column;
+      align-items: initial;
+    }
+  }
+
+  .packaging__type {
+    max-width: 245px;
+    flex-grow: 1;
+  }
+
+  .packaging__type-list {
+    right: 0;
+    left: 0;
+  }
+
+  .packaging__count {
+    @media(max-width: $phone) {
+      margin-left: -100px;
+    }
+  }
+
+  .packaging__count-name {
+    display: none;
+  }
+
+  .packaging__count-item {
+    margin: 0 !important;
+    padding: 0;
+    border: 0;
+    grid-column-gap: 10px;
+    column-gap: 10px;
+
+    @media(max-width: $tablet) {
+      margin-top: 10px !important;
+    }
+
+    @media(max-width: $phone) {
+      flex-direction: column;
+      align-items: initial;
+    }
+  }
+
+  .packaging__count-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    @media(max-width: $phone) {
+      gap: 10px;
+    }
+  }
+
+  .packaging__count-buttons {
+    width: 180px;
+
+    @media(max-width: $phone) {
+      width: 100px;
+    }
+  }
+
+  .packaging__count-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+
+    @media(max-width: $phone) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .packaging__count-button--plus:after,
+  .packaging__count-button:before {
+    width: 16px;
+
+    @media(max-width: $phone) {
+      width: 10px;
+    }
+  }
+}

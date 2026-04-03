@@ -1,0 +1,166 @@
+@import 'src/utils/utils';
+
+.suggest {
+  position: relative;
+  padding-bottom: 110px;
+  background-color: $white-1;
+
+  @media(max-width: $phone) {
+    padding-bottom: 40px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    grid-column-gap: 60px;
+    column-gap: 60px;
+
+    @media(max-width: $desktop) {
+      grid-column-gap: 30px;
+      column-gap: 30px;
+    }
+    @media(max-width: $phone) {
+      flex-direction: column;
+      grid-row-gap: 20px;
+      row-gap: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+    font-family: $title-font;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 45px;
+    color: $dark-blue-1;
+
+    @media(max-width: $phone) {
+      margin-bottom: 10px;
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    em {
+      font-style: normal;
+      color: $blue-1;
+    }
+  }
+
+  &__banner {
+    user-select: none;
+
+    @media(max-width: $phone) {
+      order: 1;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__form {
+    display: grid;
+    max-width: 600px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    flex-shrink: 0;
+
+    @media(max-width: $tablet) {
+      max-width: 400px;
+      grid-template-columns: 1fr;
+    }
+    @media(max-width: $phone) {
+      max-width: unset;
+    }
+  }
+
+  &__field {
+    position: relative;
+
+    &--wide {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    margin: 0;
+    padding-top: 11px;
+    padding-right: 14px;
+    padding-bottom: 12px;
+    padding-left: 14px;
+    border: 1px solid $grey-6;
+    border-radius: 8px;
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    color: $dark-blue-1;
+    background-color: $white-1;
+    outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &::placeholder {
+      font-family: $main-font;
+      color: $grey-8;
+    }
+  }
+
+  &__textarea {
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    margin: 0;
+    padding-top: 11px;
+    padding-right: 14px;
+    padding-bottom: 12px;
+    padding-left: 14px;
+    border: 1px solid $grey-6;
+    border-radius: 8px;
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    color: $dark-blue-1;
+    background-color: $white-1;
+    outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &::placeholder {
+      font-family: $main-font;
+      color: $grey-8;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: $dark-blue-1;
+
+    @media(max-width: $phone) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    margin-top: 10px;
+
+    @media(max-width: $phone) {
+      margin-top: 0;
+    }
+  }
+}

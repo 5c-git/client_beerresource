@@ -1,0 +1,12 @@
+mixin cart-block(props)
+  section.cart-block.cart-block--active
+    div.cart-block__container
+      div.cart-block__header
+        h2.cart-block__title=props.title
+        div.cart-block__total 
+          p.cart-block__total-weight=props.weight
+          p.cart-block__total-amount=props.amount
+
+      div.cart-block__inner
+        div.cart-block__answer
+          block

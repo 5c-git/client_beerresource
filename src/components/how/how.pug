@@ -1,0 +1,32 @@
+section.how
+  div.container 
+    +marker({
+      title: '● Хранение'
+    })
+    div.how__wrapper
+      h2(data-aos='fade-up' data-aos-delay='100' data-aos-duration='500').how__title <em>Как мы</em> храним хмель
+      ul.how__card-list 
+        li.how__card-item
+          +how-card({
+            src: './assets/images/image-19.jpg',
+            title: 'Стеллажное хранение',
+            text: 'Элементы политического процесса, превозмогая сложившуюся непростую экономическую ситуацию, обнародованы.',
+          })
+        li.how__card-item
+          +how-card({
+            src: './assets/images/image-16.jpg',
+            title: 'Вентиляция в помещениях',
+            text: 'Отдельные теплые сухие склады класса А с необходимой температурой и влажностью.',
+          })
+        li.how__card-item
+          +how-card({
+            src: './assets/images/image-8.jpg',
+            title: 'Отдельные теплые сухие склады класса А',
+            text: 'Есть над чем задуматься: явные признаки победы институционализации призваны к ответу.',
+          })
+        li.how__card-item
+          +how-card({
+            src: './assets/images/image-3.jpg',
+            title: 'Санитарная обработка',
+            text: 'Есть над чем задуматься: явные признаки победы институционализации призваны к ответу.',
+          })
