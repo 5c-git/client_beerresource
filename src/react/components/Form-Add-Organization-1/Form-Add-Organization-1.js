@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Formik, Form, FieldArray, getIn, Field } from "formik";
 import * as Yup from "yup";
-import InputMask from "react-input-mask";
+import { InputMask } from "@react-input/mask";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -165,29 +165,23 @@ const FormAddOrganization1 = (props) => {
                   ИНН организации или ИП
                 </label>
                 <InputMask
-                  mask="999999999999"
-                  maskPlaceholder={null}
+                  mask="____________"
+                  replacement={{ _: /\d/ }}
+                  className={
+                    errors.inn && touched.inn
+                      ? "form-lk__item error"
+                      : "form-lk__item"
+                  }
+                  id="inn"
+                  name="inn"
+                  type="text"
+                  autoComplete="off"
+                  autoCapitalize="off"
+                  placeholder="Введите ИНН организации или ИП"
                   value={values.inn}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                >
-                  <input
-                    className={
-                      errors.inn && touched.inn
-                        ? "form-lk__item error"
-                        : "form-lk__item"
-                    }
-                    id="inn"
-                    name="inn"
-                    type="text"
-                    autoComplete="off"
-                    autoCapitalize="off"
-                    placeholder="Введите ИНН организации или ИП"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.inn}
-                  />
-                </InputMask>
+                />
               </div>
             </fieldset>
 
@@ -257,27 +251,21 @@ const FormAddOrganization1 = (props) => {
                   Контактный телефон
                 </label>
                 <InputMask
-                  mask="+7 (999) 999-99-99"
-                  maskPlaceholder={null}
+                  mask="+7 (___) ___-__-__"
+                  replacement={{ _: /\d/ }}
+                  className={
+                    errors.mainPhone && touched.mainPhone
+                      ? "form-lk__item error"
+                      : "form-lk__item"
+                  }
+                  id="mainPhone"
+                  name="mainPhone"
+                  type="phone"
+                  placeholder="Введите телефон"
                   value={values.mainPhone}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                >
-                  <input
-                    className={
-                      errors.mainPhone && touched.mainPhone
-                        ? "form-lk__item error"
-                        : "form-lk__item"
-                    }
-                    id="mainPhone"
-                    name="mainPhone"
-                    type="phone"
-                    placeholder="Введите телефон"
-                    onChange={props.onChange}
-                    onBlur={props.onBlur}
-                    value={props.values}
-                  />
-                </InputMask>
+                />
               </div>
 
               <div className="form-lk__field">
@@ -411,23 +399,21 @@ const FormAddOrganization1 = (props) => {
                         Контактный телефон
                       </label>
                       <InputMask
-                        mask="+7 (999) 999-99-99"
-                        maskPlaceholder={null}
-                        value={values.contacts.phone}
+                        mask="+7 (___) ___-__-__"
+                        replacement={{ _: /\d/ }}
+                        className={
+                          getIn(errors, `contacts[${index}].phone`) &&
+                          getIn(touched, `contacts[${index}].phone`)
+                            ? "form-lk__item error"
+                            : "form-lk__item"
+                        }
+                        name={`contacts.${index}.phone`}
+                        placeholder="Введите телефон"
+                        type="phone"
+                        value={getIn(values, `contacts[${index}].phone`)}
                         onChange={handleChange}
-                      >
-                        <Field
-                          className={
-                            getIn(errors, `contacts[${index}].phone`) &&
-                            getIn(touched, `contacts[${index}].phone`)
-                              ? "form-lk__item error"
-                              : "form-lk__item"
-                          }
-                          name={`contacts.${index}.phone`}
-                          placeholder="Введите телефон"
-                          type="phone"
-                        />
-                      </InputMask>
+                        onBlur={handleBlur}
+                      />
 
                       <div className="form-lk__field">
                         <FormControl sx={FormControlStyle}>

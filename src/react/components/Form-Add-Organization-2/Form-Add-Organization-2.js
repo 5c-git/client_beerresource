@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import InputMask from "react-input-mask";
+import { InputMask } from "@react-input/mask";
 
 const innRegExp = /^[0-9_]{10,12}$/;
 const ogrnRegExp = /^[0-9]{15}$/;
@@ -113,28 +113,22 @@ const FormAddOrganization2 = (props) => {
                 ИНН
               </label>
               <InputMask
-                mask="999999999999"
-                maskPlaceholder={null}
+                mask="____________"
+                replacement={{ _: /\d/ }}
+                className={
+                  formik.errors.inn && formik.touched.inn
+                    ? "form-lk__item error"
+                    : "form-lk__item"
+                }
+                id="inn"
+                name="inn"
+                type="text"
+                placeholder="Введите ИНН организации или ИП"
                 value={formik.values.inn}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 disabled={existFlag}
-              >
-                <input
-                  className={
-                    formik.errors.inn && formik.touched.inn
-                      ? "form-lk__item error"
-                      : "form-lk__item"
-                  }
-                  id="inn"
-                  name="inn"
-                  type="text"
-                  placeholder="Введите ИНН организации или ИП"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.inn}
-                />
-              </InputMask>
+              />
             </div>
             <div className="form-lk__field form-lk__field--narrow">
               {/* {formik.errors.companyName && formik.touched.companyName ? <div className='error'>{formik.errors.companyName}</div> : null} */}
@@ -232,28 +226,21 @@ const FormAddOrganization2 = (props) => {
                 ОГРН
               </label>
               <InputMask
-                mask="999999999999999"
-                maskPlaceholder={null}
+                mask="_______________"
+                replacement={{ _: /\d/ }}
+                className={
+                  formik.errors.ogrn && formik.touched.ogrn
+                    ? "form-lk__item error"
+                    : "form-lk__item"
+                }
+                id="ogrn"
+                name="ogrn"
+                type="text"
+                placeholder="Введите ОГРН"
                 value={formik.values.ogrn}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                // disabled={existFlag}
-              >
-                <input
-                  className={
-                    formik.errors.ogrn && formik.touched.ogrn
-                      ? "form-lk__item error"
-                      : "form-lk__item"
-                  }
-                  id="ogrn"
-                  name="ogrn"
-                  type="text"
-                  placeholder="Введите ОГРН"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.ogrn}
-                />
-              </InputMask>
+              />
             </div>
             {/* кпп цифры*/}
             {/* <div className="form-lk__field form-lk__field--narrow">*/}

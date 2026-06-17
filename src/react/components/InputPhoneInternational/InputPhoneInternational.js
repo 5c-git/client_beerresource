@@ -1,10 +1,13 @@
 import "./InputPhoneInternational.scss";
-import { Field } from "formik";
-import InputMask from "react-input-mask";
+import { InputMask } from "@react-input/mask";
 import { ENV } from 'env';
 
 import { Select, MenuItem } from "@mui/material";
 import { useState } from "react";
+
+// Конверсия старых масок react-input-mask в синтаксис @react-input/mask:
+// голая "9" — плейсхолдер-цифра → "_"; экранированная "\9" (и прочие \X) — литерал → X.
+const toMask = (m) => m.replace(/\\(.)|9/g, (_m, esc) => (esc !== undefined ? esc : "_"));
 
 const masks = [
   {
@@ -1412,23 +1415,20 @@ const InputPhoneInternational = ({
       ) : null}
 
       <InputMask
-        mask={country.mask}
-        maskPlaceholder={null}
+        mask={toMask(country.mask)}
+        replacement={{ _: /\d/ }}
+        minLength="10"
+        autoComplete="off"
+        autoCapitalize="off"
+        className="InputPhoneInternational__field"
+        type="tel"
+        name={name}
+        placeholder={placeholder}
         value={value}
         onChange={onChange}
         onBlur={onBlur}
         disabled={isDisabled}
-      >
-        <Field
-          minLength="10"
-          autoComplete="off"
-          autoCapitalize="off"
-          className="InputPhoneInternational__field"
-          type="tel"
-          name={name}
-          placeholder={placeholder}
-        />
-      </InputMask>
+      />
     </div>
   );
 };
