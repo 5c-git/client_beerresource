@@ -1,11 +1,8 @@
-@import 'src/utils/utils';
-
 .RequestSearch {
-
   &__header {
     margin-bottom: 30px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 20px;
     }
   }
@@ -18,7 +15,7 @@
     font-weight: 300;
     line-height: 45px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 30px;
       line-height: 35px;
     }
@@ -28,7 +25,7 @@
     margin: 0;
     margin-top: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 15px;
     }
   }
@@ -39,10 +36,10 @@
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       grid-template-columns: repeat(2, 1fr);
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-template-columns: 1fr;
     }
   }
@@ -63,7 +60,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 0;
       grid-template-columns: 1fr;
       grid-column-gap: 0;
@@ -81,7 +78,7 @@
     grid-column: span 2;
     gap: 10px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
       order: 1;
@@ -96,7 +93,7 @@
       color: $blue-1;
 
       &:hover {
-        @media(min-width: $desktop-only) {
+        @media (min-width: $desktop-only) {
           text-decoration: none;
         }
       }
@@ -104,7 +101,7 @@
   }
 
   &__submit {
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       width: 100%;
       min-width: unset;
     }
@@ -115,7 +112,7 @@
     padding-top: 30px;
     border-top: 1px solid $grey-6;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 20px;
       padding-top: 20px;
     }
@@ -132,7 +129,7 @@
     list-style: none;
     gap: 10px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       flex-direction: column;
     }
   }
@@ -147,7 +144,7 @@
     grid-column-gap: 5px;
 
     &:hover {
-      @media(min-width: $phone) {
+      @media (min-width: $phone) {
         color: $blue-1;
       }
     }

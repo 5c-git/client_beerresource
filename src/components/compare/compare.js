@@ -3,9 +3,10 @@ import './compare.scss';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import Swiper, {
+import Swiper from 'swiper';
+import {
   Navigation, Pagination,
-} from 'swiper/swiper.esm';
+} from 'swiper/modules';
 
 const breakPoints = {
   320: {

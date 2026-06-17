@@ -1,13 +1,8 @@
-@import 'src/utils/utils';
-
 .Checkbox {
-
-  &:has(.Checkbox__field[value='true']) {
-
+  &:has(.Checkbox__field[value="true"]) {
     .Checkbox {
-
       &__box {
-        background-color: #1F617F;
+        background-color: #1f617f;
 
         &:before {
           left: calc(100% - 20px);
@@ -29,7 +24,7 @@
     width: 36px;
     height: 20px;
     display: flex;
-    background-color: #D6DFE4;
+    background-color: #d6dfe4;
     outline: 1px solid transparent;
     border-radius: 10px;
     transition: background-color 0.3s;
@@ -41,15 +36,14 @@
       width: 20px;
       height: 20px;
       background-color: #ffffff;
-      border: 1px solid #D6DFE4;
+      border: 1px solid #d6dfe4;
       border-radius: 10px;
       transition: left 0.3s;
-      content: '';
+      content: "";
     }
   }
 
   &--error {
-
     .Checkbox {
       &__box {
         outline-color: $red-1;

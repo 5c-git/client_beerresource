@@ -1,8 +1,9 @@
 import './watched.scss';
 
-import Swiper, {
+import Swiper from 'swiper';
+import {
   Navigation, Pagination, Scrollbar,
-} from 'swiper/swiper.esm';
+} from 'swiper/modules';
 
 const watched = document.querySelectorAll('.watched');
 if (watched) {

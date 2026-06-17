@@ -1,5 +1,5 @@
 import './SubscribeProvider.scss';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 import Subscribe from '../../../react/Subscribe/Subscribe';
 import { sendSubscribe } from '../../../api/SubscribeApi';
 
@@ -13,5 +13,5 @@ if (subscribeProvider) {
     </div>
   );
 
-  ReactDOM.render(<SubscribeProvider />, subscribeProvider);
+  createRoot(subscribeProvider).render(<SubscribeProvider />);
 }

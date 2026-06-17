@@ -4,9 +4,9 @@
   margin: 0;
 }
 
-$main-font: 'Inter';
-$title-font: 'BEERRESOURCE';
-$icon-font: 'icon';
+$main-font: "Inter";
+$title-font: "BEERRESOURCE";
+$icon-font: "icon";
 
 $white-1: #ffffff;
 $grey-1: #f7fafc;
@@ -40,9 +40,9 @@ $phone: 767px;
   background-size: 60px;
   background-position: center;
   background-color: $grey-3;
-  background-image: url('../assets/images/no-image.svg');
+  background-image: url("../assets/images/no-image.svg");
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     background-size: 44px;
   }
 

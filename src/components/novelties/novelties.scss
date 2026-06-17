@@ -1,11 +1,9 @@
-@import 'src/utils/utils';
-
 .novelties {
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: $grey-1;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     padding-top: 30px;
     padding-bottom: 30px;
   }
@@ -18,7 +16,7 @@
     font-weight: 300;
     line-height: 45px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 20px;
       font-size: 30px;
       line-height: 35px;
@@ -28,13 +26,13 @@
   &__slider {
     position: relative;
 
-    @media(max-width: $desktop) {
+    @media (max-width: $desktop) {
       margin-right: -30px;
       margin-left: -30px;
       padding-right: 30px;
       padding-left: 30px;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-right: -15px;
       margin-left: -15px;
       padding-right: 15px;
@@ -54,7 +52,7 @@
     width: unset !important;
     margin-right: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-right: 10px;
     }
 
@@ -66,7 +64,7 @@
   &__scrollbar {
     display: none;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       display: block;
       height: 4px;
       margin-top: 25px;
@@ -90,7 +88,7 @@
     grid-column-gap: 15px;
     grid-template-columns: repeat(2, 50px);
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       display: none;
     }
   }
@@ -107,12 +105,14 @@
     line-height: 20px;
     color: $dark-blue-1;
     background-color: transparent;
-    transition: border-color 0.3s, color 0.3s;
+    transition:
+      border-color 0.3s,
+      color 0.3s;
     user-select: none;
     cursor: pointer;
 
     &:not([disabled]):hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
         border-color: $blue-1;
       }

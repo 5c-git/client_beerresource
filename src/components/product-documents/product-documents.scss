@@ -1,159 +1,157 @@
-@import "src/utils/utils";
-
 .product-documents {
-    position: relative;
+  position: relative;
 
-    .document-card {
-        &:not(:first-of-type) {
-            margin-top: 15px;
+  .document-card {
+    &:not(:first-of-type) {
+      margin-top: 15px;
 
-            @media (max-width: $phone) {
-                margin-top: 10px;
-            }
-        }
+      @media (max-width: $phone) {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__block {
+    max-width: 800px;
+
+    &:not(:first-of-type) {
+      margin-top: 20px;
+
+      @media (max-width: $phone) {
+        margin-top: 20px;
+      }
     }
 
-    &__block {
-        max-width: 800px;
+    .product-documents__title {
+      margin: 0;
+      margin-bottom: 15px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+  }
 
-        &:not(:first-of-type) {
-            margin-top: 20px;
+  &__download {
+    position: absolute;
+    top: 0;
+    right: 0;
 
-            @media (max-width: $phone) {
-                margin-top: 20px;
-            }
-        }
+    @media (max-width: $tablet) {
+      position: initial;
+      margin-top: 60px;
 
-        .product-documents__title {
-            margin: 0;
-            margin-bottom: 15px;
-            font-size: 18px;
-            font-weight: 700;
-            line-height: 28px;
-        }
+      @media (max-width: $phone) {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__download-link {
+    display: inline-grid;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    text-decoration: none;
+    color: $dark-blue-1;
+    transition: color 0.3s;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
+    grid-column-gap: 8px;
+    white-space: nowrap;
+
+    @media (max-width: $phone) {
+      font-size: 14px;
+      line-height: 20px;
+      color: $blue-1;
     }
 
-    &__download {
-        position: absolute;
-        top: 0;
-        right: 0;
-
-        @media (max-width: $tablet) {
-            position: initial;
-            margin-top: 60px;
-
-            @media (max-width: $phone) {
-                margin-top: 20px;
-            }
-        }
+    &:hover {
+      @media (min-width: $desktop-only) {
+        color: $blue-1;
+      }
     }
 
-    &__download-link {
-        display: inline-grid;
-        align-items: center;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 25px;
-        text-decoration: none;
-        color: $dark-blue-1;
-        transition: color 0.3s;
-        grid-auto-flow: column;
-        grid-auto-columns: min-content;
-        grid-column-gap: 8px;
-        white-space: nowrap;
+    svg {
+      width: 25px;
+      height: 25px;
+      stroke: currentColor;
 
-        @media (max-width: $phone) {
-            font-size: 14px;
-            line-height: 20px;
-            color: $blue-1;
-        }
+      @media (max-width: $phone) {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
 
-        &:hover {
-            @media (min-width: $desktop-only) {
-                color: $blue-1;
-            }
-        }
+  &__alert {
+    max-width: 600px;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: $grey-5;
 
-        svg {
-            width: 25px;
-            height: 25px;
-            stroke: currentColor;
-
-            @media (max-width: $phone) {
-                width: 28px;
-                height: 28px;
-            }
-        }
+    @media (max-width: $phone) {
+      margin-top: 20px;
     }
 
-    &__alert {
-        max-width: 600px;
-        margin-top: 50px;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: $grey-5;
+    p {
+      margin: 0;
+      margin-bottom: 15px;
 
-        @media (max-width: $phone) {
-            margin-top: 20px;
-        }
+      @media (max-width: $phone) {
+        margin-bottom: 10px;
+      }
 
-        p {
-            margin: 0;
-            margin-bottom: 15px;
-
-            @media (max-width: $phone) {
-                margin-bottom: 10px;
-            }
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-
-        a {
-            display: block;
-            margin-bottom: 15px;
-            color: $blue-1;
-
-            @media (max-width: $phone) {
-                margin-bottom: 10px;
-            }
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-
-            &:hover {
-                @media (min-width: $desktop-only) {
-                    text-decoration: none;
-                }
-            }
-        }
-
-        img {
-            display: block;
-            width: 250px;
-            height: auto;
-            margin-bottom: 15px;
-
-            @media (max-width: $phone) {
-                margin-bottom: 10px;
-            }
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
-    &__qr {
-        display: flex;
-        margin-top: 50px;
-        gap: 30px;
-        flex-wrap: wrap;
+    a {
+      display: block;
+      margin-bottom: 15px;
+      color: $blue-1;
 
-        @media (max-width: $phone) {
-            margin-top: 20px;
+      @media (max-width: $phone) {
+        margin-bottom: 10px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        @media (min-width: $desktop-only) {
+          text-decoration: none;
         }
+      }
     }
+
+    img {
+      display: block;
+      width: 250px;
+      height: auto;
+      margin-bottom: 15px;
+
+      @media (max-width: $phone) {
+        margin-bottom: 10px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__qr {
+    display: flex;
+    margin-top: 50px;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    @media (max-width: $phone) {
+      margin-top: 20px;
+    }
+  }
 }

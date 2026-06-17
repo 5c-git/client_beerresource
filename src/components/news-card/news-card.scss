@@ -1,5 +1,3 @@
-@import 'src/utils/utils';
-
 .news-card {
   display: flex;
   flex-direction: column;
@@ -13,7 +11,7 @@
     line-height: 20px;
     list-style: none;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
     }
@@ -24,7 +22,7 @@
     color: $dark-blue-1;
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }
@@ -39,8 +37,7 @@
     aspect-ratio: 380 / 300;
 
     &:hover {
-      @media(min-width: $desktop-only) {
-
+      @media (min-width: $desktop-only) {
         &:before {
           visibility: initial;
           opacity: initial;
@@ -62,11 +59,13 @@
       line-height: 96px;
       color: $white-1;
       background-color: rgba($color: $dark-blue-1, $alpha: 30%);
-      transition: visibility 0.3s, opacity 0.3s;
+      transition:
+        visibility 0.3s,
+        opacity 0.3s;
       visibility: hidden;
       opacity: 0;
       pointer-events: none;
-      content: '↗';
+      content: "↗";
     }
 
     img {
@@ -83,7 +82,7 @@
     font-weight: 700;
     line-height: 28px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 16px;
       line-height: 25px;
     }
@@ -94,7 +93,7 @@
       color: $dark-blue-1;
 
       &:hover {
-        @media(min-width: $desktop-only) {
+        @media (min-width: $desktop-only) {
           color: $blue-1;
         }
       }
@@ -129,13 +128,13 @@
     transition: color 0.3s;
     cursor: pointer;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 15px;
     }
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }

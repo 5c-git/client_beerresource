@@ -1,11 +1,8 @@
-@import 'src/utils/utils';
-
 .tabs {
-
   & + .layout {
     margin-top: 40px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 20px;
     }
   }
@@ -13,7 +10,7 @@
   &__nav {
     display: flex;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       margin-right: -30px;
       margin-left: -30px;
       padding-right: 30px;
@@ -22,7 +19,7 @@
       overflow-y: hidden;
       overflow-x: auto;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-right: -15px;
       margin-left: -15px;
       padding-right: 15px;
@@ -44,7 +41,7 @@
     grid-template-columns: min-content;
     grid-column-gap: 30px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-column-gap: 20px;
     }
   }
@@ -67,13 +64,13 @@
     white-space: nowrap;
     cursor: pointer;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       line-height: 20px;
     }
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }
@@ -85,7 +82,7 @@
       color: $grey-8;
       transform: translateY(-5px);
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         font-size: 12px;
       }
     }

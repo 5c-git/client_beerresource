@@ -1,7 +1,99 @@
 import "./Code.scss";
 import { Formik } from "formik";
-import ReactCodeInput from "react-verification-code-input";
 import { useState, useEffect, useRef } from "react";
+
+// Собственный аналог react-verification-code-input (либа заброшена, на React 18 не встаёт).
+// Контролируемый компонент: значение приходит через value, отдаётся через onChange/onComplete.
+const CodeInput = ({
+  fields = 4,
+  value = "",
+  onChange = () => {},
+  onComplete = () => {},
+  inputProps = {},
+  className = "",
+}) => {
+  const inputsRef = useRef([]);
+  const digits = Array.from({ length: fields }, (_, i) => value[i] || "");
+
+  const emit = (next) => {
+    const joined = next.join("").slice(0, fields);
+    onChange(joined);
+    if (joined.length === fields && next.every((d) => d !== "")) {
+      onComplete(joined);
+    }
+  };
+
+  const focusInput = (i) => {
+    const el = inputsRef.current[i];
+    if (el) el.focus();
+  };
+
+  const handleChange = (i, raw) => {
+    const onlyDigits = raw.replace(/\D/g, "");
+    const next = [...digits];
+
+    if (!onlyDigits) {
+      next[i] = "";
+      emit(next);
+      return;
+    }
+
+    let pos = i;
+    for (const ch of onlyDigits.split("")) {
+      if (pos >= fields) break;
+      next[pos] = ch;
+      pos += 1;
+    }
+    emit(next);
+    focusInput(Math.min(pos, fields - 1));
+  };
+
+  const handleKeyDown = (i, e) => {
+    if (e.key === "Backspace") {
+      const next = [...digits];
+      if (digits[i]) {
+        next[i] = "";
+        emit(next);
+      } else if (i > 0) {
+        next[i - 1] = "";
+        emit(next);
+        focusInput(i - 1);
+        e.preventDefault();
+      }
+    } else if (e.key === "ArrowLeft" && i > 0) {
+      focusInput(i - 1);
+    } else if (e.key === "ArrowRight" && i < fields - 1) {
+      focusInput(i + 1);
+    }
+  };
+
+  const handlePaste = (e) => {
+    e.preventDefault();
+    const pasted = (e.clipboardData.getData("text") || "").replace(/\D/g, "");
+    if (pasted) handleChange(0, pasted.slice(0, fields));
+  };
+
+  return (
+    <div className={className}>
+      {digits.map((digit, i) => (
+        <input
+          key={i}
+          ref={(el) => {
+            inputsRef.current[i] = el;
+          }}
+          type="text"
+          inputMode="numeric"
+          value={digit}
+          onChange={(e) => handleChange(i, e.target.value)}
+          onKeyDown={(e) => handleKeyDown(i, e)}
+          onPaste={handlePaste}
+          onFocus={(e) => e.target.select()}
+          {...inputProps}
+        />
+      ))}
+    </div>
+  );
+};
 
 // Хук для автоподстановки кода через WebOTP (Android)
 function useWebOTP(formikRef, updateUI, CODE_LENGTH = 4) {
@@ -96,8 +188,8 @@ const Code = ({ phoneNumber, changeAction, sendAgain, sendSms }) => {
               onInput={handleIOSInput}
             />
 
-            {/* ReactCodeInput для UI */}
-            <ReactCodeInput
+            {/* Поле ввода кода */}
+            <CodeInput
               fields={4}
               value={codeValue}
               onChange={(value) => setCodeValue(value)}

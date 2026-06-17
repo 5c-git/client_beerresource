@@ -1,10 +1,8 @@
-@import 'src/utils/utils';
-
 .offer {
   margin-top: 30px;
   margin-bottom: 60px;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     margin-top: 20px;
     margin-bottom: 40px;
   }
@@ -14,7 +12,7 @@
     color: $blue-1;
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         text-decoration: none;
       }
     }
@@ -27,7 +25,7 @@
   &__banner {
     margin-bottom: 30px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 20px;
     }
 
@@ -37,7 +35,7 @@
       height: auto;
       margin: 0 auto;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         width: 70px;
       }
     }
@@ -54,7 +52,7 @@
     line-height: 55px;
     word-break: break-word;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 10px;
       font-size: 35px;
       line-height: 35px;
@@ -67,7 +65,7 @@
     font-size: 16px;
     line-height: 25px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 5px;
       font-size: 14px;
       line-height: 20px;
@@ -78,7 +76,7 @@
       font-weight: 700;
       line-height: 28px;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         font-size: 16px;
         line-height: 25px;
       }
@@ -91,7 +89,7 @@
     line-height: 20px;
     color: $grey-8;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
     }

@@ -1,10 +1,8 @@
-@import 'src/utils/utils';
-
 .title {
   margin-top: 30px;
   margin-bottom: 30px;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -12,7 +10,7 @@
   & + .site-nav {
     margin-top: 30px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 20px;
     }
   }
@@ -24,7 +22,7 @@
     grid-column-gap: 30px;
     column-gap: 30px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       grid-column-gap: 15px;
       column-gap: 15px;
     }
@@ -40,7 +38,7 @@
     line-height: 55px;
     word-break: break-word;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 35px;
       line-height: 35px;
     }
@@ -53,7 +51,7 @@
     color: $grey-7;
     flex-shrink: 0;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       height: 35px;
     }
 
@@ -63,7 +61,7 @@
       font-size: 14px;
       line-height: 20px;
 
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         display: none;
       }
     }
@@ -71,16 +69,15 @@
     .back {
       padding-bottom: 3px;
 
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         display: none;
       }
     }
   }
 
   &--small {
-
     .title__text {
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         font-size: 20px;
         line-height: 25px;
       }
@@ -88,7 +85,7 @@
   }
 
   &--hidden {
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       display: none;
     }
   }

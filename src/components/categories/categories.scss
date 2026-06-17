@@ -1,12 +1,10 @@
-@import 'src/utils/utils';
-
 .categories {
   position: relative;
   padding-top: 110px;
   padding-bottom: 110px;
   background-color: $white-1;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     padding-top: 30px;
     padding-bottom: 40px;
   }
@@ -37,11 +35,11 @@
     grid-column-gap: 60px;
     column-gap: 60px;
 
-    @media(max-width: $desktop) {
+    @media (max-width: $desktop) {
       grid-column-gap: 30px;
       column-gap: 30px;
     }
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       flex-direction: column;
     }
   }
@@ -50,7 +48,7 @@
     max-width: 490px;
     flex-grow: 1;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       display: flex;
       max-width: unset;
       flex-direction: row;
@@ -62,7 +60,7 @@
       overflow-y: hidden;
       overflow-x: auto;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-right: -15px;
       margin-bottom: 20px;
       margin-left: -15px;
@@ -84,7 +82,7 @@
     list-style: none;
     counter-reset: lvl1;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       position: initial;
       display: flex;
       flex-direction: row;
@@ -92,7 +90,7 @@
       grid-column-gap: 30px;
       column-gap: 30px;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-column-gap: 20px;
       column-gap: 20px;
     }
@@ -110,10 +108,10 @@
     column-gap: 5px;
     cursor: pointer;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       margin-bottom: 0;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       color: $dark-blue-1;
     }
 
@@ -130,14 +128,14 @@
       line-height: 18px;
       content: counter(lvl1);
 
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         display: none;
         content: unset;
       }
     }
 
     &:not(.categories__nav-item--active):hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }
@@ -145,7 +143,7 @@
     &--active {
       color: $dark-blue-1;
 
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         border-bottom: 1px solid currentcolor;
         color: $blue-1;
         box-shadow: 0 1px 0 0 currentcolor;
@@ -163,9 +161,8 @@
 
     @while $num < 10 {
       &:nth-of-type(#{$num}) {
-
         &:before {
-          content: '0'counter(lvl1);
+          content: "0" counter(lvl1);
         }
       }
 
@@ -185,10 +182,10 @@
     user-select: none;
     white-space: nowrap;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       padding-left: 0;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding-bottom: 9px;
       font-size: 14px;
       font-weight: 400;
@@ -204,7 +201,7 @@
     height: 1px;
     background-color: $grey-6;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       display: none;
     }
   }
@@ -213,7 +210,10 @@
     width: 0;
     height: 100%;
     background-color: $grey-6;
-    transition: width 0.3s, background-color 0.3s, box-shadow 0.3s;
+    transition:
+      width 0.3s,
+      background-color 0.3s,
+      box-shadow 0.3s;
     box-shadow: 0 -1px $grey-6;
   }
 
@@ -221,7 +221,7 @@
     width: 470px;
     flex-shrink: 0;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       width: unset;
     }
   }
@@ -229,20 +229,20 @@
   &__block {
     position: relative;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       display: none;
     }
 
     &:not(:first-of-type) {
       margin-top: 60px;
 
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         margin-top: 0;
       }
     }
 
     &--active {
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         display: block;
       }
     }
@@ -252,7 +252,7 @@
     position: absolute;
     top: -100px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       position: initial;
     }
   }
@@ -263,13 +263,13 @@
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       grid-template-columns: repeat(3, 1fr);
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-column-gap: 10px;
     }
-    @media(max-width: 469px) {
+    @media (max-width: 469px) {
       grid-template-columns: repeat(2, 1fr);
     }
 
@@ -286,7 +286,7 @@
     min-width: 277px;
     margin-top: 60px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       width: 100%;
       margin-top: 30px;
     }

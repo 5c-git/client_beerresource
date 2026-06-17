@@ -10,11 +10,7 @@ import "./utils/utils.js";
 import "aos/src/sass/aos.scss";
 import "choices.js/src/styles/choices.scss";
 // import 'flatpickr/dist/themes/light.scss'
-import "swiper/swiper.scss";
-import "swiper/modules/effect-fade/effect-fade.scss";
-import "swiper/modules/navigation/navigation.scss";
-import "swiper/modules/pagination/pagination.scss";
-import "swiper/modules/scrollbar/scrollbar.scss";
+import "swiper/css/bundle";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale-subtle.css";
 //------------------------------------------------------------

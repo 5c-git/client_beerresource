@@ -1,7 +1,4 @@
-@import 'src/utils/utils';
-
 .RequestSuggest {
-
   &__title {
     margin: 0;
     margin-bottom: 30px;
@@ -12,7 +9,7 @@
     line-height: 45px;
     color: $dark-blue-1;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 10px;
       font-size: 30px;
       line-height: 35px;
@@ -32,11 +29,11 @@
     grid-row-gap: 20px;
     flex-shrink: 0;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       max-width: 400px;
       grid-template-columns: 1fr;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       max-width: unset;
     }
   }
@@ -64,7 +61,7 @@
     grid-column: span 2;
     gap: 10px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
       order: 1;
@@ -79,7 +76,7 @@
       color: $blue-1;
 
       &:hover {
-        @media(min-width: $desktop-only) {
+        @media (min-width: $desktop-only) {
           text-decoration: none;
         }
       }

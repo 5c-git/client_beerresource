@@ -1,18 +1,15 @@
-@import 'src/utils/utils';
-
 .profile-center {
-
   &__top {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       flex-direction: column;
       grid-row-gap: 25px;
       row-gap: 25px;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 15px;
     }
   }
@@ -26,7 +23,7 @@
     line-height: 45px;
     color: $grey-8;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 20px;
       line-height: 25px;
     }
@@ -43,12 +40,12 @@
     transition: color 0.3s;
     flex-shrink: 0;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       width: 100%;
     }
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }
@@ -73,7 +70,7 @@
       color: currentcolor;
       background-color: $white-1;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         font-size: 14px;
         line-height: 20px;
       }
@@ -108,17 +105,19 @@
         line-height: 25px;
         text-align: left;
         color: $black-1;
-        transition: color 0.3s, background-color 0.3s;
+        transition:
+          color 0.3s,
+          background-color 0.3s;
         text-overflow: ellipsis;
         overflow: hidden;
 
-        @media(max-width: $phone) {
+        @media (max-width: $phone) {
           font-size: 14px;
           line-height: 20px;
         }
 
         &:hover {
-          @media(min-width: $desktop-only) {
+          @media (min-width: $desktop-only) {
             color: $blue-1;
             background-color: $grey-3;
           }
@@ -142,7 +141,7 @@
       opacity: 1;
     }
 
-    &[data-type*='select-one'] .choices__inner {
+    &[data-type*="select-one"] .choices__inner {
       min-height: unset;
       margin: 0;
       padding: 0;
@@ -151,7 +150,7 @@
       background-color: transparent;
     }
 
-    &[data-type*='select-one']:before {
+    &[data-type*="select-one"]:before {
       position: absolute;
       top: calc(50% - 2px);
       right: 21px;
@@ -163,10 +162,10 @@
       transition: transform 0.3s;
       transform: rotate(45deg);
       pointer-events: none;
-      content: '';
+      content: "";
     }
 
-    &[data-type*='select-one']:after {
+    &[data-type*="select-one"]:after {
       position: absolute;
       top: calc(50% - 2px);
       right: 15px;
@@ -178,28 +177,27 @@
       transition: transform 0.3s;
       transform: rotate(-45deg);
       pointer-events: none;
-      content: '';
+      content: "";
     }
 
-    &[data-type*='select-one'].is-open:before {
+    &[data-type*="select-one"].is-open:before {
       margin: 0;
       transform: rotate(-45deg);
     }
 
-    &[data-type*='select-one'].is-open:after {
+    &[data-type*="select-one"].is-open:after {
       margin: 0;
       transform: rotate(45deg);
     }
 
-    &[data-type*='select-one'].is-open .choices__inner {
+    &[data-type*="select-one"].is-open .choices__inner {
       border-radius: 8px 8px 0 0;
     }
   }
 
   &__main {
-
     .top-filters__sort {
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         flex-direction: column;
         align-items: initial;
         grid-row-gap: 10px;
@@ -214,7 +212,7 @@
     grid-column-gap: 15px;
     grid-row-gap: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
       grid-column-gap: 10px;
       grid-row-gap: 15px;

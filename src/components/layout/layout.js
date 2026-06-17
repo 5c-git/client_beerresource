@@ -1,8 +1,9 @@
 import './layout.scss';
 
-import Swiper, {
+import Swiper from 'swiper';
+import {
   Navigation, Pagination, Scrollbar,
-} from 'swiper/swiper.esm';
+} from 'swiper/modules';
 
 const layoutSliders = document.querySelectorAll('.layout--slider');
 layoutSliders.forEach((layoutSlider, index) => {

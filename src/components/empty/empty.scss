@@ -1,11 +1,9 @@
-@import 'src/utils/utils';
-
 .empty {
   margin-top: 60px;
   margin-bottom: 60px;
   text-align: center;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     margin-top: 40px;
     margin-bottom: 40px;
   }
@@ -17,14 +15,14 @@
     margin-right: auto;
     margin-left: auto;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       width: 182px;
     }
 
     & + .back-nav {
       margin-top: 60px;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         margin-top: 20px;
       }
     }
@@ -39,7 +37,7 @@
     font-weight: 300;
     line-height: 45px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 10px;
       font-size: 20px;
       line-height: 25px;

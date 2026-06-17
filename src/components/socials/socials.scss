@@ -1,7 +1,4 @@
-@import 'src/utils/utils';
-
 .socials {
-
   &__list {
     display: grid;
     justify-content: flex-start;
@@ -24,61 +21,61 @@
     overflow: hidden;
 
     &--fb {
-      background-image: url('../assets/images/icon-fb.svg');
+      background-image: url("../assets/images/icon-fb.svg");
 
       &:hover {
-        @media(min-width: $desktop-only) {
-          background-image: url('../assets/images/icon-fb--hover.svg');
+        @media (min-width: $desktop-only) {
+          background-image: url("../assets/images/icon-fb--hover.svg");
         }
       }
     }
 
     &--vk {
-      background-image: url('../assets/images/icon-vk.svg');
+      background-image: url("../assets/images/icon-vk.svg");
 
       &:hover {
-        @media(min-width: $desktop-only) {
-          background-image: url('../assets/images/icon-vk--hover.svg');
+        @media (min-width: $desktop-only) {
+          background-image: url("../assets/images/icon-vk--hover.svg");
         }
       }
     }
 
     &--insta {
-      background-image: url('../assets/images/icon-insta.svg');
+      background-image: url("../assets/images/icon-insta.svg");
 
       &:hover {
-        @media(min-width: $desktop-only) {
-          background-image: url('../assets/images/icon-insta--hover.svg');
+        @media (min-width: $desktop-only) {
+          background-image: url("../assets/images/icon-insta--hover.svg");
         }
       }
     }
 
     &--you {
-      background-image: url('../assets/images/icon-you.svg');
+      background-image: url("../assets/images/icon-you.svg");
 
       &:hover {
-        @media(min-width: $desktop-only) {
-          background-image: url('../assets/images/icon-you--hover.svg');
+        @media (min-width: $desktop-only) {
+          background-image: url("../assets/images/icon-you--hover.svg");
         }
       }
     }
 
     &--tele {
-      background-image: url('../assets/images/icon-tele.svg');
+      background-image: url("../assets/images/icon-tele.svg");
 
       &:hover {
-        @media(min-width: $desktop-only) {
-          background-image: url('../assets/images/icon-tele--hover.svg');
+        @media (min-width: $desktop-only) {
+          background-image: url("../assets/images/icon-tele--hover.svg");
         }
       }
     }
 
     &--whats {
-      background-image: url('../assets/images/icon-whats.svg');
+      background-image: url("../assets/images/icon-whats.svg");
 
       &:hover {
-        @media(min-width: $desktop-only) {
-          background-image: url('../assets/images/icon-whats--hover.svg');
+        @media (min-width: $desktop-only) {
+          background-image: url("../assets/images/icon-whats--hover.svg");
         }
       }
     }

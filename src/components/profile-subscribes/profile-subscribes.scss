@@ -1,7 +1,4 @@
-@import 'src/utils/utils';
-
 .profile-subscribes {
-
   &__form {
     display: grid;
     grid-template-columns: 1fr;
@@ -19,7 +16,7 @@
     grid-auto-flow: column;
     grid-column-gap: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-template-columns: repeat(2, 140px);
       grid-column-gap: 10px;
     }
@@ -30,7 +27,8 @@
     }
   }
 
-  &__checkbox {}
+  &__checkbox {
+  }
 
   &__label {
     position: relative;
@@ -40,14 +38,13 @@
     line-height: 20px;
     cursor: pointer;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       line-height: 20px;
     }
   }
 
   &__input {
-
     &:checked + .profile-subscribes__label-box {
       background-color: $blue-1;
       border-color: $blue-1;
@@ -74,7 +71,7 @@
         border-bottom: 2px solid #ffffff;
         transform: rotate(45deg);
         box-sizing: content-box;
-        content: '';
+        content: "";
       }
     }
   }
@@ -93,7 +90,6 @@
 }
 
 @keyframes checkbox-check {
-
   0% {
     width: 0;
     height: 0;
@@ -115,7 +111,6 @@
   }
 }
 @keyframes checkbox-check-some {
-
   0% {
     width: 0.2em;
     height: 0.5em;

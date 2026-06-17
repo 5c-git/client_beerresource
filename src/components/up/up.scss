@@ -1,5 +1,3 @@
-@import 'src/utils/utils';
-
 .up {
   position: fixed;
   right: 0;
@@ -21,7 +19,7 @@
   outline: none;
   cursor: pointer;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     right: 0;
     bottom: 0;
     left: 0;
@@ -35,7 +33,7 @@
   }
 
   &:hover {
-    @media(min-width: $desktop-only) {
+    @media (min-width: $desktop-only) {
       color: $blue-1;
     }
   }
@@ -48,7 +46,7 @@
     text-transform: uppercase;
     writing-mode: vertical-lr;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       text-transform: unset;
       writing-mode: unset;
     }
@@ -60,7 +58,7 @@
     margin-top: 9px;
     background-color: $grey-6;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       display: none;
     }
   }

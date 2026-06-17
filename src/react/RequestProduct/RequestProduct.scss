@@ -1,11 +1,8 @@
-@import 'src/utils/utils';
-
 .RequestProduct {
-
   &__header {
     margin-bottom: 30px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 20px;
     }
   }
@@ -18,7 +15,7 @@
     font-weight: 300;
     line-height: 45px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 30px;
       line-height: 35px;
     }
@@ -28,7 +25,7 @@
     margin: 0;
     margin-top: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 15px;
     }
   }
@@ -39,7 +36,7 @@
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-template-columns: 1fr;
       grid-column-gap: 0;
     }
@@ -60,7 +57,7 @@
     grid-template-columns: 277px 1fr;
     grid-column-gap: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       align-items: flex-start;
       grid-template-columns: 40px 1fr;
       grid-column-gap: 10px;
@@ -68,12 +65,12 @@
   }
 
   &__file-button {
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding: 0;
     }
 
     span {
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         display: none;
       }
     }
@@ -83,7 +80,7 @@
     margin: 0;
     color: $grey-8;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
     }
@@ -100,7 +97,7 @@
     border: 1px dashed $grey-8;
     border-radius: 8px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding-top: 9px;
       padding-right: 9px;
       padding-bottom: 9px;
@@ -126,7 +123,7 @@
     cursor: pointer;
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         text-decoration: none;
       }
     }
@@ -174,12 +171,12 @@
     outline: none;
     cursor: pointer;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       color: $black-1;
     }
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }
@@ -199,7 +196,7 @@
         width: 100%;
         height: 1px;
         background-color: currentcolor;
-        content: '';
+        content: "";
         transform: rotate(45deg);
       }
 
@@ -210,7 +207,7 @@
         width: 100%;
         height: 1px;
         background-color: currentcolor;
-        content: '';
+        content: "";
         transform: rotate(-45deg);
       }
     }
@@ -245,7 +242,7 @@
     grid-template-columns: 1fr 277px;
     grid-gap: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-template-columns: 1fr;
       grid-column-gap: 0;
       grid-row-gap: 9px;
@@ -261,7 +258,7 @@
     color: $grey-8;
     gap: 10px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
       order: 1;
@@ -276,7 +273,7 @@
       color: $blue-1;
 
       &:hover {
-        @media(min-width: $desktop-only) {
+        @media (min-width: $desktop-only) {
           text-decoration: none;
         }
       }
@@ -284,7 +281,7 @@
   }
 
   &__submit {
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       width: 100%;
       min-width: unset;
     }

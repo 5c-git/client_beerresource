@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 import FooterSubscribe from '../../../react/FooterSubscribe/FooterSubscribe';
 import { sendFooterSubscribe } from '../../../api/FooterSubscribeApi';
 
@@ -10,5 +10,5 @@ if (footerSubscribe) {
     <FooterSubscribe submitHandler={sendFooterSubscribe} id={id} />
   );
 
-  ReactDOM.render(<FooterSubscribeProvider />, footerSubscribe);
+  createRoot(footerSubscribe).render(<FooterSubscribeProvider />);
 }

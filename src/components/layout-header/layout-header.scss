@@ -1,14 +1,12 @@
-@import 'src/utils/utils';
-
 .layout-header {
   margin-bottom: 60px;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     margin-bottom: 40px;
   }
 
   & + .line {
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       margin-top: -20px;
     }
   }
@@ -18,14 +16,13 @@
     grid-template-columns: minmax(0, 800px) 1fr;
     grid-column-gap: 30px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       grid-template-columns: 1fr;
       grid-row-gap: 20px;
     }
   }
 
   &__main {
-
     p {
       margin: 0;
       margin-top: 10px;
@@ -39,7 +36,7 @@
   &__sidebar {
     justify-self: flex-end;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       justify-self: unset;
       order: 1;
     }
@@ -49,11 +46,11 @@
     margin-top: 60px;
     grid-column: 1 / -1;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       margin-top: 20px;
       order: 2;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 10px;
     }
 
@@ -80,7 +77,7 @@
       line-height: 20px;
       color: $grey-8;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         margin-top: 5px;
         font-size: 10px;
         line-height: 15px;
@@ -100,7 +97,7 @@
     grid-row-gap: 20px;
     row-gap: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 15px;
       grid-column-gap: 20px;
       column-gap: 20px;
@@ -127,11 +124,11 @@
         transition: transform 0.3s ease;
         transform: scaleX(1);
         transform-origin: left;
-        content: '';
+        content: "";
       }
 
       &:hover {
-        @media(min-width: $desktop-only) {
+        @media (min-width: $desktop-only) {
           color: $blue-1;
 
           &:before {
@@ -147,7 +144,7 @@
     min-width: 240px;
     margin-top: 30px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       width: 100%;
       margin-top: 20px;
     }

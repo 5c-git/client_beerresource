@@ -1,14 +1,12 @@
-@import 'src/utils/utils';
-
 .Address {
   @include zero;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     background-color: $white-1;
   }
 
   &__wrapper {
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding-right: 15px;
       padding-left: 15px;
     }
@@ -23,7 +21,7 @@
     line-height: 30px;
     color: $dark-blue-1;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding-top: 17px;
       padding-right: 50px;
       padding-bottom: 17px;
@@ -50,7 +48,7 @@
     margin-bottom: 20px;
     column-gap: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       column-gap: 10px;
     }
   }
@@ -74,12 +72,12 @@
     cursor: pointer;
     transition: 0.3s;
 
-    @media(min-width: $desktop-only) {
+    @media (min-width: $desktop-only) {
       &:hover {
         border-color: $blue-1;
       }
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding-top: 13px;
       padding-bottom: 13px;
       font-size: 12px;
@@ -98,7 +96,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       display: block;
     }
 
@@ -106,15 +104,14 @@
       grid-column-start: 1;
       grid-column-end: 3;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         grid-column-start: unset;
         grid-column-end: unset;
       }
     }
 
     & > .Address__input {
-
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         margin-bottom: 20px;
       }
     }
@@ -128,7 +125,7 @@
     grid-column-start: 1;
     grid-column-end: 3;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-template-columns: 1fr;
     }
   }
@@ -137,7 +134,7 @@
     grid-column-start: 1;
     grid-column-end: 4;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-column-start: unset;
       grid-column-end: unset;
     }
@@ -151,7 +148,7 @@
     grid-column-start: 1;
     grid-column-end: 3;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 10px;
       margin-right: -15px;
       margin-left: -15px;
@@ -166,7 +163,7 @@
   }
 
   &__button {
-    @media(max-width: 425px) {
+    @media (max-width: 425px) {
       width: 48%;
       padding-right: 5px;
       padding-left: 5px;
@@ -174,9 +171,7 @@
   }
 
   &__input {
-
     &--error {
-
       .Input__field,
       .Textarea__field {
         border-color: $red-1;
@@ -190,7 +185,6 @@
       .MuiSelect-select:before {
         border-color: $red-1 !important;
       }
-
     }
   }
 
@@ -208,9 +202,9 @@
     line-height: 25px;
     color: $blue-1;
     transition: 0.3s;
-    cursor: pointer; 
-    
-    @media(min-width: $desktop-only) {
+    cursor: pointer;
+
+    @media (min-width: $desktop-only) {
       &:hover {
         color: $dark-blue-1;
       }

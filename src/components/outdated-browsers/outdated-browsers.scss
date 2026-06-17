@@ -1,5 +1,3 @@
-@import 'src/utils/utils';
-
 .outdated-browsers {
   position: fixed;
   top: 0;
@@ -18,7 +16,7 @@
     max-width: 100%;
     margin: auto 0;
     border-radius: 8px;
-    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font-family: "PT Sans", Helvetica, Arial, sans-serif;
     color: #333333;
     background-color: #ffffff;
     box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.32);
@@ -61,7 +59,7 @@
       line-height: 1;
       font-variant: normal;
       text-transform: none;
-      content: '\e014';
+      content: "\e014";
       speak: none;
     }
   }
@@ -108,22 +106,22 @@
 
     &--yandex {
       background-repeat: no-repeat;
-      background-image: url('../assets/images/browsers/yandex.png');
+      background-image: url("../assets/images/browsers/yandex.png");
     }
 
     &--chrome {
       background-repeat: no-repeat;
-      background-image: url('../assets/images/browsers/chrome.png');
+      background-image: url("../assets/images/browsers/chrome.png");
     }
 
     &--firefox {
       background-repeat: no-repeat;
-      background-image: url('../assets/images/browsers/firefox.png');
+      background-image: url("../assets/images/browsers/firefox.png");
     }
 
     &--opera {
       background-repeat: no-repeat;
-      background-image: url('../assets/images/browsers/opera.png');
+      background-image: url("../assets/images/browsers/opera.png");
     }
   }
 

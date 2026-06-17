@@ -1,9 +1,7 @@
-@import 'src/utils/utils';
-
 .privacy {
   margin-top: 35px;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     margin-top: 15px;
   }
 
@@ -16,7 +14,7 @@
     font-weight: 300;
     line-height: 25px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       line-height: 20px;
     }
@@ -27,7 +25,7 @@
     color: $black-1;
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         text-decoration: none;
       }
     }
@@ -40,7 +38,7 @@
     list-style: none;
     counter-reset: lvl1;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 10px;
     }
 
@@ -55,7 +53,7 @@
       line-height: 25px;
       counter-increment: lvl1;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         margin-top: 20px;
         padding-left: 0;
         font-size: 16px;
@@ -74,9 +72,9 @@
         position: absolute;
         top: 0;
         left: 0;
-        content: counter(lvl1) '. ';
+        content: counter(lvl1) ". ";
 
-        @media(max-width: $phone) {
+        @media (max-width: $phone) {
           position: relative;
         }
       }
@@ -88,7 +86,7 @@
         font-weight: 300;
         line-height: 25px;
 
-        @media(max-width: $phone) {
+        @media (max-width: $phone) {
           font-size: 14px;
           line-height: 20px;
         }
@@ -98,7 +96,7 @@
         margin-top: 20px;
         counter-reset: lvl2;
 
-        @media(max-width: $phone) {
+        @media (max-width: $phone) {
           margin-top: 10px;
         }
 
@@ -111,7 +109,7 @@
           line-height: 25px;
           counter-increment: lvl2;
 
-          @media(max-width: $phone) {
+          @media (max-width: $phone) {
             margin-bottom: 10px;
             padding-left: 0;
             font-size: 14px;
@@ -119,14 +117,14 @@
           }
 
           &:before {
-            content: counter(lvl1) '.' counter(lvl2) '. ';
+            content: counter(lvl1) "." counter(lvl2) ". ";
           }
 
           ol {
             margin-top: 15px;
             counter-reset: lvl3;
 
-            @media(max-width: $phone) {
+            @media (max-width: $phone) {
               margin-top: 10px;
             }
 
@@ -136,13 +134,13 @@
               padding-left: 50px;
               counter-increment: lvl3;
 
-              @media(max-width: $phone) {
+              @media (max-width: $phone) {
                 margin-bottom: 5px;
                 padding-left: 0;
               }
 
               &:before {
-                content: counter(lvl1) '.' counter(lvl2) '.' counter(lvl3) '. ';
+                content: counter(lvl1) "." counter(lvl2) "." counter(lvl3) ". ";
               }
             }
           }
@@ -150,7 +148,7 @@
           ul {
             margin-top: 15px;
 
-            @media(max-width: $phone) {
+            @media (max-width: $phone) {
               margin-top: 10px;
             }
 
@@ -160,7 +158,7 @@
               padding-left: 50px;
               counter-increment: unset !important;
 
-              @media(max-width: $phone) {
+              @media (max-width: $phone) {
                 padding-left: 0;
               }
 
@@ -168,9 +166,9 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                content: '— ' !important;
+                content: "— " !important;
 
-                @media(max-width: $phone) {
+                @media (max-width: $phone) {
                   position: relative;
                 }
               }
@@ -182,7 +180,7 @@
       ul {
         margin-top: 20px;
 
-        @media(max-width: $phone) {
+        @media (max-width: $phone) {
           margin-top: 10px;
         }
 
@@ -195,7 +193,7 @@
           line-height: 25px;
           counter-increment: unset !important;
 
-          @media(max-width: $phone) {
+          @media (max-width: $phone) {
             margin-bottom: 10px;
             padding-left: 0;
             font-size: 14px;
@@ -206,9 +204,9 @@
             position: absolute;
             top: 0;
             left: 0;
-            content: '— ' !important;
+            content: "— " !important;
 
-            @media(max-width: $phone) {
+            @media (max-width: $phone) {
               position: relative;
             }
           }
@@ -234,7 +232,7 @@
       line-height: 25px;
       counter-increment: unset !important;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         margin-top: 10px;
         padding-left: 0;
         font-size: 14px;
@@ -253,9 +251,9 @@
         position: absolute;
         top: 0;
         left: 0;
-        content: '— ' !important;
+        content: "— " !important;
 
-        @media(max-width: $phone) {
+        @media (max-width: $phone) {
           position: relative;
         }
       }

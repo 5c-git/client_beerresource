@@ -1,7 +1,4 @@
-@import 'src/utils/utils';
-
 .how-card {
-
   &__banner {
     display: block;
     margin-bottom: 20px;
@@ -9,7 +6,7 @@
     overflow: hidden;
     user-select: none;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 15px;
     }
 
@@ -20,7 +17,7 @@
       height: 300px;
       object-fit: cover;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         height: 265px;
       }
     }
@@ -35,7 +32,7 @@
     font-weight: 300;
     line-height: 30px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 18px;
       line-height: 20px;
     }
@@ -48,7 +45,7 @@
     font-weight: 400;
     line-height: 25px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
     }

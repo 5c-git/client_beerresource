@@ -1,7 +1,4 @@
-@import 'src/utils/utils';
-
 .select-city {
-
   &__form {
     display: flex;
     flex-direction: column;
@@ -9,7 +6,6 @@
   }
 
   &__field {
-
     &--select {
       height: 305px;
       overflow-x: hidden;
@@ -68,19 +64,21 @@
     line-height: 25px;
     text-align: left;
     color: $black-1;
-    transition: color 0.3s, background-color 0.3s;
+    transition:
+      color 0.3s,
+      background-color 0.3s;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     cursor: pointer;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       line-height: 20px;
     }
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
         background-color: $grey-3;
       }

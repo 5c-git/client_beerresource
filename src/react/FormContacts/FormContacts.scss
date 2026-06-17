@@ -1,5 +1,3 @@
-@import 'src/utils/utils';
-
 .FormContacts {
   display: flex;
   flex-direction: row;
@@ -11,7 +9,7 @@
   column-gap: 50px;
   row-gap: 20px;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     flex-direction: column;
     gap: 10px;
   }
@@ -26,7 +24,7 @@
     grid-column-gap: 5px;
 
     &:hover {
-      @media(min-width: $phone) {
+      @media (min-width: $phone) {
         color: $blue-1;
       }
     }

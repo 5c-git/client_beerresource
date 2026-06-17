@@ -1,12 +1,10 @@
-@import 'src/utils/utils';
-
 .catalog-nav {
   margin-top: -155px;
   padding-top: 165px;
   padding-bottom: 70px;
   background-color: $grey-3;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     margin-top: -110px;
     padding-top: 110px;
     padding-bottom: 40px;
@@ -22,7 +20,7 @@
     column-gap: 20px;
     row-gap: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       flex-direction: column;
       justify-content: initial;
       column-gap: unset;
@@ -31,14 +29,13 @@
   }
 
   &__item {
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       border-bottom: 1px solid $grey-6;
     }
   }
 
   &__item:first-of-type {
-    @media(max-width: $phone) {
-
+    @media (max-width: $phone) {
       .catalog-card__wrapper {
         padding-top: 0;
       }

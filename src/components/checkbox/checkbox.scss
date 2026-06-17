@@ -1,5 +1,3 @@
-@import 'src/utils/utils';
-
 .checkbox {
   display: flex;
   font-family: $main-font;
@@ -19,11 +17,8 @@
   }
 
   &:has(:checked) {
-
     .checkbox {
-
       &__box {
-
         color: $blue-1;
       }
     }
@@ -53,15 +48,12 @@
   }
 
   &:not(.checkbox--toggle) {
-
-    input[type='checkbox'] {
-  
+    input[type="checkbox"] {
       &:checked {
-  
-        &+.checkbox__box {
+        & + .checkbox__box {
           background-color: currentColor;
           border-color: currentColor;
-  
+
           &:before {
             position: absolute;
             top: 2px;
@@ -70,9 +62,9 @@
             border-right: 2px solid $white-1;
             border-bottom: 2px solid $white-1;
             transform: rotate(45deg);
-            content: '';
-  
-            @media(max-width: $phone) {
+            content: "";
+
+            @media (max-width: $phone) {
               top: 2px;
               left: 6px;
               width: 6px;
@@ -82,28 +74,24 @@
         }
       }
     }
-  
-    input[type='radio'] {
-  
+
+    input[type="radio"] {
       &:checked {
-  
-        &+.checkbox__box {
-  
+        & + .checkbox__box {
           &:before {
             background-color: $white-1;
             border: 5px solid currentColor;
-  
-            @media(max-width: $phone) {
+
+            @media (max-width: $phone) {
               border-width: 4px;
             }
           }
         }
       }
-  
-  
-      &+.checkbox__box {
+
+      & + .checkbox__box {
         border-radius: 50%;
-  
+
         &:before {
           position: absolute;
           top: 0;
@@ -114,18 +102,15 @@
           border: 1px solid $grey-6;
           border-radius: 50%;
           will-change: border-width;
-          content: '';
+          content: "";
         }
       }
     }
   }
 
   &--toggle {
-
     &:has(:checked) {
-
       .checkbox {
-
         &__box {
           background-color: currentColor;
 
@@ -137,7 +122,6 @@
     }
 
     .checkbox {
-
       &__box {
         position: relative;
         width: 36px;
@@ -159,7 +143,7 @@
           border: 1px solid $grey-6;
           border-radius: 10px;
           transition: left 0.3s;
-          content: '';
+          content: "";
         }
       }
     }

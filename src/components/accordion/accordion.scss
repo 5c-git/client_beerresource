@@ -1,7 +1,4 @@
-@import 'src/utils/utils';
-
 .accordion {
-
   &__inner {
     max-height: 0;
     transition: max-height 0.3s ease-in;

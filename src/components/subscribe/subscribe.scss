@@ -1,16 +1,14 @@
-@import 'src/utils/utils';
-
 .subscribe {
   margin-top: 60px;
   margin-bottom: 60px;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     margin-top: 20px;
     margin-bottom: 20px;
   }
 
   & + .layout {
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 20px;
     }
   }
@@ -28,14 +26,14 @@
     grid-column-gap: 30px;
     grid-row-gap: 5px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       padding-top: 30px;
       padding-right: 30px;
       padding-bottom: 30px;
       padding-left: 30px;
       grid-template-columns: 1fr 1fr;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding-top: 15px;
       padding-right: 15px;
       padding-bottom: 15px;
@@ -56,7 +54,7 @@
     font-weight: 300;
     line-height: 45px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 15px;
       font-size: 30px;
       line-height: 35px;
@@ -66,7 +64,7 @@
   &__post-title {
     margin: 0;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 15px;
     }
@@ -76,7 +74,7 @@
     margin-bottom: 15px;
     align-self: flex-end;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 0;
     }
   }
@@ -89,7 +87,7 @@
     line-height: 20px;
     color: $dark-blue-1;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 15px;
     }
@@ -134,10 +132,10 @@
     grid-row-gap: 15px;
     grid-column: 1 / -1;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       grid-template-columns: 1fr 1fr;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-template-columns: 1fr;
     }
   }
@@ -151,7 +149,7 @@
     line-height: 20px;
     color: $grey-8;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
       order: 1;
@@ -163,7 +161,7 @@
     color: $blue-1;
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         text-decoration: none;
       }
     }

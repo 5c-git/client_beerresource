@@ -1,11 +1,9 @@
-@import 'src/utils/utils';
-
 .compare {
   position: relative;
   padding-top: 40px;
   padding-bottom: 60px;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     padding-top: 20px;
     padding-bottom: 40px;
   }
@@ -15,7 +13,7 @@
     margin-top: 15px;
     font-size: 15px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 5px;
       padding-right: 5px;
       padding-left: 5px;
@@ -26,7 +24,7 @@
   &__nav {
     margin-bottom: 40px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 20px;
     }
   }
@@ -37,7 +35,7 @@
     grid-column-gap: 30px;
     column-gap: 30px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       flex-direction: column;
       grid-row-gap: 20px;
       row-gap: 20px;
@@ -49,7 +47,7 @@
     grid-auto-flow: column;
     grid-column-gap: 15px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-template-columns: repeat(2, 1fr);
       grid-column-gap: 10px;
     }
@@ -72,7 +70,7 @@
     color: $dark-blue-1;
     background-color: transparent;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding-top: 10px;
       padding-right: 9px;
       padding-bottom: 10px;
@@ -82,7 +80,7 @@
     }
 
     &:not(.compare__filter-button--active):hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         border-style: solid;
         border-color: $grey-7;
         cursor: pointer;
@@ -116,14 +114,14 @@
     flex-shrink: 0;
     cursor: pointer;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       font-weight: 400;
       line-height: 20px;
     }
 
     &:not(:disabled):hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }
@@ -139,7 +137,7 @@
     grid-column-gap: 15px;
     grid-template-columns: repeat(2, 50px);
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       display: none;
     }
   }
@@ -155,11 +153,13 @@
     line-height: 20px;
     color: $dark-blue-1;
     background-color: transparent;
-    transition: border-color 0.3s, color 0.3s;
+    transition:
+      border-color 0.3s,
+      color 0.3s;
     user-select: none;
     cursor: pointer;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       width: 35px;
       height: 35px;
       padding-bottom: 2px;
@@ -168,7 +168,7 @@
     }
 
     &:not([disabled]):hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
         border-color: $blue-1;
       }
@@ -196,12 +196,12 @@
       transition: opacity 0.3s;
       opacity: 0.5;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         top: calc(50% - 17px);
       }
 
       &:hover {
-        @media(min-width: $desktop-only) {
+        @media (min-width: $desktop-only) {
           opacity: 1;
         }
       }
@@ -235,7 +235,7 @@
     padding-top: 15px;
     padding-bottom: 15px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding-top: 10px;
       padding-bottom: 10px;
     }
@@ -268,7 +268,7 @@
     column-gap: 10px;
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }
@@ -282,7 +282,7 @@
     background-color: $grey-3;
     flex-shrink: 0;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       width: 40px;
       height: 40px;
       padding: 5px;
@@ -314,7 +314,7 @@
     -webkit-line-clamp: 3;
     /* stylelint-enable */
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 10px;
       font-weight: 700;
       line-height: 15px;
@@ -329,7 +329,7 @@
     line-height: 20px;
     color: $grey-8;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 10px;
       line-height: 15px;
     }
@@ -359,7 +359,7 @@
       width: unset !important;
       height: 400px;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         height: 250px;
       }
     }
@@ -374,7 +374,7 @@
     text-align: center;
     color: $grey-8;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       display: block;
     }
   }
@@ -382,7 +382,7 @@
   &__header {
     margin-bottom: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 10px;
     }
   }
@@ -397,7 +397,7 @@
     font-weight: 300;
     line-height: 45px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 40px;
       padding-top: 30px;
       font-size: 30px;
@@ -414,13 +414,12 @@
     transition: background-color 0.3s;
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         background-color: $grey-2;
       }
     }
 
     &:last-of-type {
-
       .compare__scoring-block {
         border-bottom: 0;
       }
@@ -432,7 +431,7 @@
     padding-bottom: 20px;
     border-bottom: 1px solid $grey-6;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding-top: 10px;
       padding-bottom: 10px;
     }
@@ -455,7 +454,7 @@
     font-weight: 500;
     line-height: 25px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       font-weight: 500;
       line-height: 20px;
@@ -482,7 +481,7 @@
       line-height: 20px;
       color: $grey-8;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         font-size: 12px;
         line-height: 18px;
       }

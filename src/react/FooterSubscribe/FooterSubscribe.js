@@ -1,5 +1,5 @@
 import './FooterSubscribe.scss';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import Input from '../Input/Input';

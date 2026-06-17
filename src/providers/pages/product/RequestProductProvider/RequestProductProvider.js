@@ -1,5 +1,5 @@
 import './RequestProductProvider.scss';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 import RequestProduct from '../../../../react/RequestProduct/RequestProduct';
 import { sendRequestProduct } from '../../../../api/RequestProductApi';
 
@@ -12,5 +12,5 @@ if (requestProduct) {
     </div>
   );
 
-  ReactDOM.render(<RequestProductProvider />, requestProduct);
+  createRoot(requestProduct).render(<RequestProductProvider />);
 }

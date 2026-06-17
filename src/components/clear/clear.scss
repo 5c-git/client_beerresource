@@ -1,7 +1,4 @@
-@import 'src/utils/utils';
-
 .clear {
-
   &__button {
     display: flex;
     align-items: center;
@@ -19,7 +16,7 @@
     column-gap: 5px;
     cursor: pointer;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       font-size: 0;
       line-height: 0;
       color: $dark-blue-1;
@@ -28,7 +25,7 @@
     }
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }
@@ -37,7 +34,7 @@
       stroke: currentColor;
       flex-shrink: 0;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         width: 25px;
         height: 25px;
       }

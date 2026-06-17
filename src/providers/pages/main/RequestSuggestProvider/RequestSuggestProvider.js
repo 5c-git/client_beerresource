@@ -1,5 +1,5 @@
 import './RequestSuggestProvider.scss';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 import RequestSuggest from '../../../../react/RequestSuggest/RequestSuggest';
 import { sendRequestSuggest } from '../../../../api/RequestSuggestApi';
 
@@ -11,5 +11,5 @@ if (requestSuggest) {
     <RequestSuggest submitHandler={sendRequestSuggest} id={id} />
   );
 
-  ReactDOM.render(<RequestSuggestProvider />, requestSuggest);
+  createRoot(requestSuggest).render(<RequestSuggestProvider />);
 }

@@ -1,5 +1,3 @@
-@import 'src/utils/utils';
-
 .offer-card {
   margin-bottom: 15px;
   padding-right: 19px;
@@ -9,7 +7,7 @@
   background-color: $white-1;
   transition: border-color 0.3s;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     margin-bottom: 10px;
     padding-right: 14px;
     padding-left: 14px;
@@ -30,16 +28,15 @@
     transition: color 0.3s;
     cursor: pointer;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       flex-direction: column;
       align-items: unset;
       padding-right: 30px;
     }
 
     &:hover {
-
       .offer-card__header-title {
-        @media(min-width: $desktop-only) {
+        @media (min-width: $desktop-only) {
           color: $blue-1;
         }
       }
@@ -52,10 +49,12 @@
       width: 10px;
       height: 2px;
       background-color: currentcolor;
-      transition: transform 0.3s, background-color 0.3s;
+      transition:
+        transform 0.3s,
+        background-color 0.3s;
       transform-origin: 50% 50%;
       transform: rotate(-45deg);
-      content: '';
+      content: "";
     }
 
     &:before {
@@ -65,10 +64,12 @@
       width: 10px;
       height: 2px;
       background-color: currentcolor;
-      transition: transform 0.3s, background-color 0.3s;
+      transition:
+        transform 0.3s,
+        background-color 0.3s;
       transform-origin: 50% 50%;
       transform: rotate(45deg);
-      content: '';
+      content: "";
     }
   }
 
@@ -81,7 +82,7 @@
     line-height: 20px;
     color: $grey-8;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
     }
@@ -93,7 +94,7 @@
       margin-right: 5px;
       border-radius: 50%;
       background-color: currentcolor;
-      content: '';
+      content: "";
     }
 
     &--formed {
@@ -122,7 +123,7 @@
     font-size: 18px;
     line-height: 28px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       line-height: 20px;
     }
@@ -136,7 +137,7 @@
     font-size: 14px;
     line-height: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 5px;
       font-size: 10px;
       line-height: 15px;
@@ -154,20 +155,21 @@
     padding-top: 15px;
     padding-bottom: 19px;
     border-top: 1px solid $grey-6;
-    transition: visibility 0.3s, opacity 0.3s;
+    transition:
+      visibility 0.3s,
+      opacity 0.3s;
     visibility: hidden;
     opacity: 0;
     grid-template-columns: 1fr 400px;
     grid-column-gap: 20px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       grid-template-columns: 1fr;
       grid-row-gap: 10px;
     }
   }
 
   &__block {
-
     &:not(:first-of-type) {
       margin-top: 10px;
     }
@@ -178,7 +180,7 @@
     font-size: 14px;
     line-height: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
     }
@@ -190,7 +192,7 @@
     line-height: 20px;
     color: $grey-8;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
     }
@@ -200,7 +202,7 @@
       color: $blue-1;
 
       &:hover {
-        @media(min-width: $desktop-only) {
+        @media (min-width: $desktop-only) {
           text-decoration: none;
         }
       }
@@ -215,12 +217,12 @@
     grid-column-gap: 20px;
     grid-column: 1 / -1;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       margin-top: 10px;
       grid-template-columns: 1fr;
       grid-row-gap: 10px;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 0;
     }
   }
@@ -228,7 +230,7 @@
   &__button {
     justify-self: flex-start;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       width: 100%;
       margin-top: 10px;
       justify-self: inherit;
@@ -243,10 +245,10 @@
     grid-column-gap: 30px;
     column-gap: 30px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       order: -1;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       flex-direction: column;
       align-items: flex-start;
       grid-row-gap: 10px;
@@ -255,13 +257,12 @@
   }
 
   &__qr {
-
     img {
       display: block;
       width: 100px;
       height: 100px;
 
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         display: none;
       }
     }
@@ -269,7 +270,7 @@
     .offer-card__block-text {
       margin-top: 10px;
 
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         display: none;
       }
     }
@@ -277,7 +278,7 @@
     .offer-card__button {
       display: none;
 
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         display: grid;
       }
     }

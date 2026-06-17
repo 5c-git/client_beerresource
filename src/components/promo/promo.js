@@ -1,8 +1,9 @@
 import './promo.scss';
 
-import Swiper, {
+import Swiper from 'swiper';
+import {
   Navigation, Pagination, Thumbs, EffectFade, Autoplay,
-} from 'swiper/swiper.esm';
+} from 'swiper/modules';
 
 // Слайдер.
 const doubleSlider = document.querySelector('.promo');

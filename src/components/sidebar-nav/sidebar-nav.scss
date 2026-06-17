@@ -1,10 +1,8 @@
-@import 'src/utils/utils';
-
 .sidebar-nav {
   position: sticky;
   top: 100px;
 
-  @media(max-width: $tablet) {
+  @media (max-width: $tablet) {
     position: relative;
     top: unset;
     margin-bottom: 20px;
@@ -26,10 +24,10 @@
     user-select: none;
     cursor: pointer;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       display: flex;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       font-weight: 400;
       line-height: 20px;
@@ -44,7 +42,7 @@
       background-color: currentColor;
       transition: transform 0.3s;
       transform: rotate(45deg);
-      content: '';
+      content: "";
     }
 
     &:after {
@@ -56,7 +54,7 @@
       background-color: currentColor;
       transition: transform 0.3s;
       transform: rotate(-45deg);
-      content: '';
+      content: "";
     }
 
     sup {
@@ -73,7 +71,7 @@
     padding: 0;
     list-style: none;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       position: absolute;
       right: 0;
       left: 0;
@@ -89,7 +87,9 @@
       text-align: left;
       background-color: #ffffff;
       list-style: none;
-      transition: visibility 0.3s, opacity 0.3s;
+      transition:
+        visibility 0.3s,
+        opacity 0.3s;
       visibility: hidden;
       opacity: 0;
       box-shadow: 0 20px 30px rgba(0 0 0 / 10%);
@@ -99,7 +99,7 @@
   &__item {
     margin-bottom: 10px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       margin-bottom: 0;
     }
 
@@ -108,7 +108,7 @@
     }
 
     &--active {
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         display: none;
       }
 
@@ -134,7 +134,7 @@
     outline: 0;
     cursor: pointer;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       width: 100%;
       padding-top: 11px;
       padding-right: 29px;
@@ -146,14 +146,14 @@
       text-align: left;
       color: $dark-blue-1;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       font-weight: 400;
       line-height: 20px;
     }
 
     &:not(.sidebar-nav__button--active):hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }
@@ -165,14 +165,13 @@
       color: $grey-8;
       transform: translateY(-5px);
 
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         font-size: 12px;
       }
     }
   }
 
   &--active {
-
     .sidebar-nav__header {
       border-radius: 8px 8px 0 0;
     }

@@ -1,4 +1,4 @@
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import React, { useState, useEffect } from "react";
 import AddOrganizationPopUp from "../../../components/react/Add-Organization-PopUp/Add-Organization-PopUp";
 import Modal from "../../../react/Modal/Modal";
@@ -47,8 +47,5 @@ const AddOrganizationPopUpContainer = document.querySelector(
 );
 
 if (AddOrganizationPopUpContainer) {
-  ReactDOM.render(
-    <AddOrganizationPopUpProvider />,
-    AddOrganizationPopUpContainer,
-  );
+  createRoot(AddOrganizationPopUpContainer).render(<AddOrganizationPopUpProvider />);
 }

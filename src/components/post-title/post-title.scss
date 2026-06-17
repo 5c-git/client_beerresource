@@ -1,10 +1,8 @@
-@import 'src/utils/utils';
-
 .post-title {
   margin-top: 30px;
   margin-bottom: 30px;
 
-  @media(max-width: $tablet) {
+  @media (max-width: $tablet) {
     margin-top: 20px;
     margin-bottom: 10px;
   }
@@ -15,7 +13,7 @@
     line-height: 20px;
     color: $grey-8;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
     }

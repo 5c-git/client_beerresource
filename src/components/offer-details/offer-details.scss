@@ -1,7 +1,4 @@
-@import 'src/utils/utils';
-
 .offer-details {
-
   &__control {
     display: flex;
     align-items: center;
@@ -15,7 +12,7 @@
     border-radius: 10px;
     column-gap: 30px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 20px;
       margin-bottom: 20px;
       padding-right: 15px;
@@ -38,7 +35,7 @@
     align-items: center;
     column-gap: 30px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       flex-direction: column;
       row-gap: 10px;
     }
@@ -63,7 +60,7 @@
     flex-shrink: 0;
     cursor: pointer;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       font-weight: 500;
       line-height: 18px;
@@ -71,7 +68,7 @@
     }
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }
@@ -81,14 +78,14 @@
       height: 28px;
       stroke: currentcolor;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         width: 24px;
         height: 24px;
       }
     }
 
     &--print {
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         display: none;
       }
     }
@@ -105,7 +102,7 @@
     font-size: 14px;
     line-height: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 10px;
       font-weight: 700;
       line-height: 15px;
@@ -117,13 +114,14 @@
     font-weight: 700;
     line-height: 28px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       line-height: 20px;
     }
   }
 
-  &__table {}
+  &__table {
+  }
 
   &__thead {
     display: flex;
@@ -133,7 +131,7 @@
     grid-column-gap: 40px;
     column-gap: 40px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 10px;
       padding-bottom: 10px;
       grid-column-gap: 20px;
@@ -150,7 +148,7 @@
     color: $grey-8;
     flex-shrink: 0;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       min-width: unset;
       font-size: 10px;
       line-height: 15px;
@@ -167,7 +165,7 @@
     padding-bottom: 15px;
     border-bottom: 1px solid $grey-6;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 10px;
       padding-bottom: 10px;
     }
@@ -186,7 +184,7 @@
     font-weight: 700;
     line-height: 28px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 10px;
       font-size: 16px;
       line-height: 25px;

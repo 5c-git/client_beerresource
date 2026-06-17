@@ -1,6 +1,6 @@
 import "./AddressProvider.scss";
 import "react-dadata/dist/react-dadata.css";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { AddressSuggestions } from "react-dadata";
 import * as Yup from "yup";
 import { useState, useEffect } from "react";
@@ -235,5 +235,5 @@ const AddressProvider = () => {
 const AddressProviderContainer = document.querySelector("#AddressProvider");
 
 if (AddressProviderContainer) {
-  ReactDOM.render(<AddressProvider />, AddressProviderContainer);
+  createRoot(AddressProviderContainer).render(<AddressProvider />);
 }

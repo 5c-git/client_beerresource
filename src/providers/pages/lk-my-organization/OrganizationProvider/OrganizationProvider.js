@@ -1,6 +1,6 @@
 import "./OrganizationProvider.scss";
 import { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import {
   fetchOrganizations,
   sendUpdatedOrganizations,
@@ -200,5 +200,5 @@ const OrganizationProvider = () => {
 const Organizations = document.querySelector("#OrganizationProvider");
 
 if (Organizations) {
-  ReactDOM.render(<OrganizationProvider />, Organizations);
+  createRoot(Organizations).render(<OrganizationProvider />);
 }

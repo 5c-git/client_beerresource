@@ -1,8 +1,9 @@
 import './banner.scss';
 
-import Swiper, {
+import Swiper from 'swiper';
+import {
   Navigation, Pagination, EffectFade, Autoplay,
-} from 'swiper/swiper.esm';
+} from 'swiper/modules';
 
 // Слайдер.
 const banner = document.querySelector('.banner');

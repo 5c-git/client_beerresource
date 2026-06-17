@@ -1,7 +1,4 @@
-@import 'src/utils/utils';
-
 .tooltip {
-
   &__button {
     position: relative;
     display: block;
@@ -16,7 +13,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-color: $dark-blue-1;
-    background-image: url('../assets/images/icon-question.svg');
+    background-image: url("../assets/images/icon-question.svg");
     outline: none;
     flex-shrink: 0;
     cursor: pointer;

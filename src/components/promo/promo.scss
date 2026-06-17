@@ -1,7 +1,4 @@
-@import 'src/utils/utils';
-
 @keyframes rotate {
-
   100% {
     transform: rotate(360deg);
   }
@@ -15,10 +12,10 @@
   background-color: $dark-blue-1;
   overflow: hidden;
 
-  @media(max-width: $tablet) {
+  @media (max-width: $tablet) {
     min-height: unset;
   }
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     margin-top: -60px;
     // padding-top: 60px;
   }
@@ -30,7 +27,7 @@
   &__overlay {
     height: calc(var(--vh, 1vh) * 100);
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       height: unset;
     }
   }
@@ -43,11 +40,11 @@
     height: calc(var(--vh, 1vh) * 100);
     padding-top: 80px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       position: initial;
       height: unset;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding-top: 60px;
     }
   }
@@ -60,11 +57,11 @@
     padding-top: 80px;
     padding-bottom: 80px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       height: unset;
       flex-direction: column;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding-top: 20px;
       padding-bottom: 40px;
     }
@@ -78,7 +75,7 @@
     align-items: flex-start;
     padding-bottom: 80px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       position: initial;
       padding: 0;
     }
@@ -93,7 +90,7 @@
     line-height: 80px;
     color: $light-blue-1;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 40px;
       line-height: 40px;
     }
@@ -105,12 +102,12 @@
     left: 30px;
     min-width: 277px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       position: initial;
       margin-top: 60px;
       margin-right: auto;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 25px;
       margin-right: unset;
     }
@@ -139,8 +136,8 @@
     margin-bottom: 5px;
     user-select: none;
     pointer-events: none;
-    
-    @media(max-width: $phone) {
+
+    @media (max-width: $phone) {
       width: 50px;
     }
   }
@@ -163,7 +160,7 @@
     color: $white-1;
     opacity: 0.2;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-right: 10px;
     }
 
@@ -185,7 +182,7 @@
     white-space: nowrap;
     text-decoration: none;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 40px;
       line-height: 40px;
     }
@@ -203,10 +200,10 @@
     padding-left: 25px;
     text-align: center;
 
-    @media(max-width: $desktop) {
+    @media (max-width: $desktop) {
       width: 300px;
     }
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       position: relative;
       width: 100%;
       margin-top: 60px;
@@ -214,7 +211,7 @@
       margin-left: auto;
       padding: 0;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 30px;
     }
   }
@@ -236,11 +233,11 @@
     box-sizing: border-box;
     user-select: none;
 
-    @media(max-width: $desktop) {
+    @media (max-width: $desktop) {
       width: 250px;
       height: 250px;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       width: 190px;
       height: 190px;
     }
@@ -257,19 +254,19 @@
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
-      background-image: url('../assets/images/promo-letters.svg');
-      content: '';
+      background-image: url("../assets/images/promo-letters.svg");
+      content: "";
       animation-name: rotate;
       animation-duration: 30s;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
       pointer-events: none;
 
-      @media(max-width: $desktop) {
+      @media (max-width: $desktop) {
         width: 230px;
         height: 230px;
       }
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         width: 170px;
         height: 170px;
       }
@@ -286,11 +283,11 @@
       width: 310px;
       height: 310px;
 
-      @media(max-width: $desktop) {
+      @media (max-width: $desktop) {
         width: 210px;
         height: 210px;
       }
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         width: 150px;
         height: 150px;
       }
@@ -310,7 +307,7 @@
     grid-column-gap: 15px;
     grid-template-columns: repeat(2, 50px);
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       position: absolute;
       top: calc(50% - 25px);
       right: 0;
@@ -319,7 +316,7 @@
       justify-content: space-between;
       margin-top: unset;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       top: calc(50% - 17px);
     }
   }
@@ -337,14 +334,16 @@
     line-height: 20px;
     color: $white-1;
     background-color: transparent;
-    transition: border-color 0.3s, background-color 0.3s;
+    transition:
+      border-color 0.3s,
+      background-color 0.3s;
     user-select: none;
     cursor: pointer;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       border: 1px solid $white-1;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       width: 35px;
       height: 35px;
       padding-bottom: 2px;
@@ -353,7 +352,7 @@
     }
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         background-color: rgba($color: $white-1, $alpha: 20%);
         border-color: $white-1;
       }

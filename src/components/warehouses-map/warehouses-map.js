@@ -1,7 +1,8 @@
 import './warehouses-map.scss';
-import Swiper, {
+import Swiper from 'swiper';
+import {
   Navigation,
-} from 'swiper/swiper.esm';
+} from 'swiper/modules';
 
 const warehousesMapInit = (data) => {
   const map = document.querySelector('.warehouses-map');

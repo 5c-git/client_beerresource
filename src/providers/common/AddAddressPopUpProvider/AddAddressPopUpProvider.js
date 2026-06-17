@@ -1,6 +1,6 @@
 import "./AddAddressPopUpProvider.scss";
 import "react-dadata/dist/react-dadata.css";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { AddressSuggestions } from "react-dadata";
 import { useState, useEffect } from "react";
 import Modal from "../../../react/Modal/Modal";
@@ -160,5 +160,5 @@ const AddressProviderContainer = document.querySelector(
 );
 
 if (AddressProviderContainer) {
-  ReactDOM.render(<AddAddressPopUpProvider />, AddressProviderContainer);
+  createRoot(AddressProviderContainer).render(<AddAddressPopUpProvider />);
 }

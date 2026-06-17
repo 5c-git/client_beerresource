@@ -4,3 +4,9 @@
 node_modules/
 npm-debug.*
 Thumbs.db
+.cache/
+webpack.cache/
+
+# --- Claude artifacts (раскомментировать, чтобы ИСКЛЮЧИТЬ из git) ---
+# claude-zone/
+# NEXT_SESSION.md

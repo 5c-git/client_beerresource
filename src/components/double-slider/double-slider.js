@@ -1,8 +1,9 @@
 import './double-slider.scss';
 // import Swiper, { FreeMode } from 'swiper/swiper-bundle.min';
-import Swiper, {
+import Swiper from 'swiper';
+import {
   FreeMode, Navigation, Pagination, Thumbs, EffectFade, Mousewheel, Keyboard,
-} from 'swiper/swiper.esm';
+} from 'swiper/modules';
 
 const doubleSlider = document.querySelector('.double-slider');
 if (doubleSlider) {

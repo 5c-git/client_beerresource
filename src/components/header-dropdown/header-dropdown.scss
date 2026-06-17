@@ -1,7 +1,4 @@
-@import 'src/utils/utils';
-
 .header-dropdown {
-
   &__top {
     display: flex;
     flex-direction: row;
@@ -12,7 +9,7 @@
     border-bottom: 1px solid $grey-6;
     gap: 60px;
 
-    @media(max-width: $desktop) {
+    @media (max-width: $desktop) {
       gap: 30px;
     }
   }
@@ -47,7 +44,7 @@
     cursor: pointer;
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }
@@ -83,14 +80,12 @@
     gap: 10px;
 
     &:first-of-type {
-
       .header-dropdown__link {
         padding-left: 0;
       }
     }
 
     &:last-of-type {
-
       .header-dropdown__link {
         padding-right: 0;
       }
@@ -115,7 +110,7 @@
     transition: color 0.3s;
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }
@@ -143,7 +138,7 @@
     padding-bottom: 50px;
     gap: 60px;
 
-    @media(max-width: $desktop) {
+    @media (max-width: $desktop) {
       gap: 30px;
     }
   }
@@ -167,11 +162,11 @@
       transition: transform 0.3s ease;
       transform: scaleX(1);
       transform-origin: left;
-      content: '';
+      content: "";
     }
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
 
         &:before {
@@ -238,7 +233,7 @@
     transition: color 0.3s;
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }

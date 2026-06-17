@@ -1,14 +1,11 @@
-@import 'src/utils/utils';
-
 .team-card {
-
   &__image {
     @include noimg;
     border-radius: 100px 0;
     aspect-ratio: 280 / 350;
     overflow: hidden;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       border-radius: 40px 0;
     }
 
@@ -27,7 +24,7 @@
     font-weight: 700;
     line-height: 28px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       line-height: 20px;
     }
@@ -40,7 +37,7 @@
     line-height: 20px;
     color: $grey-8;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 0;
       font-size: 12px;
       line-height: 18px;

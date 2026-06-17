@@ -1,5 +1,5 @@
 import './RequestServiceProvider.scss';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 import RequestService from '../../../../react/RequestService/RequestService';
 import { sendRequestService } from '../../../../api/RequestServiceApi';
 
@@ -13,5 +13,5 @@ if (requestService) {
     </div>
   );
 
-  ReactDOM.render(<RequestServiceProvider />, requestService);
+  createRoot(requestService).render(<RequestServiceProvider />);
 }

@@ -1,5 +1,5 @@
 import './RequestSearchProvider.scss';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 import RequestSearch from '../../../../react/RequestSearch/RequestSearch';
 import { sendRequestSearch } from '../../../../api/RequestSearchApi';
 
@@ -13,5 +13,5 @@ if (requestSearch) {
     </div>
   );
 
-  ReactDOM.render(<RequestSearchProvider />, requestSearch);
+  createRoot(requestSearch).render(<RequestSearchProvider />);
 }

@@ -1,9 +1,7 @@
-@import 'src/utils/utils';
-
 .product {
   padding-bottom: 60px;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     padding-bottom: 40px;
   }
 
@@ -11,7 +9,7 @@
     display: flex;
     margin-bottom: 30px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       margin-right: -30px;
       margin-left: -30px;
       padding-right: 30px;
@@ -20,7 +18,7 @@
       overflow-y: hidden;
       overflow-x: auto;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-right: -15px;
       margin-bottom: 20px;
       margin-left: -15px;
@@ -47,7 +45,7 @@
     grid-template-columns: min-content;
     grid-column-gap: 30px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-column-gap: 20px;
     }
   }
@@ -67,13 +65,13 @@
     white-space: nowrap;
     cursor: pointer;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       line-height: 20px;
     }
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }

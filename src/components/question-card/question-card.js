@@ -1,7 +1,8 @@
 import './question-card.scss';
-import Swiper, {
+import Swiper from 'swiper';
+import {
   Navigation,
-} from 'swiper/swiper.esm';
+} from 'swiper/modules';
 
 const questionSliderInit = () => {
   const questions = document.querySelectorAll('.question-card');

@@ -1,7 +1,4 @@
-@import 'src/utils/utils';
-
 .packaging {
-
   &__type {
     position: relative;
     border-bottom: 1px solid $grey-6;
@@ -9,7 +6,7 @@
     font-weight: 500;
     line-height: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 15px;
     }
@@ -19,7 +16,6 @@
     }
 
     &--active {
-
       .packaging__type-list {
         visibility: visible;
         opacity: 1;
@@ -43,7 +39,7 @@
     user-select: none;
     cursor: pointer;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding-top: 0;
       padding-bottom: 12px;
     }
@@ -57,9 +53,9 @@
       background-color: currentcolor;
       transition: transform 0.3s;
       transform: rotate(45deg);
-      content: '';
+      content: "";
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         top: 8px;
         right: 5px;
         width: 8px;
@@ -76,9 +72,9 @@
       background-color: currentcolor;
       transition: transform 0.3s;
       transform: rotate(-45deg);
-      content: '';
+      content: "";
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         top: 8px;
         right: 0px;
         width: 8px;
@@ -102,12 +98,14 @@
     text-align: left;
     background-color: #ffffff;
     list-style: none;
-    transition: visibility 0.3s, opacity 0.3s;
+    transition:
+      visibility 0.3s,
+      opacity 0.3s;
     visibility: hidden;
     opacity: 0;
     box-shadow: 0 20px 30px rgba(0 0 0 / 10%);
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       right: -11px;
       left: -11px;
     }
@@ -136,11 +134,11 @@
   &__count {
     margin-left: auto;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       margin-left: unset;
       align-self: flex-start;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       align-self: unset;
     }
   }
@@ -169,7 +167,7 @@
     font-weight: 500;
     line-height: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       display: none;
     }
   }
@@ -196,7 +194,7 @@
     background: transparent;
     outline: none;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
     }
@@ -212,7 +210,9 @@
     border-radius: 5px;
     color: $dark-blue-1;
     background-color: $grey-3;
-    transition: color 0.3s, background-color 0.3s;
+    transition:
+      color 0.3s,
+      background-color 0.3s;
     flex-shrink: 0;
 
     &:disabled {
@@ -221,7 +221,7 @@
     }
 
     &:not(:disabled):hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $white-1;
         background-color: $blue-1;
         cursor: pointer;
@@ -233,18 +233,17 @@
       width: 10px;
       height: 1px;
       background-color: currentcolor;
-      content: '';
+      content: "";
     }
 
     &--plus {
-
       &:after {
         position: absolute;
         width: 10px;
         height: 1px;
         background-color: currentcolor;
         transform: rotate(90deg);
-        content: '';
+        content: "";
       }
     }
   }
@@ -256,7 +255,7 @@
     line-height: 20px;
     color: $grey-8;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-right: 0;
       font-size: 10px;
       line-height: 15px;
@@ -273,7 +272,7 @@
     font-weight: 700;
     line-height: 25px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       line-height: 20px;
     }
@@ -285,7 +284,7 @@
     font-weight: 700;
     line-height: 25px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       line-height: 20px;
     }

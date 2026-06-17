@@ -1,12 +1,10 @@
-@import 'src/utils/utils';
-
 .partners {
   position: relative;
   padding-top: 110px;
   padding-bottom: 110px;
   background-color: $grey-1;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     padding-top: 30px;
     padding-bottom: 40px;
   }
@@ -21,7 +19,7 @@
     line-height: 45px;
     color: $dark-blue-1;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 10px;
       font-size: 30px;
       line-height: 35px;
@@ -41,7 +39,7 @@
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     grid-column-gap: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
       grid-column-gap: 10px;
     }
@@ -58,10 +56,10 @@
     transition: filter 0.3s;
     filter: grayscale(1);
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       filter: unset;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       height: 75px;
       padding-top: 15px;
       padding-right: 15px;

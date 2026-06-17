@@ -1,18 +1,16 @@
-@import 'src/utils/utils';
-
 .not-found {
   padding-top: 180px;
   padding-bottom: 260px !important;
 
-  @media(max-width: $desktop) {
+  @media (max-width: $desktop) {
     padding-top: 120px;
     padding-bottom: 150px !important;
   }
-  @media(max-width: $tablet) {
+  @media (max-width: $tablet) {
     padding-top: 70px;
     padding-bottom: 70px !important;
   }
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     padding-top: 40px;
     padding-bottom: 40px !important;
   }
@@ -30,7 +28,7 @@
     margin-bottom: 20px;
     margin-left: auto;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       width: 200px;
     }
   }
@@ -43,7 +41,7 @@
     font-weight: 300;
     line-height: 45px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 35px;
       line-height: 35px;
     }

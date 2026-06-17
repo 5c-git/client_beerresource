@@ -1,12 +1,10 @@
-@import 'src/utils/utils';
-
 .top-filters {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 40px;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     flex-direction: column-reverse;
     margin-bottom: 20px;
   }
@@ -18,7 +16,7 @@
     grid-column-gap: 15px;
     column-gap: 15px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       flex-direction: column;
       align-items: initial;
       grid-row-gap: 10px;
@@ -31,7 +29,7 @@
     line-height: 20px;
     color: $grey-7;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
     }
@@ -42,7 +40,7 @@
     grid-auto-flow: column;
     grid-column-gap: 15px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       justify-content: flex-start;
       grid-column-gap: 10px;
     }
@@ -66,7 +64,7 @@
     background-color: transparent;
     cursor: pointer;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding-top: 4px;
       padding-right: 9px;
       padding-bottom: 5px;
@@ -76,7 +74,7 @@
     }
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         border: 1px solid $grey-7;
       }
     }
@@ -89,7 +87,7 @@
       margin-left: 12px;
       background-color: currentcolor;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         width: 6px;
         margin-left: 8px;
       }
@@ -101,9 +99,9 @@
         width: 12px;
         height: 1px;
         background-color: currentcolor;
-        content: '';
+        content: "";
 
-        @media(max-width: $phone) {
+        @media (max-width: $phone) {
           width: 8px;
         }
       }
@@ -115,9 +113,9 @@
         width: 5px;
         height: 1px;
         background-color: currentcolor;
-        content: '';
+        content: "";
 
-        @media(max-width: $phone) {
+        @media (max-width: $phone) {
           width: 4px;
         }
       }
@@ -133,7 +131,6 @@
     }
 
     &--low {
-
       span:before {
         top: 4px;
       }
@@ -147,7 +144,7 @@
   &__view {
     display: flex;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 20px;
       align-self: flex-end;
     }
@@ -165,7 +162,7 @@
     cursor: pointer;
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }

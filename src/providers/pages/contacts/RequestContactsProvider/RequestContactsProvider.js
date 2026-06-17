@@ -1,5 +1,5 @@
 import './RequestContactsProvider.scss';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 import RequestContacts from '../../../../react/RequestContacts/RequestContacts';
 import { sendRequestContacts } from '../../../../api/RequestContactsApi';
 
@@ -13,5 +13,5 @@ if (requestContacts) {
     </div>
   );
 
-  ReactDOM.render(<RequestContactsProvider />, requestContacts);
+  createRoot(requestContacts).render(<RequestContactsProvider />);
 }

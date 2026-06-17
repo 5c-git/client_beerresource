@@ -1,8 +1,9 @@
 import './novelties.scss';
 
-import Swiper, {
+import Swiper from 'swiper';
+import {
   Navigation, Pagination, Scrollbar,
-} from 'swiper/swiper.esm';
+} from 'swiper/modules';
 
 const novelties = document.querySelectorAll('.novelties');
 if (novelties) {

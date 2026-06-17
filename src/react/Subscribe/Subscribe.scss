@@ -1,5 +1,3 @@
-@import 'src/utils/utils';
-
 .Subscribe {
   display: grid;
   padding-top: 60px;
@@ -11,14 +9,14 @@
   background-color: $grey-2;
   gap: 15px;
 
-  @media(max-width: $tablet) {
+  @media (max-width: $tablet) {
     padding-top: 30px;
     padding-right: 30px;
     padding-bottom: 30px;
     padding-left: 30px;
   }
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     padding-top: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
@@ -37,11 +35,11 @@
     grid-template-columns: 1fr 385px;
     gap: 30px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       grid-template-columns: 1fr 1fr;
     }
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-template-columns: 1fr;
       gap: 15px;
     }
@@ -60,7 +58,7 @@
     font-weight: 300;
     line-height: 45px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 30px;
       line-height: 35px;
     }
@@ -69,7 +67,7 @@
   &__post-title {
     margin: 0;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 15px;
     }
@@ -83,7 +81,7 @@
     line-height: 20px;
     color: $dark-blue-1;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 15px;
     }
@@ -126,11 +124,11 @@
     grid-template-columns: 1fr 385px;
     gap: 30px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       grid-template-columns: 1fr 1fr;
     }
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       grid-template-columns: 1fr;
       gap: 15px;
     }
@@ -145,7 +143,7 @@
     color: $grey-8;
     gap: 10px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
       order: 1;
@@ -160,7 +158,7 @@
       color: $blue-1;
 
       &:hover {
-        @media(min-width: $desktop-only) {
+        @media (min-width: $desktop-only) {
           text-decoration: none;
         }
       }
@@ -172,7 +170,7 @@
     color: $blue-1;
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         text-decoration: none;
       }
     }

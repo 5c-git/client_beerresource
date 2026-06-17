@@ -1,5 +1,5 @@
 import './RequestCooperationProvider.scss';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 import RequestCooperation from '../../../../react/RequestCooperation/RequestCooperation';
 import { sendRequestCooperation } from '../../../../api/RequestCooperationApi';
 
@@ -13,5 +13,5 @@ if (requestCooperation) {
     </div>
   );
 
-  ReactDOM.render(<RequestCooperationProvider />, requestCooperation);
+  createRoot(requestCooperation).render(<RequestCooperationProvider />);
 }

@@ -1,11 +1,9 @@
-@import 'src/utils/utils';
-
 .marker {
   position: relative;
   margin-bottom: 60px;
   padding-top: 11px;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     margin-bottom: 30px;
     padding-top: 5px;
   }
@@ -20,21 +18,20 @@
     transition: transform 1s;
     transform: scaleX(0);
     transform-origin: left;
-    content: '';
+    content: "";
   }
 
   &__title {
     font-size: 14px;
     line-height: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
     }
   }
 
   &--show {
-
     &:before {
       transform: scaleX(1);
     }

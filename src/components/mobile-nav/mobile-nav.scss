@@ -1,7 +1,4 @@
-@import 'src/utils/utils';
-
 .mobile-nav {
-
   &__top {
     display: flex;
     flex-direction: row;
@@ -22,7 +19,6 @@
     gap: 15px;
 
     &--big {
-
       .mobile-nav__item {
         display: flex;
         flex-wrap: wrap;
@@ -54,14 +50,12 @@
     }
 
     &--sup {
-
       .mobile-nav__link {
         padding-right: 40px;
       }
     }
 
     &--active {
-
       .mobile-nav__sub-toggle:before {
         transform: rotate(-45deg);
       }
@@ -80,7 +74,7 @@
     color: $dark-blue-1;
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }
@@ -92,7 +86,7 @@
       color: $grey-8;
       transform: translateY(-5px);
 
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         font-size: 12px;
       }
     }
@@ -163,7 +157,7 @@
       border-top: 2px solid currentcolor;
       border-right: 2px solid currentcolor;
       transform: rotate(135deg);
-      content: '';
+      content: "";
     }
   }
 

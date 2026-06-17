@@ -1,24 +1,29 @@
 import './qr-code.scss';
-import QArt from 'qartjs';
+import QRCodeStyling from 'qr-code-styling';
 
+// Замена qartjs (заброшен, тянул нативный canvas — не ставится на Node 22).
+// qr-code-styling — browser-only, поддерживает логотип в центре.
 const codes = document.querySelectorAll('.qr-code');
 codes.forEach((code) => {
   const a = code.querySelector('a');
   const img = code.querySelector('img');
-  if (a && img) {
+  const wrapper = code.querySelector('.qr-code__wrapper');
+  if (a && img && wrapper) {
     const { href } = a;
     const { src } = img;
     a.remove();
     img.remove();
 
-    const qart = new QArt({
-      value: href,
-      imagePath: src,
-      filter: 'color',
-      size: 250,
+    const qr = new QRCodeStyling({
+      width: 250,
+      height: 250,
+      data: href,
+      image: src,
+      dotsOptions: { color: '#000000', type: 'square' },
+      backgroundOptions: { color: '#ffffff' },
+      imageOptions: { crossOrigin: 'anonymous', margin: 5, imageSize: 0.3 },
     });
 
-    // directly appending canvas to the document
-    qart.make(code.querySelector('.qr-code__wrapper'));
+    qr.append(wrapper);
   }
 });

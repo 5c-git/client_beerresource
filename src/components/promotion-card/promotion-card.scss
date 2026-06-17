@@ -1,7 +1,4 @@
-@import 'src/utils/utils';
-
 .promotion-card {
-
   &__image {
     @include noimg;
     position: relative;
@@ -11,8 +8,7 @@
     overflow: hidden;
 
     &:hover {
-      @media(min-width: $desktop-only) {
-
+      @media (min-width: $desktop-only) {
         &:before {
           visibility: initial;
           opacity: initial;
@@ -34,11 +30,13 @@
       line-height: 96px;
       color: $white-1;
       background-color: rgba($color: $dark-blue-1, $alpha: 30%);
-      transition: visibility 0.3s, opacity 0.3s;
+      transition:
+        visibility 0.3s,
+        opacity 0.3s;
       visibility: hidden;
       opacity: 0;
       pointer-events: none;
-      content: '↗';
+      content: "↗";
     }
 
     img {
@@ -60,7 +58,7 @@
     grid-column-gap: 25px;
     column-gap: 25px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
     }
@@ -70,11 +68,10 @@
     position: relative;
 
     &:not(:first-of-type) {
-
       &:before {
         position: absolute;
         left: -19px;
-        content: '—';
+        content: "—";
       }
     }
   }
@@ -86,7 +83,7 @@
     font-weight: 700;
     line-height: 28px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 5px;
       font-size: 16px;
       line-height: 25px;
@@ -98,7 +95,7 @@
       color: $dark-blue-1;
 
       &:hover {
-        @media(min-width: $desktop-only) {
+        @media (min-width: $desktop-only) {
           color: $blue-1;
         }
       }

@@ -1,12 +1,10 @@
-@import 'src/utils/utils';
-
 .product-questions {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 277px;
   grid-column-gap: 60px;
   column-gap: 60px;
 
-  @media(max-width: $tablet) {
+  @media (max-width: $tablet) {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -14,7 +12,7 @@
     width: 100%;
     max-width: 800px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       max-width: unset;
     }
   }
@@ -35,7 +33,7 @@
       color: $grey-8;
       transform: translateY(-5px);
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         font-size: 12px;
       }
     }
@@ -50,7 +48,7 @@
     top: 100px;
     min-width: 277px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       display: none;
     }
   }

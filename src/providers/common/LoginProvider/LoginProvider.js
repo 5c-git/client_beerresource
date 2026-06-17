@@ -1,4 +1,4 @@
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import React, { useState, useEffect } from "react";
 import Modal from "../../../react/Modal/Modal";
 import Login from "../../../react/Login/Login";
@@ -179,5 +179,5 @@ const LoginProvider = () => {
 const LoginProviderContainer = document.querySelector("#LoginProvider");
 
 if (LoginProvider) {
-  ReactDOM.render(<LoginProvider />, LoginProviderContainer);
+  createRoot(LoginProviderContainer).render(<LoginProvider />);
 }

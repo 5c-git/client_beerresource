@@ -1,10 +1,8 @@
-@import 'src/utils/utils';
-
 .layout {
   margin-top: 60px;
   margin-bottom: 60px;
 
-  @media(max-width: $phone) {
+  @media (max-width: $phone) {
     margin-top: 40px;
     margin-bottom: 40px;
   }
@@ -17,14 +15,13 @@
     padding-top: 60px;
     border-top: 1px solid $grey-6;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       padding-top: 0;
       border-top: 0;
     }
   }
 
   .question {
-
     &:not(:first-of-type) {
       margin-top: 15px;
     }
@@ -38,7 +35,7 @@
     align-items: flex-end;
     margin-bottom: 40px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 20px;
     }
   }
@@ -50,7 +47,7 @@
     font-weight: 300;
     line-height: 45px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 30px;
       line-height: 35px;
     }
@@ -63,10 +60,10 @@
 
   &__list {
     display: grid;
-    grid-template-columns: minmax(0 ,1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       gap: 15px;
     }
   }
@@ -81,21 +78,21 @@
     transition: color 0.3s;
     align-self: center;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 25px;
       font-weight: 500;
       line-height: 30px;
     }
 
     &:hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
       }
     }
   }
 
   &__all-text {
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       display: none;
     }
   }
@@ -105,7 +102,7 @@
     margin-bottom: -3px;
     margin-left: 5px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-top: 5px;
       margin-bottom: -5px;
       margin-left: 0;
@@ -113,13 +110,13 @@
   }
 
   &__slider {
-    @media(max-width: $desktop) {
+    @media (max-width: $desktop) {
       margin-right: -30px;
       margin-left: -30px;
       padding-right: 30px;
       padding-left: 30px;
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-right: -15px;
       margin-left: -15px;
       padding-right: 15px;
@@ -139,7 +136,7 @@
     width: unset !important;
     margin-right: 20px;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-right: 10px;
     }
 
@@ -151,7 +148,7 @@
   &__scrollbar {
     display: none;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       display: block;
       height: 4px;
       margin-top: 25px;
@@ -175,7 +172,7 @@
     column-gap: 15px;
     grid-template-columns: repeat(2, 50px);
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       display: none;
     }
   }
@@ -192,12 +189,14 @@
     line-height: 20px;
     color: $dark-blue-1;
     background-color: transparent;
-    transition: border-color 0.3s, color 0.3s;
+    transition:
+      border-color 0.3s,
+      color 0.3s;
     user-select: none;
     cursor: pointer;
 
     &:not([disabled]):hover {
-      @media(min-width: $desktop-only) {
+      @media (min-width: $desktop-only) {
         color: $blue-1;
         border-color: $blue-1;
       }
@@ -215,13 +214,12 @@
   }
 
   &--slider {
-
     .layout__head {
       justify-content: flex-start;
       padding-right: 150px;
       column-gap: 10px;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         justify-content: space-between;
         padding-right: unset;
       }
@@ -232,14 +230,14 @@
       line-height: 26px;
       color: $dark-blue-1;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         font-size: 25px;
         font-weight: 500;
         line-height: 30px;
       }
 
       &:hover {
-        @media(min-width: $desktop-only) {
+        @media (min-width: $desktop-only) {
           color: $blue-1;
         }
       }
@@ -248,24 +246,23 @@
     .layout__all-arrow {
       margin: 0;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         margin-left: 0;
       }
     }
   }
 
   &--grid {
-
     .layout__list {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
       column-gap: 20px;
       row-gap: 20px;
 
-      @media(max-width: $desktop) {
+      @media (max-width: $desktop) {
         column-gap: 15px;
       }
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
         column-gap: 10px;
         row-gap: 15px;
@@ -274,17 +271,16 @@
   }
 
   &--grid3 {
-
     .layout__list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       column-gap: 30px;
       row-gap: 40px;
 
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         grid-template-columns: repeat(2, 1fr);
       }
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         grid-template-columns: 1fr;
         row-gap: 20px;
       }
@@ -292,17 +288,16 @@
   }
 
   &--grid4 {
-
     .layout__list {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       column-gap: 30px;
       row-gap: 40px;
 
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         grid-template-columns: repeat(2, 1fr);
       }
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         grid-template-columns: 1fr;
         row-gap: 20px;
       }
@@ -310,7 +305,6 @@
   }
 
   &--sidebar {
-
     & + .layout .layout__wrapper {
       padding-top: 0;
       border-top: 0;
@@ -321,7 +315,7 @@
       grid-template-columns: 230px 1fr;
       column-gap: 25px;
 
-      @media(max-width: $tablet) {
+      @media (max-width: $tablet) {
         display: block;
       }
     }
@@ -332,7 +326,7 @@
       column-gap: 15px;
       row-gap: 20px;
 
-      @media(max-width: $phone) {
+      @media (max-width: $phone) {
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
         column-gap: 10px;
         row-gap: 15px;

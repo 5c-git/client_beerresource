@@ -1,5 +1,3 @@
-@import 'src/utils/utils';
-
 .Code {
   @include zero;
 
@@ -11,7 +9,7 @@
     line-height: 30px;
     color: $dark-blue-1;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       line-height: 25px;
     }
   }
@@ -25,7 +23,7 @@
     line-height: 25px;
     color: $dark-blue-1;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       margin-bottom: 10px;
       font-size: 14px;
       line-height: 20px;
@@ -35,42 +33,31 @@
   &__number {
     margin-top: 15px;
     margin-bottom: 15px;
+    display: flex;
+    column-gap: 10px;
 
-    .styles_react-code-input__CRulA {
+    input {
+      width: 50px;
+      height: 60px;
+      padding-right: 9px;
+      padding-left: 9px;
+      border: 1px solid $grey-6;
+      border-radius: 8px;
+      font-family: $main-font;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 28px;
       display: flex;
-      column-gap: 10px;
+      align-items: center;
+      text-align: center;
+      color: $dark-blue-1;
+      outline: none;
+      transition: 0.3s;
+      caret-color: $black-1;
 
-      input {
-        width: 50px !important;
-        height: 60px !important;
-        padding-right: 9px;
-        padding-left: 9px;
-        border: 1px solid $grey-6 !important;
-        border-radius: 8px;
-        font-family: $main-font;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 28px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        color: $dark-blue-1;
-        outline: none;
-        transition: 0.3s;
-        caret-color: $black-1 !important;
-
-        &:focus {
-          border-color: $blue-1 !important;
-        }
-
-        &:first-child,
-        &:last-child {
-          border: 1px solid $grey-6;
-          border-radius: 8px;
-        }
-
+      &:focus {
+        border-color: $blue-1;
       }
-
     }
   }
 
@@ -86,13 +73,12 @@
     background-color: transparent;
     cursor: pointer;
 
-    @media(min-width: $desktop-only) {
-
+    @media (min-width: $desktop-only) {
       &:hover {
         text-decoration: none;
       }
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 14px;
       line-height: 20px;
     }
@@ -106,7 +92,7 @@
     line-height: 20px;
     color: $grey-8;
 
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
       font-size: 12px;
       line-height: 18px;
     }
