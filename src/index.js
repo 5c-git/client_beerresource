@@ -37,10 +37,13 @@ window.addEventListener("resize", () => {
 // Компоненты (pug/jQuery) — авто-агрегатор, window.js грузится первым
 import "./components/components.js";
 
-// MSW — поднимаем mock-воркер (только при ENV=Local). Провайдеры монтируем
-// ПОСЛЕ старта воркера: иначе первый запрос (getProfile в useEffect) проскочит
-// мимо перехвата. На Remote workerStartPromise резолвится сразу — задержки нет.
-import { workerStartPromise } from "./mocks/start-msw";
+// MSW — поднимаем mock-воркер (только при ENV=Local). На Remote — no-op.
+// Сам воркер (msw + хендлеры + моки) лениво грузится отдельным чанком msw-mocks.js,
+// в основной бандл и на Remote не попадает.
+import "./mocks/start-msw";
 
-// React-провайдеры (common + pages) — авто-агрегатор маунтеров
-workerStartPromise.then(() => import("./react/providers/providers"));
+// React-провайдеры (common + pages) — авто-агрегатор маунтеров.
+// Статический импорт (канон): провайдеры попадают в bundle.js, без code-split.
+// На Local самый первый запрос до установки SW может проскочить мимо MSW — решается
+// перезагрузкой; на Remote MSW выключен, разницы нет.
+import "./react/providers/providers";
