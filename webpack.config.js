@@ -30,6 +30,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { EsbuildPlugin } = require('esbuild-loader');
 const pugDependencies = [
   ...glob.sync(path.resolve(__dirname, 'src/components/**/*.pug')),
   ...glob.sync(path.resolve(__dirname, 'src/components/**/*.js')),
@@ -66,8 +67,16 @@ module.exports = {
     clean: isProduction,
   },
   optimization: {
-    minimize: false,
-    minimizer: [],
+    // minimize: false,
+    // minimizer: [],
+    minimize: true, // Включаем минимизацию.
+    minimizer: [
+      new EsbuildPlugin({
+        target: 'es2017',
+        css: true,
+        include: /vendors\.js$/, // Только vendors.js
+      }),
+    ],
     splitChunks: {
       cacheGroups: {
         vendors: {
