@@ -37,5 +37,10 @@ window.addEventListener("resize", () => {
 // Компоненты (pug/jQuery) — авто-агрегатор, window.js грузится первым
 import "./components/components.js";
 
+// MSW — поднимаем mock-воркер (только при ENV=Local). Провайдеры монтируем
+// ПОСЛЕ старта воркера: иначе первый запрос (getProfile в useEffect) проскочит
+// мимо перехвата. На Remote workerStartPromise резолвится сразу — задержки нет.
+import { workerStartPromise } from "./mocks/start-msw";
+
 // React-провайдеры (common + pages) — авто-агрегатор маунтеров
-import "./react/providers/providers";
+workerStartPromise.then(() => import("./react/providers/providers"));

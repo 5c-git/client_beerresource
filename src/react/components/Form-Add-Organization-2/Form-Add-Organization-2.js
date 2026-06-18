@@ -471,7 +471,7 @@ const FormAddOrganization2 = (props) => {
           </button>
           <a
             className="form-lk__button-cancel form-lk__button-cancel--mobile button button--transparent"
-            href="lk-my-organization.html"
+            href="/personal/organizations/"
           >
             ✗ Отменить
           </a>

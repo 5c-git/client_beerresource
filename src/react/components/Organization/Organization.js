@@ -121,7 +121,7 @@ const Organization = ({ organization, unlockOrg, sendOrg, callAlert }) => {
               bik: organization.bik,
               checkingAccount: organization.checkingAccount,
               correspondentAccount: organization.correspondentAccount,
-              contacts: organization.contacts,
+              contacts: organization.contacts || [],
             }}
             enableReinitialize={true}
             validationSchema={validationSchema}
@@ -226,7 +226,8 @@ const Organization = ({ organization, unlockOrg, sendOrg, callAlert }) => {
                             />
 
                             <Select
-                              value={values.contacts[index].role.toString()}
+                              multiple
+                              value={values.contacts[index].role || []}
                               name={`contacts[${index}].role`}
                               fieldName="role"
                               onChange={handleChange}
@@ -247,12 +248,14 @@ const Organization = ({ organization, unlockOrg, sendOrg, callAlert }) => {
                               // }
                               isDisabled={true}
                             >
-                              <MenuItem value="Повар">Повар</MenuItem>
+                              <MenuItem value="Пивовар">Пивовар</MenuItem>
                               <MenuItem value="Закупщик">Закупщик</MenuItem>
                               <MenuItem value="Директор">Директор</MenuItem>
                               <MenuItem value="Управляющий">
                                 Управляющий
                               </MenuItem>
+                              <MenuItem value="Бухгалтер">Бухгалтер</MenuItem>
+                              <MenuItem value="Другое">Другое</MenuItem>
                             </Select>
                           </section>
                         </section>

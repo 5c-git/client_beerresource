@@ -1,57 +1,53 @@
-# Next session — client_beerresource
+# NEXT_SESSION.md — client_beerresource
 
-## Kickoff-промпт (скопировать в новую сессию)
+**Дата генерации:** 2026-06-18
+**Что было в предыдущей сессии:** Подтянули **MSW** на проект (заменили хардкод `run.mocky.io` в `urlapp.js`). Мокнут практически весь API: профиль (get + личные данные), адреса (get/update), организации (get/update/delete), логин (phone/code/registration — реальные ответы препрода), формы (subscribe + 4 feedback + search_notfound + add_organization). По ходу нашли и починили **3 бага** (относительная ссылка «Отменить» в добавлении организации; падение списка организаций без `contacts`; MUI-варнинг ролей контакта). Сделали **2 скилла** (новый `setup-frontend-msw`, обновлён `migrate-frontend-wp5` на таргет 24/19). Собрали **клиентский отчёт** `ОТЧЁТ-БАГИ.md`.
 
+**Тег/baseline:** ветка `webpack5-migration`, последний коммит `80c93a0` (всё текущее — рабочая копия, не закоммичено).
+**Закрытые находки:** Б#1–Б#3 в `claude-zone/FINDINGS.md`, промочены #5–#6 в централь `frontend_findings.md`.
+
+---
+
+## Kickoff-prompt для следующей сессии
+
+```text
+Продолжаем client_beerresource. Прошлая сессия — настройка MSW + фикс 3 багов + 2 скилла. Рабочая копия не закоммичена.
+
+Стек: Webpack 5 + esbuild, Node 24.16, React 19.2, MSW для моков. Ветка webpack5-migration.
+
+Открытые хвосты (выбрать с Павлом):
+1. ДОМОКАТЬ последние 2 ручки — флоу проверки ИНН в добавлении организации (dataAPI.getOrganization в api.js):
+   - checkCompany.php (POST {inn} → есть ли дубль, влияет на isAlreadyExist)
+   - suggestions.dadata.ru (внешний DaData, реквизиты по ИНН → suggestions[0].data; живой токен в api.js:5)
+   Нужны реальные ответы с препрода. Паттерн — по скиллу setup-frontend-msw.
+2. Code-правки, висят с MSW-сессии (по желанию Павла):
+   - Поднять import "./mocks/start-msw" ВЫШЕ components.js в index.js (защита от краша компонента до старта MSW; сейчас на домашней в статик-смоуке MSW не стартует).
+   - 🐛 OrganizationsApi.js:60 — sendDeletedOrganizations зовёт несуществующую oranizationsApi.post → ReferenceError, удаление организации сломано даже на боевом. Фикс — axios.post(...).
+   - 🧹 RegistrationApi.js — мёртвый закомментированный файл, кандидат на удаление (спросить).
+3. Новая задача от Павла.
+
+Ограничения:
+- Коммит/мерж/пуш — ТОЛЬКО по явной команде (ручной деплой: npm run stage → залить на гит). Claude не коммитит.
+- build/ — намеренно вне git, не добавлять.
+- src/assets/ не трогать.
+- Не поднимать dev-сервер на :3000 (коллизия). Для рантайм-смоука: статик-serve build/ на левом порту + headless Chrome (порт 4222 под chrome-devtools MCP), потом гасить.
+- ⚠️ MSW-смоук: заходить через http://localhost:<port>/, НЕ 127.0.0.1 (иначе ENV=Remote, MSW выключится).
+- ⚠️ CDP-тест перехвата: ручной fetch из evaluate_script байпасит воркер; воркер дохнет по простою → reload+сразу тест. (детали в скилле setup-frontend-msw)
+- Node-канон проекта = 24, React = 19. Не откатывать.
+
+Связанные документы (прочитать до старта):
+- claude-zone/FINDINGS.md — баги Б#1–Б#3.
+- ОТЧЁТ-БАГИ.md — клиентский отчёт по багам.
+- src/mocks/ — вся MSW-инфра (handlers/, data/).
+- Память: project_msw_setup (полная карта моков + что осталось), project_overview, project_build_and_node.
+- Скиллы: setup-frontend-msw (плейбук моков), migrate-frontend-wp5 (миграция на канон 24/19).
 ```
-Продолжаем client_beerresource. Webpack 4→5 миграция СДЕЛАНА и рабочая (ветка
-feature/webpack5-migration, не закоммичена). Сборка зелёная: npm run stage / npm run dev,
-Node 22.21.0. Детали — память [[project_webpack5_migration]].
 
-ЗАДАЧА №1 на эту сессию: проверить модалку ВВОДА SMS-КОДА.
-Я заменил мёртвую либу react-verification-code-input своим компонентом CodeInput
-(файл src/react/Code/Code.js, 4 поля ввода + фокус-менеджмент + paste + WebOTP/iOS-автозаполнение).
-Надо убедиться, что она работает правильно — визуально и по поведению.
+---
 
-Где живёт модалка:
-- src/react/Code/Code.js — сам компонент CodeInput + Code (шаг ввода кода).
-- Рендерится в: src/providers/common/LoginProvider/LoginProvider.js (модалка логина,
-  кнопка .request-login → шаг телефона → шаг кода), src/components/react/Form-Personal-Data,
-  src/providers/pages/lk-my-organization/OrganizationProvider.
+## Что предложить Павлу
 
-Как проверять (ВАЖНЫЙ нюанс): в деве НЕТ бэка, поэтому переход «телефон → код» по сети не
-произойдёт (sendPhone из api/LoginApi падает с Network Error). Чтобы увидеть CodeInput:
-вариант А — временно форснуть рендер шага кода (замокать ответ sendPhone или выставить стейт);
-вариант Б — проверять на stage/реальном бэке. Проверять headless Chrome через CDP
-(паттерн: поднять Chrome --remote-debugging-port, навигировать, читать console + DOM).
-Что именно проверить в CodeInput: 4 ячейки, ввод цифры двигает фокус вперёд, Backspace —
-назад, вставка кода целиком раскидывается по ячейкам, onComplete сабмитит форму.
-
-Остальные хвосты (ниже приоритетом):
-1. Закоммитить/смержить ветку (ручной процесс Павла — спросить про мерж в master).
-2. autoprefixer: postcss выпал (канон sokfit). Глянуть префиксы глазами, вернуть если надо.
-3. axios 1.x: проверить error.response в src/api/ на реальном бэке.
-4. (отложено) Этап 2 — реорг структуры под канон sokfit.
-
-ЖЁСТКО НЕ ТРОГАТЬ: src/assets/. Деплой ручной (npm run stage → гит).
-Работать автономно [[feedback_work_autonomously]] (trust-session уже включён).
-Конвенция файлов: claude-zone/ в проекте + централь personal-claude-knowledge
-[[reference_personal_kb_convention]].
-```
-
-## Ключевые файлы
-- `src/react/Code/Code.js` — CodeInput (то, что проверяем) + Code.
-- `src/providers/common/LoginProvider/LoginProvider.js` — основная точка рендера модалки.
-- `webpack.config.js` — единый конфиг (канон sokfit).
-- Эталон-референс: `G:\Work-5corners\client_sokfit`.
-
-## Память
-- [[project_webpack5_migration]] — прогресс и риски миграции.
-- [[feedback_work_autonomously]] — не дёргать пермишенами.
-- [[reference_personal_kb_convention]] — где вести знание по личным проектам.
-- [[project_build_and_node]] — Node 22.21.0, npm-скрипты.
-
-## Что изменилось с прошлого закрытия
-- Заведена конвенция KB личных проектов: `claude-zone/` в проекте (тоглится из git, блок в .gitignore)
-  + централь `G:\Work-5corners\claude zone\personal-claude-knowledge\` (docs/findings/rules).
-- Якорь на эту базу добавлен в глобальный `~/.claude/CLAUDE.md`.
-- Находки миграции записаны в claude-zone/FINDINGS.md и в централь.
+- Домокать checkCompany + DaData (закроет MSW полностью) — нужны ответы с препрода.
+- Починить реальный баг удаления организации (`OrganizationsApi.js:60`, `oranizationsApi` → `axios`).
+- Решить судьбу мёртвого `RegistrationApi.js` (удалить?).
+- В какой-то момент — закоммитить накопленное (MSW + фиксы багов); сейчас рабочая копия не зафиксирована.

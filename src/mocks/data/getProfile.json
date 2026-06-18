@@ -1,0 +1,8 @@
+{
+  "status": "success",
+  "profile": {
+    "name": "Иван Иванов",
+    "email": "ivan.ivanov@example.com",
+    "phone": "+7 (999) 991-23-45"
+  }
+}

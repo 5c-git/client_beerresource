@@ -57,7 +57,7 @@ export const sendDeletedOrganizations = (
   setOrganizations,
   setModal
 ) => {
-  oranizationsApi
+  axios
     .post(
       `${
         window.routes5.organizations.requests.deleteOrganizations[`url${ENV}`]

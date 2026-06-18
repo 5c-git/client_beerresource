@@ -152,7 +152,7 @@ const AddOrganizationPopUp = () => {
   return (
     <>
       <div className="form-lk__add-organization">
-        <a className="form-lk__link" href="lk-my-organization.html">
+        <a className="form-lk__link" href="/personal/organizations/">
           ← Мои организации
         </a>
       </div>

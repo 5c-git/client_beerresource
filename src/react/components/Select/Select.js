@@ -15,6 +15,7 @@ const Select = ({
   isDisabled,
   className,
   placeholder,
+  multiple,
 }) => {
   return (
     <div className={`Select${className ? ` ${className}` : ""}`}>
@@ -31,6 +32,7 @@ const Select = ({
       ) : null}
       <FormControl fullWidth>
         <MuiSelect
+          multiple={multiple}
           value={value}
           name={name}
           disabled={isDisabled}
@@ -48,11 +50,11 @@ const Select = ({
           IconComponent={KeyboardArrowDownIcon}
           displayEmpty
           renderValue={(value) => {
-            if (value === "") {
+            if (value === "" || (Array.isArray(value) && value.length === 0)) {
               return placeholder;
             }
 
-            return value;
+            return Array.isArray(value) ? value.join(", ") : value;
           }}
           sx={{
             fontFamily: "Inter",

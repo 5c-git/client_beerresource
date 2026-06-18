@@ -39,6 +39,10 @@ const emptyOrganization = {
   },
 };
 
+const placeholderEvent = new CustomEvent("PlaceholderEvent", {
+  bubbles: true,
+});
+
 const OrganizationProvider = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [organizations, setOrganizations] = useState([]);
@@ -71,7 +75,7 @@ const OrganizationProvider = () => {
   // берем массив органицаций удаляем организацию и делаем запрос на сервер, давая обратную связь
   const deleteOrganization = () => {
     const updatedArray = organizations.filter(
-      (item) => item.inn !== organizationToDelete
+      (item) => item.inn !== organizationToDelete.inn
     );
 
     sendDeletedOrganizations(
