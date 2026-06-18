@@ -1,3 +1,4 @@
+/******/ (() => { // webpackBootstrap
 // Куки уже вшиты в bundle.js
 
 // Скролим страницу при обновлении наверх.
@@ -542,3 +543,6 @@ if (productInfo) {
 window.addEventListener('ModalLoginClosed', (evt) => {
   console.log(evt.bubbles);
 });
+
+/******/ })()
+;
