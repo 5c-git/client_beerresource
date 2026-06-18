@@ -100,6 +100,11 @@ const AddOrganization = () => {
           fetchData={fetchData}
           dataForm={formData}
           setDataForm={setFormData}
+          onCancel={() => {
+            window.location.assign(
+              `${window.location.origin}/personal/organizations/`,
+            );
+          }}
         />
       );
       break;

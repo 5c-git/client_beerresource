@@ -92,4 +92,15 @@
 
 **Б#4.2 — фильтр удаления сравнивает строку с объектом → ничего не удаляется.** `callAlert(organization)` кладёт в `organizationToDelete` **весь объект** (нужно для заголовка модалки `{organizationToDelete.companyName}`), а `deleteOrganization` фильтровал `item.inn !== organizationToDelete` (`OrganizationProvider.js:74`) — inn-строка vs объект → всегда true, `updatedArray` = полный список. **Решение (✅):** `item.inn !== organizationToDelete.inn`. Заголовок модалки трогать не надо — он уже на объекте.
 
+## Б#5 — «Отмена» на шаге 1 добавления организации мертва на странице (завязана на закрытие попапа)
+
+**Дата:** 2026-06-18
+**Контекст:** найдено Павлом. Страница `/personal/addorganization/`, форма добавления, шаг 1, кнопка «✗ Отменить».
+**Симптом (❌):** клик «Отмена» — ничего не происходит, без ошибок в консоли. Обработчик есть, но визуально no-op.
+**Корень:** `FormAddOrganization1` используется в двух контекстах — попап (`Add-Organization-PopUp.js:130`) и страница (`Add-Organization.js:99`). Кнопка «Отмена» была захардкожена на `window.AddOrganizationPopUpProvider.setOpen(false)` (`Form-Add-Organization-1.js:510`) — закрытие **попапа**. Глобал `AddOrganizationPopUpProvider` смонтирован на всех страницах (common-провайдер, `<div id='AddOrganizationPopUpProvider'>`), поэтому ошибки нет — `setOpen(false)` просто закрывает уже-закрытый невидимый попап. На странице это no-op. (Шаг 2 этим не страдал — там «Отмена» = `href`, починена в Б#1.)
+**Решение (✅):** прокинут проп `onCancel` из родителя — контекст задаёт поведение:
+- `Form-Add-Organization-1.js:16` — `onCancel` в деструктуризацию пропсов; кнопка (`:509`) зовёт `onCancel?.()` (убран хардкод setOpen + закомментированный `href="lk-my-organization.html"`).
+- `Add-Organization.js:99` (страница) — `onCancel={() => window.location.assign(\`${origin}/personal/organizations/\`)}` (канон ухода, как success-redirect `:88` и ссылка «Мои организации» `:124`).
+- `Add-Organization-PopUp.js:130` (попап) — `onCancel={() => window.AddOrganizationPopUpProvider.setOpen(false)}` (поведение сохранено — попап закрывается изящно, без редиректа).
+
 ⚠️ Оставшиеся грабли теста (не баги фронта): (1) `OrganizationsApi.js:68` зовёт `window.Corners5ProjectLayout.summonAlert("#alert--organization-deleted")` — на статик-смоуке без глобала/алерт-элемента упадёт в `.then`; (2) под MSW удаление визуально не персистит — POST-хендлер на `organizations.php` отдаёт статичный полный `getOrganizations.json`, организация возвращается в список. Для UI-теста исчезновения — временно сделать хендлер эхом (`return HttpResponse.json(присланный updatedArray)`).

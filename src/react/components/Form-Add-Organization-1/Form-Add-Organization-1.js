@@ -13,7 +13,7 @@ import ArrowDropDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { getPaddingFromBody, getPaddingOnBody } from "utils/utils";
 
 const FormAddOrganization1 = (props) => {
-  const { fetchData, dataForm, setDataForm } = props;
+  const { fetchData, dataForm, setDataForm, onCancel } = props;
   const phoneRegExp = /^((8|\+7)[ \- ]?)?(\(?\d{3}\)?[ \- ]?)?[\d\- ]{7,10}$/;
   const innRegExp = /^[0-9_]{10,12}$/;
 
@@ -507,9 +507,8 @@ const FormAddOrganization1 = (props) => {
                 className="form-lk__button-cancel button button--transparent"
                 type="button"
                 onClick={() => {
-                  window.AddOrganizationPopUpProvider.setOpen(false);
+                  onCancel?.();
                 }}
-                // href="lk-my-organization.html"
               >
                 ✗ Отменить
               </button>

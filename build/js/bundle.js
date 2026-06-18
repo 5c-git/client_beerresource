@@ -5567,7 +5567,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 
 
 const FormAddOrganization1 = (props) => {
-  const { fetchData, dataForm, setDataForm } = props;
+  const { fetchData, dataForm, setDataForm, onCancel } = props;
   const phoneRegExp = /^((8|\+7)[ \- ]?)?(\(?\d{3}\)?[ \- ]?)?[\d\- ]{7,10}$/;
   const innRegExp = /^[0-9_]{10,12}$/;
   const validationSchema = yup__WEBPACK_IMPORTED_MODULE_3__/* .object */ .Ik().shape({
@@ -5981,7 +5981,7 @@ const FormAddOrganization1 = (props) => {
                 className: "form-lk__button-cancel button button--transparent",
                 type: "button",
                 onClick: () => {
-                  window.AddOrganizationPopUpProvider.setOpen(false);
+                  onCancel == null ? void 0 : onCancel();
                 },
                 children: "\u2717 \u041E\u0442\u043C\u0435\u043D\u0438\u0442\u044C"
               }
@@ -7030,7 +7030,10 @@ const AddOrganizationPopUp = () => {
         {
           fetchData,
           dataForm: formData,
-          setDataForm: setFormData
+          setDataForm: setFormData,
+          onCancel: () => {
+            window.AddOrganizationPopUpProvider.setOpen(false);
+          }
         }
       );
       break;
@@ -9793,7 +9796,12 @@ const AddOrganization = () => {
         {
           fetchData,
           dataForm: formData,
-          setDataForm: setFormData
+          setDataForm: setFormData,
+          onCancel: () => {
+            window.location.assign(
+              `${window.location.origin}/personal/organizations/`
+            );
+          }
         }
       );
       break;

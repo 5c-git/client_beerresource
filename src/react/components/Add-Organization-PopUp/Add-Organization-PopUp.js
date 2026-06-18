@@ -131,6 +131,9 @@ const AddOrganizationPopUp = () => {
           fetchData={fetchData}
           dataForm={formData}
           setDataForm={setFormData}
+          onCancel={() => {
+            window.AddOrganizationPopUpProvider.setOpen(false);
+          }}
         />
       );
       break;
