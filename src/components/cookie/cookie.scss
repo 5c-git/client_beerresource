@@ -1,19 +1,12 @@
 .cookie {
-  position: fixed;
-  top: unset;
-  right: 50%;
-  bottom: 50px;
-  left: unset;
-  z-index: 15;
-  width: 100%;
-  height: unset;
-  color: $dark-blue-1;
-  transform: translateX(50%);
-  pointer-events: none;
-  overflow: initial;
+  top: unset !important;
+  bottom: 50px !important;
+  z-index: 25 !important;
+  height: unset !important;
+  // transform: translateX(50%);
 
   @media (max-width: $phone) {
-    bottom: 15px;
+    bottom: 15px !important;
   }
 
   &__overlay {

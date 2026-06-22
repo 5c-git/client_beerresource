@@ -38,7 +38,8 @@ const pugDependencies = [
 ];
 
 const isProduction = process.env.NODE_ENV === 'production';
-const devStyleLoader = isProduction ? MiniCssExtractPlugin.loader : 'style-loader';
+// CSS всегда через экстрактор — чтобы локальная сборка (bundle + vendors) совпадала с prod.
+const devStyleLoader = MiniCssExtractPlugin.loader;
 
 // Автоматический HtmlWebpackPlugin для всех .pug в src/pages
 const pages = glob.sync('./src/pages/**/*.pug');
