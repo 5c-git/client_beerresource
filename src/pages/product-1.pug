@@ -1,5 +1,8 @@
 extends ../templates/default
 
+include ../components/product/product
+include ../components/double-slider/double-slider
+
 block main
   include ../components/breadcrumbs/breadcrumbs
   
@@ -8,7 +11,10 @@ block main
   })
     include ../components/back/back
 
-  include ../components/product/product
+  +product({})
+    +double-slider({
+      lots: true,
+    })
 
   include ../react/providers/pages/product/RequestProductProvider/RequestProductProvider
   

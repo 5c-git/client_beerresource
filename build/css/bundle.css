@@ -6441,22 +6441,14 @@ input:-webkit-autofill:active {
 /* stylelint-disable */
 /* stylelint-enable */
 .cookie {
-  position: fixed;
-  top: unset;
-  right: 50%;
-  bottom: 50px;
-  left: unset;
-  z-index: 15;
-  width: 100%;
-  height: unset;
-  color: #212f4e;
-  transform: translateX(50%);
-  pointer-events: none;
-  overflow: initial;
+  top: unset !important;
+  bottom: 50px !important;
+  z-index: 25 !important;
+  height: unset !important;
 }
 @media (max-width: 767px) {
   .cookie {
-    bottom: 15px;
+    bottom: 15px !important;
   }
 }
 .cookie__overlay {

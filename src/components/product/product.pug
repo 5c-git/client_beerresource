@@ -1,30 +1,36 @@
-section.product
-  div.container 
-    div.product__wrapper 
-      div.product__nav
-        div.product__nav-border
-          div.product__nav-list
-            button(type='button').product__nav-item.product__nav-item--active Купить
-            button(type='button').product__nav-item Характеристики
-            button(type='button').product__nav-item Описание
-            button(type='button').product__nav-item Материалы и документы
-            button(type='button').product__nav-item Аналоги
-            button(type='button').product__nav-item Вопросы
-      div.product__inner 
-        div.product__block.product__block--active
-          include ../product-main/product-main
+mixin product(props)
 
-        div.product__block
-          include ../product-specification/product-specification
+  include ../product-main/product-main
 
-        div.product__block
-          include ../product-description/product-description
+  section.product
+    div.container 
+      div.product__wrapper 
+        div.product__nav
+          div.product__nav-border
+            div.product__nav-list
+              button(type='button').product__nav-item.product__nav-item--active Купить
+              button(type='button').product__nav-item Характеристики
+              button(type='button').product__nav-item Описание
+              button(type='button').product__nav-item Материалы и документы
+              button(type='button').product__nav-item Аналоги
+              button(type='button').product__nav-item Вопросы
+        div.product__inner 
 
-        div.product__block
-          include ../product-documents/product-documents
+          div.product__block.product__block--active
+            +product-main({})
+              block
 
-        div.product__block
-          include ../product-analogues/product-analogues
+          div.product__block
+            include ../product-specification/product-specification
 
-        div.product__block
-          include ../product-questions/product-questions
+          div.product__block
+            include ../product-description/product-description
+
+          div.product__block
+            include ../product-documents/product-documents
+
+          div.product__block
+            include ../product-analogues/product-analogues
+
+          div.product__block
+            include ../product-questions/product-questions

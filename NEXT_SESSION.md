@@ -1,49 +1,52 @@
 # NEXT_SESSION.md — client_beerresource
 
-**Дата генерации:** 2026-06-22
-**Что было в предыдущей сессии:** Починили расхождение CSS-каскада dev vs prod. Дефолт (`style-loader` в dev / `mini-css-extract` в prod) давал разный порядок CSS → равно-специфичные конфликты (`section.popUp.cookie` — два класса на одном элементе правят `top/left/display`) резолвились по-разному, баг не воспроизводился локально. Фикс — одна строка: dev тоже на `MiniCssExtractPlugin.loader` (`webpack.config.js:41`). Куки-баг Павел добил `!important` в `cookie.scss`. Находку занёс в скилл `migrate-frontend-wp5` («Не-очевидное»). Новая память `feedback_minimal_scope` (Павел отверг мой пакет из 3 правок — делать минимум под запрос).
+**Дата генерации:** 2026-07-08
+**Что было в предыдущей сессии:** Точечный перф-тюнинг после зарелиженной WP5-миграции. (1) Добавил в `webpack.config.js` copy-pattern `src/mocks/data → build/mocks/data` (паритет с эталоном client_knowledge; про `output.chunkFilename` решили не трогать — чанк уже именованный). (2) Прореживание pug `block mixins`: вынес 23 редких/страничных миксина из `templates/default.pug`+`main-page.pug` в потребителей (осталось 18), чтобы правка миксина не пересобирала все 52 страницы. Метод + грабли записаны в скилл `migrate-frontend-wp5`. (3) Инфра: завёл личную базу знаний Павла под git — private-репо `DepressiaGitHub/Depressia-claude-knowledge` (перенёс 3 личных скилла + docs/findings, junction в `~/.claude/skills`), написал скилл `sync-personal-kb` для её синка.
 
-**Тег/baseline:** ветка `webpack5-migration`, последний коммит `3cf3690`.
-**⚠️ Незакоммичено:** `webpack.config.js` (dev CSS-loader) + `src/components/cookie/cookie.scss` (`!important`). Плюс ранее висел НЕзапушенный React19+Node24 коммит `80c93a0` — проверить, залит ли.
+**Тег/baseline:** ветка `webpack5-migration`, последние релизы `3cf3690`/`d46ccf6`.
+**⚠️ Незакоммичено в рабочей копии:**
+- **Моё (54 файла):** `webpack.config.js` + 53 pug (block mixins refactor — 18 компонентов + 33 страницы + 2 шаблона). Сборка зелёная.
+- **ЧУЖОЕ (5 файлов, НЕ мои, висели до сессии):** `double-slider.pug` (+175 строк), `product-main.pug`, `product.pug`, `widget.pug`, `pages/index.pug`. Разобраться с Павлом — коммитить отдельно или это его work-in-progress.
 
 ---
 
 ## Kickoff-prompt для следующей сессии
 
 ```text
-Продолжаем client_beerresource. Прошлая сессия — фикс CSS-каскада dev=prod (dev теперь на MiniCssExtractPlugin.loader, webpack.config.js:41) + куки-баг (Павел добил !important в cookie.scss).
+Продолжаем client_beerresource. Прошлая сессия — перф-тюнинг после зарелиженной WP5-миграции: copy-pattern моков в билд + прореживание pug block mixins (вынес 23 миксина из шаблонов в потребителей, чтобы правка миксина не пересобирала все 52 страницы).
 
-Стек: Webpack 5 + esbuild, Node 24.16, React 19.2, MSW для моков. Ветка webpack5-migration.
+Стек: Webpack 5 + esbuild, Node 24.16, React 19.2, MSW. Ветка webpack5-migration. build/ вне git, деплой ручной (npm run stage → залить).
 
-Первое дело: разобраться с незакоммиченным — webpack.config.js + cookie.scss висят в рабочей копии. Спросить Павла: коммитить/пушить (вместе с висящим React19-коммитом 80c93a0, если он ещё не на origin) или ждать.
+⚠️ ПЕРВОЕ ДЕЛО — разрулить рабочую копию. Незакоммичено:
+- МОЁ (сессия block mixins): webpack.config.js + 53 pug. Предложить коммит одним куском (напр. "perf(pug): прорядил block mixins — вынес 23 редких миксина в потребителей + copy моков в билд").
+- ЧУЖОЕ (НЕ я трогал, висело до сессии): double-slider.pug (+175 строк!), product-main.pug, product.pug, widget.pug, pages/index.pug. Спросить Павла — его work-in-progress? Коммитить отдельно/отдельным автором. НЕ смешивать с моим refactor.
 
 Открытые хвосты (выбрать с Павлом):
-1. Пройтись по остальным попапам — тот же паттерн dual-class (`.popUp.X` на одном узле, конфликт layout-свойств). Теперь он стабильно виден локально благодаря prod-каскаду в dev. Источник-образец — cookie.pug:1 (section.popUp.cookie).
-2. ДОМОКАТЬ последние 2 ручки — флоу проверки ИНН в добавлении организации (dataAPI.getOrganization в api.js): checkCompany.php (POST {inn}) + suggestions.dadata.ru (внешний DaData, токен в api.js:5). Нужны реальные ответы с препрода. Паттерн — скилл setup-frontend-msw.
-3. Форма добавления организации — самое баговое место (3 из 5 находок оттуда). Пройти целиком.
-4. 🧹 RegistrationApi.js — мёртвый закомментированный файл, кандидат на удаление (спросить).
-5. Новая задача от Павла.
+1. Пройтись по остальным попапам на dual-class CSS-паттерн (.popUp.X, конфликт layout-свойств) — теперь ловится локально (dev-каскад = prod).
+2. Домокать 2 ручки — checkCompany.php + suggestions.dadata.ru (закроет MSW полностью). Нужны реальные ответы с препрода.
+3. Форма добавления организации целиком (самое баговое место, 3 из 5 находок оттуда).
+4. 🧹 Мёртвый закомментированный RegistrationApi.js — судьба (спросить).
+5. Новая задача.
 
 Ограничения:
-- Делать минимум под запрос (feedback_minimal_scope). Не возвращать ENV-флаг/специфичность-фикс/webpack-ворнинги по CSS — Павел отверг.
-- Коммит/мерж/пуш — ТОЛЬКО по явной команде. Деплой ручной (npm run stage → залить). build/ вне git. src/assets/ не трогать.
-- Dev теперь без CSS-HMR (правка scss = полный reload) — это нормально, последствие фикса.
-- Не поднимать dev-сервер на :3000. Рантайм-смоук: статик-serve build/ на левом порту + headless Chrome, потом гасить.
-- ⚠️ MSW-смоук: через http://localhost:<port>/, НЕ 127.0.0.1 (иначе ENV=Remote).
-- Node-канон = 24, React = 19. Не откатывать.
+- Минимум под запрос (feedback_minimal_scope). Автономно, без микро-вопросов (feedback_work_autonomously).
+- Коммит/мерж/пуш — ТОЛЬКО по явной команде.
+- src/assets/ не трогать. Node=24, React=19 — не откатывать.
+- Рантайм-смоук: статик-serve build/ на левом порту + headless Chrome, потом гасить. НЕ поднимать dev :3000. MSW-смоук через http://localhost:<port>/, НЕ 127.0.0.1.
+- Личная база знаний под git (Depressia-claude-knowledge): правка личного скилла → «синкни личную базу» (/sync-personal-kb, НЕ командный /sync-kb).
 
 Связанные документы (прочитать до старта):
-- claude-zone/FINDINGS.md — находки Б#1–Б#5 + миграция.
-- src/mocks/ + src/index.js — MSW-инфра и проводка (статика).
-- Память: project_webpack5_migration, feedback_minimal_scope, project_msw_setup, feedback_client_report_scope.
-- Скиллы: migrate-frontend-wp5 (секция «Не-очевидное» — CSS dev/prod), setup-frontend-msw.
+- claude-zone/FINDINGS.md — находки #1–#5 (миграция + block mixins) + баги Б#1–Б#5.
+- webpack.config.js — copy-patterns (моки/assets/libsJQ) + block mixins в templates/.
+- Память: project_webpack5_migration, project_build_and_node, project_msw_setup, feedback_minimal_scope, feedback_personal_naming, reference_personal_kb_git.
+- Скиллы: migrate-frontend-wp5 (секция «Не-очевидное» — block mixins + CSS dev/prod), setup-frontend-msw, sync-personal-kb.
 ```
 
 ---
 
 ## Что предложить Павлу
-- Разрулить незакоммиченное (webpack.config.js + cookie.scss + статус React19-коммита).
-- Пройтись по попапам на тот же dual-class CSS-паттерн (теперь ловится локально).
-- Домокать checkCompany + DaData (закроет MSW полностью).
-- Судьба мёртвого `RegistrationApi.js`.
-- 🧹 Гигиена памяти: `project_webpack5_migration` всё ещё «ТЕКУЩАЯ ЗАДАЧА», но миграция зарелизена — переключить на «завершено». `project_build_and_node` пишет Node 14.9.0 — обновить на 24.
+- Разрулить незакоммиченное: развести МОЙ block-mixins refactor (54 файла) и ЧУЖИЕ 5 файлов (double-slider и пр.), закоммитить раздельно.
+- Пройтись по попапам на dual-class CSS-паттерн.
+- Домокать checkCompany + DaData (закроет MSW).
+- Судьба мёртвого RegistrationApi.js.
+- Если захочет синк одной фразой — уже есть /sync-personal-kb для личной базы.

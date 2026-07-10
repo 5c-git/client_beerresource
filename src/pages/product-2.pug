@@ -1,0 +1,23 @@
+extends ../templates/default
+
+include ../components/product/product
+include ../components/double-slider/double-slider
+
+block main
+  include ../components/breadcrumbs/breadcrumbs
+  
+  +title({
+    title: 'Товар свежий с парой картинок',
+  })
+    include ../components/back/back
+
+  +product({})
+    +double-slider({
+      few: true,
+    })
+
+  include ../react/providers/pages/product/RequestProductProvider/RequestProductProvider
+  
+  +watched({
+    title: 'Вы смотрели',
+  })

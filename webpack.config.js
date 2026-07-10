@@ -249,6 +249,11 @@ module.exports = {
           to: `libsJQ/`
         },
         {
+          from: path.resolve(__dirname, 'src/mocks/data'),
+          to: 'mocks/data',
+          noErrorOnMissing: true,
+        },
+        {
           from: path.resolve(__dirname, 'src/mockServiceWorker.js'),
           to: 'mockServiceWorker.js',
         },

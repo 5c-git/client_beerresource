@@ -1,73 +1,104 @@
-div.double-slider
-  div.swiper.double-slider__main
-    ul.swiper-wrapper.double-slider__main-list
-      <!-- Рекомендуемые размеры 330х330. -->
-      li.swiper-slide.double-slider__main-item
-        div.double-slider__main-banner
-          img(src="./assets/images/promo-picture-1.png" alt="")
-      li.swiper-slide.double-slider__main-item
-        div.double-slider__main-banner
-          img(src="./assets/images/promo-picture-2.png" alt="")
-      li.swiper-slide.double-slider__main-item
-        div.double-slider__main-banner
-          img(src="./assets/images/promo-picture-3.png" alt="")
-      li.swiper-slide.double-slider__main-item
-        div.double-slider__main-banner
-          img(src="./assets/images/promo-picture-4.png" alt="")
-      li.swiper-slide.double-slider__main-item
-        div.double-slider__main-banner
-          img(src="./assets/images/promo-picture-5.png" alt="")
-      li.swiper-slide.double-slider__main-item
-        div.double-slider__main-banner
-          img(src="./assets/images/promo-picture-6.png" alt="")
-      li.swiper-slide.double-slider__main-item
-        div.double-slider__main-banner
-          img(src="./assets/images/promo-picture-7.jpg" alt="")
-      li.swiper-slide.double-slider__main-item
-        div.double-slider__main-banner
-          img(src="./assets/images/promo-picture-8.jpg" alt="")
-      li.swiper-slide.double-slider__main-item
-        div.double-slider__main-banner
-          img(src="./assets/images/promo-picture-9.jpg" alt="")
-      li.swiper-slide.double-slider__main-item
-        div.double-slider__main-banner
-          img(src="./assets/images/promo-picture-10.jpg" alt="")
-      li.swiper-slide.double-slider__main-item
-        div.double-slider__main-banner
-          img(src="./assets/images/promo-picture-11.jpg" alt="")
-      li.swiper-slide.double-slider__main-item
-        div.double-slider__main-banner
-          img(src="./assets/images/promo-picture-12.jpg" alt="")
-    div.double-slider__pagination
+mixin double-slider(props)
 
-  div.double-slider__sidebar
-    div.swiper.double-slider__nav
-      ul.swiper-wrapper.double-slider__nav-list
-        <!-- Рекомендуемые размеры 70х70. -->
-        li.swiper-slide.double-slider__nav-item
-          img(src="./assets/images/promo-picture-1.png" alt="")
-        li.swiper-slide.double-slider__nav-item
-          img(src="./assets/images/promo-picture-2.png" alt="")
-        li.swiper-slide.double-slider__nav-item
-          img(src="./assets/images/promo-picture-3.png" alt="")
-        li.swiper-slide.double-slider__nav-item
-          img(src="./assets/images/promo-picture-4.png" alt="")
-        li.swiper-slide.double-slider__nav-item
-          img(src="./assets/images/promo-picture-5.png" alt="")
-        li.swiper-slide.double-slider__nav-item
-          img(src="./assets/images/promo-picture-6.png" alt="")
-        li.swiper-slide.double-slider__nav-item
-          img(src="./assets/images/promo-picture-7.jpg" alt="")
-        li.swiper-slide.double-slider__nav-item
-          img(src="./assets/images/promo-picture-8.jpg" alt="")
-        li.swiper-slide.double-slider__nav-item
-          img(src="./assets/images/promo-picture-9.jpg" alt="")
-        li.swiper-slide.double-slider__nav-item
-          img(src="./assets/images/promo-picture-10.jpg" alt="")
-        li.swiper-slide.double-slider__nav-item
-          img(src="./assets/images/promo-picture-11.jpg" alt="")
-        li.swiper-slide.double-slider__nav-item
-          img(src="./assets/images/promo-picture-12.jpg" alt="")
-    div.double-slider__nav-buttons
-      button(type='button' aria-label='Предыдущий слайд.').double-slider__nav-button.double-slider__nav-button--prev ←
-      button(type='button' aria-label='Следующий слайд.').double-slider__nav-button.double-slider__nav-button--next →
+  if props.lots
+
+    div.double-slider
+      div.swiper.double-slider__main
+        ul.swiper-wrapper.double-slider__main-list
+          <!-- Рекомендуемые размеры 330х330. -->
+          li.swiper-slide.double-slider__main-item
+            div.double-slider__main-banner
+              img(src="./assets/images/promo-picture-1.png" alt="")
+          li.swiper-slide.double-slider__main-item
+            div.double-slider__main-banner
+              img(src="./assets/images/promo-picture-2.png" alt="")
+          li.swiper-slide.double-slider__main-item
+            div.double-slider__main-banner
+              img(src="./assets/images/promo-picture-3.png" alt="")
+          li.swiper-slide.double-slider__main-item
+            div.double-slider__main-banner
+              img(src="./assets/images/promo-picture-4.png" alt="")
+          li.swiper-slide.double-slider__main-item
+            div.double-slider__main-banner
+              img(src="./assets/images/promo-picture-5.png" alt="")
+          li.swiper-slide.double-slider__main-item
+            div.double-slider__main-banner
+              img(src="./assets/images/promo-picture-6.png" alt="")
+          li.swiper-slide.double-slider__main-item
+            div.double-slider__main-banner
+              img(src="./assets/images/promo-picture-7.jpg" alt="")
+          li.swiper-slide.double-slider__main-item
+            div.double-slider__main-banner
+              img(src="./assets/images/promo-picture-8.jpg" alt="")
+          li.swiper-slide.double-slider__main-item
+            div.double-slider__main-banner
+              img(src="./assets/images/promo-picture-9.jpg" alt="")
+          li.swiper-slide.double-slider__main-item
+            div.double-slider__main-banner
+              img(src="./assets/images/promo-picture-10.jpg" alt="")
+          li.swiper-slide.double-slider__main-item
+            div.double-slider__main-banner
+              img(src="./assets/images/promo-picture-11.jpg" alt="")
+          li.swiper-slide.double-slider__main-item
+            div.double-slider__main-banner
+              img(src="./assets/images/promo-picture-12.jpg" alt="")
+        div.double-slider__pagination
+
+      div.double-slider__sidebar
+        div.swiper.double-slider__nav
+          ul.swiper-wrapper.double-slider__nav-list
+            <!-- Рекомендуемые размеры 70х70. -->
+            li.swiper-slide.double-slider__nav-item
+              img(src="./assets/images/promo-picture-1.png" alt="")
+            li.swiper-slide.double-slider__nav-item
+              img(src="./assets/images/promo-picture-2.png" alt="")
+            li.swiper-slide.double-slider__nav-item
+              img(src="./assets/images/promo-picture-3.png" alt="")
+            li.swiper-slide.double-slider__nav-item
+              img(src="./assets/images/promo-picture-4.png" alt="")
+            li.swiper-slide.double-slider__nav-item
+              img(src="./assets/images/promo-picture-5.png" alt="")
+            li.swiper-slide.double-slider__nav-item
+              img(src="./assets/images/promo-picture-6.png" alt="")
+            li.swiper-slide.double-slider__nav-item
+              img(src="./assets/images/promo-picture-7.jpg" alt="")
+            li.swiper-slide.double-slider__nav-item
+              img(src="./assets/images/promo-picture-8.jpg" alt="")
+            li.swiper-slide.double-slider__nav-item
+              img(src="./assets/images/promo-picture-9.jpg" alt="")
+            li.swiper-slide.double-slider__nav-item
+              img(src="./assets/images/promo-picture-10.jpg" alt="")
+            li.swiper-slide.double-slider__nav-item
+              img(src="./assets/images/promo-picture-11.jpg" alt="")
+            li.swiper-slide.double-slider__nav-item
+              img(src="./assets/images/promo-picture-12.jpg" alt="")
+        div.double-slider__nav-buttons
+          button(type='button' aria-label='Предыдущий слайд.').double-slider__nav-button.double-slider__nav-button--prev ←
+          button(type='button' aria-label='Следующий слайд.').double-slider__nav-button.double-slider__nav-button--next →
+
+
+  if props.few
+
+    div.double-slider
+      div.swiper.double-slider__main
+        ul.swiper-wrapper.double-slider__main-list
+          <!-- Рекомендуемые размеры 330х330. -->
+          li.swiper-slide.double-slider__main-item
+            div.double-slider__main-banner
+              img(src="./assets/images/promo-picture-7.jpg" alt="")
+          li.swiper-slide.double-slider__main-item
+            div.double-slider__main-banner
+              img(src="./assets/images/promo-picture-12.jpg" alt="")
+        div.double-slider__pagination
+
+      div.double-slider__sidebar
+        div.swiper.double-slider__nav
+          ul.swiper-wrapper.double-slider__nav-list
+            <!-- Рекомендуемые размеры 70х70. -->
+            li.swiper-slide.double-slider__nav-item
+              img(src="./assets/images/promo-picture-7.jpg" alt="")
+            li.swiper-slide.double-slider__nav-item
+              img(src="./assets/images/promo-picture-12.jpg" alt="")
+        div.double-slider__nav-buttons
+          button(type='button' aria-label='Предыдущий слайд.').double-slider__nav-button.double-slider__nav-button--prev ←
+          button(type='button' aria-label='Следующий слайд.').double-slider__nav-button.double-slider__nav-button--next →
