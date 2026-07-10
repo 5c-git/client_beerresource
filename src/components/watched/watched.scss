@@ -100,6 +100,7 @@
   }
 
   &__slider-button {
+    display: none; // скрыта до инициализации Swiper, чтобы не мигала при загрузке
     width: 50px;
     height: 50px;
     justify-content: center;
@@ -117,10 +118,6 @@
     user-select: none;
     cursor: pointer;
 
-    &:not(.swiper-button-lock) {
-      display: flex;
-    }
-
     &:not([disabled]):hover {
       @media (min-width: $desktop-only) {
         color: $blue-1;
@@ -133,5 +130,11 @@
       border-color: $grey-7;
       cursor: not-allowed;
     }
+  }
+
+  // Показываем кнопки только после init Swiper и только если слайдер реально нужен
+  // (при малом числе слайдов Swiper вешает swiper-button-lock) — иначе они мигают на загрузке.
+  &:has(.swiper-initialized) &__slider-button:not(.swiper-button-lock) {
+    display: flex;
   }
 }
