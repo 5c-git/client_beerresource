@@ -116,6 +116,10 @@
     .bx-soa-customer-input {
       border-color: $red-1;
     }
+
+    .choices[data-type*=select-one] .choices__inner {
+      border-color: $red-1;
+    }
   }
 
   .form-group {

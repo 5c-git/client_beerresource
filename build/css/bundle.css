@@ -2481,6 +2481,9 @@ input:-webkit-autofill:active {
 #bx-soa-order .has-error .bx-soa-customer-input {
   border-color: #db1f35;
 }
+#bx-soa-order .has-error .choices[data-type*=select-one] .choices__inner {
+  border-color: #db1f35;
+}
 #bx-soa-order .form-group {
   margin-top: 0;
 }
@@ -11221,23 +11224,18 @@ input:-webkit-autofill:active {
 /* stylelint-enable */
 .modal__container {
   position: relative;
-  min-width: 510px;
-  max-width: 520px;
-  padding-right: 30px;
-  padding-left: 30px;
+  padding: 30px;
   box-sizing: border-box;
 }
 @media (max-width: 767px) {
   .modal__container {
-    width: 100%;
-    min-width: unset;
-    padding-top: 15px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 15px;
   }
 }
 .modal__wrapper {
   position: relative;
+  width: 100%;
+  max-width: 500px;
   padding-top: 19px;
   padding-right: 19px;
   padding-bottom: 19px;
@@ -11248,10 +11246,7 @@ input:-webkit-autofill:active {
 }
 @media (max-width: 767px) {
   .modal__wrapper {
-    padding-top: 19px;
-    padding-right: 16px;
-    padding-bottom: 19px;
-    padding-left: 16px;
+    padding: 16px;
   }
 }
 .modal__close {
@@ -14344,8 +14339,7 @@ input:-webkit-autofill:active {
   height: 100%;
   justify-content: center;
   align-items: center;
-  overflow-y: auto;
-  overflow-x: hidden;
+  pointer-events: none;
 }
 .popUp__overlay {
   position: fixed;
@@ -14356,6 +14350,7 @@ input:-webkit-autofill:active {
   height: 100%;
   background-color: #000000;
   opacity: 0.7;
+  pointer-events: auto;
 }
 .popUp__body-fixer {
   top: 0;
@@ -14383,7 +14378,15 @@ input:-webkit-autofill:active {
 .popUp__container {
   position: relative;
   z-index: 11;
+  width: 100%;
   max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.popUp__wrapper {
+  width: 100%;
+  margin: 0 auto;
+  pointer-events: auto;
 }
 /* stylelint-disable */
 /* stylelint-enable */

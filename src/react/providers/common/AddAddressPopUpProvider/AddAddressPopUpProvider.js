@@ -102,7 +102,9 @@ const AddAddressPopUpProvider = () => {
           closeModal={() => {
             setShow(false);
             setAddress({ value: "" });
-            window.addressPopUpSelectInstance.setChoiceByValue("");
+            // Селект не трогаем: выбор уже возвращён к прежнему адресу (или к плейсхолдеру)
+            // в момент клика по "+ Добавить ещё адрес" — см. order_ajax_ext.js. Сбрасывать
+            // его здесь в "" значило бы терять адрес, выбранный до открытия модалки.
           }}
           closeEvent={placeholderEvent}
         >
@@ -124,23 +126,59 @@ const AddAddressPopUpProvider = () => {
                 },
               );
               if (request.status === 200) {
+                // Строку адреса собирает БЭК из всех полей формы (дом, квартира, подъезд,
+                // домофон, этаж) и в ответ на POST отдаёт актуальный список
+                // [{name, addresses: {ID: "полный адрес"}}]. Берём оттуда только что
+                // созданный (максимальный ID — HL отдаёт ID DESC, автоинкремент) и строим
+                // опцию 1:1 как серверная: value = LAT|LON|NAME|ID_ADDRESS (4 сегмента).
+                // Самому клеить ярлык нельзя: он уходит в #locationNew → ORDER_PROP ADDRESS
+                // (обрезанный адрес в заказе), а без ID_ADDRESS checkPosition.php не считает
+                // зону доставки для свежего адреса.
+                const addresses = await request.json();
+
+                const [id, name] = addresses
+                  .flatMap((group) => Object.entries(group.addresses ?? {}))
+                  .sort((a, b) => Number(b[0]) - Number(a[0]))[0] ?? [];
+
+                if (!id) {
+                  // Адрес сохранён, но список не распознан — не подсовываем в селект
+                  // самодельную опцию (см. выше), просто закрываем: после перезагрузки
+                  // страницы адрес придёт с сервера штатной опцией.
+                  console.error("[addresses] неожиданный ответ:", addresses);
+                  setAddress({ value: "" });
+                  window.AddAddressPopUpProvider.setShow(false);
+                  return;
+                }
+
+                const optionValue = `${val.lat}|${val.lon}|${name}|${id}`;
+
                 //забираем инстанс choices.js из глобального window и берем из него список опций
                 const currentOptions =
                   window.addressPopUpSelectInstance.config.choices;
 
                 //добавляем в массив на предпоследнее место последнюю организацию из списка, который мы загрузили с сервера
                 currentOptions.splice(currentOptions.length - 1, 0, {
-                  value: `${val.lat}|${val.lon}|${val.address} ${val.street} ${val.house}`,
-                  label: `${val.address} ${val.street} ${val.house}`,
+                  value: optionValue,
+                  label: name,
                   disabled: false,
                 });
 
                 //тут обновляем список
                 window.addressPopUpSelectInstance.clearChoices();
                 window.addressPopUpSelectInstance.setChoices(currentOptions);
-                window.addressPopUpSelectInstance.setChoiceByValue(
-                  `${val.lat}|${val.lon}|${val.address} ${val.street} ${val.house}`,
-                );
+                window.addressPopUpSelectInstance.setChoiceByValue(optionValue);
+
+                // Choices на ПРОГРАММНЫЙ выбор шлёт только addItem, но не change — а вся
+                // логика заказа (locationNew/locationNewtwo, addressSet, checkPosition,
+                // пересчёт доставки) висит на change. Без этого только что добавленный адрес
+                // выглядит выбранным, но для формы его нет: заказ уходит без адреса, а блок
+                // региона остаётся невалидным (красная рамка). Дёргаем change руками.
+                const selectNode =
+                  window.addressPopUpSelectInstance.passedElement?.element;
+
+                if (selectNode) {
+                  selectNode.dispatchEvent(new Event("change", { bubbles: true }));
+                }
 
                 setAddress({ value: "" });
                 window.AddAddressPopUpProvider.setShow(false);

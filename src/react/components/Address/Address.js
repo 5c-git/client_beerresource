@@ -30,6 +30,11 @@ const Address = ({ address, organizations, cancelHandler, submitHandler }) => {
     city: address.data.city ? address.data.city : "",
     street: address.data.street_with_type ? address.data.street_with_type : "",
     house: address.data.house ? address.data.house : "",
+    // Строение/корпус: у DaData это отдельные поля (block = "15", blockType = "стр"/"к"),
+    // в дом они не входят. Своего инпута в форме нет — тащим как есть из подсказки,
+    // иначе «д 84 стр 15» превращается в «д 84».
+    block: address.data.block ? address.data.block : "",
+    blockType: address.data.block_type ? address.data.block_type : "",
     flat: address.data.flat ? address.data.flat : "",
     lat: address.data.geo_lat ? address.data.geo_lat : "",
     lon: address.data.geo_lon ? address.data.geo_lon : "",

@@ -1,23 +1,18 @@
 .modal {
   &__container {
     position: relative;
-    min-width: 510px;
-    max-width: 520px;
-    padding-right: 30px;
-    padding-left: 30px;
+    padding: 30px;
     box-sizing: border-box;
 
     @media (max-width: $phone) {
-      width: 100%;
-      min-width: unset;
-      padding-top: 15px;
-      padding-right: 15px;
-      padding-left: 15px;
+      padding: 15px;
     }
   }
 
   &__wrapper {
     position: relative;
+    width: 100%;
+    max-width: 500px;
     padding-top: 19px;
     padding-right: 19px;
     padding-bottom: 19px;
@@ -27,10 +22,7 @@
     background-color: $white-1;
 
     @media (max-width: $phone) {
-      padding-top: 19px;
-      padding-right: 16px;
-      padding-bottom: 19px;
-      padding-left: 16px;
+      padding: 16px;
     }
   }
 

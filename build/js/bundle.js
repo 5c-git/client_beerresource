@@ -537,17 +537,21 @@ __webpack_require__.r(__webpack_exports__);
 
 const initBxSoaOrderSelect = (container, func) => {
   const select = container;
-  let choicesNolint;
-  if (select) {
-    choicesNolint = new (choices_js__WEBPACK_IMPORTED_MODULE_0___default())(select, {
-      searchEnabled: false,
-      itemSelectText: "",
-      shouldSort: false
-    });
-    select.addEventListener("addItem", (event) => {
-      func(event);
-    });
+  if (!select) {
+    return void 0;
   }
+  if (select.choicesInstance) {
+    return select.choicesInstance;
+  }
+  const choicesNolint = new (choices_js__WEBPACK_IMPORTED_MODULE_0___default())(select, {
+    searchEnabled: false,
+    itemSelectText: "",
+    shouldSort: false
+  });
+  select.addEventListener("addItem", (event) => {
+    func(event);
+  });
+  select.choicesInstance = choicesNolint;
   return choicesNolint;
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initBxSoaOrderSelect);
@@ -5053,6 +5057,11 @@ const Address = ({ address, organizations, cancelHandler, submitHandler }) => {
     city: address.data.city ? address.data.city : "",
     street: address.data.street_with_type ? address.data.street_with_type : "",
     house: address.data.house ? address.data.house : "",
+    // Строение/корпус: у DaData это отдельные поля (block = "15", blockType = "стр"/"к"),
+    // в дом они не входят. Своего инпута в форме нет — тащим как есть из подсказки,
+    // иначе «д 84 стр 15» превращается в «д 84».
+    block: address.data.block ? address.data.block : "",
+    blockType: address.data.block_type ? address.data.block_type : "",
     flat: address.data.flat ? address.data.flat : "",
     lat: address.data.geo_lat ? address.data.geo_lat : "",
     lon: address.data.geo_lon ? address.data.geo_lon : "",
@@ -6830,7 +6839,6 @@ const AddAddressPopUpProvider = () => {
         closeModal: () => {
           setShow(false);
           setAddress({ value: "" });
-          window.addressPopUpSelectInstance.setChoiceByValue("");
         },
         closeEvent: placeholderEvent,
         children: /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(
@@ -6842,6 +6850,7 @@ const AddAddressPopUpProvider = () => {
               setShow(true);
             },
             submitHandler: async (val) => {
+              var _a, _b;
               const request = await fetch(
                 `${window.routes5.addresses.requests.updateAddresses[`url${env__WEBPACK_IMPORTED_MODULE_8__/* .ENV */ .K}`]}`,
                 {
@@ -6853,17 +6862,31 @@ const AddAddressPopUpProvider = () => {
                 }
               );
               if (request.status === 200) {
+                const addresses2 = await request.json();
+                const [id, name] = (_a = addresses2.flatMap((group) => {
+                  var _a2;
+                  return Object.entries((_a2 = group.addresses) != null ? _a2 : {});
+                }).sort((a, b) => Number(b[0]) - Number(a[0]))[0]) != null ? _a : [];
+                if (!id) {
+                  console.error("[addresses] \u043D\u0435\u043E\u0436\u0438\u0434\u0430\u043D\u043D\u044B\u0439 \u043E\u0442\u0432\u0435\u0442:", addresses2);
+                  setAddress({ value: "" });
+                  window.AddAddressPopUpProvider.setShow(false);
+                  return;
+                }
+                const optionValue = `${val.lat}|${val.lon}|${name}|${id}`;
                 const currentOptions = window.addressPopUpSelectInstance.config.choices;
                 currentOptions.splice(currentOptions.length - 1, 0, {
-                  value: `${val.lat}|${val.lon}|${val.address} ${val.street} ${val.house}`,
-                  label: `${val.address} ${val.street} ${val.house}`,
+                  value: optionValue,
+                  label: name,
                   disabled: false
                 });
                 window.addressPopUpSelectInstance.clearChoices();
                 window.addressPopUpSelectInstance.setChoices(currentOptions);
-                window.addressPopUpSelectInstance.setChoiceByValue(
-                  `${val.lat}|${val.lon}|${val.address} ${val.street} ${val.house}`
-                );
+                window.addressPopUpSelectInstance.setChoiceByValue(optionValue);
+                const selectNode = (_b = window.addressPopUpSelectInstance.passedElement) == null ? void 0 : _b.element;
+                if (selectNode) {
+                  selectNode.dispatchEvent(new Event("change", { bubbles: true }));
+                }
                 setAddress({ value: "" });
                 window.AddAddressPopUpProvider.setShow(false);
               }

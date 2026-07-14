@@ -54,6 +54,16 @@ const getAddresses_namespaceObject = /*#__PURE__*/JSON.parse('[{"name":"Личн
 
 
 
+const buildAddress = (params) => [
+  params.city && `\u0420\u043E\u0441\u0441\u0438\u0439\u0441\u043A\u0430\u044F \u0424\u0435\u0434\u0435\u0440\u0430\u0446\u0438\u044F, \u0433 ${params.city}`,
+  params.street,
+  params.house && `\u0434 ${params.house}`,
+  params.block && `${params.blockType || "\u043A"} ${params.block}`,
+  params.flat && `\u043A\u0432 ${params.flat}`,
+  params.entrance && `\u043F\u043E\u0434\u044A\u0435\u0437\u0434 ${params.entrance}`,
+  params.flatNumber && `\u0434\u043E\u043C\u043E\u0444\u043E\u043D ${params.flatNumber}`,
+  params.floor && `\u044D\u0442\u0430\u0436 ${params.floor}`
+].filter(Boolean).join(", ");
 const addressesHandlers = [
   // Список адресов доставки (fetchAddresses → setAddresses(response.data))
   http/* http */.L.get(
@@ -65,13 +75,28 @@ const addressesHandlers = [
     }
   ),
   // Сохранение адресов (sendUpdatedAddresses → setAddresses(response.data), затем reload).
-  // Мок статичный — возвращаем тот же список; правки не персистятся (норма для моков).
+  // Бэк на POST отдаёт ПЕРЕСОБРАННЫЙ список — фронт берёт из него новый адрес (макс. ID).
+  // Повторяем это: добавление одного адреса (объект) → дописываем его в «Личные адреса»
+  // со свежим ID. Между запросами не персистим (норма для моков) — при перезагрузке
+  // GET снова отдаст статичный getAddresses.json.
   http/* http */.L.post(
     `${window.routes5.addresses.requests.updateAddresses[`url${env/* ENV */.K}`]}`,
     async ({ request }) => {
+      var _a;
       console.log("[MSW] handled updateAddresses:", request.url);
       await (0,delay/* delay */.cb)(500);
-      return HttpResponse/* HttpResponse */.cS.json(getAddresses_namespaceObject);
+      const params = await request.json().catch(() => null);
+      if (!params || Array.isArray(params)) {
+        return HttpResponse/* HttpResponse */.cS.json(getAddresses_namespaceObject);
+      }
+      const groups = structuredClone(getAddresses_namespaceObject);
+      const personal = (_a = groups.find((group) => group.name === "\u041B\u0438\u0447\u043D\u044B\u0435 \u0430\u0434\u0440\u0435\u0441\u0430")) != null ? _a : groups[0];
+      const maxId = groups.flatMap((group) => {
+        var _a2;
+        return Object.keys((_a2 = group.addresses) != null ? _a2 : {});
+      }).reduce((max, id) => Math.max(max, Number(id)), 0);
+      personal.addresses[maxId + 1] = buildAddress(params);
+      return HttpResponse/* HttpResponse */.cS.json(groups);
     }
   )
 ];

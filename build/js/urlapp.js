@@ -1,4 +1,3 @@
-/******/ (() => { // webpackBootstrap
 const ROUTES = {
   Media: {
     // URL для медиафайлов(картиники, видео и тп)
@@ -114,6 +113,3 @@ const ROUTES = {
 };
 
 window.routes5 = ROUTES;
-
-/******/ })()
-;
